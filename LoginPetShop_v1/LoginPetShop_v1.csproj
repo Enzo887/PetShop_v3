@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A7DF50C7-18AA-4EE4-B665-2BF2C55B39E8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LoginPetShop_v1</RootNamespace>
+    <AssemblyName>LoginPetShop_v1</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administracion\AdminInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\AdminInicio.Designer.cs">
+      <DependentUpon>AdminInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\AdministracionDeRol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Administracion\AdministracionDeRol.Designer.cs">
+      <DependentUpon>AdministracionDeRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\UC_ConfigurarAlertas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Administracion\UC_ConfigurarAlertas.Designer.cs">
+      <DependentUpon>UC_ConfigurarAlertas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\UC_VerEstadisticas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Administracion\UC_VerEstadisticas.Designer.cs">
+      <DependentUpon>UC_VerEstadisticas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formInicio.Designer.cs">
+      <DependentUpon>formInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vendedor\UC_GestionarStock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vendedor\UC_GestionarStock.Designer.cs">
+      <DependentUpon>UC_GestionarStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vendedor\VendedorHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vendedor\VendedorHome.Designer.cs">
+      <DependentUpon>VendedorHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vendedor\VendedorInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vendedor\VendedorInicio.Designer.cs">
+      <DependentUpon>VendedorInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vendedor\UC_RegistrarVenta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vendedor\UC_RegistrarVenta.Designer.cs">
+      <DependentUpon>UC_RegistrarVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Veterinario\AgregarProducto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Veterinario\AgregarProducto.Designer.cs">
+      <DependentUpon>AgregarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Veterinario\CrearFichaMascota.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Veterinario\CrearFichaMascota.Designer.cs">
+      <DependentUpon>CrearFichaMascota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gerente\GerenteInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerente\GerenteInicio.Designer.cs">
+      <DependentUpon>GerenteInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Veterinario\HistorialMedico.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Veterinario\HistorialMedico.Designer.cs">
+      <DependentUpon>HistorialMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Veterinario\VeterinarioInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Veterinario\VeterinarioInicio.Designer.cs">
+      <DependentUpon>VeterinarioInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Veterinario\VeterinarioStock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Veterinario\VeterinarioStock.Designer.cs">
+      <DependentUpon>VeterinarioStock.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Administracion\AdminInicio.resx">
+      <DependentUpon>AdminInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\AdministracionDeRol.resx">
+      <DependentUpon>AdministracionDeRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\UC_ConfigurarAlertas.resx">
+      <DependentUpon>UC_ConfigurarAlertas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\UC_VerEstadisticas.resx">
+      <DependentUpon>UC_VerEstadisticas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formInicio.resx">
+      <DependentUpon>formInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendedor\UC_GestionarStock.resx">
+      <DependentUpon>UC_GestionarStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendedor\VendedorHome.resx">
+      <DependentUpon>VendedorHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendedor\VendedorInicio.resx">
+      <DependentUpon>VendedorInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Vendedor\UC_RegistrarVenta.resx">
+      <DependentUpon>UC_RegistrarVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Veterinario\AgregarProducto.resx">
+      <DependentUpon>AgregarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Veterinario\CrearFichaMascota.resx">
+      <DependentUpon>CrearFichaMascota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Veterinario\HistorialMedico.resx">
+      <DependentUpon>HistorialMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Veterinario\VeterinarioInicio.resx">
+      <DependentUpon>VeterinarioInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Veterinario\VeterinarioStock.resx">
+      <DependentUpon>VeterinarioStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BE\BE.csproj">
+      <Project>{e72a6858-82d0-4424-8f03-f38d94c53f5b}</Project>
+      <Name>BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{754dce2b-3bb8-4716-b1bf-7a0ac58f1d0a}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\foto.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
