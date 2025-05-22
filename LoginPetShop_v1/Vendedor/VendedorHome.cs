@@ -27,5 +27,10 @@ namespace LoginPetShop_v1.Vendedor
         {
             CargarUserControl( new UC_RegistrarVenta() );
         }
+
+        private void btnGestionarStock_Click(object sender, EventArgs e)
+        {
+            CargarUserControl ( new UC_GestionarStock() );
+        }
     }
 }
