@@ -33,36 +33,36 @@
             this.btnStock = new System.Windows.Forms.Button();
             this.pBoxPerfil = new System.Windows.Forms.PictureBox();
             this.panelLateralVeterinario = new System.Windows.Forms.Panel();
+            this.panelTopVeterinario = new System.Windows.Forms.Panel();
             this.tBoxBusqueda = new System.Windows.Forms.TextBox();
             this.panelContenedorVeterinario = new System.Windows.Forms.Panel();
-            this.lblBuscador = new System.Windows.Forms.Label();
-            this.panelTopVeterinario = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-            this.lblNombreMascota = new System.Windows.Forms.Label();
-            this.lblNombreMascota2 = new System.Windows.Forms.Label();
-            this.lblNombreMascota3 = new System.Windows.Forms.Label();
-            this.lblNombreMascota4 = new System.Windows.Forms.Label();
-            this.lblNombreMascota5 = new System.Windows.Forms.Label();
-            this.btnVerFichaMascota = new System.Windows.Forms.Button();
-            this.btnVerFichaMascota2 = new System.Windows.Forms.Button();
-            this.btnVerFichaMascota3 = new System.Windows.Forms.Button();
-            this.btnVerFichaMascota4 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.btnVerFichaMascota5 = new System.Windows.Forms.Button();
+            this.lblNombreMascota5 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnVerFichaMascota4 = new System.Windows.Forms.Button();
+            this.lblNombreMascota4 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnVerFichaMascota3 = new System.Windows.Forms.Button();
+            this.lblNombreMascota3 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnVerFichaMascota2 = new System.Windows.Forms.Button();
+            this.lblNombreMascota2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnVerFichaMascota = new System.Windows.Forms.Button();
+            this.lblNombreMascota = new System.Windows.Forms.Label();
+            this.lblBuscador = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxPerfil)).BeginInit();
             this.panelLateralVeterinario.SuspendLayout();
             this.panelContenedorVeterinario.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblVeterinario
@@ -94,10 +94,10 @@
             this.btnStock.TabIndex = 6;
             this.btnStock.Text = "Ver Stock";
             this.btnStock.UseVisualStyleBackColor = true;
+            this.btnStock.Click += new System.EventHandler(this.btnStock_Click);
             // 
             // pBoxPerfil
             // 
-            this.pBoxPerfil.Image = global::LoginPetShop_v1.Properties.Resources.foto;
             this.pBoxPerfil.Location = new System.Drawing.Point(22, 19);
             this.pBoxPerfil.Name = "pBoxPerfil";
             this.pBoxPerfil.Size = new System.Drawing.Size(95, 80);
@@ -115,33 +115,6 @@
             this.panelLateralVeterinario.Size = new System.Drawing.Size(169, 453);
             this.panelLateralVeterinario.TabIndex = 8;
             // 
-            // tBoxBusqueda
-            // 
-            this.tBoxBusqueda.Location = new System.Drawing.Point(218, 45);
-            this.tBoxBusqueda.Name = "tBoxBusqueda";
-            this.tBoxBusqueda.Size = new System.Drawing.Size(464, 20);
-            this.tBoxBusqueda.TabIndex = 2;
-            // 
-            // panelContenedorVeterinario
-            // 
-            this.panelContenedorVeterinario.Controls.Add(this.vScrollBar1);
-            this.panelContenedorVeterinario.Controls.Add(this.tableLayoutPanel1);
-            this.panelContenedorVeterinario.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenedorVeterinario.Location = new System.Drawing.Point(169, 0);
-            this.panelContenedorVeterinario.Name = "panelContenedorVeterinario";
-            this.panelContenedorVeterinario.Size = new System.Drawing.Size(631, 453);
-            this.panelContenedorVeterinario.TabIndex = 9;
-            // 
-            // lblBuscador
-            // 
-            this.lblBuscador.AutoSize = true;
-            this.lblBuscador.Location = new System.Drawing.Point(215, 29);
-            this.lblBuscador.Name = "lblBuscador";
-            this.lblBuscador.Size = new System.Drawing.Size(124, 13);
-            this.lblBuscador.TabIndex = 5;
-            this.lblBuscador.Text = "Buscar ficha de mascota";
-            this.lblBuscador.Click += new System.EventHandler(this.lblBuscador_Click);
-            // 
             // panelTopVeterinario
             // 
             this.panelTopVeterinario.Dock = System.Windows.Forms.DockStyle.Top;
@@ -149,6 +122,33 @@
             this.panelTopVeterinario.Name = "panelTopVeterinario";
             this.panelTopVeterinario.Size = new System.Drawing.Size(169, 142);
             this.panelTopVeterinario.TabIndex = 0;
+            // 
+            // tBoxBusqueda
+            // 
+            this.tBoxBusqueda.Location = new System.Drawing.Point(46, 45);
+            this.tBoxBusqueda.Name = "tBoxBusqueda";
+            this.tBoxBusqueda.Size = new System.Drawing.Size(464, 20);
+            this.tBoxBusqueda.TabIndex = 2;
+            // 
+            // panelContenedorVeterinario
+            // 
+            this.panelContenedorVeterinario.Controls.Add(this.lblBuscador);
+            this.panelContenedorVeterinario.Controls.Add(this.vScrollBar1);
+            this.panelContenedorVeterinario.Controls.Add(this.tBoxBusqueda);
+            this.panelContenedorVeterinario.Controls.Add(this.tableLayoutPanel1);
+            this.panelContenedorVeterinario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContenedorVeterinario.Location = new System.Drawing.Point(169, 0);
+            this.panelContenedorVeterinario.Name = "panelContenedorVeterinario";
+            this.panelContenedorVeterinario.Size = new System.Drawing.Size(631, 453);
+            this.panelContenedorVeterinario.TabIndex = 9;
+            this.panelContenedorVeterinario.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedorVeterinario_Paint);
+            // 
+            // vScrollBar1
+            // 
+            this.vScrollBar1.Location = new System.Drawing.Point(513, 115);
+            this.vScrollBar1.Name = "vScrollBar1";
+            this.vScrollBar1.Size = new System.Drawing.Size(16, 303);
+            this.vScrollBar1.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
@@ -171,42 +171,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(464, 306);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnVerFichaMascota);
-            this.panel1.Controls.Add(this.lblNombreMascota);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(458, 55);
-            this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnVerFichaMascota2);
-            this.panel2.Controls.Add(this.lblNombreMascota2);
-            this.panel2.Location = new System.Drawing.Point(3, 64);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(458, 55);
-            this.panel2.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.btnVerFichaMascota3);
-            this.panel3.Controls.Add(this.lblNombreMascota3);
-            this.panel3.Location = new System.Drawing.Point(3, 125);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(458, 55);
-            this.panel3.TabIndex = 2;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.btnVerFichaMascota4);
-            this.panel4.Controls.Add(this.lblNombreMascota4);
-            this.panel4.Location = new System.Drawing.Point(3, 186);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(458, 55);
-            this.panel4.TabIndex = 3;
-            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.btnVerFichaMascota5);
@@ -215,94 +179,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(458, 55);
             this.panel5.TabIndex = 4;
-            // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(513, 115);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(16, 303);
-            this.vScrollBar1.TabIndex = 0;
-            // 
-            // lblNombreMascota
-            // 
-            this.lblNombreMascota.AutoSize = true;
-            this.lblNombreMascota.Location = new System.Drawing.Point(26, 18);
-            this.lblNombreMascota.Name = "lblNombreMascota";
-            this.lblNombreMascota.Size = new System.Drawing.Size(105, 13);
-            this.lblNombreMascota.TabIndex = 0;
-            this.lblNombreMascota.Text = "Nombre de mascota:";
-            // 
-            // lblNombreMascota2
-            // 
-            this.lblNombreMascota2.AutoSize = true;
-            this.lblNombreMascota2.Location = new System.Drawing.Point(26, 18);
-            this.lblNombreMascota2.Name = "lblNombreMascota2";
-            this.lblNombreMascota2.Size = new System.Drawing.Size(105, 13);
-            this.lblNombreMascota2.TabIndex = 1;
-            this.lblNombreMascota2.Text = "Nombre de mascota:";
-            // 
-            // lblNombreMascota3
-            // 
-            this.lblNombreMascota3.AutoSize = true;
-            this.lblNombreMascota3.Location = new System.Drawing.Point(26, 16);
-            this.lblNombreMascota3.Name = "lblNombreMascota3";
-            this.lblNombreMascota3.Size = new System.Drawing.Size(105, 13);
-            this.lblNombreMascota3.TabIndex = 2;
-            this.lblNombreMascota3.Text = "Nombre de mascota:";
-            // 
-            // lblNombreMascota4
-            // 
-            this.lblNombreMascota4.AutoSize = true;
-            this.lblNombreMascota4.Location = new System.Drawing.Point(26, 14);
-            this.lblNombreMascota4.Name = "lblNombreMascota4";
-            this.lblNombreMascota4.Size = new System.Drawing.Size(105, 13);
-            this.lblNombreMascota4.TabIndex = 1;
-            this.lblNombreMascota4.Text = "Nombre de mascota:";
-            // 
-            // lblNombreMascota5
-            // 
-            this.lblNombreMascota5.AutoSize = true;
-            this.lblNombreMascota5.Location = new System.Drawing.Point(26, 19);
-            this.lblNombreMascota5.Name = "lblNombreMascota5";
-            this.lblNombreMascota5.Size = new System.Drawing.Size(105, 13);
-            this.lblNombreMascota5.TabIndex = 1;
-            this.lblNombreMascota5.Text = "Nombre de mascota:";
-            // 
-            // btnVerFichaMascota
-            // 
-            this.btnVerFichaMascota.Location = new System.Drawing.Point(357, 18);
-            this.btnVerFichaMascota.Name = "btnVerFichaMascota";
-            this.btnVerFichaMascota.Size = new System.Drawing.Size(63, 23);
-            this.btnVerFichaMascota.TabIndex = 1;
-            this.btnVerFichaMascota.Text = "Ver";
-            this.btnVerFichaMascota.UseVisualStyleBackColor = true;
-            // 
-            // btnVerFichaMascota2
-            // 
-            this.btnVerFichaMascota2.Location = new System.Drawing.Point(357, 18);
-            this.btnVerFichaMascota2.Name = "btnVerFichaMascota2";
-            this.btnVerFichaMascota2.Size = new System.Drawing.Size(63, 23);
-            this.btnVerFichaMascota2.TabIndex = 2;
-            this.btnVerFichaMascota2.Text = "Ver";
-            this.btnVerFichaMascota2.UseVisualStyleBackColor = true;
-            // 
-            // btnVerFichaMascota3
-            // 
-            this.btnVerFichaMascota3.Location = new System.Drawing.Point(357, 16);
-            this.btnVerFichaMascota3.Name = "btnVerFichaMascota3";
-            this.btnVerFichaMascota3.Size = new System.Drawing.Size(63, 23);
-            this.btnVerFichaMascota3.TabIndex = 3;
-            this.btnVerFichaMascota3.Text = "Ver";
-            this.btnVerFichaMascota3.UseVisualStyleBackColor = true;
-            // 
-            // btnVerFichaMascota4
-            // 
-            this.btnVerFichaMascota4.Location = new System.Drawing.Point(357, 14);
-            this.btnVerFichaMascota4.Name = "btnVerFichaMascota4";
-            this.btnVerFichaMascota4.Size = new System.Drawing.Size(63, 23);
-            this.btnVerFichaMascota4.TabIndex = 2;
-            this.btnVerFichaMascota4.Text = "Ver";
-            this.btnVerFichaMascota4.UseVisualStyleBackColor = true;
             // 
             // btnVerFichaMascota5
             // 
@@ -313,13 +189,138 @@
             this.btnVerFichaMascota5.Text = "Ver";
             this.btnVerFichaMascota5.UseVisualStyleBackColor = true;
             // 
+            // lblNombreMascota5
+            // 
+            this.lblNombreMascota5.AutoSize = true;
+            this.lblNombreMascota5.Location = new System.Drawing.Point(26, 19);
+            this.lblNombreMascota5.Name = "lblNombreMascota5";
+            this.lblNombreMascota5.Size = new System.Drawing.Size(105, 13);
+            this.lblNombreMascota5.TabIndex = 1;
+            this.lblNombreMascota5.Text = "Nombre de mascota:";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btnVerFichaMascota4);
+            this.panel4.Controls.Add(this.lblNombreMascota4);
+            this.panel4.Location = new System.Drawing.Point(3, 186);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(458, 55);
+            this.panel4.TabIndex = 3;
+            // 
+            // btnVerFichaMascota4
+            // 
+            this.btnVerFichaMascota4.Location = new System.Drawing.Point(357, 14);
+            this.btnVerFichaMascota4.Name = "btnVerFichaMascota4";
+            this.btnVerFichaMascota4.Size = new System.Drawing.Size(63, 23);
+            this.btnVerFichaMascota4.TabIndex = 2;
+            this.btnVerFichaMascota4.Text = "Ver";
+            this.btnVerFichaMascota4.UseVisualStyleBackColor = true;
+            // 
+            // lblNombreMascota4
+            // 
+            this.lblNombreMascota4.AutoSize = true;
+            this.lblNombreMascota4.Location = new System.Drawing.Point(26, 14);
+            this.lblNombreMascota4.Name = "lblNombreMascota4";
+            this.lblNombreMascota4.Size = new System.Drawing.Size(105, 13);
+            this.lblNombreMascota4.TabIndex = 1;
+            this.lblNombreMascota4.Text = "Nombre de mascota:";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnVerFichaMascota3);
+            this.panel3.Controls.Add(this.lblNombreMascota3);
+            this.panel3.Location = new System.Drawing.Point(3, 125);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(458, 55);
+            this.panel3.TabIndex = 2;
+            // 
+            // btnVerFichaMascota3
+            // 
+            this.btnVerFichaMascota3.Location = new System.Drawing.Point(357, 16);
+            this.btnVerFichaMascota3.Name = "btnVerFichaMascota3";
+            this.btnVerFichaMascota3.Size = new System.Drawing.Size(63, 23);
+            this.btnVerFichaMascota3.TabIndex = 3;
+            this.btnVerFichaMascota3.Text = "Ver";
+            this.btnVerFichaMascota3.UseVisualStyleBackColor = true;
+            // 
+            // lblNombreMascota3
+            // 
+            this.lblNombreMascota3.AutoSize = true;
+            this.lblNombreMascota3.Location = new System.Drawing.Point(26, 16);
+            this.lblNombreMascota3.Name = "lblNombreMascota3";
+            this.lblNombreMascota3.Size = new System.Drawing.Size(105, 13);
+            this.lblNombreMascota3.TabIndex = 2;
+            this.lblNombreMascota3.Text = "Nombre de mascota:";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnVerFichaMascota2);
+            this.panel2.Controls.Add(this.lblNombreMascota2);
+            this.panel2.Location = new System.Drawing.Point(3, 64);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(458, 55);
+            this.panel2.TabIndex = 1;
+            // 
+            // btnVerFichaMascota2
+            // 
+            this.btnVerFichaMascota2.Location = new System.Drawing.Point(357, 18);
+            this.btnVerFichaMascota2.Name = "btnVerFichaMascota2";
+            this.btnVerFichaMascota2.Size = new System.Drawing.Size(63, 23);
+            this.btnVerFichaMascota2.TabIndex = 2;
+            this.btnVerFichaMascota2.Text = "Ver";
+            this.btnVerFichaMascota2.UseVisualStyleBackColor = true;
+            // 
+            // lblNombreMascota2
+            // 
+            this.lblNombreMascota2.AutoSize = true;
+            this.lblNombreMascota2.Location = new System.Drawing.Point(26, 18);
+            this.lblNombreMascota2.Name = "lblNombreMascota2";
+            this.lblNombreMascota2.Size = new System.Drawing.Size(105, 13);
+            this.lblNombreMascota2.TabIndex = 1;
+            this.lblNombreMascota2.Text = "Nombre de mascota:";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnVerFichaMascota);
+            this.panel1.Controls.Add(this.lblNombreMascota);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(458, 55);
+            this.panel1.TabIndex = 0;
+            // 
+            // btnVerFichaMascota
+            // 
+            this.btnVerFichaMascota.Location = new System.Drawing.Point(357, 18);
+            this.btnVerFichaMascota.Name = "btnVerFichaMascota";
+            this.btnVerFichaMascota.Size = new System.Drawing.Size(63, 23);
+            this.btnVerFichaMascota.TabIndex = 1;
+            this.btnVerFichaMascota.Text = "Ver";
+            this.btnVerFichaMascota.UseVisualStyleBackColor = true;
+            // 
+            // lblNombreMascota
+            // 
+            this.lblNombreMascota.AutoSize = true;
+            this.lblNombreMascota.Location = new System.Drawing.Point(26, 18);
+            this.lblNombreMascota.Name = "lblNombreMascota";
+            this.lblNombreMascota.Size = new System.Drawing.Size(105, 13);
+            this.lblNombreMascota.TabIndex = 0;
+            this.lblNombreMascota.Text = "Nombre de mascota:";
+            // 
+            // lblBuscador
+            // 
+            this.lblBuscador.AutoSize = true;
+            this.lblBuscador.Location = new System.Drawing.Point(43, 29);
+            this.lblBuscador.Name = "lblBuscador";
+            this.lblBuscador.Size = new System.Drawing.Size(124, 13);
+            this.lblBuscador.TabIndex = 5;
+            this.lblBuscador.Text = "Buscar ficha de mascota";
+            this.lblBuscador.Click += new System.EventHandler(this.lblBuscador_Click);
+            // 
             // VeterinarioInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 453);
-            this.Controls.Add(this.lblBuscador);
-            this.Controls.Add(this.tBoxBusqueda);
             this.Controls.Add(this.panelContenedorVeterinario);
             this.Controls.Add(this.pBoxPerfil);
             this.Controls.Add(this.btnStock);
@@ -333,17 +334,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBoxPerfil)).EndInit();
             this.panelLateralVeterinario.ResumeLayout(false);
             this.panelContenedorVeterinario.ResumeLayout(false);
+            this.panelContenedorVeterinario.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -55,6 +55,7 @@
             this.tBoxEspecieMascota = new System.Windows.Forms.TextBox();
             this.lblNombreMascota = new System.Windows.Forms.Label();
             this.tBoxNombreMascota = new System.Windows.Forms.TextBox();
+            this.btnVerHistorialMedico = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -65,6 +66,7 @@
             this.btnCancelar.TabIndex = 54;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnEditar
             // 
@@ -279,10 +281,21 @@
             this.tBoxNombreMascota.Size = new System.Drawing.Size(100, 20);
             this.tBoxNombreMascota.TabIndex = 28;
             // 
+            // btnVerHistorialMedico
+            // 
+            this.btnVerHistorialMedico.Location = new System.Drawing.Point(181, 91);
+            this.btnVerHistorialMedico.Name = "btnVerHistorialMedico";
+            this.btnVerHistorialMedico.Size = new System.Drawing.Size(112, 23);
+            this.btnVerHistorialMedico.TabIndex = 55;
+            this.btnVerHistorialMedico.Text = "Ver historial medico";
+            this.btnVerHistorialMedico.UseVisualStyleBackColor = true;
+            this.btnVerHistorialMedico.Click += new System.EventHandler(this.btnVerHistorialMedico_Click);
+            // 
             // CrearFichaMascota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnVerHistorialMedico);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnGuardarCambios);
@@ -346,5 +359,6 @@
         private System.Windows.Forms.TextBox tBoxEspecieMascota;
         private System.Windows.Forms.Label lblNombreMascota;
         private System.Windows.Forms.TextBox tBoxNombreMascota;
+        private System.Windows.Forms.Button btnVerHistorialMedico;
     }
 }

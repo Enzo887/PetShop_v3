@@ -12,9 +12,26 @@ namespace LoginPetShop_v1.Veterinario
 {
     public partial class CrearFichaMascota : UserControl
     {
+        public Action<UserControl> CambiarControl;
         public CrearFichaMascota()
         {
             InitializeComponent();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            VeterinarioInicio main = new VeterinarioInicio();
+            main.Show();
+             Form esteform = this.FindForm();
+            esteform.Close();
+           
+
+        }
+
+        private void btnVerHistorialMedico_Click(object sender, EventArgs e)
+        {
+          
+            
         }
     }
 }

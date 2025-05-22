@@ -13,6 +13,7 @@ namespace LoginPetShop_v1.Veterinario
 {
     public partial class VeterinarioInicio : Form
     {
+        
         public VeterinarioInicio()
         {
             InitializeComponent();
@@ -38,8 +39,11 @@ namespace LoginPetShop_v1.Veterinario
         private void BtnCrearFicha_Click(object sender, EventArgs e)
         {
             CargarUserControl(new CrearFichaMascota());
-            
-            
+
+           
+
+
+
         }
 
         private void lblBuscador_Click(object sender, EventArgs e)
@@ -54,6 +58,16 @@ namespace LoginPetShop_v1.Veterinario
         }
 
         private void lBoxMascotas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnStock_Click(object sender, EventArgs e)
+        {
+            CargarUserControl(new VeterinarioStock());
+        }
+
+        private void panelContenedorVeterinario_Paint(object sender, PaintEventArgs e)
         {
 
         }
