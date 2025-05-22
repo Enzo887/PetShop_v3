@@ -29,47 +29,48 @@
         private void InitializeComponent()
         {
             this.tLPanelProductos = new System.Windows.Forms.TableLayoutPanel();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-            this.panelProductos = new System.Windows.Forms.Panel();
-            this.panelProductos2 = new System.Windows.Forms.Panel();
-            this.panelProductos3 = new System.Windows.Forms.Panel();
-            this.panelProductos4 = new System.Windows.Forms.Panel();
             this.panelProductos5 = new System.Windows.Forms.Panel();
+            this.lblEstadoProducto5 = new System.Windows.Forms.Label();
+            this.lblNombreProducto5 = new System.Windows.Forms.Label();
+            this.panelProductos4 = new System.Windows.Forms.Panel();
+            this.lblEstadoProducto4 = new System.Windows.Forms.Label();
+            this.lblNombreProducto4 = new System.Windows.Forms.Label();
+            this.panelProductos3 = new System.Windows.Forms.Panel();
+            this.lblEstadoProducto3 = new System.Windows.Forms.Label();
+            this.lblNombreProducto3 = new System.Windows.Forms.Label();
+            this.panelProductos2 = new System.Windows.Forms.Panel();
+            this.lblEstadoProducto2 = new System.Windows.Forms.Label();
+            this.lblNombreProducto2 = new System.Windows.Forms.Label();
+            this.panelProductos = new System.Windows.Forms.Panel();
+            this.lblEstadoProducto = new System.Windows.Forms.Label();
+            this.lblNombreProducto = new System.Windows.Forms.Label();
+            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.lblProductos = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblBuscarProducto = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panelProductoxVencer = new System.Windows.Forms.Panel();
+            this.lblVencimientoProducto = new System.Windows.Forms.Label();
+            this.lblNombreProductoxVencer = new System.Windows.Forms.Label();
+            this.lblCantidadRestantexVencer = new System.Windows.Forms.Label();
+            this.panelProductoxVencer2 = new System.Windows.Forms.Panel();
+            this.lblCantidadRestantexVencer2 = new System.Windows.Forms.Label();
+            this.lblVencimientoProducto2 = new System.Windows.Forms.Label();
+            this.lblNombreProductoxVencer2 = new System.Windows.Forms.Label();
+            this.panelProductoxVencer3 = new System.Windows.Forms.Panel();
+            this.lblCantidadRestantexVencer3 = new System.Windows.Forms.Label();
+            this.lblVencimientoProducto3 = new System.Windows.Forms.Label();
+            this.lblNombreProductoxVencer3 = new System.Windows.Forms.Label();
             this.vScrollBar2 = new System.Windows.Forms.VScrollBar();
             this.btnAgregarProducto = new System.Windows.Forms.Button();
-            this.panelProductoxVencer = new System.Windows.Forms.Panel();
-            this.panelProductoxVencer2 = new System.Windows.Forms.Panel();
-            this.panelProductoxVencer3 = new System.Windows.Forms.Panel();
             this.lblProductosxVencer = new System.Windows.Forms.Label();
-            this.lblNombreProductoxVencer = new System.Windows.Forms.Label();
-            this.lblNombreProductoxVencer2 = new System.Windows.Forms.Label();
-            this.lblNombreProductoxVencer3 = new System.Windows.Forms.Label();
-            this.lblVencimientoProducto = new System.Windows.Forms.Label();
-            this.lblVencimientoProducto2 = new System.Windows.Forms.Label();
-            this.lblVencimientoProducto3 = new System.Windows.Forms.Label();
-            this.lblCantidadRestantexVencer = new System.Windows.Forms.Label();
-            this.lblCantidadRestantexVencer3 = new System.Windows.Forms.Label();
-            this.lblCantidadRestantexVencer2 = new System.Windows.Forms.Label();
-            this.lblNombreProducto = new System.Windows.Forms.Label();
-            this.lblNombreProducto2 = new System.Windows.Forms.Label();
-            this.lblNombreProducto3 = new System.Windows.Forms.Label();
-            this.lblNombreProducto4 = new System.Windows.Forms.Label();
-            this.lblNombreProducto5 = new System.Windows.Forms.Label();
-            this.lblEstadoProducto = new System.Windows.Forms.Label();
-            this.lblEstadoProducto2 = new System.Windows.Forms.Label();
-            this.lblEstadoProducto3 = new System.Windows.Forms.Label();
-            this.lblEstadoProducto4 = new System.Windows.Forms.Label();
-            this.lblEstadoProducto5 = new System.Windows.Forms.Label();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.tLPanelProductos.SuspendLayout();
-            this.panelProductos.SuspendLayout();
-            this.panelProductos2.SuspendLayout();
-            this.panelProductos3.SuspendLayout();
-            this.panelProductos4.SuspendLayout();
             this.panelProductos5.SuspendLayout();
+            this.panelProductos4.SuspendLayout();
+            this.panelProductos3.SuspendLayout();
+            this.panelProductos2.SuspendLayout();
+            this.panelProductos.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panelProductoxVencer.SuspendLayout();
             this.panelProductoxVencer2.SuspendLayout();
@@ -96,39 +97,32 @@
             this.tLPanelProductos.Size = new System.Drawing.Size(229, 316);
             this.tLPanelProductos.TabIndex = 0;
             // 
-            // vScrollBar1
+            // panelProductos5
             // 
-            this.vScrollBar1.Location = new System.Drawing.Point(257, 91);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(15, 316);
-            this.vScrollBar1.TabIndex = 1;
+            this.panelProductos5.Controls.Add(this.lblEstadoProducto5);
+            this.panelProductos5.Controls.Add(this.lblNombreProducto5);
+            this.panelProductos5.Location = new System.Drawing.Point(3, 255);
+            this.panelProductos5.Name = "panelProductos5";
+            this.panelProductos5.Size = new System.Drawing.Size(200, 57);
+            this.panelProductos5.TabIndex = 4;
             // 
-            // panelProductos
+            // lblEstadoProducto5
             // 
-            this.panelProductos.Controls.Add(this.lblEstadoProducto);
-            this.panelProductos.Controls.Add(this.lblNombreProducto);
-            this.panelProductos.Location = new System.Drawing.Point(3, 3);
-            this.panelProductos.Name = "panelProductos";
-            this.panelProductos.Size = new System.Drawing.Size(200, 57);
-            this.panelProductos.TabIndex = 0;
+            this.lblEstadoProducto5.AutoSize = true;
+            this.lblEstadoProducto5.Location = new System.Drawing.Point(9, 30);
+            this.lblEstadoProducto5.Name = "lblEstadoProducto5";
+            this.lblEstadoProducto5.Size = new System.Drawing.Size(43, 13);
+            this.lblEstadoProducto5.TabIndex = 11;
+            this.lblEstadoProducto5.Text = "Estado:";
             // 
-            // panelProductos2
+            // lblNombreProducto5
             // 
-            this.panelProductos2.Controls.Add(this.lblEstadoProducto2);
-            this.panelProductos2.Controls.Add(this.lblNombreProducto2);
-            this.panelProductos2.Location = new System.Drawing.Point(3, 66);
-            this.panelProductos2.Name = "panelProductos2";
-            this.panelProductos2.Size = new System.Drawing.Size(200, 57);
-            this.panelProductos2.TabIndex = 1;
-            // 
-            // panelProductos3
-            // 
-            this.panelProductos3.Controls.Add(this.lblEstadoProducto3);
-            this.panelProductos3.Controls.Add(this.lblNombreProducto3);
-            this.panelProductos3.Location = new System.Drawing.Point(3, 129);
-            this.panelProductos3.Name = "panelProductos3";
-            this.panelProductos3.Size = new System.Drawing.Size(200, 57);
-            this.panelProductos3.TabIndex = 2;
+            this.lblNombreProducto5.AutoSize = true;
+            this.lblNombreProducto5.Location = new System.Drawing.Point(3, 0);
+            this.lblNombreProducto5.Name = "lblNombreProducto5";
+            this.lblNombreProducto5.Size = new System.Drawing.Size(107, 13);
+            this.lblNombreProducto5.TabIndex = 10;
+            this.lblNombreProducto5.Text = "Nombre de producto:";
             // 
             // panelProductos4
             // 
@@ -139,14 +133,111 @@
             this.panelProductos4.Size = new System.Drawing.Size(200, 57);
             this.panelProductos4.TabIndex = 3;
             // 
-            // panelProductos5
+            // lblEstadoProducto4
             // 
-            this.panelProductos5.Controls.Add(this.lblEstadoProducto5);
-            this.panelProductos5.Controls.Add(this.lblNombreProducto5);
-            this.panelProductos5.Location = new System.Drawing.Point(3, 255);
-            this.panelProductos5.Name = "panelProductos5";
-            this.panelProductos5.Size = new System.Drawing.Size(200, 57);
-            this.panelProductos5.TabIndex = 4;
+            this.lblEstadoProducto4.AutoSize = true;
+            this.lblEstadoProducto4.Location = new System.Drawing.Point(9, 25);
+            this.lblEstadoProducto4.Name = "lblEstadoProducto4";
+            this.lblEstadoProducto4.Size = new System.Drawing.Size(43, 13);
+            this.lblEstadoProducto4.TabIndex = 11;
+            this.lblEstadoProducto4.Text = "Estado:";
+            // 
+            // lblNombreProducto4
+            // 
+            this.lblNombreProducto4.AutoSize = true;
+            this.lblNombreProducto4.Location = new System.Drawing.Point(3, 0);
+            this.lblNombreProducto4.Name = "lblNombreProducto4";
+            this.lblNombreProducto4.Size = new System.Drawing.Size(107, 13);
+            this.lblNombreProducto4.TabIndex = 10;
+            this.lblNombreProducto4.Text = "Nombre de producto:";
+            // 
+            // panelProductos3
+            // 
+            this.panelProductos3.Controls.Add(this.lblEstadoProducto3);
+            this.panelProductos3.Controls.Add(this.lblNombreProducto3);
+            this.panelProductos3.Location = new System.Drawing.Point(3, 129);
+            this.panelProductos3.Name = "panelProductos3";
+            this.panelProductos3.Size = new System.Drawing.Size(200, 57);
+            this.panelProductos3.TabIndex = 2;
+            // 
+            // lblEstadoProducto3
+            // 
+            this.lblEstadoProducto3.AutoSize = true;
+            this.lblEstadoProducto3.Location = new System.Drawing.Point(9, 25);
+            this.lblEstadoProducto3.Name = "lblEstadoProducto3";
+            this.lblEstadoProducto3.Size = new System.Drawing.Size(43, 13);
+            this.lblEstadoProducto3.TabIndex = 11;
+            this.lblEstadoProducto3.Text = "Estado:";
+            // 
+            // lblNombreProducto3
+            // 
+            this.lblNombreProducto3.AutoSize = true;
+            this.lblNombreProducto3.Location = new System.Drawing.Point(3, 2);
+            this.lblNombreProducto3.Name = "lblNombreProducto3";
+            this.lblNombreProducto3.Size = new System.Drawing.Size(107, 13);
+            this.lblNombreProducto3.TabIndex = 10;
+            this.lblNombreProducto3.Text = "Nombre de producto:";
+            // 
+            // panelProductos2
+            // 
+            this.panelProductos2.Controls.Add(this.lblEstadoProducto2);
+            this.panelProductos2.Controls.Add(this.lblNombreProducto2);
+            this.panelProductos2.Location = new System.Drawing.Point(3, 66);
+            this.panelProductos2.Name = "panelProductos2";
+            this.panelProductos2.Size = new System.Drawing.Size(200, 57);
+            this.panelProductos2.TabIndex = 1;
+            // 
+            // lblEstadoProducto2
+            // 
+            this.lblEstadoProducto2.AutoSize = true;
+            this.lblEstadoProducto2.Location = new System.Drawing.Point(9, 32);
+            this.lblEstadoProducto2.Name = "lblEstadoProducto2";
+            this.lblEstadoProducto2.Size = new System.Drawing.Size(43, 13);
+            this.lblEstadoProducto2.TabIndex = 11;
+            this.lblEstadoProducto2.Text = "Estado:";
+            // 
+            // lblNombreProducto2
+            // 
+            this.lblNombreProducto2.AutoSize = true;
+            this.lblNombreProducto2.Location = new System.Drawing.Point(3, 9);
+            this.lblNombreProducto2.Name = "lblNombreProducto2";
+            this.lblNombreProducto2.Size = new System.Drawing.Size(107, 13);
+            this.lblNombreProducto2.TabIndex = 10;
+            this.lblNombreProducto2.Text = "Nombre de producto:";
+            // 
+            // panelProductos
+            // 
+            this.panelProductos.Controls.Add(this.lblEstadoProducto);
+            this.panelProductos.Controls.Add(this.lblNombreProducto);
+            this.panelProductos.Location = new System.Drawing.Point(3, 3);
+            this.panelProductos.Name = "panelProductos";
+            this.panelProductos.Size = new System.Drawing.Size(200, 57);
+            this.panelProductos.TabIndex = 0;
+            // 
+            // lblEstadoProducto
+            // 
+            this.lblEstadoProducto.AutoSize = true;
+            this.lblEstadoProducto.Location = new System.Drawing.Point(9, 26);
+            this.lblEstadoProducto.Name = "lblEstadoProducto";
+            this.lblEstadoProducto.Size = new System.Drawing.Size(43, 13);
+            this.lblEstadoProducto.TabIndex = 10;
+            this.lblEstadoProducto.Text = "Estado:";
+            // 
+            // lblNombreProducto
+            // 
+            this.lblNombreProducto.AutoSize = true;
+            this.lblNombreProducto.Location = new System.Drawing.Point(3, 4);
+            this.lblNombreProducto.Name = "lblNombreProducto";
+            this.lblNombreProducto.Size = new System.Drawing.Size(107, 13);
+            this.lblNombreProducto.TabIndex = 9;
+            this.lblNombreProducto.Text = "Nombre de producto:";
+            // 
+            // vScrollBar1
+            // 
+            this.vScrollBar1.Location = new System.Drawing.Point(257, 91);
+            this.vScrollBar1.Name = "vScrollBar1";
+            this.vScrollBar1.Size = new System.Drawing.Size(15, 316);
+            this.vScrollBar1.TabIndex = 1;
             // 
             // lblProductos
             // 
@@ -192,6 +283,117 @@
             this.tableLayoutPanel1.TabIndex = 5;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
+            // panelProductoxVencer
+            // 
+            this.panelProductoxVencer.Controls.Add(this.lblVencimientoProducto);
+            this.panelProductoxVencer.Controls.Add(this.lblNombreProductoxVencer);
+            this.panelProductoxVencer.Controls.Add(this.lblCantidadRestantexVencer);
+            this.panelProductoxVencer.Location = new System.Drawing.Point(3, 3);
+            this.panelProductoxVencer.Name = "panelProductoxVencer";
+            this.panelProductoxVencer.Size = new System.Drawing.Size(194, 56);
+            this.panelProductoxVencer.TabIndex = 0;
+            // 
+            // lblVencimientoProducto
+            // 
+            this.lblVencimientoProducto.AutoSize = true;
+            this.lblVencimientoProducto.Location = new System.Drawing.Point(4, 26);
+            this.lblVencimientoProducto.Name = "lblVencimientoProducto";
+            this.lblVencimientoProducto.Size = new System.Drawing.Size(68, 13);
+            this.lblVencimientoProducto.TabIndex = 1;
+            this.lblVencimientoProducto.Text = "Vencimiento:";
+            // 
+            // lblNombreProductoxVencer
+            // 
+            this.lblNombreProductoxVencer.AutoSize = true;
+            this.lblNombreProductoxVencer.Location = new System.Drawing.Point(4, 4);
+            this.lblNombreProductoxVencer.Name = "lblNombreProductoxVencer";
+            this.lblNombreProductoxVencer.Size = new System.Drawing.Size(53, 13);
+            this.lblNombreProductoxVencer.TabIndex = 0;
+            this.lblNombreProductoxVencer.Text = "Vacuna 1";
+            // 
+            // lblCantidadRestantexVencer
+            // 
+            this.lblCantidadRestantexVencer.AutoSize = true;
+            this.lblCantidadRestantexVencer.Location = new System.Drawing.Point(63, 4);
+            this.lblCantidadRestantexVencer.Name = "lblCantidadRestantexVencer";
+            this.lblCantidadRestantexVencer.Size = new System.Drawing.Size(93, 13);
+            this.lblCantidadRestantexVencer.TabIndex = 9;
+            this.lblCantidadRestantexVencer.Text = "Cantidad restante:";
+            // 
+            // panelProductoxVencer2
+            // 
+            this.panelProductoxVencer2.Controls.Add(this.lblCantidadRestantexVencer2);
+            this.panelProductoxVencer2.Controls.Add(this.lblVencimientoProducto2);
+            this.panelProductoxVencer2.Controls.Add(this.lblNombreProductoxVencer2);
+            this.panelProductoxVencer2.Location = new System.Drawing.Point(3, 65);
+            this.panelProductoxVencer2.Name = "panelProductoxVencer2";
+            this.panelProductoxVencer2.Size = new System.Drawing.Size(194, 56);
+            this.panelProductoxVencer2.TabIndex = 1;
+            // 
+            // lblCantidadRestantexVencer2
+            // 
+            this.lblCantidadRestantexVencer2.AutoSize = true;
+            this.lblCantidadRestantexVencer2.Location = new System.Drawing.Point(67, 1);
+            this.lblCantidadRestantexVencer2.Name = "lblCantidadRestantexVencer2";
+            this.lblCantidadRestantexVencer2.Size = new System.Drawing.Size(93, 13);
+            this.lblCantidadRestantexVencer2.TabIndex = 11;
+            this.lblCantidadRestantexVencer2.Text = "Cantidad restante:";
+            // 
+            // lblVencimientoProducto2
+            // 
+            this.lblVencimientoProducto2.AutoSize = true;
+            this.lblVencimientoProducto2.Location = new System.Drawing.Point(4, 23);
+            this.lblVencimientoProducto2.Name = "lblVencimientoProducto2";
+            this.lblVencimientoProducto2.Size = new System.Drawing.Size(68, 13);
+            this.lblVencimientoProducto2.TabIndex = 1;
+            this.lblVencimientoProducto2.Text = "Vencimiento:";
+            // 
+            // lblNombreProductoxVencer2
+            // 
+            this.lblNombreProductoxVencer2.AutoSize = true;
+            this.lblNombreProductoxVencer2.Location = new System.Drawing.Point(3, 1);
+            this.lblNombreProductoxVencer2.Name = "lblNombreProductoxVencer2";
+            this.lblNombreProductoxVencer2.Size = new System.Drawing.Size(58, 13);
+            this.lblNombreProductoxVencer2.TabIndex = 0;
+            this.lblNombreProductoxVencer2.Text = "Vacunas 2";
+            // 
+            // panelProductoxVencer3
+            // 
+            this.panelProductoxVencer3.Controls.Add(this.lblCantidadRestantexVencer3);
+            this.panelProductoxVencer3.Controls.Add(this.lblVencimientoProducto3);
+            this.panelProductoxVencer3.Controls.Add(this.lblNombreProductoxVencer3);
+            this.panelProductoxVencer3.Location = new System.Drawing.Point(3, 127);
+            this.panelProductoxVencer3.Name = "panelProductoxVencer3";
+            this.panelProductoxVencer3.Size = new System.Drawing.Size(194, 56);
+            this.panelProductoxVencer3.TabIndex = 2;
+            // 
+            // lblCantidadRestantexVencer3
+            // 
+            this.lblCantidadRestantexVencer3.AutoSize = true;
+            this.lblCantidadRestantexVencer3.Location = new System.Drawing.Point(63, 4);
+            this.lblCantidadRestantexVencer3.Name = "lblCantidadRestantexVencer3";
+            this.lblCantidadRestantexVencer3.Size = new System.Drawing.Size(93, 13);
+            this.lblCantidadRestantexVencer3.TabIndex = 10;
+            this.lblCantidadRestantexVencer3.Text = "Cantidad restante:";
+            // 
+            // lblVencimientoProducto3
+            // 
+            this.lblVencimientoProducto3.AutoSize = true;
+            this.lblVencimientoProducto3.Location = new System.Drawing.Point(3, 27);
+            this.lblVencimientoProducto3.Name = "lblVencimientoProducto3";
+            this.lblVencimientoProducto3.Size = new System.Drawing.Size(68, 13);
+            this.lblVencimientoProducto3.TabIndex = 1;
+            this.lblVencimientoProducto3.Text = "Vencimiento:";
+            // 
+            // lblNombreProductoxVencer3
+            // 
+            this.lblNombreProductoxVencer3.AutoSize = true;
+            this.lblNombreProductoxVencer3.Location = new System.Drawing.Point(4, 4);
+            this.lblNombreProductoxVencer3.Name = "lblNombreProductoxVencer3";
+            this.lblNombreProductoxVencer3.Size = new System.Drawing.Size(33, 13);
+            this.lblNombreProductoxVencer3.TabIndex = 0;
+            this.lblNombreProductoxVencer3.Text = "gotas";
+            // 
             // vScrollBar2
             // 
             this.vScrollBar2.Location = new System.Drawing.Point(562, 91);
@@ -209,36 +411,6 @@
             this.btnAgregarProducto.Text = "Agregar producto";
             this.btnAgregarProducto.UseVisualStyleBackColor = true;
             // 
-            // panelProductoxVencer
-            // 
-            this.panelProductoxVencer.Controls.Add(this.lblVencimientoProducto);
-            this.panelProductoxVencer.Controls.Add(this.lblNombreProductoxVencer);
-            this.panelProductoxVencer.Controls.Add(this.lblCantidadRestantexVencer);
-            this.panelProductoxVencer.Location = new System.Drawing.Point(3, 3);
-            this.panelProductoxVencer.Name = "panelProductoxVencer";
-            this.panelProductoxVencer.Size = new System.Drawing.Size(194, 56);
-            this.panelProductoxVencer.TabIndex = 0;
-            // 
-            // panelProductoxVencer2
-            // 
-            this.panelProductoxVencer2.Controls.Add(this.lblCantidadRestantexVencer2);
-            this.panelProductoxVencer2.Controls.Add(this.lblVencimientoProducto2);
-            this.panelProductoxVencer2.Controls.Add(this.lblNombreProductoxVencer2);
-            this.panelProductoxVencer2.Location = new System.Drawing.Point(3, 65);
-            this.panelProductoxVencer2.Name = "panelProductoxVencer2";
-            this.panelProductoxVencer2.Size = new System.Drawing.Size(194, 56);
-            this.panelProductoxVencer2.TabIndex = 1;
-            // 
-            // panelProductoxVencer3
-            // 
-            this.panelProductoxVencer3.Controls.Add(this.lblCantidadRestantexVencer3);
-            this.panelProductoxVencer3.Controls.Add(this.lblVencimientoProducto3);
-            this.panelProductoxVencer3.Controls.Add(this.lblNombreProductoxVencer3);
-            this.panelProductoxVencer3.Location = new System.Drawing.Point(3, 127);
-            this.panelProductoxVencer3.Name = "panelProductoxVencer3";
-            this.panelProductoxVencer3.Size = new System.Drawing.Size(194, 56);
-            this.panelProductoxVencer3.TabIndex = 2;
-            // 
             // lblProductosxVencer
             // 
             this.lblProductosxVencer.AutoSize = true;
@@ -248,181 +420,21 @@
             this.lblProductosxVencer.TabIndex = 8;
             this.lblProductosxVencer.Text = "Proximos productos a vencer";
             // 
-            // lblNombreProductoxVencer
+            // btnVolver
             // 
-            this.lblNombreProductoxVencer.AutoSize = true;
-            this.lblNombreProductoxVencer.Location = new System.Drawing.Point(4, 4);
-            this.lblNombreProductoxVencer.Name = "lblNombreProductoxVencer";
-            this.lblNombreProductoxVencer.Size = new System.Drawing.Size(53, 13);
-            this.lblNombreProductoxVencer.TabIndex = 0;
-            this.lblNombreProductoxVencer.Text = "Vacuna 1";
-            // 
-            // lblNombreProductoxVencer2
-            // 
-            this.lblNombreProductoxVencer2.AutoSize = true;
-            this.lblNombreProductoxVencer2.Location = new System.Drawing.Point(3, 1);
-            this.lblNombreProductoxVencer2.Name = "lblNombreProductoxVencer2";
-            this.lblNombreProductoxVencer2.Size = new System.Drawing.Size(58, 13);
-            this.lblNombreProductoxVencer2.TabIndex = 0;
-            this.lblNombreProductoxVencer2.Text = "Vacunas 2";
-            // 
-            // lblNombreProductoxVencer3
-            // 
-            this.lblNombreProductoxVencer3.AutoSize = true;
-            this.lblNombreProductoxVencer3.Location = new System.Drawing.Point(4, 4);
-            this.lblNombreProductoxVencer3.Name = "lblNombreProductoxVencer3";
-            this.lblNombreProductoxVencer3.Size = new System.Drawing.Size(33, 13);
-            this.lblNombreProductoxVencer3.TabIndex = 0;
-            this.lblNombreProductoxVencer3.Text = "gotas";
-            // 
-            // lblVencimientoProducto
-            // 
-            this.lblVencimientoProducto.AutoSize = true;
-            this.lblVencimientoProducto.Location = new System.Drawing.Point(4, 26);
-            this.lblVencimientoProducto.Name = "lblVencimientoProducto";
-            this.lblVencimientoProducto.Size = new System.Drawing.Size(68, 13);
-            this.lblVencimientoProducto.TabIndex = 1;
-            this.lblVencimientoProducto.Text = "Vencimiento:";
-            // 
-            // lblVencimientoProducto2
-            // 
-            this.lblVencimientoProducto2.AutoSize = true;
-            this.lblVencimientoProducto2.Location = new System.Drawing.Point(4, 23);
-            this.lblVencimientoProducto2.Name = "lblVencimientoProducto2";
-            this.lblVencimientoProducto2.Size = new System.Drawing.Size(68, 13);
-            this.lblVencimientoProducto2.TabIndex = 1;
-            this.lblVencimientoProducto2.Text = "Vencimiento:";
-            // 
-            // lblVencimientoProducto3
-            // 
-            this.lblVencimientoProducto3.AutoSize = true;
-            this.lblVencimientoProducto3.Location = new System.Drawing.Point(3, 27);
-            this.lblVencimientoProducto3.Name = "lblVencimientoProducto3";
-            this.lblVencimientoProducto3.Size = new System.Drawing.Size(68, 13);
-            this.lblVencimientoProducto3.TabIndex = 1;
-            this.lblVencimientoProducto3.Text = "Vencimiento:";
-            // 
-            // lblCantidadRestantexVencer
-            // 
-            this.lblCantidadRestantexVencer.AutoSize = true;
-            this.lblCantidadRestantexVencer.Location = new System.Drawing.Point(63, 4);
-            this.lblCantidadRestantexVencer.Name = "lblCantidadRestantexVencer";
-            this.lblCantidadRestantexVencer.Size = new System.Drawing.Size(93, 13);
-            this.lblCantidadRestantexVencer.TabIndex = 9;
-            this.lblCantidadRestantexVencer.Text = "Cantidad restante:";
-            // 
-            // lblCantidadRestantexVencer3
-            // 
-            this.lblCantidadRestantexVencer3.AutoSize = true;
-            this.lblCantidadRestantexVencer3.Location = new System.Drawing.Point(63, 4);
-            this.lblCantidadRestantexVencer3.Name = "lblCantidadRestantexVencer3";
-            this.lblCantidadRestantexVencer3.Size = new System.Drawing.Size(93, 13);
-            this.lblCantidadRestantexVencer3.TabIndex = 10;
-            this.lblCantidadRestantexVencer3.Text = "Cantidad restante:";
-            // 
-            // lblCantidadRestantexVencer2
-            // 
-            this.lblCantidadRestantexVencer2.AutoSize = true;
-            this.lblCantidadRestantexVencer2.Location = new System.Drawing.Point(67, 1);
-            this.lblCantidadRestantexVencer2.Name = "lblCantidadRestantexVencer2";
-            this.lblCantidadRestantexVencer2.Size = new System.Drawing.Size(93, 13);
-            this.lblCantidadRestantexVencer2.TabIndex = 11;
-            this.lblCantidadRestantexVencer2.Text = "Cantidad restante:";
-            // 
-            // lblNombreProducto
-            // 
-            this.lblNombreProducto.AutoSize = true;
-            this.lblNombreProducto.Location = new System.Drawing.Point(3, 4);
-            this.lblNombreProducto.Name = "lblNombreProducto";
-            this.lblNombreProducto.Size = new System.Drawing.Size(107, 13);
-            this.lblNombreProducto.TabIndex = 9;
-            this.lblNombreProducto.Text = "Nombre de producto:";
-            // 
-            // lblNombreProducto2
-            // 
-            this.lblNombreProducto2.AutoSize = true;
-            this.lblNombreProducto2.Location = new System.Drawing.Point(3, 9);
-            this.lblNombreProducto2.Name = "lblNombreProducto2";
-            this.lblNombreProducto2.Size = new System.Drawing.Size(107, 13);
-            this.lblNombreProducto2.TabIndex = 10;
-            this.lblNombreProducto2.Text = "Nombre de producto:";
-            // 
-            // lblNombreProducto3
-            // 
-            this.lblNombreProducto3.AutoSize = true;
-            this.lblNombreProducto3.Location = new System.Drawing.Point(3, 2);
-            this.lblNombreProducto3.Name = "lblNombreProducto3";
-            this.lblNombreProducto3.Size = new System.Drawing.Size(107, 13);
-            this.lblNombreProducto3.TabIndex = 10;
-            this.lblNombreProducto3.Text = "Nombre de producto:";
-            // 
-            // lblNombreProducto4
-            // 
-            this.lblNombreProducto4.AutoSize = true;
-            this.lblNombreProducto4.Location = new System.Drawing.Point(3, 0);
-            this.lblNombreProducto4.Name = "lblNombreProducto4";
-            this.lblNombreProducto4.Size = new System.Drawing.Size(107, 13);
-            this.lblNombreProducto4.TabIndex = 10;
-            this.lblNombreProducto4.Text = "Nombre de producto:";
-            // 
-            // lblNombreProducto5
-            // 
-            this.lblNombreProducto5.AutoSize = true;
-            this.lblNombreProducto5.Location = new System.Drawing.Point(3, 0);
-            this.lblNombreProducto5.Name = "lblNombreProducto5";
-            this.lblNombreProducto5.Size = new System.Drawing.Size(107, 13);
-            this.lblNombreProducto5.TabIndex = 10;
-            this.lblNombreProducto5.Text = "Nombre de producto:";
-            // 
-            // lblEstadoProducto
-            // 
-            this.lblEstadoProducto.AutoSize = true;
-            this.lblEstadoProducto.Location = new System.Drawing.Point(9, 26);
-            this.lblEstadoProducto.Name = "lblEstadoProducto";
-            this.lblEstadoProducto.Size = new System.Drawing.Size(43, 13);
-            this.lblEstadoProducto.TabIndex = 10;
-            this.lblEstadoProducto.Text = "Estado:";
-            // 
-            // lblEstadoProducto2
-            // 
-            this.lblEstadoProducto2.AutoSize = true;
-            this.lblEstadoProducto2.Location = new System.Drawing.Point(9, 32);
-            this.lblEstadoProducto2.Name = "lblEstadoProducto2";
-            this.lblEstadoProducto2.Size = new System.Drawing.Size(43, 13);
-            this.lblEstadoProducto2.TabIndex = 11;
-            this.lblEstadoProducto2.Text = "Estado:";
-            // 
-            // lblEstadoProducto3
-            // 
-            this.lblEstadoProducto3.AutoSize = true;
-            this.lblEstadoProducto3.Location = new System.Drawing.Point(9, 25);
-            this.lblEstadoProducto3.Name = "lblEstadoProducto3";
-            this.lblEstadoProducto3.Size = new System.Drawing.Size(43, 13);
-            this.lblEstadoProducto3.TabIndex = 11;
-            this.lblEstadoProducto3.Text = "Estado:";
-            // 
-            // lblEstadoProducto4
-            // 
-            this.lblEstadoProducto4.AutoSize = true;
-            this.lblEstadoProducto4.Location = new System.Drawing.Point(9, 25);
-            this.lblEstadoProducto4.Name = "lblEstadoProducto4";
-            this.lblEstadoProducto4.Size = new System.Drawing.Size(43, 13);
-            this.lblEstadoProducto4.TabIndex = 11;
-            this.lblEstadoProducto4.Text = "Estado:";
-            // 
-            // lblEstadoProducto5
-            // 
-            this.lblEstadoProducto5.AutoSize = true;
-            this.lblEstadoProducto5.Location = new System.Drawing.Point(9, 30);
-            this.lblEstadoProducto5.Name = "lblEstadoProducto5";
-            this.lblEstadoProducto5.Size = new System.Drawing.Size(43, 13);
-            this.lblEstadoProducto5.TabIndex = 11;
-            this.lblEstadoProducto5.Text = "Estado:";
+            this.btnVolver.Location = new System.Drawing.Point(444, 362);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(75, 41);
+            this.btnVolver.TabIndex = 9;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // VeterinarioStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.lblProductosxVencer);
             this.Controls.Add(this.btnAgregarProducto);
             this.Controls.Add(this.vScrollBar2);
@@ -435,16 +447,16 @@
             this.Name = "VeterinarioStock";
             this.Size = new System.Drawing.Size(600, 450);
             this.tLPanelProductos.ResumeLayout(false);
-            this.panelProductos.ResumeLayout(false);
-            this.panelProductos.PerformLayout();
-            this.panelProductos2.ResumeLayout(false);
-            this.panelProductos2.PerformLayout();
-            this.panelProductos3.ResumeLayout(false);
-            this.panelProductos3.PerformLayout();
-            this.panelProductos4.ResumeLayout(false);
-            this.panelProductos4.PerformLayout();
             this.panelProductos5.ResumeLayout(false);
             this.panelProductos5.PerformLayout();
+            this.panelProductos4.ResumeLayout(false);
+            this.panelProductos4.PerformLayout();
+            this.panelProductos3.ResumeLayout(false);
+            this.panelProductos3.PerformLayout();
+            this.panelProductos2.ResumeLayout(false);
+            this.panelProductos2.PerformLayout();
+            this.panelProductos.ResumeLayout(false);
+            this.panelProductos.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panelProductoxVencer.ResumeLayout(false);
             this.panelProductoxVencer.PerformLayout();
@@ -495,5 +507,6 @@
         private System.Windows.Forms.Label lblNombreProducto2;
         private System.Windows.Forms.Label lblEstadoProducto;
         private System.Windows.Forms.Label lblNombreProducto;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

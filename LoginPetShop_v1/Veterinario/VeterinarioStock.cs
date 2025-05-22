@@ -31,5 +31,13 @@ namespace LoginPetShop_v1.Veterinario
         {
 
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            VeterinarioInicio main = new VeterinarioInicio();
+            main.Show();
+            Form esteform = this.FindForm();
+            esteform.Close();
+        }
     }
 }
