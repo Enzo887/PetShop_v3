@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panelLateral = new System.Windows.Forms.Panel();
-            this.btnAtenderReserva = new System.Windows.Forms.Button();
             this.btnGestionarStock = new System.Windows.Forms.Button();
             this.btnRegistrarVenta = new System.Windows.Forms.Button();
             this.margenTop = new System.Windows.Forms.Panel();
@@ -40,7 +39,6 @@
             // panelLateral
             // 
             this.panelLateral.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panelLateral.Controls.Add(this.btnAtenderReserva);
             this.panelLateral.Controls.Add(this.btnGestionarStock);
             this.panelLateral.Controls.Add(this.btnRegistrarVenta);
             this.panelLateral.Controls.Add(this.margenTop);
@@ -49,16 +47,6 @@
             this.panelLateral.Name = "panelLateral";
             this.panelLateral.Size = new System.Drawing.Size(200, 450);
             this.panelLateral.TabIndex = 1;
-            // 
-            // btnAtenderReserva
-            // 
-            this.btnAtenderReserva.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAtenderReserva.Location = new System.Drawing.Point(0, 194);
-            this.btnAtenderReserva.Name = "btnAtenderReserva";
-            this.btnAtenderReserva.Size = new System.Drawing.Size(200, 47);
-            this.btnAtenderReserva.TabIndex = 3;
-            this.btnAtenderReserva.Text = "Atender Reserva";
-            this.btnAtenderReserva.UseVisualStyleBackColor = true;
             // 
             // btnGestionarStock
             // 
@@ -69,6 +57,7 @@
             this.btnGestionarStock.TabIndex = 2;
             this.btnGestionarStock.Text = "Gestionar Stock";
             this.btnGestionarStock.UseVisualStyleBackColor = true;
+            this.btnGestionarStock.Click += new System.EventHandler(this.btnGestionarStock_Click);
             // 
             // btnRegistrarVenta
             // 
@@ -114,7 +103,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panelLateral;
-        private System.Windows.Forms.Button btnAtenderReserva;
         private System.Windows.Forms.Button btnGestionarStock;
         private System.Windows.Forms.Button btnRegistrarVenta;
         private System.Windows.Forms.Panel margenTop;
