@@ -38,5 +38,10 @@ namespace LoginPetShop_v1.Administracion
         {
 
         }
+
+        private void btnConfigurarAlertas_Click(object sender, EventArgs e)
+        {
+            CargarUserControl(new UC_ConfigurarAlertas());
+        }
     }
 }

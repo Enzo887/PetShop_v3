@@ -95,6 +95,7 @@
             this.btnConfigurarAlertas.TabIndex = 2;
             this.btnConfigurarAlertas.Text = "Configurar Alertas";
             this.btnConfigurarAlertas.UseVisualStyleBackColor = false;
+            this.btnConfigurarAlertas.Click += new System.EventHandler(this.btnConfigurarAlertas_Click);
             // 
             // btnAdminstrarRoles
             // 
