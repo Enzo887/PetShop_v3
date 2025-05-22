@@ -1,0 +1,21 @@
+# Normaliza los finales de línea para todos los archivos de texto
+* text=auto
+
+# Fuerza CRLF (Windows) en los archivos C# y similares
+*.cs text eol=crlf
+*.resx text eol=crlf
+*.config text eol=crlf
+*.xaml text eol=crlf
+*.sln text eol=crlf
+*.csproj text eol=crlf
+*.Designer.cs text eol=crlf
+
+# Ignora los binarios para normalización
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.exe binary
+*.dll binary
+*.pdf binary
