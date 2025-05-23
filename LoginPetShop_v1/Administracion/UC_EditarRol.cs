@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LoginPetShop_v1.Administracion
 {
-    public partial class UC_SupervisarCambios : UserControl
+    public partial class UC_EditarRol : UserControl
     {
-        public UC_SupervisarCambios()
+        public UC_EditarRol()
         {
             InitializeComponent();
         }
