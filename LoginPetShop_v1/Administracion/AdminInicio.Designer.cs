@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panelLateralAdmin = new System.Windows.Forms.Panel();
-            this.btnSupervisarCambios = new System.Windows.Forms.Button();
             this.btnVerEstadisticas = new System.Windows.Forms.Button();
             this.btnConfigurarAlertas = new System.Windows.Forms.Button();
             this.btnAdminstrarRoles = new System.Windows.Forms.Button();
@@ -45,7 +44,6 @@
             // panelLateralAdmin
             // 
             this.panelLateralAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.panelLateralAdmin.Controls.Add(this.btnSupervisarCambios);
             this.panelLateralAdmin.Controls.Add(this.btnVerEstadisticas);
             this.panelLateralAdmin.Controls.Add(this.btnConfigurarAlertas);
             this.panelLateralAdmin.Controls.Add(this.btnAdminstrarRoles);
@@ -55,19 +53,6 @@
             this.panelLateralAdmin.Name = "panelLateralAdmin";
             this.panelLateralAdmin.Size = new System.Drawing.Size(200, 450);
             this.panelLateralAdmin.TabIndex = 0;
-            // 
-            // btnSupervisarCambios
-            // 
-            this.btnSupervisarCambios.BackColor = System.Drawing.Color.White;
-            this.btnSupervisarCambios.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSupervisarCambios.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSupervisarCambios.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSupervisarCambios.Location = new System.Drawing.Point(0, 325);
-            this.btnSupervisarCambios.Name = "btnSupervisarCambios";
-            this.btnSupervisarCambios.Size = new System.Drawing.Size(200, 65);
-            this.btnSupervisarCambios.TabIndex = 4;
-            this.btnSupervisarCambios.Text = "Supervisar Cambios";
-            this.btnSupervisarCambios.UseVisualStyleBackColor = false;
             // 
             // btnVerEstadisticas
             // 
@@ -171,7 +156,6 @@
 
         private System.Windows.Forms.Panel panelLateralAdmin;
         private System.Windows.Forms.Panel panelContenedorAdmin;
-        private System.Windows.Forms.Button btnSupervisarCambios;
         private System.Windows.Forms.Button btnVerEstadisticas;
         private System.Windows.Forms.Button btnConfigurarAlertas;
         private System.Windows.Forms.Button btnAdminstrarRoles;

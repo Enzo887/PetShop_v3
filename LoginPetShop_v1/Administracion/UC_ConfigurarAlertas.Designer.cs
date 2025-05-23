@@ -38,12 +38,19 @@
             this.btnEditarAlerta = new System.Windows.Forms.Button();
             this.btnEliminarAlerta = new System.Windows.Forms.Button();
             this.lblConfigAlertasTitulo = new System.Windows.Forms.Label();
+            this.gridHistorialAlertas = new System.Windows.Forms.DataGridView();
+            this.lblHistorialAlertas = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Nombre_alerta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_alerta_programada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rol_asignado_alerta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.gridHistorialAlertas)).BeginInit();
             this.SuspendLayout();
             // 
             // tboxEscribirNombreAlerta
             // 
             this.tboxEscribirNombreAlerta.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxEscribirNombreAlerta.Location = new System.Drawing.Point(184, 143);
+            this.tboxEscribirNombreAlerta.Location = new System.Drawing.Point(31, 60);
             this.tboxEscribirNombreAlerta.Name = "tboxEscribirNombreAlerta";
             this.tboxEscribirNombreAlerta.Size = new System.Drawing.Size(199, 23);
             this.tboxEscribirNombreAlerta.TabIndex = 0;
@@ -52,7 +59,7 @@
             // 
             this.lblNombreAlerta.AutoSize = true;
             this.lblNombreAlerta.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreAlerta.Location = new System.Drawing.Point(181, 123);
+            this.lblNombreAlerta.Location = new System.Drawing.Point(28, 40);
             this.lblNombreAlerta.Name = "lblNombreAlerta";
             this.lblNombreAlerta.Size = new System.Drawing.Size(202, 17);
             this.lblNombreAlerta.TabIndex = 1;
@@ -62,7 +69,7 @@
             // 
             this.btnCrearAlerta.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCrearAlerta.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrearAlerta.Location = new System.Drawing.Point(460, 394);
+            this.btnCrearAlerta.Location = new System.Drawing.Point(460, 340);
             this.btnCrearAlerta.Name = "btnCrearAlerta";
             this.btnCrearAlerta.Size = new System.Drawing.Size(114, 32);
             this.btnCrearAlerta.TabIndex = 2;
@@ -72,7 +79,7 @@
             // pickerFechaAlerta
             // 
             this.pickerFechaAlerta.CalendarFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pickerFechaAlerta.Location = new System.Drawing.Point(184, 203);
+            this.pickerFechaAlerta.Location = new System.Drawing.Point(31, 118);
             this.pickerFechaAlerta.Name = "pickerFechaAlerta";
             this.pickerFechaAlerta.Size = new System.Drawing.Size(199, 20);
             this.pickerFechaAlerta.TabIndex = 3;
@@ -81,11 +88,11 @@
             // 
             this.lblProgramarAlertas.AutoSize = true;
             this.lblProgramarAlertas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProgramarAlertas.Location = new System.Drawing.Point(181, 183);
+            this.lblProgramarAlertas.Location = new System.Drawing.Point(28, 98);
             this.lblProgramarAlertas.Name = "lblProgramarAlertas";
-            this.lblProgramarAlertas.Size = new System.Drawing.Size(295, 17);
+            this.lblProgramarAlertas.Size = new System.Drawing.Size(206, 17);
             this.lblProgramarAlertas.TabIndex = 4;
-            this.lblProgramarAlertas.Text = "Seleccione fecha progamada para la alerta";
+            this.lblProgramarAlertas.Text = "Seleccione fecha programada";
             // 
             // checkListAsignarRolAlerta
             // 
@@ -96,7 +103,7 @@
             "Gerente",
             "Vendedor",
             "Veterinario"});
-            this.checkListAsignarRolAlerta.Location = new System.Drawing.Point(184, 256);
+            this.checkListAsignarRolAlerta.Location = new System.Drawing.Point(375, 60);
             this.checkListAsignarRolAlerta.Name = "checkListAsignarRolAlerta";
             this.checkListAsignarRolAlerta.Size = new System.Drawing.Size(199, 76);
             this.checkListAsignarRolAlerta.TabIndex = 5;
@@ -105,7 +112,7 @@
             // 
             this.lblAsignarAlertaRol.AutoSize = true;
             this.lblAsignarAlertaRol.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAsignarAlertaRol.Location = new System.Drawing.Point(181, 236);
+            this.lblAsignarAlertaRol.Location = new System.Drawing.Point(372, 40);
             this.lblAsignarAlertaRol.Name = "lblAsignarAlertaRol";
             this.lblAsignarAlertaRol.Size = new System.Drawing.Size(149, 17);
             this.lblAsignarAlertaRol.TabIndex = 6;
@@ -115,7 +122,7 @@
             // 
             this.btnEditarAlerta.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnEditarAlerta.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarAlerta.Location = new System.Drawing.Point(340, 394);
+            this.btnEditarAlerta.Location = new System.Drawing.Point(460, 259);
             this.btnEditarAlerta.Name = "btnEditarAlerta";
             this.btnEditarAlerta.Size = new System.Drawing.Size(114, 32);
             this.btnEditarAlerta.TabIndex = 7;
@@ -126,7 +133,7 @@
             // 
             this.btnEliminarAlerta.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnEliminarAlerta.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarAlerta.Location = new System.Drawing.Point(220, 394);
+            this.btnEliminarAlerta.Location = new System.Drawing.Point(460, 297);
             this.btnEliminarAlerta.Name = "btnEliminarAlerta";
             this.btnEliminarAlerta.Size = new System.Drawing.Size(114, 32);
             this.btnEliminarAlerta.TabIndex = 8;
@@ -137,17 +144,65 @@
             // 
             this.lblConfigAlertasTitulo.AutoSize = true;
             this.lblConfigAlertasTitulo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConfigAlertasTitulo.Location = new System.Drawing.Point(183, 52);
+            this.lblConfigAlertasTitulo.Location = new System.Drawing.Point(3, 10);
             this.lblConfigAlertasTitulo.Name = "lblConfigAlertasTitulo";
             this.lblConfigAlertasTitulo.Size = new System.Drawing.Size(200, 19);
             this.lblConfigAlertasTitulo.TabIndex = 9;
             this.lblConfigAlertasTitulo.Text = "Configuracion de alertas";
+            // 
+            // gridHistorialAlertas
+            // 
+            this.gridHistorialAlertas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridHistorialAlertas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nombre_alerta,
+            this.fecha_alerta_programada,
+            this.rol_asignado_alerta});
+            this.gridHistorialAlertas.Location = new System.Drawing.Point(31, 249);
+            this.gridHistorialAlertas.Name = "gridHistorialAlertas";
+            this.gridHistorialAlertas.Size = new System.Drawing.Size(345, 150);
+            this.gridHistorialAlertas.TabIndex = 10;
+            // 
+            // lblHistorialAlertas
+            // 
+            this.lblHistorialAlertas.AutoSize = true;
+            this.lblHistorialAlertas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHistorialAlertas.Location = new System.Drawing.Point(151, 200);
+            this.lblHistorialAlertas.Name = "lblHistorialAlertas";
+            this.lblHistorialAlertas.Size = new System.Drawing.Size(126, 17);
+            this.lblHistorialAlertas.TabIndex = 11;
+            this.lblHistorialAlertas.Text = "Historial de alertas";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(31, 220);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(345, 23);
+            this.textBox1.TabIndex = 12;
+            // 
+            // Nombre_alerta
+            // 
+            this.Nombre_alerta.HeaderText = "Nombre alerta";
+            this.Nombre_alerta.Name = "Nombre_alerta";
+            // 
+            // fecha_alerta_programada
+            // 
+            this.fecha_alerta_programada.HeaderText = "Fecha programada";
+            this.fecha_alerta_programada.Name = "fecha_alerta_programada";
+            // 
+            // rol_asignado_alerta
+            // 
+            this.rol_asignado_alerta.HeaderText = "Rol/es asignado/s";
+            this.rol_asignado_alerta.Name = "rol_asignado_alerta";
             // 
             // UC_ConfigurarAlertas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lblHistorialAlertas);
+            this.Controls.Add(this.gridHistorialAlertas);
             this.Controls.Add(this.lblConfigAlertasTitulo);
             this.Controls.Add(this.btnEliminarAlerta);
             this.Controls.Add(this.btnEditarAlerta);
@@ -160,6 +215,7 @@
             this.Controls.Add(this.tboxEscribirNombreAlerta);
             this.Name = "UC_ConfigurarAlertas";
             this.Size = new System.Drawing.Size(600, 450);
+            ((System.ComponentModel.ISupportInitialize)(this.gridHistorialAlertas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,5 +233,11 @@
         private System.Windows.Forms.Button btnEditarAlerta;
         private System.Windows.Forms.Button btnEliminarAlerta;
         private System.Windows.Forms.Label lblConfigAlertasTitulo;
+        private System.Windows.Forms.DataGridView gridHistorialAlertas;
+        private System.Windows.Forms.Label lblHistorialAlertas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_alerta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_alerta_programada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rol_asignado_alerta;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

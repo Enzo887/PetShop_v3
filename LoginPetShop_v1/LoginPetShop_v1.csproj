@@ -65,11 +65,11 @@
     <Compile Include="Administracion\UC_ConfigurarAlertas.Designer.cs">
       <DependentUpon>UC_ConfigurarAlertas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Administracion\UC_SupervisarCambios.cs">
+    <Compile Include="Administracion\UC_EditarRol.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Administracion\UC_SupervisarCambios.Designer.cs">
-      <DependentUpon>UC_SupervisarCambios.cs</DependentUpon>
+    <Compile Include="Administracion\UC_EditarRol.Designer.cs">
+      <DependentUpon>UC_EditarRol.cs</DependentUpon>
     </Compile>
     <Compile Include="Administracion\UC_VerEstadisticas.cs">
       <SubType>UserControl</SubType>
@@ -154,8 +154,8 @@
     <EmbeddedResource Include="Administracion\UC_ConfigurarAlertas.resx">
       <DependentUpon>UC_ConfigurarAlertas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Administracion\UC_SupervisarCambios.resx">
-      <DependentUpon>UC_SupervisarCambios.cs</DependentUpon>
+    <EmbeddedResource Include="Administracion\UC_EditarRol.resx">
+      <DependentUpon>UC_EditarRol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Administracion\UC_VerEstadisticas.resx">
       <DependentUpon>UC_VerEstadisticas.cs</DependentUpon>
