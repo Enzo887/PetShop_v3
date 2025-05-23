@@ -59,6 +59,12 @@
     <Compile Include="Administracion\AdministracionDeRol.Designer.cs">
       <DependentUpon>AdministracionDeRol.cs</DependentUpon>
     </Compile>
+    <Compile Include="Administracion\UC_AdministrarUsuarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Administracion\UC_AdministrarUsuarios.Designer.cs">
+      <DependentUpon>UC_AdministrarUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Administracion\UC_ConfigurarAlertas.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -150,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Administracion\AdministracionDeRol.resx">
       <DependentUpon>AdministracionDeRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\UC_AdministrarUsuarios.resx">
+      <DependentUpon>UC_AdministrarUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Administracion\UC_ConfigurarAlertas.resx">
       <DependentUpon>UC_ConfigurarAlertas.cs</DependentUpon>

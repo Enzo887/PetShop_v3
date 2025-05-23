@@ -43,5 +43,10 @@ namespace LoginPetShop_v1.Administracion
         {
             CargarUserControl(new UC_ConfigurarAlertas());
         }
+
+        private void btnGestionarUsuarios_Click(object sender, EventArgs e)
+        {
+            CargarUserControl(new UC_AdministrarUsuarios());
+        }
     }
 }
