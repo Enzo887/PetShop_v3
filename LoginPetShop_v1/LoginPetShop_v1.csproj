@@ -89,6 +89,12 @@
     <Compile Include="formInicio.Designer.cs">
       <DependentUpon>formInicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gerente\UC_CrearTarjeta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gerente\UC_CrearTarjeta.Designer.cs">
+      <DependentUpon>UC_CrearTarjeta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vendedor\UC_GestionarStock.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -113,11 +119,11 @@
     <Compile Include="Vendedor\UC_RegistrarVenta.Designer.cs">
       <DependentUpon>UC_RegistrarVenta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Veterinario\AgregarProducto.cs">
+    <Compile Include="Veterinario\UC_AgregarProducto.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Veterinario\AgregarProducto.Designer.cs">
-      <DependentUpon>AgregarProducto.cs</DependentUpon>
+    <Compile Include="Veterinario\UC_AgregarProducto.Designer.cs">
+      <DependentUpon>UC_AgregarProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Veterinario\CrearFichaMascota.cs">
       <SubType>UserControl</SubType>
@@ -172,6 +178,9 @@
     <EmbeddedResource Include="formInicio.resx">
       <DependentUpon>formInicio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Gerente\UC_CrearTarjeta.resx">
+      <DependentUpon>UC_CrearTarjeta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vendedor\UC_GestionarStock.resx">
       <DependentUpon>UC_GestionarStock.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,8 +202,8 @@
     <EmbeddedResource Include="Vendedor\UC_RegistrarVenta.resx">
       <DependentUpon>UC_RegistrarVenta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Veterinario\AgregarProducto.resx">
-      <DependentUpon>AgregarProducto.cs</DependentUpon>
+    <EmbeddedResource Include="Veterinario\UC_AgregarProducto.resx">
+      <DependentUpon>UC_AgregarProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Veterinario\CrearFichaMascota.resx">
       <DependentUpon>CrearFichaMascota.cs</DependentUpon>
