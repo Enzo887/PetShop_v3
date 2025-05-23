@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LoginPetShop_v1.Veterinario
+namespace LoginPetShop_v1.Gerente
 {
-    public partial class AgregarProducto : UserControl
+    public partial class UC_CrearTarjeta : UserControl
     {
-        public AgregarProducto()
+        public UC_CrearTarjeta()
         {
             InitializeComponent();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
