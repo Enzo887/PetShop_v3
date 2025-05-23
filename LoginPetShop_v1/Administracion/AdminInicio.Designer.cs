@@ -36,6 +36,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblAdminTitulo = new System.Windows.Forms.Label();
             this.panelContenedorAdmin = new System.Windows.Forms.Panel();
+            this.btnGestionarUsuarios = new System.Windows.Forms.Button();
             this.panelLateralAdmin.SuspendLayout();
             this.panelTopAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -44,6 +45,7 @@
             // panelLateralAdmin
             // 
             this.panelLateralAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panelLateralAdmin.Controls.Add(this.btnGestionarUsuarios);
             this.panelLateralAdmin.Controls.Add(this.btnVerEstadisticas);
             this.panelLateralAdmin.Controls.Add(this.btnConfigurarAlertas);
             this.panelLateralAdmin.Controls.Add(this.btnAdminstrarRoles);
@@ -134,6 +136,20 @@
             this.panelContenedorAdmin.TabIndex = 1;
             this.panelContenedorAdmin.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedorAdmin_Paint);
             // 
+            // btnGestionarUsuarios
+            // 
+            this.btnGestionarUsuarios.BackColor = System.Drawing.Color.White;
+            this.btnGestionarUsuarios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGestionarUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGestionarUsuarios.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionarUsuarios.Location = new System.Drawing.Point(0, 325);
+            this.btnGestionarUsuarios.Name = "btnGestionarUsuarios";
+            this.btnGestionarUsuarios.Size = new System.Drawing.Size(200, 65);
+            this.btnGestionarUsuarios.TabIndex = 4;
+            this.btnGestionarUsuarios.Text = "Administrar usuarios";
+            this.btnGestionarUsuarios.UseVisualStyleBackColor = false;
+            this.btnGestionarUsuarios.Click += new System.EventHandler(this.btnGestionarUsuarios_Click);
+            // 
             // AdminInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -162,5 +178,6 @@
         private System.Windows.Forms.Panel panelTopAdmin;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblAdminTitulo;
+        private System.Windows.Forms.Button btnGestionarUsuarios;
     }
 }
