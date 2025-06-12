@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class Usuario
+    public abstract class Usuario 
     {
 		private string _nombre;
 
@@ -32,14 +32,57 @@ namespace BE
 			set { _nombreUsuario = value; }
 		}
 
-		private string _clave;
+		private string _contraseña;
 
-		public string Clave
+		public string Contraseña
 		{
-			get { return _clave; }
-			set { _clave = value; }
+			get { return _contraseña; }
+			set { _contraseña = value; }
 		}
 
+		public void CerrarSesion()
+		{
 
-	}
+		}
+
+		public void IniciarSesion()
+		{
+
+		}
+
+		public void EditarPerfil()
+		{
+
+		}
+
+		public virtual void EditarProducto(Producto unProducto)
+		{
+
+		}
+
+        public virtual void AgregarProducto(Producto unProducto)
+        {
+
+        }
+
+		public virtual void EliminarProducto(Producto unProducto)
+		{
+
+		}
+
+		public virtual void HabilitarProducto(Producto unProducto)
+		{
+
+		}
+
+		public virtual void DeshabilitarProducto(Producto unProducto)
+		{
+
+		}
+
+		public List<Producto> VerStock()
+		{
+
+		}
+    }
 }
