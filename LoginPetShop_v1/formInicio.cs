@@ -42,31 +42,33 @@ namespace LoginPetShop_v1
             string nombreUsuario = tboxUsuario.Text;
             string clave = tboxClave.Text;
 
-            BLL.Usuario usuario = new BLL.Usuario();
+            BLL.Administrador usuario = new BLL.Administrador();
             BE.Usuario usuarioLogeado =  usuario.Loguearse(nombreUsuario, clave);
 
             if(usuarioLogeado != null)
             {
-                if(usuarioLogeado.NombreUsuario == "admin")
+                Form formInicio = null;
+
+                switch (usuarioLogeado.Rol)
                 {
-                    Form formInicio = new Administracion.AdminInicio();
-                    formInicio.Show();
+                    case "admin":
+                        formInicio = new Administracion.AdminInicio();
+                        break;
+                    case "gerente":
+                        formInicio = new Gerente.GerenteInicio();
+                        break;
+                    case "vendedor":
+                        formInicio = new Vendedor.VendedorHome();
+                        break;
+                    case "veterinario":
+                        formInicio = new Veterinario.VeterinarioInicio();
+                        break;
+                    default:
+                        MessageBox.Show("Rol de usuario no reconocido");
+                        return;
                 }
-                else if (usuarioLogeado.NombreUsuario == "gerente")
-                {
-                    Form formGerente = new Gerente.GerenteInicio();
-                    formGerente.Show();
-                }
-                else if (usuarioLogeado.NombreUsuario == "vendedor")
-                {
-                    Form formVendedor = new Vendedor.VendedorHome();
-                    formVendedor.Show();
-                }
-                else if (usuarioLogeado.NombreUsuario == "veterinario")
-                {
-                    Form formVeterinario = new Veterinario.VeterinarioInicio();
-                    formVeterinario.Show();
-                }
+
+                formInicio.Show();
             }
             else
             {

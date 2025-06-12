@@ -40,49 +40,12 @@ namespace BE
 			set { _contraseña = value; }
 		}
 
-		public void CerrarSesion()
-		{
+        private string _rol;
 
-		}
-
-		public void IniciarSesion()
-		{
-
-		}
-
-		public void EditarPerfil()
-		{
-
-		}
-
-		public virtual void EditarProducto(Producto unProducto)
-		{
-
-		}
-
-        public virtual void AgregarProducto(Producto unProducto)
+        public string Rol
         {
-
+            get { return _rol; }
+            set { _rol = value; }
         }
-
-		public virtual void EliminarProducto(Producto unProducto)
-		{
-
-		}
-
-		public virtual void HabilitarProducto(Producto unProducto)
-		{
-
-		}
-
-		public virtual void DeshabilitarProducto(Producto unProducto)
-		{
-
-		}
-
-		public List<Producto> VerStock()
-		{
-
-		}
     }
 }
