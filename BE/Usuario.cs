@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public abstract class Usuario 
+    public class Usuario 
     {
 		private string _nombre;
 

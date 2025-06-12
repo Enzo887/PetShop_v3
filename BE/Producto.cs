@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class Producto
+    public abstract class Producto
     {
         private int _idProducto;
 

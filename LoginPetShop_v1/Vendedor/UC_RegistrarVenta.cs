@@ -27,5 +27,13 @@ namespace LoginPetShop_v1.Vendedor
         {
 
         }
+
+        private void btnAgregarProducto_Click(object sender, EventArgs e)
+        {
+            string producto = tboxProducto.Text;
+            float cantidad = (float)nudCantidad.Value;
+
+            gridVenta.Rows.Add(producto, cantidad);
+        }
     }
 }
