@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class Gerente : Usuario
+    public class Vacuna : Producto
     {
-        
+       
     }
 }

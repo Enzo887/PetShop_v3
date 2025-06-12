@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class Usuario
+    public abstract class Usuario
     {
         public BE.Usuario Loguearse(string NombreUsuario, string Clave)
         {
@@ -15,11 +15,49 @@ namespace BLL
 
             foreach (BE.Usuario unUsuario in usuarios)
             {
-                if(unUsuario.Clave== Clave.Trim() && unUsuario.NombreUsuario == NombreUsuario.Trim())
+                if(unUsuario.Contraseña== Clave.Trim() && unUsuario.NombreUsuario == NombreUsuario.Trim())
                 {
                     return unUsuario;
                 }
             }
+            return null;
+        }
+        public void CerrarSesion()
+        {
+
+        }
+
+        public void EditarPerfil()
+        {
+
+        }
+        public virtual void EditarProducto(Producto unProducto)
+        {
+
+        }
+
+        public virtual void AgregarProducto(Producto unProducto)
+        {
+
+        }
+
+        public virtual void EliminarProducto(Producto unProducto)
+        {
+
+        }
+
+        public virtual void HabilitarProducto(Producto unProducto)
+        {
+
+        }
+
+        public virtual void DeshabilitarProducto(Producto unProducto)
+        {
+
+        }
+
+        public List<Producto> VerStock()
+        {
             return null;
         }
 

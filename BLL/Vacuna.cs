@@ -10,12 +10,11 @@ namespace BLL
     {
         public void ProgramarVacuna()
         {
-
         }
 
         public override List<Producto> MostrarStock()
         {
-
+            return null;
         }
     }
 }

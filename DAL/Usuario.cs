@@ -16,16 +16,17 @@ namespace DAL
             Conexion conexion = new Conexion();
             
 
-            DataTable dt = conexion.LeerPorComando("SELECT [IdUsuario],[Nombre],[Apellido],[NombreUsuario],[Clave] FROM [dbo].[Usuarios]");
+            DataTable dt = conexion.LeerPorComando("SELECT R.NOMBRE_ROL AS ROL,U.NOMBRE,U.APELLIDO,U.NOMBRE_USUARIO,U.CONTRASEÑA FROM dbo.USUARIO U JOIN dbo.ROL R ON U.ROL_ID = R.ROL_ID");
 
             foreach (DataRow fila in dt.Rows)
             {
-                BE.Usuario unUsuario = new BE.Usuario();
+                BE.Usuario unUsuario = new BE.Administrador();
 
-                unUsuario.Nombre = fila["Nombre"].ToString();
-                unUsuario.Apellido = fila["Apellido"].ToString();
-                unUsuario.NombreUsuario = fila["NombreUsuario"].ToString();
-                unUsuario.Clave = fila["Clave"].ToString();
+                unUsuario.Nombre = fila["NOMBRE"].ToString();
+                unUsuario.Apellido = fila["APELLIDO"].ToString();
+                unUsuario.NombreUsuario = fila["NOMBRE_USUARIO"].ToString();
+                unUsuario.Contraseña = fila["CONTRASEÑA"].ToString();
+                unUsuario.Rol = fila["ROL"].ToString();
 
                 usuarios.Add(unUsuario);
             }
