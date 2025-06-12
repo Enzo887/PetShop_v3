@@ -57,5 +57,16 @@ namespace BLL
         {
             return null;
         }
+
+        
+        public Administrador()
+        {
+            
+        }
+        public void RegistrarUsuario(BE.Usuario unUsuario)
+        {
+            DAL.Administrador unAdminDal = new DAL.Administrador();
+            unAdminDal.RegistrarUsuario(unUsuario);
+        }
     }
 }

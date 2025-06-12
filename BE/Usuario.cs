@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public abstract class Usuario 
+    public class Usuario 
     {
 		private string _nombre;
 
@@ -47,5 +47,14 @@ namespace BE
             get { return _rol; }
             set { _rol = value; }
         }
-    }
+
+		private int _dni;
+
+		public int DNI
+		{
+			get { return _dni; }
+			set { _dni = value; }
+		}
+
+	}
 }
