@@ -39,15 +39,17 @@
             this.lblApellidoUsuarioCrear = new System.Windows.Forms.Label();
             this.lblNUsuarioCrear = new System.Windows.Forms.Label();
             this.lblContraseñaUsuarioCrear = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboxSeleccionRolNuevoUsuario = new System.Windows.Forms.ComboBox();
+            this.tboxBuscarUsuario = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.lblVerUsuarios = new System.Windows.Forms.Label();
             this.cNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cRolUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblVerUsuarios = new System.Windows.Forms.Label();
             this.lblAdministrarUsuarios = new System.Windows.Forms.Label();
+            this.lblDniUsuario = new System.Windows.Forms.Label();
+            this.tboxDniUsuario = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,6 +63,7 @@
             this.btnCrearUsuario.TabIndex = 0;
             this.btnCrearUsuario.Text = "Crear usuario";
             this.btnCrearUsuario.UseVisualStyleBackColor = false;
+            this.btnCrearUsuario.Click += new System.EventHandler(this.btnCrearUsuario_Click);
             // 
             // btnEditarUsuario
             // 
@@ -156,28 +159,28 @@
             this.lblContraseñaUsuarioCrear.TabIndex = 10;
             this.lblContraseñaUsuarioCrear.Text = "Contraseña";
             // 
-            // comboBox1
+            // comboxSeleccionRolNuevoUsuario
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboxSeleccionRolNuevoUsuario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboxSeleccionRolNuevoUsuario.FormattingEnabled = true;
+            this.comboxSeleccionRolNuevoUsuario.Items.AddRange(new object[] {
             "Administrador",
             "Gerente",
             "Veterinario",
             "Vendedor"});
-            this.comboBox1.Location = new System.Drawing.Point(3, 283);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(136, 25);
-            this.comboBox1.TabIndex = 11;
-            this.comboBox1.Text = "Rol a ocupar";
+            this.comboxSeleccionRolNuevoUsuario.Location = new System.Drawing.Point(3, 334);
+            this.comboxSeleccionRolNuevoUsuario.Name = "comboxSeleccionRolNuevoUsuario";
+            this.comboxSeleccionRolNuevoUsuario.Size = new System.Drawing.Size(136, 25);
+            this.comboxSeleccionRolNuevoUsuario.TabIndex = 11;
+            this.comboxSeleccionRolNuevoUsuario.Text = "Rol a ocupar";
             // 
-            // textBox1
+            // tboxBuscarUsuario
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(153, 187);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(444, 23);
-            this.textBox1.TabIndex = 12;
+            this.tboxBuscarUsuario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxBuscarUsuario.Location = new System.Drawing.Point(153, 187);
+            this.tboxBuscarUsuario.Name = "tboxBuscarUsuario";
+            this.tboxBuscarUsuario.Size = new System.Drawing.Size(444, 23);
+            this.tboxBuscarUsuario.TabIndex = 12;
             // 
             // dataGridView1
             // 
@@ -191,16 +194,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(444, 170);
             this.dataGridView1.TabIndex = 13;
-            // 
-            // lblVerUsuarios
-            // 
-            this.lblVerUsuarios.AutoSize = true;
-            this.lblVerUsuarios.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVerUsuarios.Location = new System.Drawing.Point(150, 166);
-            this.lblVerUsuarios.Name = "lblVerUsuarios";
-            this.lblVerUsuarios.Size = new System.Drawing.Size(122, 17);
-            this.lblVerUsuarios.TabIndex = 14;
-            this.lblVerUsuarios.Text = "Visualizar usuarios";
             // 
             // cNombre
             // 
@@ -222,6 +215,16 @@
             this.cRolUsuario.HeaderText = "Rol";
             this.cRolUsuario.Name = "cRolUsuario";
             // 
+            // lblVerUsuarios
+            // 
+            this.lblVerUsuarios.AutoSize = true;
+            this.lblVerUsuarios.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVerUsuarios.Location = new System.Drawing.Point(150, 166);
+            this.lblVerUsuarios.Name = "lblVerUsuarios";
+            this.lblVerUsuarios.Size = new System.Drawing.Size(122, 17);
+            this.lblVerUsuarios.TabIndex = 14;
+            this.lblVerUsuarios.Text = "Visualizar usuarios";
+            // 
             // lblAdministrarUsuarios
             // 
             this.lblAdministrarUsuarios.AutoSize = true;
@@ -232,16 +235,36 @@
             this.lblAdministrarUsuarios.TabIndex = 15;
             this.lblAdministrarUsuarios.Text = "Administracion de usuarios";
             // 
+            // lblDniUsuario
+            // 
+            this.lblDniUsuario.AutoSize = true;
+            this.lblDniUsuario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDniUsuario.Location = new System.Drawing.Point(3, 270);
+            this.lblDniUsuario.Name = "lblDniUsuario";
+            this.lblDniUsuario.Size = new System.Drawing.Size(31, 17);
+            this.lblDniUsuario.TabIndex = 17;
+            this.lblDniUsuario.Text = "DNI";
+            // 
+            // tboxDniUsuario
+            // 
+            this.tboxDniUsuario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxDniUsuario.Location = new System.Drawing.Point(3, 290);
+            this.tboxDniUsuario.Name = "tboxDniUsuario";
+            this.tboxDniUsuario.Size = new System.Drawing.Size(136, 23);
+            this.tboxDniUsuario.TabIndex = 16;
+            // 
             // UC_AdministrarUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.Controls.Add(this.lblDniUsuario);
+            this.Controls.Add(this.tboxDniUsuario);
             this.Controls.Add(this.lblAdministrarUsuarios);
             this.Controls.Add(this.lblVerUsuarios);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.tboxBuscarUsuario);
+            this.Controls.Add(this.comboxSeleccionRolNuevoUsuario);
             this.Controls.Add(this.lblContraseñaUsuarioCrear);
             this.Controls.Add(this.lblNUsuarioCrear);
             this.Controls.Add(this.lblApellidoUsuarioCrear);
@@ -274,8 +297,8 @@
         private System.Windows.Forms.Label lblApellidoUsuarioCrear;
         private System.Windows.Forms.Label lblNUsuarioCrear;
         private System.Windows.Forms.Label lblContraseñaUsuarioCrear;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboxSeleccionRolNuevoUsuario;
+        private System.Windows.Forms.TextBox tboxBuscarUsuario;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn cNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn cApellido;
@@ -283,5 +306,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cRolUsuario;
         private System.Windows.Forms.Label lblVerUsuarios;
         private System.Windows.Forms.Label lblAdministrarUsuarios;
+        private System.Windows.Forms.Label lblDniUsuario;
+        private System.Windows.Forms.TextBox tboxDniUsuario;
     }
 }

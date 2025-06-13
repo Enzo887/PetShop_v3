@@ -9,6 +9,6 @@ namespace BE
 {
     public class Administrador : Usuario
     {
-        
-    }
+
+	}
 }

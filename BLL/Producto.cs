@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public abstract class Producto
+    public class Producto
     {
 		public virtual List<Producto> MostrarStock()
 		{ 
@@ -14,5 +14,11 @@ namespace BLL
 			return null;
 
         }
+
+		public virtual BE.Producto BuscarProducto(string producto)
+		{
+			DAL.Producto unProductoDAL = new DAL.Producto();
+			return unProductoDAL.BuscarProducto(producto);
+		}
 	}
 }
