@@ -47,5 +47,14 @@ namespace BE
             get { return _vencimiento; }
             set { _vencimiento = value; }
         }
+
+        private bool _estado;
+
+        public bool Estado
+        {
+            get { return _estado; }
+            set { _estado = value; }
+        }
+
     }
 }

@@ -143,12 +143,6 @@
     <Compile Include="Veterinario\UC_AgregarProducto.Designer.cs">
       <DependentUpon>UC_AgregarProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Veterinario\CrearFichaMascota.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Veterinario\CrearFichaMascota.Designer.cs">
-      <DependentUpon>CrearFichaMascota.cs</DependentUpon>
-    </Compile>
     <Compile Include="Gerente\GerenteInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,17 +157,35 @@
     <Compile Include="Veterinario\HistorialMedico.Designer.cs">
       <DependentUpon>HistorialMedico.cs</DependentUpon>
     </Compile>
+    <Compile Include="Veterinario\UC_CrearFichaMascota.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Veterinario\UC_CrearFichaMascota.Designer.cs">
+      <DependentUpon>UC_CrearFichaMascota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Veterinario\UC_EditarFichaMascota.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Veterinario\UC_EditarFichaMascota.Designer.cs">
+      <DependentUpon>UC_EditarFichaMascota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Veterinario\UC_EditarHistorialMedico.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Veterinario\UC_EditarHistorialMedico.Designer.cs">
+      <DependentUpon>UC_EditarHistorialMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Veterinario\UC_GestionarStock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Veterinario\UC_GestionarStock.Designer.cs">
+      <DependentUpon>UC_GestionarStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="Veterinario\VeterinarioInicio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Veterinario\VeterinarioInicio.Designer.cs">
       <DependentUpon>VeterinarioInicio.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Veterinario\VeterinarioStock.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Veterinario\VeterinarioStock.Designer.cs">
-      <DependentUpon>VeterinarioStock.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Administracion\AdminInicio.resx">
       <DependentUpon>AdminInicio.cs</DependentUpon>
@@ -235,17 +247,23 @@
     <EmbeddedResource Include="Veterinario\UC_AgregarProducto.resx">
       <DependentUpon>UC_AgregarProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Veterinario\CrearFichaMascota.resx">
-      <DependentUpon>CrearFichaMascota.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Veterinario\HistorialMedico.resx">
       <DependentUpon>HistorialMedico.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Veterinario\UC_CrearFichaMascota.resx">
+      <DependentUpon>UC_CrearFichaMascota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Veterinario\UC_EditarFichaMascota.resx">
+      <DependentUpon>UC_EditarFichaMascota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Veterinario\UC_EditarHistorialMedico.resx">
+      <DependentUpon>UC_EditarHistorialMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Veterinario\UC_GestionarStock.resx">
+      <DependentUpon>UC_GestionarStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Veterinario\VeterinarioInicio.resx">
       <DependentUpon>VeterinarioInicio.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Veterinario\VeterinarioStock.resx">
-      <DependentUpon>VeterinarioStock.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

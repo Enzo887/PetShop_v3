@@ -29,96 +29,97 @@
         private void InitializeComponent()
         {
             this.tLPVacunas = new System.Windows.Forms.TableLayoutPanel();
+            this.panelFechaVacunas4 = new System.Windows.Forms.Panel();
+            this.dTPFechaVacunas4 = new System.Windows.Forms.DateTimePicker();
+            this.lblFechaVacunasl4 = new System.Windows.Forms.Label();
+            this.panelFechaVacunas3 = new System.Windows.Forms.Panel();
+            this.dTPFechaVacunas3 = new System.Windows.Forms.DateTimePicker();
+            this.lblFechaVacunas3 = new System.Windows.Forms.Label();
+            this.panelFechaVacunas2 = new System.Windows.Forms.Panel();
+            this.dTPFechaVacunas2 = new System.Windows.Forms.DateTimePicker();
+            this.lblFechaVacunas2 = new System.Windows.Forms.Label();
+            this.panelFechaVacunas = new System.Windows.Forms.Panel();
+            this.dTPFechaVacunas = new System.Windows.Forms.DateTimePicker();
+            this.lblFechaVacunas = new System.Windows.Forms.Label();
+            this.panelContenedorVacunas = new System.Windows.Forms.Panel();
+            this.cBoxEstadoVacunas = new System.Windows.Forms.ComboBox();
+            this.lblEstadoVacuna = new System.Windows.Forms.Label();
+            this.tBoxNombreVacuna = new System.Windows.Forms.TextBox();
+            this.lblNombreVacuna = new System.Windows.Forms.Label();
+            this.panelContenedorVacunas2 = new System.Windows.Forms.Panel();
+            this.cBoxEstadoVacunas2 = new System.Windows.Forms.ComboBox();
+            this.tBoxNombreVacuna2 = new System.Windows.Forms.TextBox();
+            this.lblEstadoVacuna2 = new System.Windows.Forms.Label();
+            this.lblNombreVacuna2 = new System.Windows.Forms.Label();
+            this.panelContenedorVacunas3 = new System.Windows.Forms.Panel();
+            this.cBoxEstadoVacunas3 = new System.Windows.Forms.ComboBox();
+            this.tBoxNombreVacuna3 = new System.Windows.Forms.TextBox();
+            this.lblNombreVacuna3 = new System.Windows.Forms.Label();
+            this.lblEstadoVacuna3 = new System.Windows.Forms.Label();
+            this.panelContenedorVacunas4 = new System.Windows.Forms.Panel();
+            this.cBoxEstadoVacunas4 = new System.Windows.Forms.ComboBox();
+            this.tBoxNombreVacuna4 = new System.Windows.Forms.TextBox();
+            this.lblEstadoVacuna4 = new System.Windows.Forms.Label();
+            this.lblNombreVacuna4 = new System.Windows.Forms.Label();
             this.lblVacunas = new System.Windows.Forms.Label();
             this.tLPConsultas = new System.Windows.Forms.TableLayoutPanel();
-            this.lblConsultas = new System.Windows.Forms.Label();
-            this.btnProgramarVacuna = new System.Windows.Forms.Button();
-            this.btnEditarHistorialMedico = new System.Windows.Forms.Button();
-            this.btnVolverInicio = new System.Windows.Forms.Button();
-            this.lblDiagnosticoConsultas = new System.Windows.Forms.Label();
-            this.lblTratamientoConsultas = new System.Windows.Forms.Label();
-            this.panelConsultas = new System.Windows.Forms.Panel();
-            this.tBoxDiagnosticoConsultas = new System.Windows.Forms.TextBox();
-            this.tBoxTratamientoConsultas = new System.Windows.Forms.TextBox();
-            this.panelConsultas2 = new System.Windows.Forms.Panel();
-            this.tBoxTratamientoConsultas2 = new System.Windows.Forms.TextBox();
-            this.tBoxDiagnosticoConsultas2 = new System.Windows.Forms.TextBox();
-            this.lblTratamientoConsultas2 = new System.Windows.Forms.Label();
-            this.lblDiagnosticoConsultas2 = new System.Windows.Forms.Label();
-            this.panelConsultas3 = new System.Windows.Forms.Panel();
-            this.tBoxTratamientoConsultas3 = new System.Windows.Forms.TextBox();
-            this.tBoxDiagnosticoConsultas3 = new System.Windows.Forms.TextBox();
-            this.lblTratamientoConsultas3 = new System.Windows.Forms.Label();
-            this.lblDiagnosticoConsultas3 = new System.Windows.Forms.Label();
+            this.panelFechaConsultas4 = new System.Windows.Forms.Panel();
+            this.dTPFechaConsultas4 = new System.Windows.Forms.DateTimePicker();
+            this.lblFechaConsultas4 = new System.Windows.Forms.Label();
+            this.panelFechaConsultas3 = new System.Windows.Forms.Panel();
+            this.dTPFechaConsultas3 = new System.Windows.Forms.DateTimePicker();
+            this.lblFechaConsultas3 = new System.Windows.Forms.Label();
+            this.panelFechaConsultas2 = new System.Windows.Forms.Panel();
+            this.dTPFechaConsultas2 = new System.Windows.Forms.DateTimePicker();
+            this.lblFechaConsultas2 = new System.Windows.Forms.Label();
             this.panelConsultas4 = new System.Windows.Forms.Panel();
             this.tBoxTratamientoConsultas4 = new System.Windows.Forms.TextBox();
             this.tBoxDiagnosticoConsultas4 = new System.Windows.Forms.TextBox();
             this.lblTratamientoConsultas4 = new System.Windows.Forms.Label();
             this.lblDiagnosticoConsultas4 = new System.Windows.Forms.Label();
-            this.lblFechaConsultas = new System.Windows.Forms.Label();
-            this.dTPFechaConsultas = new System.Windows.Forms.DateTimePicker();
+            this.panelConsultas3 = new System.Windows.Forms.Panel();
+            this.tBoxTratamientoConsultas3 = new System.Windows.Forms.TextBox();
+            this.tBoxDiagnosticoConsultas3 = new System.Windows.Forms.TextBox();
+            this.lblTratamientoConsultas3 = new System.Windows.Forms.Label();
+            this.lblDiagnosticoConsultas3 = new System.Windows.Forms.Label();
+            this.panelConsultas2 = new System.Windows.Forms.Panel();
+            this.tBoxTratamientoConsultas2 = new System.Windows.Forms.TextBox();
+            this.tBoxDiagnosticoConsultas2 = new System.Windows.Forms.TextBox();
+            this.lblTratamientoConsultas2 = new System.Windows.Forms.Label();
+            this.lblDiagnosticoConsultas2 = new System.Windows.Forms.Label();
+            this.panelConsultas = new System.Windows.Forms.Panel();
+            this.tBoxTratamientoConsultas = new System.Windows.Forms.TextBox();
+            this.tBoxDiagnosticoConsultas = new System.Windows.Forms.TextBox();
+            this.lblTratamientoConsultas = new System.Windows.Forms.Label();
+            this.lblDiagnosticoConsultas = new System.Windows.Forms.Label();
             this.panelFechaConsultas = new System.Windows.Forms.Panel();
-            this.panelFechaConsultas2 = new System.Windows.Forms.Panel();
-            this.dTPFechaConsultas2 = new System.Windows.Forms.DateTimePicker();
-            this.lblFechaConsultas2 = new System.Windows.Forms.Label();
-            this.panelFechaConsultas3 = new System.Windows.Forms.Panel();
-            this.dTPFechaConsultas3 = new System.Windows.Forms.DateTimePicker();
-            this.lblFechaConsultas3 = new System.Windows.Forms.Label();
-            this.panelFechaConsultas4 = new System.Windows.Forms.Panel();
-            this.dTPFechaConsultas4 = new System.Windows.Forms.DateTimePicker();
-            this.lblFechaConsultas4 = new System.Windows.Forms.Label();
-            this.panelContenedorVacunas = new System.Windows.Forms.Panel();
-            this.panelContenedorVacunas2 = new System.Windows.Forms.Panel();
-            this.panelContenedorVacunas3 = new System.Windows.Forms.Panel();
-            this.panelContenedorVacunas4 = new System.Windows.Forms.Panel();
-            this.panelFechaVacunas = new System.Windows.Forms.Panel();
-            this.dTPFechaVacunas = new System.Windows.Forms.DateTimePicker();
-            this.lblFechaVacunas = new System.Windows.Forms.Label();
-            this.panelFechaVacunas2 = new System.Windows.Forms.Panel();
-            this.dTPFechaVacunas2 = new System.Windows.Forms.DateTimePicker();
-            this.lblFechaVacunas2 = new System.Windows.Forms.Label();
-            this.panelFechaVacunas3 = new System.Windows.Forms.Panel();
-            this.dTPFechaVacunas3 = new System.Windows.Forms.DateTimePicker();
-            this.lblFechaVacunas3 = new System.Windows.Forms.Label();
-            this.panelFechaVacunas4 = new System.Windows.Forms.Panel();
-            this.dTPFechaVacunas4 = new System.Windows.Forms.DateTimePicker();
-            this.lblFechaVacunasl4 = new System.Windows.Forms.Label();
-            this.lblNombreVacuna = new System.Windows.Forms.Label();
-            this.tBoxNombreVacuna = new System.Windows.Forms.TextBox();
-            this.lblEstadoVacuna = new System.Windows.Forms.Label();
+            this.dTPFechaConsultas = new System.Windows.Forms.DateTimePicker();
+            this.lblFechaConsultas = new System.Windows.Forms.Label();
+            this.lblConsultas = new System.Windows.Forms.Label();
+            this.btnProgramarVacuna = new System.Windows.Forms.Button();
+            this.btnEditarHistorialMedico = new System.Windows.Forms.Button();
+            this.btnVolverInicio = new System.Windows.Forms.Button();
             this.vScrollBarVacunas = new System.Windows.Forms.VScrollBar();
             this.vScrollBarConsultas = new System.Windows.Forms.VScrollBar();
-            this.cBoxEstadoVacunas = new System.Windows.Forms.ComboBox();
-            this.cBoxEstadoVacunas2 = new System.Windows.Forms.ComboBox();
-            this.lblEstadoVacuna2 = new System.Windows.Forms.Label();
-            this.tBoxNombreVacuna2 = new System.Windows.Forms.TextBox();
-            this.lblNombreVacuna2 = new System.Windows.Forms.Label();
-            this.lblNombreVacuna3 = new System.Windows.Forms.Label();
-            this.lblEstadoVacuna3 = new System.Windows.Forms.Label();
-            this.tBoxNombreVacuna3 = new System.Windows.Forms.TextBox();
-            this.cBoxEstadoVacunas3 = new System.Windows.Forms.ComboBox();
-            this.lblEstadoVacuna4 = new System.Windows.Forms.Label();
-            this.lblNombreVacuna4 = new System.Windows.Forms.Label();
-            this.tBoxNombreVacuna4 = new System.Windows.Forms.TextBox();
-            this.cBoxEstadoVacunas4 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tLPVacunas.SuspendLayout();
-            this.tLPConsultas.SuspendLayout();
-            this.panelConsultas.SuspendLayout();
-            this.panelConsultas2.SuspendLayout();
-            this.panelConsultas3.SuspendLayout();
-            this.panelConsultas4.SuspendLayout();
-            this.panelFechaConsultas.SuspendLayout();
-            this.panelFechaConsultas2.SuspendLayout();
-            this.panelFechaConsultas3.SuspendLayout();
-            this.panelFechaConsultas4.SuspendLayout();
+            this.panelFechaVacunas4.SuspendLayout();
+            this.panelFechaVacunas3.SuspendLayout();
+            this.panelFechaVacunas2.SuspendLayout();
+            this.panelFechaVacunas.SuspendLayout();
             this.panelContenedorVacunas.SuspendLayout();
             this.panelContenedorVacunas2.SuspendLayout();
             this.panelContenedorVacunas3.SuspendLayout();
             this.panelContenedorVacunas4.SuspendLayout();
-            this.panelFechaVacunas.SuspendLayout();
-            this.panelFechaVacunas2.SuspendLayout();
-            this.panelFechaVacunas3.SuspendLayout();
-            this.panelFechaVacunas4.SuspendLayout();
+            this.tLPConsultas.SuspendLayout();
+            this.panelFechaConsultas4.SuspendLayout();
+            this.panelFechaConsultas3.SuspendLayout();
+            this.panelFechaConsultas2.SuspendLayout();
+            this.panelConsultas4.SuspendLayout();
+            this.panelConsultas3.SuspendLayout();
+            this.panelConsultas2.SuspendLayout();
+            this.panelConsultas.SuspendLayout();
+            this.panelFechaConsultas.SuspendLayout();
             this.SuspendLayout();
             // 
             // tLPVacunas
@@ -143,6 +144,298 @@
             this.tLPVacunas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tLPVacunas.Size = new System.Drawing.Size(210, 201);
             this.tLPVacunas.TabIndex = 0;
+            // 
+            // panelFechaVacunas4
+            // 
+            this.panelFechaVacunas4.Controls.Add(this.dTPFechaVacunas4);
+            this.panelFechaVacunas4.Controls.Add(this.lblFechaVacunasl4);
+            this.panelFechaVacunas4.Location = new System.Drawing.Point(108, 153);
+            this.panelFechaVacunas4.Name = "panelFechaVacunas4";
+            this.panelFechaVacunas4.Size = new System.Drawing.Size(94, 44);
+            this.panelFechaVacunas4.TabIndex = 16;
+            // 
+            // dTPFechaVacunas4
+            // 
+            this.dTPFechaVacunas4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dTPFechaVacunas4.Location = new System.Drawing.Point(6, 20);
+            this.dTPFechaVacunas4.Name = "dTPFechaVacunas4";
+            this.dTPFechaVacunas4.Size = new System.Drawing.Size(85, 20);
+            this.dTPFechaVacunas4.TabIndex = 11;
+            // 
+            // lblFechaVacunasl4
+            // 
+            this.lblFechaVacunasl4.AutoSize = true;
+            this.lblFechaVacunasl4.Location = new System.Drawing.Point(3, 3);
+            this.lblFechaVacunasl4.Name = "lblFechaVacunasl4";
+            this.lblFechaVacunasl4.Size = new System.Drawing.Size(40, 13);
+            this.lblFechaVacunasl4.TabIndex = 10;
+            this.lblFechaVacunasl4.Text = "Fecha:";
+            // 
+            // panelFechaVacunas3
+            // 
+            this.panelFechaVacunas3.Controls.Add(this.dTPFechaVacunas3);
+            this.panelFechaVacunas3.Controls.Add(this.lblFechaVacunas3);
+            this.panelFechaVacunas3.Location = new System.Drawing.Point(108, 103);
+            this.panelFechaVacunas3.Name = "panelFechaVacunas3";
+            this.panelFechaVacunas3.Size = new System.Drawing.Size(94, 44);
+            this.panelFechaVacunas3.TabIndex = 15;
+            // 
+            // dTPFechaVacunas3
+            // 
+            this.dTPFechaVacunas3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dTPFechaVacunas3.Location = new System.Drawing.Point(6, 20);
+            this.dTPFechaVacunas3.Name = "dTPFechaVacunas3";
+            this.dTPFechaVacunas3.Size = new System.Drawing.Size(85, 20);
+            this.dTPFechaVacunas3.TabIndex = 11;
+            // 
+            // lblFechaVacunas3
+            // 
+            this.lblFechaVacunas3.AutoSize = true;
+            this.lblFechaVacunas3.Location = new System.Drawing.Point(3, 3);
+            this.lblFechaVacunas3.Name = "lblFechaVacunas3";
+            this.lblFechaVacunas3.Size = new System.Drawing.Size(40, 13);
+            this.lblFechaVacunas3.TabIndex = 10;
+            this.lblFechaVacunas3.Text = "Fecha:";
+            // 
+            // panelFechaVacunas2
+            // 
+            this.panelFechaVacunas2.Controls.Add(this.dTPFechaVacunas2);
+            this.panelFechaVacunas2.Controls.Add(this.lblFechaVacunas2);
+            this.panelFechaVacunas2.Location = new System.Drawing.Point(108, 53);
+            this.panelFechaVacunas2.Name = "panelFechaVacunas2";
+            this.panelFechaVacunas2.Size = new System.Drawing.Size(94, 44);
+            this.panelFechaVacunas2.TabIndex = 14;
+            // 
+            // dTPFechaVacunas2
+            // 
+            this.dTPFechaVacunas2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dTPFechaVacunas2.Location = new System.Drawing.Point(6, 20);
+            this.dTPFechaVacunas2.Name = "dTPFechaVacunas2";
+            this.dTPFechaVacunas2.Size = new System.Drawing.Size(85, 20);
+            this.dTPFechaVacunas2.TabIndex = 11;
+            // 
+            // lblFechaVacunas2
+            // 
+            this.lblFechaVacunas2.AutoSize = true;
+            this.lblFechaVacunas2.Location = new System.Drawing.Point(3, 3);
+            this.lblFechaVacunas2.Name = "lblFechaVacunas2";
+            this.lblFechaVacunas2.Size = new System.Drawing.Size(40, 13);
+            this.lblFechaVacunas2.TabIndex = 10;
+            this.lblFechaVacunas2.Text = "Fecha:";
+            // 
+            // panelFechaVacunas
+            // 
+            this.panelFechaVacunas.Controls.Add(this.dTPFechaVacunas);
+            this.panelFechaVacunas.Controls.Add(this.lblFechaVacunas);
+            this.panelFechaVacunas.Location = new System.Drawing.Point(108, 3);
+            this.panelFechaVacunas.Name = "panelFechaVacunas";
+            this.panelFechaVacunas.Size = new System.Drawing.Size(97, 44);
+            this.panelFechaVacunas.TabIndex = 13;
+            // 
+            // dTPFechaVacunas
+            // 
+            this.dTPFechaVacunas.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dTPFechaVacunas.Location = new System.Drawing.Point(6, 20);
+            this.dTPFechaVacunas.Name = "dTPFechaVacunas";
+            this.dTPFechaVacunas.Size = new System.Drawing.Size(85, 20);
+            this.dTPFechaVacunas.TabIndex = 11;
+            // 
+            // lblFechaVacunas
+            // 
+            this.lblFechaVacunas.AutoSize = true;
+            this.lblFechaVacunas.Location = new System.Drawing.Point(3, 3);
+            this.lblFechaVacunas.Name = "lblFechaVacunas";
+            this.lblFechaVacunas.Size = new System.Drawing.Size(40, 13);
+            this.lblFechaVacunas.TabIndex = 10;
+            this.lblFechaVacunas.Text = "Fecha:";
+            // 
+            // panelContenedorVacunas
+            // 
+            this.panelContenedorVacunas.Controls.Add(this.cBoxEstadoVacunas);
+            this.panelContenedorVacunas.Controls.Add(this.lblEstadoVacuna);
+            this.panelContenedorVacunas.Controls.Add(this.tBoxNombreVacuna);
+            this.panelContenedorVacunas.Controls.Add(this.lblNombreVacuna);
+            this.panelContenedorVacunas.Location = new System.Drawing.Point(3, 3);
+            this.panelContenedorVacunas.Name = "panelContenedorVacunas";
+            this.panelContenedorVacunas.Size = new System.Drawing.Size(99, 44);
+            this.panelContenedorVacunas.TabIndex = 0;
+            // 
+            // cBoxEstadoVacunas
+            // 
+            this.cBoxEstadoVacunas.FormattingEnabled = true;
+            this.cBoxEstadoVacunas.Items.AddRange(new object[] {
+            "Aplicada",
+            "Sin Aplicar"});
+            this.cBoxEstadoVacunas.Location = new System.Drawing.Point(46, 24);
+            this.cBoxEstadoVacunas.Name = "cBoxEstadoVacunas";
+            this.cBoxEstadoVacunas.Size = new System.Drawing.Size(44, 21);
+            this.cBoxEstadoVacunas.TabIndex = 12;
+            // 
+            // lblEstadoVacuna
+            // 
+            this.lblEstadoVacuna.AutoSize = true;
+            this.lblEstadoVacuna.Location = new System.Drawing.Point(4, 26);
+            this.lblEstadoVacuna.Name = "lblEstadoVacuna";
+            this.lblEstadoVacuna.Size = new System.Drawing.Size(40, 13);
+            this.lblEstadoVacuna.TabIndex = 10;
+            this.lblEstadoVacuna.Text = "Estado";
+            // 
+            // tBoxNombreVacuna
+            // 
+            this.tBoxNombreVacuna.Location = new System.Drawing.Point(46, 3);
+            this.tBoxNombreVacuna.Name = "tBoxNombreVacuna";
+            this.tBoxNombreVacuna.Size = new System.Drawing.Size(44, 20);
+            this.tBoxNombreVacuna.TabIndex = 1;
+            // 
+            // lblNombreVacuna
+            // 
+            this.lblNombreVacuna.AutoSize = true;
+            this.lblNombreVacuna.Location = new System.Drawing.Point(3, 6);
+            this.lblNombreVacuna.Name = "lblNombreVacuna";
+            this.lblNombreVacuna.Size = new System.Drawing.Size(47, 13);
+            this.lblNombreVacuna.TabIndex = 0;
+            this.lblNombreVacuna.Text = "Vacuna:";
+            // 
+            // panelContenedorVacunas2
+            // 
+            this.panelContenedorVacunas2.Controls.Add(this.cBoxEstadoVacunas2);
+            this.panelContenedorVacunas2.Controls.Add(this.tBoxNombreVacuna2);
+            this.panelContenedorVacunas2.Controls.Add(this.lblEstadoVacuna2);
+            this.panelContenedorVacunas2.Controls.Add(this.lblNombreVacuna2);
+            this.panelContenedorVacunas2.Location = new System.Drawing.Point(3, 53);
+            this.panelContenedorVacunas2.Name = "panelContenedorVacunas2";
+            this.panelContenedorVacunas2.Size = new System.Drawing.Size(99, 44);
+            this.panelContenedorVacunas2.TabIndex = 1;
+            // 
+            // cBoxEstadoVacunas2
+            // 
+            this.cBoxEstadoVacunas2.FormattingEnabled = true;
+            this.cBoxEstadoVacunas2.Items.AddRange(new object[] {
+            "Aplicada",
+            "Sin Aplicar"});
+            this.cBoxEstadoVacunas2.Location = new System.Drawing.Point(46, 24);
+            this.cBoxEstadoVacunas2.Name = "cBoxEstadoVacunas2";
+            this.cBoxEstadoVacunas2.Size = new System.Drawing.Size(44, 21);
+            this.cBoxEstadoVacunas2.TabIndex = 16;
+            // 
+            // tBoxNombreVacuna2
+            // 
+            this.tBoxNombreVacuna2.Location = new System.Drawing.Point(46, 3);
+            this.tBoxNombreVacuna2.Name = "tBoxNombreVacuna2";
+            this.tBoxNombreVacuna2.Size = new System.Drawing.Size(44, 20);
+            this.tBoxNombreVacuna2.TabIndex = 14;
+            // 
+            // lblEstadoVacuna2
+            // 
+            this.lblEstadoVacuna2.AutoSize = true;
+            this.lblEstadoVacuna2.Location = new System.Drawing.Point(4, 26);
+            this.lblEstadoVacuna2.Name = "lblEstadoVacuna2";
+            this.lblEstadoVacuna2.Size = new System.Drawing.Size(40, 13);
+            this.lblEstadoVacuna2.TabIndex = 15;
+            this.lblEstadoVacuna2.Text = "Estado";
+            // 
+            // lblNombreVacuna2
+            // 
+            this.lblNombreVacuna2.AutoSize = true;
+            this.lblNombreVacuna2.Location = new System.Drawing.Point(3, 6);
+            this.lblNombreVacuna2.Name = "lblNombreVacuna2";
+            this.lblNombreVacuna2.Size = new System.Drawing.Size(47, 13);
+            this.lblNombreVacuna2.TabIndex = 13;
+            this.lblNombreVacuna2.Text = "Vacuna:";
+            // 
+            // panelContenedorVacunas3
+            // 
+            this.panelContenedorVacunas3.Controls.Add(this.cBoxEstadoVacunas3);
+            this.panelContenedorVacunas3.Controls.Add(this.tBoxNombreVacuna3);
+            this.panelContenedorVacunas3.Controls.Add(this.lblNombreVacuna3);
+            this.panelContenedorVacunas3.Controls.Add(this.lblEstadoVacuna3);
+            this.panelContenedorVacunas3.Location = new System.Drawing.Point(3, 103);
+            this.panelContenedorVacunas3.Name = "panelContenedorVacunas3";
+            this.panelContenedorVacunas3.Size = new System.Drawing.Size(99, 44);
+            this.panelContenedorVacunas3.TabIndex = 2;
+            // 
+            // cBoxEstadoVacunas3
+            // 
+            this.cBoxEstadoVacunas3.FormattingEnabled = true;
+            this.cBoxEstadoVacunas3.Items.AddRange(new object[] {
+            "Aplicada",
+            "Sin Aplicar"});
+            this.cBoxEstadoVacunas3.Location = new System.Drawing.Point(46, 21);
+            this.cBoxEstadoVacunas3.Name = "cBoxEstadoVacunas3";
+            this.cBoxEstadoVacunas3.Size = new System.Drawing.Size(44, 21);
+            this.cBoxEstadoVacunas3.TabIndex = 16;
+            // 
+            // tBoxNombreVacuna3
+            // 
+            this.tBoxNombreVacuna3.Location = new System.Drawing.Point(46, 0);
+            this.tBoxNombreVacuna3.Name = "tBoxNombreVacuna3";
+            this.tBoxNombreVacuna3.Size = new System.Drawing.Size(44, 20);
+            this.tBoxNombreVacuna3.TabIndex = 14;
+            // 
+            // lblNombreVacuna3
+            // 
+            this.lblNombreVacuna3.AutoSize = true;
+            this.lblNombreVacuna3.Location = new System.Drawing.Point(3, 3);
+            this.lblNombreVacuna3.Name = "lblNombreVacuna3";
+            this.lblNombreVacuna3.Size = new System.Drawing.Size(47, 13);
+            this.lblNombreVacuna3.TabIndex = 13;
+            this.lblNombreVacuna3.Text = "Vacuna:";
+            // 
+            // lblEstadoVacuna3
+            // 
+            this.lblEstadoVacuna3.AutoSize = true;
+            this.lblEstadoVacuna3.Location = new System.Drawing.Point(4, 23);
+            this.lblEstadoVacuna3.Name = "lblEstadoVacuna3";
+            this.lblEstadoVacuna3.Size = new System.Drawing.Size(40, 13);
+            this.lblEstadoVacuna3.TabIndex = 15;
+            this.lblEstadoVacuna3.Text = "Estado";
+            // 
+            // panelContenedorVacunas4
+            // 
+            this.panelContenedorVacunas4.Controls.Add(this.cBoxEstadoVacunas4);
+            this.panelContenedorVacunas4.Controls.Add(this.tBoxNombreVacuna4);
+            this.panelContenedorVacunas4.Controls.Add(this.lblEstadoVacuna4);
+            this.panelContenedorVacunas4.Controls.Add(this.lblNombreVacuna4);
+            this.panelContenedorVacunas4.Location = new System.Drawing.Point(3, 153);
+            this.panelContenedorVacunas4.Name = "panelContenedorVacunas4";
+            this.panelContenedorVacunas4.Size = new System.Drawing.Size(99, 45);
+            this.panelContenedorVacunas4.TabIndex = 3;
+            // 
+            // cBoxEstadoVacunas4
+            // 
+            this.cBoxEstadoVacunas4.FormattingEnabled = true;
+            this.cBoxEstadoVacunas4.Items.AddRange(new object[] {
+            "Aplicada",
+            "Sin Aplicar"});
+            this.cBoxEstadoVacunas4.Location = new System.Drawing.Point(46, 21);
+            this.cBoxEstadoVacunas4.Name = "cBoxEstadoVacunas4";
+            this.cBoxEstadoVacunas4.Size = new System.Drawing.Size(44, 21);
+            this.cBoxEstadoVacunas4.TabIndex = 16;
+            // 
+            // tBoxNombreVacuna4
+            // 
+            this.tBoxNombreVacuna4.Location = new System.Drawing.Point(46, 0);
+            this.tBoxNombreVacuna4.Name = "tBoxNombreVacuna4";
+            this.tBoxNombreVacuna4.Size = new System.Drawing.Size(44, 20);
+            this.tBoxNombreVacuna4.TabIndex = 14;
+            // 
+            // lblEstadoVacuna4
+            // 
+            this.lblEstadoVacuna4.AutoSize = true;
+            this.lblEstadoVacuna4.Location = new System.Drawing.Point(4, 23);
+            this.lblEstadoVacuna4.Name = "lblEstadoVacuna4";
+            this.lblEstadoVacuna4.Size = new System.Drawing.Size(40, 13);
+            this.lblEstadoVacuna4.TabIndex = 15;
+            this.lblEstadoVacuna4.Text = "Estado";
+            // 
+            // lblNombreVacuna4
+            // 
+            this.lblNombreVacuna4.AutoSize = true;
+            this.lblNombreVacuna4.Location = new System.Drawing.Point(3, 3);
+            this.lblNombreVacuna4.Name = "lblNombreVacuna4";
+            this.lblNombreVacuna4.Size = new System.Drawing.Size(47, 13);
+            this.lblNombreVacuna4.TabIndex = 13;
+            this.lblNombreVacuna4.Text = "Vacuna:";
             // 
             // lblVacunas
             // 
@@ -177,127 +470,126 @@
             this.tLPConsultas.TabIndex = 1;
             this.tLPConsultas.Paint += new System.Windows.Forms.PaintEventHandler(this.tLPConsultas_Paint);
             // 
-            // lblConsultas
+            // panelFechaConsultas4
             // 
-            this.lblConsultas.AutoSize = true;
-            this.lblConsultas.Location = new System.Drawing.Point(288, 99);
-            this.lblConsultas.Name = "lblConsultas";
-            this.lblConsultas.Size = new System.Drawing.Size(53, 13);
-            this.lblConsultas.TabIndex = 2;
-            this.lblConsultas.Text = "Consultas";
+            this.panelFechaConsultas4.Controls.Add(this.dTPFechaConsultas4);
+            this.panelFechaConsultas4.Controls.Add(this.lblFechaConsultas4);
+            this.panelFechaConsultas4.Location = new System.Drawing.Point(227, 153);
+            this.panelFechaConsultas4.Name = "panelFechaConsultas4";
+            this.panelFechaConsultas4.Size = new System.Drawing.Size(50, 44);
+            this.panelFechaConsultas4.TabIndex = 13;
             // 
-            // btnProgramarVacuna
+            // dTPFechaConsultas4
             // 
-            this.btnProgramarVacuna.Location = new System.Drawing.Point(110, 322);
-            this.btnProgramarVacuna.Name = "btnProgramarVacuna";
-            this.btnProgramarVacuna.Size = new System.Drawing.Size(75, 44);
-            this.btnProgramarVacuna.TabIndex = 5;
-            this.btnProgramarVacuna.Text = "Programar Vacuna";
-            this.btnProgramarVacuna.UseVisualStyleBackColor = true;
+            this.dTPFechaConsultas4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dTPFechaConsultas4.Location = new System.Drawing.Point(6, 20);
+            this.dTPFechaConsultas4.Name = "dTPFechaConsultas4";
+            this.dTPFechaConsultas4.Size = new System.Drawing.Size(37, 20);
+            this.dTPFechaConsultas4.TabIndex = 11;
             // 
-            // btnEditarHistorialMedico
+            // lblFechaConsultas4
             // 
-            this.btnEditarHistorialMedico.Location = new System.Drawing.Point(446, 396);
-            this.btnEditarHistorialMedico.Name = "btnEditarHistorialMedico";
-            this.btnEditarHistorialMedico.Size = new System.Drawing.Size(75, 23);
-            this.btnEditarHistorialMedico.TabIndex = 8;
-            this.btnEditarHistorialMedico.Text = "Editar";
-            this.btnEditarHistorialMedico.UseVisualStyleBackColor = true;
+            this.lblFechaConsultas4.AutoSize = true;
+            this.lblFechaConsultas4.Location = new System.Drawing.Point(3, 3);
+            this.lblFechaConsultas4.Name = "lblFechaConsultas4";
+            this.lblFechaConsultas4.Size = new System.Drawing.Size(40, 13);
+            this.lblFechaConsultas4.TabIndex = 10;
+            this.lblFechaConsultas4.Text = "Fecha:";
             // 
-            // btnVolverInicio
+            // panelFechaConsultas3
             // 
-            this.btnVolverInicio.Location = new System.Drawing.Point(16, 16);
-            this.btnVolverInicio.Name = "btnVolverInicio";
-            this.btnVolverInicio.Size = new System.Drawing.Size(75, 23);
-            this.btnVolverInicio.TabIndex = 9;
-            this.btnVolverInicio.Text = "Volver";
-            this.btnVolverInicio.UseVisualStyleBackColor = true;
+            this.panelFechaConsultas3.Controls.Add(this.dTPFechaConsultas3);
+            this.panelFechaConsultas3.Controls.Add(this.lblFechaConsultas3);
+            this.panelFechaConsultas3.Location = new System.Drawing.Point(227, 103);
+            this.panelFechaConsultas3.Name = "panelFechaConsultas3";
+            this.panelFechaConsultas3.Size = new System.Drawing.Size(50, 44);
+            this.panelFechaConsultas3.TabIndex = 13;
             // 
-            // lblDiagnosticoConsultas
+            // dTPFechaConsultas3
             // 
-            this.lblDiagnosticoConsultas.AutoSize = true;
-            this.lblDiagnosticoConsultas.Location = new System.Drawing.Point(6, 0);
-            this.lblDiagnosticoConsultas.Name = "lblDiagnosticoConsultas";
-            this.lblDiagnosticoConsultas.Size = new System.Drawing.Size(66, 13);
-            this.lblDiagnosticoConsultas.TabIndex = 10;
-            this.lblDiagnosticoConsultas.Text = "Diagnostico:";
+            this.dTPFechaConsultas3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dTPFechaConsultas3.Location = new System.Drawing.Point(6, 20);
+            this.dTPFechaConsultas3.Name = "dTPFechaConsultas3";
+            this.dTPFechaConsultas3.Size = new System.Drawing.Size(37, 20);
+            this.dTPFechaConsultas3.TabIndex = 11;
             // 
-            // lblTratamientoConsultas
+            // lblFechaConsultas3
             // 
-            this.lblTratamientoConsultas.AutoSize = true;
-            this.lblTratamientoConsultas.Location = new System.Drawing.Point(6, 21);
-            this.lblTratamientoConsultas.Name = "lblTratamientoConsultas";
-            this.lblTratamientoConsultas.Size = new System.Drawing.Size(66, 13);
-            this.lblTratamientoConsultas.TabIndex = 10;
-            this.lblTratamientoConsultas.Text = "Tratamiento:";
+            this.lblFechaConsultas3.AutoSize = true;
+            this.lblFechaConsultas3.Location = new System.Drawing.Point(3, 3);
+            this.lblFechaConsultas3.Name = "lblFechaConsultas3";
+            this.lblFechaConsultas3.Size = new System.Drawing.Size(40, 13);
+            this.lblFechaConsultas3.TabIndex = 10;
+            this.lblFechaConsultas3.Text = "Fecha:";
             // 
-            // panelConsultas
+            // panelFechaConsultas2
             // 
-            this.panelConsultas.Controls.Add(this.tBoxTratamientoConsultas);
-            this.panelConsultas.Controls.Add(this.tBoxDiagnosticoConsultas);
-            this.panelConsultas.Controls.Add(this.lblTratamientoConsultas);
-            this.panelConsultas.Controls.Add(this.lblDiagnosticoConsultas);
-            this.panelConsultas.Location = new System.Drawing.Point(3, 3);
-            this.panelConsultas.Name = "panelConsultas";
-            this.panelConsultas.Size = new System.Drawing.Size(200, 44);
-            this.panelConsultas.TabIndex = 11;
+            this.panelFechaConsultas2.Controls.Add(this.dTPFechaConsultas2);
+            this.panelFechaConsultas2.Controls.Add(this.lblFechaConsultas2);
+            this.panelFechaConsultas2.Location = new System.Drawing.Point(227, 53);
+            this.panelFechaConsultas2.Name = "panelFechaConsultas2";
+            this.panelFechaConsultas2.Size = new System.Drawing.Size(50, 44);
+            this.panelFechaConsultas2.TabIndex = 13;
             // 
-            // tBoxDiagnosticoConsultas
+            // dTPFechaConsultas2
             // 
-            this.tBoxDiagnosticoConsultas.Location = new System.Drawing.Point(78, 0);
-            this.tBoxDiagnosticoConsultas.Name = "tBoxDiagnosticoConsultas";
-            this.tBoxDiagnosticoConsultas.Size = new System.Drawing.Size(100, 20);
-            this.tBoxDiagnosticoConsultas.TabIndex = 10;
+            this.dTPFechaConsultas2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dTPFechaConsultas2.Location = new System.Drawing.Point(6, 20);
+            this.dTPFechaConsultas2.Name = "dTPFechaConsultas2";
+            this.dTPFechaConsultas2.Size = new System.Drawing.Size(37, 20);
+            this.dTPFechaConsultas2.TabIndex = 11;
             // 
-            // tBoxTratamientoConsultas
+            // lblFechaConsultas2
             // 
-            this.tBoxTratamientoConsultas.Location = new System.Drawing.Point(78, 21);
-            this.tBoxTratamientoConsultas.Name = "tBoxTratamientoConsultas";
-            this.tBoxTratamientoConsultas.Size = new System.Drawing.Size(100, 20);
-            this.tBoxTratamientoConsultas.TabIndex = 11;
+            this.lblFechaConsultas2.AutoSize = true;
+            this.lblFechaConsultas2.Location = new System.Drawing.Point(3, 3);
+            this.lblFechaConsultas2.Name = "lblFechaConsultas2";
+            this.lblFechaConsultas2.Size = new System.Drawing.Size(40, 13);
+            this.lblFechaConsultas2.TabIndex = 10;
+            this.lblFechaConsultas2.Text = "Fecha:";
             // 
-            // panelConsultas2
+            // panelConsultas4
             // 
-            this.panelConsultas2.Controls.Add(this.tBoxTratamientoConsultas2);
-            this.panelConsultas2.Controls.Add(this.tBoxDiagnosticoConsultas2);
-            this.panelConsultas2.Controls.Add(this.lblTratamientoConsultas2);
-            this.panelConsultas2.Controls.Add(this.lblDiagnosticoConsultas2);
-            this.panelConsultas2.Location = new System.Drawing.Point(3, 53);
-            this.panelConsultas2.Name = "panelConsultas2";
-            this.panelConsultas2.Size = new System.Drawing.Size(200, 44);
-            this.panelConsultas2.TabIndex = 13;
+            this.panelConsultas4.Controls.Add(this.tBoxTratamientoConsultas4);
+            this.panelConsultas4.Controls.Add(this.tBoxDiagnosticoConsultas4);
+            this.panelConsultas4.Controls.Add(this.lblTratamientoConsultas4);
+            this.panelConsultas4.Controls.Add(this.lblDiagnosticoConsultas4);
+            this.panelConsultas4.Location = new System.Drawing.Point(3, 153);
+            this.panelConsultas4.Name = "panelConsultas4";
+            this.panelConsultas4.Size = new System.Drawing.Size(200, 44);
+            this.panelConsultas4.TabIndex = 12;
             // 
-            // tBoxTratamientoConsultas2
+            // tBoxTratamientoConsultas4
             // 
-            this.tBoxTratamientoConsultas2.Location = new System.Drawing.Point(78, 21);
-            this.tBoxTratamientoConsultas2.Name = "tBoxTratamientoConsultas2";
-            this.tBoxTratamientoConsultas2.Size = new System.Drawing.Size(100, 20);
-            this.tBoxTratamientoConsultas2.TabIndex = 11;
+            this.tBoxTratamientoConsultas4.Location = new System.Drawing.Point(78, 21);
+            this.tBoxTratamientoConsultas4.Name = "tBoxTratamientoConsultas4";
+            this.tBoxTratamientoConsultas4.Size = new System.Drawing.Size(100, 20);
+            this.tBoxTratamientoConsultas4.TabIndex = 11;
             // 
-            // tBoxDiagnosticoConsultas2
+            // tBoxDiagnosticoConsultas4
             // 
-            this.tBoxDiagnosticoConsultas2.Location = new System.Drawing.Point(78, 0);
-            this.tBoxDiagnosticoConsultas2.Name = "tBoxDiagnosticoConsultas2";
-            this.tBoxDiagnosticoConsultas2.Size = new System.Drawing.Size(100, 20);
-            this.tBoxDiagnosticoConsultas2.TabIndex = 10;
+            this.tBoxDiagnosticoConsultas4.Location = new System.Drawing.Point(78, 0);
+            this.tBoxDiagnosticoConsultas4.Name = "tBoxDiagnosticoConsultas4";
+            this.tBoxDiagnosticoConsultas4.Size = new System.Drawing.Size(100, 20);
+            this.tBoxDiagnosticoConsultas4.TabIndex = 10;
             // 
-            // lblTratamientoConsultas2
+            // lblTratamientoConsultas4
             // 
-            this.lblTratamientoConsultas2.AutoSize = true;
-            this.lblTratamientoConsultas2.Location = new System.Drawing.Point(6, 21);
-            this.lblTratamientoConsultas2.Name = "lblTratamientoConsultas2";
-            this.lblTratamientoConsultas2.Size = new System.Drawing.Size(66, 13);
-            this.lblTratamientoConsultas2.TabIndex = 10;
-            this.lblTratamientoConsultas2.Text = "Tratamiento:";
+            this.lblTratamientoConsultas4.AutoSize = true;
+            this.lblTratamientoConsultas4.Location = new System.Drawing.Point(6, 21);
+            this.lblTratamientoConsultas4.Name = "lblTratamientoConsultas4";
+            this.lblTratamientoConsultas4.Size = new System.Drawing.Size(66, 13);
+            this.lblTratamientoConsultas4.TabIndex = 10;
+            this.lblTratamientoConsultas4.Text = "Tratamiento:";
             // 
-            // lblDiagnosticoConsultas2
+            // lblDiagnosticoConsultas4
             // 
-            this.lblDiagnosticoConsultas2.AutoSize = true;
-            this.lblDiagnosticoConsultas2.Location = new System.Drawing.Point(6, 0);
-            this.lblDiagnosticoConsultas2.Name = "lblDiagnosticoConsultas2";
-            this.lblDiagnosticoConsultas2.Size = new System.Drawing.Size(66, 13);
-            this.lblDiagnosticoConsultas2.TabIndex = 10;
-            this.lblDiagnosticoConsultas2.Text = "Diagnostico:";
+            this.lblDiagnosticoConsultas4.AutoSize = true;
+            this.lblDiagnosticoConsultas4.Location = new System.Drawing.Point(6, 0);
+            this.lblDiagnosticoConsultas4.Name = "lblDiagnosticoConsultas4";
+            this.lblDiagnosticoConsultas4.Size = new System.Drawing.Size(66, 13);
+            this.lblDiagnosticoConsultas4.TabIndex = 10;
+            this.lblDiagnosticoConsultas4.Text = "Diagnostico:";
             // 
             // panelConsultas3
             // 
@@ -343,65 +635,91 @@
             this.lblDiagnosticoConsultas3.TabIndex = 10;
             this.lblDiagnosticoConsultas3.Text = "Diagnostico:";
             // 
-            // panelConsultas4
+            // panelConsultas2
             // 
-            this.panelConsultas4.Controls.Add(this.tBoxTratamientoConsultas4);
-            this.panelConsultas4.Controls.Add(this.tBoxDiagnosticoConsultas4);
-            this.panelConsultas4.Controls.Add(this.lblTratamientoConsultas4);
-            this.panelConsultas4.Controls.Add(this.lblDiagnosticoConsultas4);
-            this.panelConsultas4.Location = new System.Drawing.Point(3, 153);
-            this.panelConsultas4.Name = "panelConsultas4";
-            this.panelConsultas4.Size = new System.Drawing.Size(200, 44);
-            this.panelConsultas4.TabIndex = 12;
+            this.panelConsultas2.Controls.Add(this.tBoxTratamientoConsultas2);
+            this.panelConsultas2.Controls.Add(this.tBoxDiagnosticoConsultas2);
+            this.panelConsultas2.Controls.Add(this.lblTratamientoConsultas2);
+            this.panelConsultas2.Controls.Add(this.lblDiagnosticoConsultas2);
+            this.panelConsultas2.Location = new System.Drawing.Point(3, 53);
+            this.panelConsultas2.Name = "panelConsultas2";
+            this.panelConsultas2.Size = new System.Drawing.Size(200, 44);
+            this.panelConsultas2.TabIndex = 13;
             // 
-            // tBoxTratamientoConsultas4
+            // tBoxTratamientoConsultas2
             // 
-            this.tBoxTratamientoConsultas4.Location = new System.Drawing.Point(78, 21);
-            this.tBoxTratamientoConsultas4.Name = "tBoxTratamientoConsultas4";
-            this.tBoxTratamientoConsultas4.Size = new System.Drawing.Size(100, 20);
-            this.tBoxTratamientoConsultas4.TabIndex = 11;
+            this.tBoxTratamientoConsultas2.Location = new System.Drawing.Point(78, 21);
+            this.tBoxTratamientoConsultas2.Name = "tBoxTratamientoConsultas2";
+            this.tBoxTratamientoConsultas2.Size = new System.Drawing.Size(100, 20);
+            this.tBoxTratamientoConsultas2.TabIndex = 11;
             // 
-            // tBoxDiagnosticoConsultas4
+            // tBoxDiagnosticoConsultas2
             // 
-            this.tBoxDiagnosticoConsultas4.Location = new System.Drawing.Point(78, 0);
-            this.tBoxDiagnosticoConsultas4.Name = "tBoxDiagnosticoConsultas4";
-            this.tBoxDiagnosticoConsultas4.Size = new System.Drawing.Size(100, 20);
-            this.tBoxDiagnosticoConsultas4.TabIndex = 10;
+            this.tBoxDiagnosticoConsultas2.Location = new System.Drawing.Point(78, 0);
+            this.tBoxDiagnosticoConsultas2.Name = "tBoxDiagnosticoConsultas2";
+            this.tBoxDiagnosticoConsultas2.Size = new System.Drawing.Size(100, 20);
+            this.tBoxDiagnosticoConsultas2.TabIndex = 10;
             // 
-            // lblTratamientoConsultas4
+            // lblTratamientoConsultas2
             // 
-            this.lblTratamientoConsultas4.AutoSize = true;
-            this.lblTratamientoConsultas4.Location = new System.Drawing.Point(6, 21);
-            this.lblTratamientoConsultas4.Name = "lblTratamientoConsultas4";
-            this.lblTratamientoConsultas4.Size = new System.Drawing.Size(66, 13);
-            this.lblTratamientoConsultas4.TabIndex = 10;
-            this.lblTratamientoConsultas4.Text = "Tratamiento:";
+            this.lblTratamientoConsultas2.AutoSize = true;
+            this.lblTratamientoConsultas2.Location = new System.Drawing.Point(6, 21);
+            this.lblTratamientoConsultas2.Name = "lblTratamientoConsultas2";
+            this.lblTratamientoConsultas2.Size = new System.Drawing.Size(66, 13);
+            this.lblTratamientoConsultas2.TabIndex = 10;
+            this.lblTratamientoConsultas2.Text = "Tratamiento:";
             // 
-            // lblDiagnosticoConsultas4
+            // lblDiagnosticoConsultas2
             // 
-            this.lblDiagnosticoConsultas4.AutoSize = true;
-            this.lblDiagnosticoConsultas4.Location = new System.Drawing.Point(6, 0);
-            this.lblDiagnosticoConsultas4.Name = "lblDiagnosticoConsultas4";
-            this.lblDiagnosticoConsultas4.Size = new System.Drawing.Size(66, 13);
-            this.lblDiagnosticoConsultas4.TabIndex = 10;
-            this.lblDiagnosticoConsultas4.Text = "Diagnostico:";
+            this.lblDiagnosticoConsultas2.AutoSize = true;
+            this.lblDiagnosticoConsultas2.Location = new System.Drawing.Point(6, 0);
+            this.lblDiagnosticoConsultas2.Name = "lblDiagnosticoConsultas2";
+            this.lblDiagnosticoConsultas2.Size = new System.Drawing.Size(66, 13);
+            this.lblDiagnosticoConsultas2.TabIndex = 10;
+            this.lblDiagnosticoConsultas2.Text = "Diagnostico:";
             // 
-            // lblFechaConsultas
+            // panelConsultas
             // 
-            this.lblFechaConsultas.AutoSize = true;
-            this.lblFechaConsultas.Location = new System.Drawing.Point(3, 3);
-            this.lblFechaConsultas.Name = "lblFechaConsultas";
-            this.lblFechaConsultas.Size = new System.Drawing.Size(40, 13);
-            this.lblFechaConsultas.TabIndex = 10;
-            this.lblFechaConsultas.Text = "Fecha:";
+            this.panelConsultas.Controls.Add(this.tBoxTratamientoConsultas);
+            this.panelConsultas.Controls.Add(this.tBoxDiagnosticoConsultas);
+            this.panelConsultas.Controls.Add(this.lblTratamientoConsultas);
+            this.panelConsultas.Controls.Add(this.lblDiagnosticoConsultas);
+            this.panelConsultas.Location = new System.Drawing.Point(3, 3);
+            this.panelConsultas.Name = "panelConsultas";
+            this.panelConsultas.Size = new System.Drawing.Size(200, 44);
+            this.panelConsultas.TabIndex = 11;
             // 
-            // dTPFechaConsultas
+            // tBoxTratamientoConsultas
             // 
-            this.dTPFechaConsultas.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dTPFechaConsultas.Location = new System.Drawing.Point(6, 20);
-            this.dTPFechaConsultas.Name = "dTPFechaConsultas";
-            this.dTPFechaConsultas.Size = new System.Drawing.Size(37, 20);
-            this.dTPFechaConsultas.TabIndex = 11;
+            this.tBoxTratamientoConsultas.Location = new System.Drawing.Point(78, 21);
+            this.tBoxTratamientoConsultas.Name = "tBoxTratamientoConsultas";
+            this.tBoxTratamientoConsultas.Size = new System.Drawing.Size(100, 20);
+            this.tBoxTratamientoConsultas.TabIndex = 11;
+            // 
+            // tBoxDiagnosticoConsultas
+            // 
+            this.tBoxDiagnosticoConsultas.Location = new System.Drawing.Point(78, 0);
+            this.tBoxDiagnosticoConsultas.Name = "tBoxDiagnosticoConsultas";
+            this.tBoxDiagnosticoConsultas.Size = new System.Drawing.Size(100, 20);
+            this.tBoxDiagnosticoConsultas.TabIndex = 10;
+            // 
+            // lblTratamientoConsultas
+            // 
+            this.lblTratamientoConsultas.AutoSize = true;
+            this.lblTratamientoConsultas.Location = new System.Drawing.Point(6, 21);
+            this.lblTratamientoConsultas.Name = "lblTratamientoConsultas";
+            this.lblTratamientoConsultas.Size = new System.Drawing.Size(66, 13);
+            this.lblTratamientoConsultas.TabIndex = 10;
+            this.lblTratamientoConsultas.Text = "Tratamiento:";
+            // 
+            // lblDiagnosticoConsultas
+            // 
+            this.lblDiagnosticoConsultas.AutoSize = true;
+            this.lblDiagnosticoConsultas.Location = new System.Drawing.Point(6, 0);
+            this.lblDiagnosticoConsultas.Name = "lblDiagnosticoConsultas";
+            this.lblDiagnosticoConsultas.Size = new System.Drawing.Size(66, 13);
+            this.lblDiagnosticoConsultas.TabIndex = 10;
+            this.lblDiagnosticoConsultas.Text = "Diagnostico:";
             // 
             // panelFechaConsultas
             // 
@@ -412,256 +730,58 @@
             this.panelFechaConsultas.Size = new System.Drawing.Size(50, 44);
             this.panelFechaConsultas.TabIndex = 12;
             // 
-            // panelFechaConsultas2
+            // dTPFechaConsultas
             // 
-            this.panelFechaConsultas2.Controls.Add(this.dTPFechaConsultas2);
-            this.panelFechaConsultas2.Controls.Add(this.lblFechaConsultas2);
-            this.panelFechaConsultas2.Location = new System.Drawing.Point(227, 53);
-            this.panelFechaConsultas2.Name = "panelFechaConsultas2";
-            this.panelFechaConsultas2.Size = new System.Drawing.Size(50, 44);
-            this.panelFechaConsultas2.TabIndex = 13;
+            this.dTPFechaConsultas.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dTPFechaConsultas.Location = new System.Drawing.Point(6, 20);
+            this.dTPFechaConsultas.Name = "dTPFechaConsultas";
+            this.dTPFechaConsultas.Size = new System.Drawing.Size(37, 20);
+            this.dTPFechaConsultas.TabIndex = 11;
             // 
-            // dTPFechaConsultas2
+            // lblFechaConsultas
             // 
-            this.dTPFechaConsultas2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dTPFechaConsultas2.Location = new System.Drawing.Point(6, 20);
-            this.dTPFechaConsultas2.Name = "dTPFechaConsultas2";
-            this.dTPFechaConsultas2.Size = new System.Drawing.Size(37, 20);
-            this.dTPFechaConsultas2.TabIndex = 11;
+            this.lblFechaConsultas.AutoSize = true;
+            this.lblFechaConsultas.Location = new System.Drawing.Point(3, 3);
+            this.lblFechaConsultas.Name = "lblFechaConsultas";
+            this.lblFechaConsultas.Size = new System.Drawing.Size(40, 13);
+            this.lblFechaConsultas.TabIndex = 10;
+            this.lblFechaConsultas.Text = "Fecha:";
             // 
-            // lblFechaConsultas2
+            // lblConsultas
             // 
-            this.lblFechaConsultas2.AutoSize = true;
-            this.lblFechaConsultas2.Location = new System.Drawing.Point(3, 3);
-            this.lblFechaConsultas2.Name = "lblFechaConsultas2";
-            this.lblFechaConsultas2.Size = new System.Drawing.Size(40, 13);
-            this.lblFechaConsultas2.TabIndex = 10;
-            this.lblFechaConsultas2.Text = "Fecha:";
+            this.lblConsultas.AutoSize = true;
+            this.lblConsultas.Location = new System.Drawing.Point(288, 99);
+            this.lblConsultas.Name = "lblConsultas";
+            this.lblConsultas.Size = new System.Drawing.Size(53, 13);
+            this.lblConsultas.TabIndex = 2;
+            this.lblConsultas.Text = "Consultas";
             // 
-            // panelFechaConsultas3
+            // btnProgramarVacuna
             // 
-            this.panelFechaConsultas3.Controls.Add(this.dTPFechaConsultas3);
-            this.panelFechaConsultas3.Controls.Add(this.lblFechaConsultas3);
-            this.panelFechaConsultas3.Location = new System.Drawing.Point(227, 103);
-            this.panelFechaConsultas3.Name = "panelFechaConsultas3";
-            this.panelFechaConsultas3.Size = new System.Drawing.Size(50, 44);
-            this.panelFechaConsultas3.TabIndex = 13;
+            this.btnProgramarVacuna.Location = new System.Drawing.Point(110, 322);
+            this.btnProgramarVacuna.Name = "btnProgramarVacuna";
+            this.btnProgramarVacuna.Size = new System.Drawing.Size(75, 44);
+            this.btnProgramarVacuna.TabIndex = 5;
+            this.btnProgramarVacuna.Text = "Programar Vacuna";
+            this.btnProgramarVacuna.UseVisualStyleBackColor = true;
             // 
-            // dTPFechaConsultas3
+            // btnEditarHistorialMedico
             // 
-            this.dTPFechaConsultas3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dTPFechaConsultas3.Location = new System.Drawing.Point(6, 20);
-            this.dTPFechaConsultas3.Name = "dTPFechaConsultas3";
-            this.dTPFechaConsultas3.Size = new System.Drawing.Size(37, 20);
-            this.dTPFechaConsultas3.TabIndex = 11;
+            this.btnEditarHistorialMedico.Location = new System.Drawing.Point(446, 396);
+            this.btnEditarHistorialMedico.Name = "btnEditarHistorialMedico";
+            this.btnEditarHistorialMedico.Size = new System.Drawing.Size(75, 23);
+            this.btnEditarHistorialMedico.TabIndex = 8;
+            this.btnEditarHistorialMedico.Text = "Editar";
+            this.btnEditarHistorialMedico.UseVisualStyleBackColor = true;
             // 
-            // lblFechaConsultas3
+            // btnVolverInicio
             // 
-            this.lblFechaConsultas3.AutoSize = true;
-            this.lblFechaConsultas3.Location = new System.Drawing.Point(3, 3);
-            this.lblFechaConsultas3.Name = "lblFechaConsultas3";
-            this.lblFechaConsultas3.Size = new System.Drawing.Size(40, 13);
-            this.lblFechaConsultas3.TabIndex = 10;
-            this.lblFechaConsultas3.Text = "Fecha:";
-            // 
-            // panelFechaConsultas4
-            // 
-            this.panelFechaConsultas4.Controls.Add(this.dTPFechaConsultas4);
-            this.panelFechaConsultas4.Controls.Add(this.lblFechaConsultas4);
-            this.panelFechaConsultas4.Location = new System.Drawing.Point(227, 153);
-            this.panelFechaConsultas4.Name = "panelFechaConsultas4";
-            this.panelFechaConsultas4.Size = new System.Drawing.Size(50, 44);
-            this.panelFechaConsultas4.TabIndex = 13;
-            // 
-            // dTPFechaConsultas4
-            // 
-            this.dTPFechaConsultas4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dTPFechaConsultas4.Location = new System.Drawing.Point(6, 20);
-            this.dTPFechaConsultas4.Name = "dTPFechaConsultas4";
-            this.dTPFechaConsultas4.Size = new System.Drawing.Size(37, 20);
-            this.dTPFechaConsultas4.TabIndex = 11;
-            // 
-            // lblFechaConsultas4
-            // 
-            this.lblFechaConsultas4.AutoSize = true;
-            this.lblFechaConsultas4.Location = new System.Drawing.Point(3, 3);
-            this.lblFechaConsultas4.Name = "lblFechaConsultas4";
-            this.lblFechaConsultas4.Size = new System.Drawing.Size(40, 13);
-            this.lblFechaConsultas4.TabIndex = 10;
-            this.lblFechaConsultas4.Text = "Fecha:";
-            // 
-            // panelContenedorVacunas
-            // 
-            this.panelContenedorVacunas.Controls.Add(this.cBoxEstadoVacunas);
-            this.panelContenedorVacunas.Controls.Add(this.lblEstadoVacuna);
-            this.panelContenedorVacunas.Controls.Add(this.tBoxNombreVacuna);
-            this.panelContenedorVacunas.Controls.Add(this.lblNombreVacuna);
-            this.panelContenedorVacunas.Location = new System.Drawing.Point(3, 3);
-            this.panelContenedorVacunas.Name = "panelContenedorVacunas";
-            this.panelContenedorVacunas.Size = new System.Drawing.Size(99, 44);
-            this.panelContenedorVacunas.TabIndex = 0;
-            // 
-            // panelContenedorVacunas2
-            // 
-            this.panelContenedorVacunas2.Controls.Add(this.cBoxEstadoVacunas2);
-            this.panelContenedorVacunas2.Controls.Add(this.tBoxNombreVacuna2);
-            this.panelContenedorVacunas2.Controls.Add(this.lblEstadoVacuna2);
-            this.panelContenedorVacunas2.Controls.Add(this.lblNombreVacuna2);
-            this.panelContenedorVacunas2.Location = new System.Drawing.Point(3, 53);
-            this.panelContenedorVacunas2.Name = "panelContenedorVacunas2";
-            this.panelContenedorVacunas2.Size = new System.Drawing.Size(99, 44);
-            this.panelContenedorVacunas2.TabIndex = 1;
-            // 
-            // panelContenedorVacunas3
-            // 
-            this.panelContenedorVacunas3.Controls.Add(this.cBoxEstadoVacunas3);
-            this.panelContenedorVacunas3.Controls.Add(this.tBoxNombreVacuna3);
-            this.panelContenedorVacunas3.Controls.Add(this.lblNombreVacuna3);
-            this.panelContenedorVacunas3.Controls.Add(this.lblEstadoVacuna3);
-            this.panelContenedorVacunas3.Location = new System.Drawing.Point(3, 103);
-            this.panelContenedorVacunas3.Name = "panelContenedorVacunas3";
-            this.panelContenedorVacunas3.Size = new System.Drawing.Size(99, 44);
-            this.panelContenedorVacunas3.TabIndex = 2;
-            // 
-            // panelContenedorVacunas4
-            // 
-            this.panelContenedorVacunas4.Controls.Add(this.cBoxEstadoVacunas4);
-            this.panelContenedorVacunas4.Controls.Add(this.tBoxNombreVacuna4);
-            this.panelContenedorVacunas4.Controls.Add(this.lblEstadoVacuna4);
-            this.panelContenedorVacunas4.Controls.Add(this.lblNombreVacuna4);
-            this.panelContenedorVacunas4.Location = new System.Drawing.Point(3, 153);
-            this.panelContenedorVacunas4.Name = "panelContenedorVacunas4";
-            this.panelContenedorVacunas4.Size = new System.Drawing.Size(99, 45);
-            this.panelContenedorVacunas4.TabIndex = 3;
-            // 
-            // panelFechaVacunas
-            // 
-            this.panelFechaVacunas.Controls.Add(this.dTPFechaVacunas);
-            this.panelFechaVacunas.Controls.Add(this.lblFechaVacunas);
-            this.panelFechaVacunas.Location = new System.Drawing.Point(108, 3);
-            this.panelFechaVacunas.Name = "panelFechaVacunas";
-            this.panelFechaVacunas.Size = new System.Drawing.Size(97, 44);
-            this.panelFechaVacunas.TabIndex = 13;
-            // 
-            // dTPFechaVacunas
-            // 
-            this.dTPFechaVacunas.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dTPFechaVacunas.Location = new System.Drawing.Point(6, 20);
-            this.dTPFechaVacunas.Name = "dTPFechaVacunas";
-            this.dTPFechaVacunas.Size = new System.Drawing.Size(85, 20);
-            this.dTPFechaVacunas.TabIndex = 11;
-            // 
-            // lblFechaVacunas
-            // 
-            this.lblFechaVacunas.AutoSize = true;
-            this.lblFechaVacunas.Location = new System.Drawing.Point(3, 3);
-            this.lblFechaVacunas.Name = "lblFechaVacunas";
-            this.lblFechaVacunas.Size = new System.Drawing.Size(40, 13);
-            this.lblFechaVacunas.TabIndex = 10;
-            this.lblFechaVacunas.Text = "Fecha:";
-            // 
-            // panelFechaVacunas2
-            // 
-            this.panelFechaVacunas2.Controls.Add(this.dTPFechaVacunas2);
-            this.panelFechaVacunas2.Controls.Add(this.lblFechaVacunas2);
-            this.panelFechaVacunas2.Location = new System.Drawing.Point(108, 53);
-            this.panelFechaVacunas2.Name = "panelFechaVacunas2";
-            this.panelFechaVacunas2.Size = new System.Drawing.Size(94, 44);
-            this.panelFechaVacunas2.TabIndex = 14;
-            // 
-            // dTPFechaVacunas2
-            // 
-            this.dTPFechaVacunas2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dTPFechaVacunas2.Location = new System.Drawing.Point(6, 20);
-            this.dTPFechaVacunas2.Name = "dTPFechaVacunas2";
-            this.dTPFechaVacunas2.Size = new System.Drawing.Size(85, 20);
-            this.dTPFechaVacunas2.TabIndex = 11;
-            // 
-            // lblFechaVacunas2
-            // 
-            this.lblFechaVacunas2.AutoSize = true;
-            this.lblFechaVacunas2.Location = new System.Drawing.Point(3, 3);
-            this.lblFechaVacunas2.Name = "lblFechaVacunas2";
-            this.lblFechaVacunas2.Size = new System.Drawing.Size(40, 13);
-            this.lblFechaVacunas2.TabIndex = 10;
-            this.lblFechaVacunas2.Text = "Fecha:";
-            // 
-            // panelFechaVacunas3
-            // 
-            this.panelFechaVacunas3.Controls.Add(this.dTPFechaVacunas3);
-            this.panelFechaVacunas3.Controls.Add(this.lblFechaVacunas3);
-            this.panelFechaVacunas3.Location = new System.Drawing.Point(108, 103);
-            this.panelFechaVacunas3.Name = "panelFechaVacunas3";
-            this.panelFechaVacunas3.Size = new System.Drawing.Size(94, 44);
-            this.panelFechaVacunas3.TabIndex = 15;
-            // 
-            // dTPFechaVacunas3
-            // 
-            this.dTPFechaVacunas3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dTPFechaVacunas3.Location = new System.Drawing.Point(6, 20);
-            this.dTPFechaVacunas3.Name = "dTPFechaVacunas3";
-            this.dTPFechaVacunas3.Size = new System.Drawing.Size(85, 20);
-            this.dTPFechaVacunas3.TabIndex = 11;
-            // 
-            // lblFechaVacunas3
-            // 
-            this.lblFechaVacunas3.AutoSize = true;
-            this.lblFechaVacunas3.Location = new System.Drawing.Point(3, 3);
-            this.lblFechaVacunas3.Name = "lblFechaVacunas3";
-            this.lblFechaVacunas3.Size = new System.Drawing.Size(40, 13);
-            this.lblFechaVacunas3.TabIndex = 10;
-            this.lblFechaVacunas3.Text = "Fecha:";
-            // 
-            // panelFechaVacunas4
-            // 
-            this.panelFechaVacunas4.Controls.Add(this.dTPFechaVacunas4);
-            this.panelFechaVacunas4.Controls.Add(this.lblFechaVacunasl4);
-            this.panelFechaVacunas4.Location = new System.Drawing.Point(108, 153);
-            this.panelFechaVacunas4.Name = "panelFechaVacunas4";
-            this.panelFechaVacunas4.Size = new System.Drawing.Size(94, 44);
-            this.panelFechaVacunas4.TabIndex = 16;
-            // 
-            // dTPFechaVacunas4
-            // 
-            this.dTPFechaVacunas4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dTPFechaVacunas4.Location = new System.Drawing.Point(6, 20);
-            this.dTPFechaVacunas4.Name = "dTPFechaVacunas4";
-            this.dTPFechaVacunas4.Size = new System.Drawing.Size(85, 20);
-            this.dTPFechaVacunas4.TabIndex = 11;
-            // 
-            // lblFechaVacunasl4
-            // 
-            this.lblFechaVacunasl4.AutoSize = true;
-            this.lblFechaVacunasl4.Location = new System.Drawing.Point(3, 3);
-            this.lblFechaVacunasl4.Name = "lblFechaVacunasl4";
-            this.lblFechaVacunasl4.Size = new System.Drawing.Size(40, 13);
-            this.lblFechaVacunasl4.TabIndex = 10;
-            this.lblFechaVacunasl4.Text = "Fecha:";
-            // 
-            // lblNombreVacuna
-            // 
-            this.lblNombreVacuna.AutoSize = true;
-            this.lblNombreVacuna.Location = new System.Drawing.Point(3, 6);
-            this.lblNombreVacuna.Name = "lblNombreVacuna";
-            this.lblNombreVacuna.Size = new System.Drawing.Size(47, 13);
-            this.lblNombreVacuna.TabIndex = 0;
-            this.lblNombreVacuna.Text = "Vacuna:";
-            // 
-            // tBoxNombreVacuna
-            // 
-            this.tBoxNombreVacuna.Location = new System.Drawing.Point(46, 3);
-            this.tBoxNombreVacuna.Name = "tBoxNombreVacuna";
-            this.tBoxNombreVacuna.Size = new System.Drawing.Size(44, 20);
-            this.tBoxNombreVacuna.TabIndex = 1;
-            // 
-            // lblEstadoVacuna
-            // 
-            this.lblEstadoVacuna.AutoSize = true;
-            this.lblEstadoVacuna.Location = new System.Drawing.Point(4, 26);
-            this.lblEstadoVacuna.Name = "lblEstadoVacuna";
-            this.lblEstadoVacuna.Size = new System.Drawing.Size(40, 13);
-            this.lblEstadoVacuna.TabIndex = 10;
-            this.lblEstadoVacuna.Text = "Estado";
+            this.btnVolverInicio.Location = new System.Drawing.Point(16, 16);
+            this.btnVolverInicio.Name = "btnVolverInicio";
+            this.btnVolverInicio.Size = new System.Drawing.Size(75, 23);
+            this.btnVolverInicio.TabIndex = 9;
+            this.btnVolverInicio.Text = "Volver";
+            this.btnVolverInicio.UseVisualStyleBackColor = true;
             // 
             // vScrollBarVacunas
             // 
@@ -677,129 +797,21 @@
             this.vScrollBarConsultas.Size = new System.Drawing.Size(10, 199);
             this.vScrollBarConsultas.TabIndex = 11;
             // 
-            // cBoxEstadoVacunas
+            // label1
             // 
-            this.cBoxEstadoVacunas.FormattingEnabled = true;
-            this.cBoxEstadoVacunas.Items.AddRange(new object[] {
-            "Aplicada",
-            "Sin Aplicar"});
-            this.cBoxEstadoVacunas.Location = new System.Drawing.Point(46, 24);
-            this.cBoxEstadoVacunas.Name = "cBoxEstadoVacunas";
-            this.cBoxEstadoVacunas.Size = new System.Drawing.Size(44, 21);
-            this.cBoxEstadoVacunas.TabIndex = 12;
-            // 
-            // cBoxEstadoVacunas2
-            // 
-            this.cBoxEstadoVacunas2.FormattingEnabled = true;
-            this.cBoxEstadoVacunas2.Items.AddRange(new object[] {
-            "Aplicada",
-            "Sin Aplicar"});
-            this.cBoxEstadoVacunas2.Location = new System.Drawing.Point(46, 24);
-            this.cBoxEstadoVacunas2.Name = "cBoxEstadoVacunas2";
-            this.cBoxEstadoVacunas2.Size = new System.Drawing.Size(44, 21);
-            this.cBoxEstadoVacunas2.TabIndex = 16;
-            // 
-            // lblEstadoVacuna2
-            // 
-            this.lblEstadoVacuna2.AutoSize = true;
-            this.lblEstadoVacuna2.Location = new System.Drawing.Point(4, 26);
-            this.lblEstadoVacuna2.Name = "lblEstadoVacuna2";
-            this.lblEstadoVacuna2.Size = new System.Drawing.Size(40, 13);
-            this.lblEstadoVacuna2.TabIndex = 15;
-            this.lblEstadoVacuna2.Text = "Estado";
-            // 
-            // tBoxNombreVacuna2
-            // 
-            this.tBoxNombreVacuna2.Location = new System.Drawing.Point(46, 3);
-            this.tBoxNombreVacuna2.Name = "tBoxNombreVacuna2";
-            this.tBoxNombreVacuna2.Size = new System.Drawing.Size(44, 20);
-            this.tBoxNombreVacuna2.TabIndex = 14;
-            // 
-            // lblNombreVacuna2
-            // 
-            this.lblNombreVacuna2.AutoSize = true;
-            this.lblNombreVacuna2.Location = new System.Drawing.Point(3, 6);
-            this.lblNombreVacuna2.Name = "lblNombreVacuna2";
-            this.lblNombreVacuna2.Size = new System.Drawing.Size(47, 13);
-            this.lblNombreVacuna2.TabIndex = 13;
-            this.lblNombreVacuna2.Text = "Vacuna:";
-            // 
-            // lblNombreVacuna3
-            // 
-            this.lblNombreVacuna3.AutoSize = true;
-            this.lblNombreVacuna3.Location = new System.Drawing.Point(3, 3);
-            this.lblNombreVacuna3.Name = "lblNombreVacuna3";
-            this.lblNombreVacuna3.Size = new System.Drawing.Size(47, 13);
-            this.lblNombreVacuna3.TabIndex = 13;
-            this.lblNombreVacuna3.Text = "Vacuna:";
-            // 
-            // lblEstadoVacuna3
-            // 
-            this.lblEstadoVacuna3.AutoSize = true;
-            this.lblEstadoVacuna3.Location = new System.Drawing.Point(4, 23);
-            this.lblEstadoVacuna3.Name = "lblEstadoVacuna3";
-            this.lblEstadoVacuna3.Size = new System.Drawing.Size(40, 13);
-            this.lblEstadoVacuna3.TabIndex = 15;
-            this.lblEstadoVacuna3.Text = "Estado";
-            // 
-            // tBoxNombreVacuna3
-            // 
-            this.tBoxNombreVacuna3.Location = new System.Drawing.Point(46, 0);
-            this.tBoxNombreVacuna3.Name = "tBoxNombreVacuna3";
-            this.tBoxNombreVacuna3.Size = new System.Drawing.Size(44, 20);
-            this.tBoxNombreVacuna3.TabIndex = 14;
-            // 
-            // cBoxEstadoVacunas3
-            // 
-            this.cBoxEstadoVacunas3.FormattingEnabled = true;
-            this.cBoxEstadoVacunas3.Items.AddRange(new object[] {
-            "Aplicada",
-            "Sin Aplicar"});
-            this.cBoxEstadoVacunas3.Location = new System.Drawing.Point(46, 21);
-            this.cBoxEstadoVacunas3.Name = "cBoxEstadoVacunas3";
-            this.cBoxEstadoVacunas3.Size = new System.Drawing.Size(44, 21);
-            this.cBoxEstadoVacunas3.TabIndex = 16;
-            // 
-            // lblEstadoVacuna4
-            // 
-            this.lblEstadoVacuna4.AutoSize = true;
-            this.lblEstadoVacuna4.Location = new System.Drawing.Point(4, 23);
-            this.lblEstadoVacuna4.Name = "lblEstadoVacuna4";
-            this.lblEstadoVacuna4.Size = new System.Drawing.Size(40, 13);
-            this.lblEstadoVacuna4.TabIndex = 15;
-            this.lblEstadoVacuna4.Text = "Estado";
-            // 
-            // lblNombreVacuna4
-            // 
-            this.lblNombreVacuna4.AutoSize = true;
-            this.lblNombreVacuna4.Location = new System.Drawing.Point(3, 3);
-            this.lblNombreVacuna4.Name = "lblNombreVacuna4";
-            this.lblNombreVacuna4.Size = new System.Drawing.Size(47, 13);
-            this.lblNombreVacuna4.TabIndex = 13;
-            this.lblNombreVacuna4.Text = "Vacuna:";
-            // 
-            // tBoxNombreVacuna4
-            // 
-            this.tBoxNombreVacuna4.Location = new System.Drawing.Point(46, 0);
-            this.tBoxNombreVacuna4.Name = "tBoxNombreVacuna4";
-            this.tBoxNombreVacuna4.Size = new System.Drawing.Size(44, 20);
-            this.tBoxNombreVacuna4.TabIndex = 14;
-            // 
-            // cBoxEstadoVacunas4
-            // 
-            this.cBoxEstadoVacunas4.FormattingEnabled = true;
-            this.cBoxEstadoVacunas4.Items.AddRange(new object[] {
-            "Aplicada",
-            "Sin Aplicar"});
-            this.cBoxEstadoVacunas4.Location = new System.Drawing.Point(46, 21);
-            this.cBoxEstadoVacunas4.Name = "cBoxEstadoVacunas4";
-            this.cBoxEstadoVacunas4.Size = new System.Drawing.Size(44, 21);
-            this.cBoxEstadoVacunas4.TabIndex = 16;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(128, 59);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(344, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "No Borrar este UC (maqueta para cuando tenga que agregar consultas)";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // HistorialMedico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.vScrollBarConsultas);
             this.Controls.Add(this.vScrollBarVacunas);
             this.Controls.Add(this.btnVolverInicio);
@@ -812,23 +824,14 @@
             this.Name = "HistorialMedico";
             this.Size = new System.Drawing.Size(600, 450);
             this.tLPVacunas.ResumeLayout(false);
-            this.tLPConsultas.ResumeLayout(false);
-            this.panelConsultas.ResumeLayout(false);
-            this.panelConsultas.PerformLayout();
-            this.panelConsultas2.ResumeLayout(false);
-            this.panelConsultas2.PerformLayout();
-            this.panelConsultas3.ResumeLayout(false);
-            this.panelConsultas3.PerformLayout();
-            this.panelConsultas4.ResumeLayout(false);
-            this.panelConsultas4.PerformLayout();
-            this.panelFechaConsultas.ResumeLayout(false);
-            this.panelFechaConsultas.PerformLayout();
-            this.panelFechaConsultas2.ResumeLayout(false);
-            this.panelFechaConsultas2.PerformLayout();
-            this.panelFechaConsultas3.ResumeLayout(false);
-            this.panelFechaConsultas3.PerformLayout();
-            this.panelFechaConsultas4.ResumeLayout(false);
-            this.panelFechaConsultas4.PerformLayout();
+            this.panelFechaVacunas4.ResumeLayout(false);
+            this.panelFechaVacunas4.PerformLayout();
+            this.panelFechaVacunas3.ResumeLayout(false);
+            this.panelFechaVacunas3.PerformLayout();
+            this.panelFechaVacunas2.ResumeLayout(false);
+            this.panelFechaVacunas2.PerformLayout();
+            this.panelFechaVacunas.ResumeLayout(false);
+            this.panelFechaVacunas.PerformLayout();
             this.panelContenedorVacunas.ResumeLayout(false);
             this.panelContenedorVacunas.PerformLayout();
             this.panelContenedorVacunas2.ResumeLayout(false);
@@ -837,14 +840,23 @@
             this.panelContenedorVacunas3.PerformLayout();
             this.panelContenedorVacunas4.ResumeLayout(false);
             this.panelContenedorVacunas4.PerformLayout();
-            this.panelFechaVacunas.ResumeLayout(false);
-            this.panelFechaVacunas.PerformLayout();
-            this.panelFechaVacunas2.ResumeLayout(false);
-            this.panelFechaVacunas2.PerformLayout();
-            this.panelFechaVacunas3.ResumeLayout(false);
-            this.panelFechaVacunas3.PerformLayout();
-            this.panelFechaVacunas4.ResumeLayout(false);
-            this.panelFechaVacunas4.PerformLayout();
+            this.tLPConsultas.ResumeLayout(false);
+            this.panelFechaConsultas4.ResumeLayout(false);
+            this.panelFechaConsultas4.PerformLayout();
+            this.panelFechaConsultas3.ResumeLayout(false);
+            this.panelFechaConsultas3.PerformLayout();
+            this.panelFechaConsultas2.ResumeLayout(false);
+            this.panelFechaConsultas2.PerformLayout();
+            this.panelConsultas4.ResumeLayout(false);
+            this.panelConsultas4.PerformLayout();
+            this.panelConsultas3.ResumeLayout(false);
+            this.panelConsultas3.PerformLayout();
+            this.panelConsultas2.ResumeLayout(false);
+            this.panelConsultas2.PerformLayout();
+            this.panelConsultas.ResumeLayout(false);
+            this.panelConsultas.PerformLayout();
+            this.panelFechaConsultas.ResumeLayout(false);
+            this.panelFechaConsultas.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -925,5 +937,6 @@
         private System.Windows.Forms.TextBox tBoxNombreVacuna4;
         private System.Windows.Forms.Label lblEstadoVacuna4;
         private System.Windows.Forms.Label lblNombreVacuna4;
+        private System.Windows.Forms.Label label1;
     }
 }

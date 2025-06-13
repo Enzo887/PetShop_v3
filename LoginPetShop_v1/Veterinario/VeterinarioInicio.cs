@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BE;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,17 +14,102 @@ namespace LoginPetShop_v1.Veterinario
 {
     public partial class VeterinarioInicio : Form
     {
+        //instancia los UserControl
+        private UC_CrearFichaMascota crearFichaMascota;
+        private UC_EditarFichaMascota editarFichaMascota;
+        private UC_EditarHistorialMedico editarHistorialMedico;
+        private UC_GestionarStock gestionarStock;
+        private UC_AgregarProducto agregarProducto;
+        
         
         public VeterinarioInicio()
         {
             InitializeComponent();
 
+            crearFichaMascota = new UC_CrearFichaMascota();
+            editarFichaMascota = new UC_EditarFichaMascota();
+            editarHistorialMedico = new UC_EditarHistorialMedico();
+            gestionarStock = new UC_GestionarStock();
+            agregarProducto = new UC_AgregarProducto(gestionarStock);
+
+            crearFichaMascota.Dock = DockStyle.Fill;
+            editarFichaMascota.Dock = DockStyle .Fill;
+            editarHistorialMedico.Dock = DockStyle .Fill;
+            gestionarStock.Dock = DockStyle .Fill;
+            agregarProducto.Dock = DockStyle .Fill;
+            //agrega los UserControl
+            panelContenedorVeterinario.Controls.Add(crearFichaMascota);
+            panelContenedorVeterinario.Controls.Add(editarFichaMascota);
+            panelContenedorVeterinario.Controls.Add(editarHistorialMedico);
+            panelContenedorVeterinario.Controls.Add(gestionarStock);
+            panelContenedorVeterinario.Controls.Add(agregarProducto);
+
+            crearFichaMascota.Visible = false;
+            editarFichaMascota.Visible = false;
+            editarHistorialMedico.Visible = false;
+            gestionarStock.Visible = false;
+            agregarProducto.Visible = false;
+
+            /*panelContenedorVeterinario.AutoScroll = false;
+            tableLayoutPanelFichas.Dock = DockStyle.Top;
+            vScrollBarFichas.Dock = DockStyle.Right;*/
+
         }
-        private void CargarUserControl(UserControl control)
+        public void MostrarCreacionFicha() 
         {
-            panelContenedorVeterinario.Controls.Clear();           // Limpia el contenido actual
-            control.Dock = DockStyle.Fill;             // Ocupa todo el panel
-            panelContenedorVeterinario.Controls.Add(control);      // Agrega el nuevo
+            crearFichaMascota.Visible = true;
+            crearFichaMascota.BringToFront();
+            editarFichaMascota.Visible = false;
+            editarHistorialMedico.Visible = false;
+            gestionarStock.Visible = false;
+            agregarProducto.Visible = false;
+        
+        }
+        public void MostrarEdicionFicha(Mascota mascota, Cliente cliente)
+        {
+            editarFichaMascota.CargarMascota(mascota, cliente);
+
+            crearFichaMascota.Visible = false;
+            editarFichaMascota.Visible = true;
+            editarFichaMascota.BringToFront();
+            editarHistorialMedico.Visible = false;
+            gestionarStock.Visible = false;
+            agregarProducto.Visible = false;
+        }
+        public void MostrarEdicionHistorial()
+        {
+            crearFichaMascota.Visible = false;
+            editarFichaMascota.Visible = false;
+            editarHistorialMedico.Visible = true;
+            editarHistorialMedico.BringToFront();
+            gestionarStock.Visible = false;
+            agregarProducto.Visible = false;
+        }
+        public void MostrarGestionStock()
+        {
+            crearFichaMascota.Visible = false;
+            editarFichaMascota.Visible = false;
+            editarHistorialMedico.Visible = false;
+            gestionarStock.Visible = true;
+            gestionarStock.BringToFront();
+            agregarProducto.Visible = false;
+        }
+        public void MostrarAgregarProducto()
+        {
+            crearFichaMascota.Visible = false;
+            editarFichaMascota.Visible = false;
+            editarHistorialMedico.Visible = false;
+            gestionarStock.Visible = false;
+            agregarProducto.Visible = true;
+            agregarProducto.BringToFront();    
+        }
+        public void MostrarPrincipal() 
+        {
+            crearFichaMascota.Visible = false;
+            editarFichaMascota.Visible = false;
+            editarHistorialMedico.Visible = false;
+            gestionarStock.Visible = false;
+            agregarProducto.Visible = false;
         }
         private void VeterinarioInicio_Load(object sender, EventArgs e)
         {
@@ -38,11 +124,7 @@ namespace LoginPetShop_v1.Veterinario
 
         private void BtnCrearFicha_Click(object sender, EventArgs e)
         {
-            CargarUserControl(new CrearFichaMascota());
-
-           
-
-
+            MostrarCreacionFicha();
 
         }
 
@@ -64,11 +146,53 @@ namespace LoginPetShop_v1.Veterinario
 
         private void btnStock_Click(object sender, EventArgs e)
         {
-            CargarUserControl(new VeterinarioStock());
+           MostrarGestionStock();
         }
 
         private void panelContenedorVeterinario_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        public void AgregarFila(int idMascota, string nombreMascota)
+        {
+
+            dataGridViewFichas.Rows.Add(idMascota, nombreMascota, "ver");
+           
+        }
+
+        private void tBoxBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dataGridViewFichas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //toma el nombre de la celda de al lado para pasarlo como parametro
+            string nombreMascota = dataGridViewFichas.Rows[e.RowIndex].Cells["nombreMascota"].Value.ToString();
+            //hay que agregar la solicitud de parametro de la edicion de ficha
+            //MostrarEdicionFicha();
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+           
+            if (tBoxBusqueda.Text == null) 
+            {
+                MessageBox.Show("Escriba el nombre de una mascota para buscar");
+            }
+            string texto = tBoxBusqueda.Text.ToLower();
+            foreach (DataGridViewRow fila in dataGridViewFichas.Rows) 
+            {
+                if (fila.IsNewRow) continue;
+
+                string nombre = fila.Cells["NombreMascota"].Value.ToString().ToLower();
+
+                // Mostrar solo si contiene el texto buscado
+                fila.Visible = string.IsNullOrEmpty(texto) || nombre.Contains(texto);
+            }
+            tBoxBusqueda.Clear();
 
         }
     }
