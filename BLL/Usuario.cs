@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public abstract class Usuario
+    public class Usuario
     {
         public BE.Usuario Loguearse(string NombreUsuario, string Clave)
         {

@@ -1,4 +1,5 @@
 ﻿using System;
+
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -55,6 +56,23 @@ namespace BE
 			get { return _raza; }
 			set { _raza = value; }
 		}
+
+		private string _sexo;
+
+		public string Sexo
+		{
+			get { return _sexo; }
+			set { _sexo = value; }
+		}
+		private int _id;
+
+		public int ID
+		{
+			get { return _id; }
+			set { _id = value; }
+		}
+
+
 
 	}
 }
