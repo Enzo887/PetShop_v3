@@ -18,8 +18,11 @@ namespace LoginPetShop_v1.Veterinario
         private UC_CrearFichaMascota crearFichaMascota;
         private UC_EditarFichaMascota editarFichaMascota;
         private UC_EditarHistorialMedico editarHistorialMedico;
+        private UC_AgregarConsulta agregarConsulta;
         private UC_GestionarStock gestionarStock;
         private UC_AgregarProducto agregarProducto;
+        private UC_EditarProducto editarProducto;
+        private UC_ProgramarVacuna programarVacuna;
         
         
         public VeterinarioInicio()
@@ -31,28 +34,34 @@ namespace LoginPetShop_v1.Veterinario
             editarHistorialMedico = new UC_EditarHistorialMedico();
             gestionarStock = new UC_GestionarStock();
             agregarProducto = new UC_AgregarProducto(gestionarStock);
+            editarProducto = new UC_EditarProducto(gestionarStock);
+            agregarConsulta = new UC_AgregarConsulta(editarHistorialMedico);
+            programarVacuna= new UC_ProgramarVacuna(editarHistorialMedico);
 
             crearFichaMascota.Dock = DockStyle.Fill;
             editarFichaMascota.Dock = DockStyle .Fill;
             editarHistorialMedico.Dock = DockStyle .Fill;
             gestionarStock.Dock = DockStyle .Fill;
             agregarProducto.Dock = DockStyle .Fill;
+            agregarConsulta.Dock = DockStyle .Fill;
+            programarVacuna.Dock = DockStyle .Fill;
             //agrega los UserControl
             panelContenedorVeterinario.Controls.Add(crearFichaMascota);
             panelContenedorVeterinario.Controls.Add(editarFichaMascota);
             panelContenedorVeterinario.Controls.Add(editarHistorialMedico);
             panelContenedorVeterinario.Controls.Add(gestionarStock);
             panelContenedorVeterinario.Controls.Add(agregarProducto);
+            panelContenedorVeterinario.Controls.Add (agregarConsulta);
+            panelContenedorVeterinario.Controls.Add(programarVacuna);
 
             crearFichaMascota.Visible = false;
             editarFichaMascota.Visible = false;
             editarHistorialMedico.Visible = false;
             gestionarStock.Visible = false;
             agregarProducto.Visible = false;
+            agregarConsulta.Visible = false ;
+            programarVacuna.Visible = false;
 
-            /*panelContenedorVeterinario.AutoScroll = false;
-            tableLayoutPanelFichas.Dock = DockStyle.Top;
-            vScrollBarFichas.Dock = DockStyle.Right;*/
 
         }
         public void MostrarCreacionFicha() 
@@ -63,6 +72,8 @@ namespace LoginPetShop_v1.Veterinario
             editarHistorialMedico.Visible = false;
             gestionarStock.Visible = false;
             agregarProducto.Visible = false;
+            agregarConsulta.Visible=false;
+            programarVacuna.Visible = false;    
         
         }
         public void MostrarEdicionFicha(Mascota mascota, Cliente cliente)
@@ -75,6 +86,8 @@ namespace LoginPetShop_v1.Veterinario
             editarHistorialMedico.Visible = false;
             gestionarStock.Visible = false;
             agregarProducto.Visible = false;
+            agregarConsulta.Visible = false;
+            programarVacuna.Visible = false;
         }
         public void MostrarEdicionHistorial()
         {
@@ -84,6 +97,8 @@ namespace LoginPetShop_v1.Veterinario
             editarHistorialMedico.BringToFront();
             gestionarStock.Visible = false;
             agregarProducto.Visible = false;
+            agregarConsulta.Visible = false;
+            programarVacuna.Visible = false;
         }
         public void MostrarGestionStock()
         {
@@ -93,6 +108,8 @@ namespace LoginPetShop_v1.Veterinario
             gestionarStock.Visible = true;
             gestionarStock.BringToFront();
             agregarProducto.Visible = false;
+            agregarConsulta.Visible = false;
+            programarVacuna.Visible = false;
         }
         public void MostrarAgregarProducto()
         {
@@ -101,7 +118,9 @@ namespace LoginPetShop_v1.Veterinario
             editarHistorialMedico.Visible = false;
             gestionarStock.Visible = false;
             agregarProducto.Visible = true;
-            agregarProducto.BringToFront();    
+            agregarProducto.BringToFront();
+            agregarConsulta.Visible = false;
+            programarVacuna.Visible = false;
         }
         public void MostrarPrincipal() 
         {
@@ -110,6 +129,28 @@ namespace LoginPetShop_v1.Veterinario
             editarHistorialMedico.Visible = false;
             gestionarStock.Visible = false;
             agregarProducto.Visible = false;
+            agregarConsulta.Visible = false;
+            programarVacuna.Visible = false;
+        }
+        public void MostrarAgregarConsulta()
+        {
+            crearFichaMascota.Visible = false;
+            editarFichaMascota.Visible = false;
+            editarHistorialMedico.Visible = false;
+            gestionarStock.Visible = false;
+            agregarProducto.Visible = false;
+            agregarConsulta.Visible = true;
+            programarVacuna.Visible = false;
+        }
+        public void MostrarProgramarVacuna()
+        {
+            crearFichaMascota.Visible = false;
+            editarFichaMascota.Visible = false;
+            editarHistorialMedico.Visible = false;
+            gestionarStock.Visible = false;
+            agregarProducto.Visible = false;
+            agregarConsulta.Visible = false;
+            programarVacuna.Visible = true;
         }
         private void VeterinarioInicio_Load(object sender, EventArgs e)
         {
@@ -195,5 +236,6 @@ namespace LoginPetShop_v1.Veterinario
             tBoxBusqueda.Clear();
 
         }
+        
     }
 }

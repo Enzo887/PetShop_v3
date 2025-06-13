@@ -69,7 +69,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(500, 354);
+            this.btnCancelar.Location = new System.Drawing.Point(489, 312);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 42);
             this.btnCancelar.TabIndex = 110;
@@ -79,12 +79,13 @@
             // 
             // btnGuardarCambios
             // 
-            this.btnGuardarCambios.Location = new System.Drawing.Point(402, 354);
+            this.btnGuardarCambios.Location = new System.Drawing.Point(395, 312);
             this.btnGuardarCambios.Name = "btnGuardarCambios";
             this.btnGuardarCambios.Size = new System.Drawing.Size(75, 42);
             this.btnGuardarCambios.TabIndex = 108;
             this.btnGuardarCambios.Text = "Guardar Cambios";
             this.btnGuardarCambios.UseVisualStyleBackColor = true;
+            this.btnGuardarCambios.Click += new System.EventHandler(this.btnGuardarCambios_Click);
             // 
             // lblMailDueño
             // 

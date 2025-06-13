@@ -34,9 +34,26 @@ namespace LoginPetShop_v1.Veterinario
         }
         public void AgregarFilaProductos(string nombreProducto, bool estado)
         {
+            string _estado;
+            if (estado == true)
+            {
+                _estado = "Habilitado";
+            }
+            else if (estado == false)
+            {
+                _estado = "Deshabilitado";
+            }
+            else { _estado = "Deshabilitado"; }
+                dataGridViewProductos.Rows.Add(nombreProducto, _estado, "ver");
 
-            dataGridViewProductos.Rows.Add(nombreProducto, estado);
-
+        }
+        public void AgregarFilaProximoAVencer(string nombreProducto, string vencimiento, float cantidadRestante) 
+        {
+            dataGridViewProductoProxVencimiento.Rows.Add(nombreProducto, vencimiento, cantidadRestante);
+        }
+        public void ProximoAVencer() 
+        {
+            //agregar funcion de detectar que un producto vence dentro de poco y que lo agrege al data grid de proximo a vencer y si un producto ya esta vencido cambie su estado a deshabilitado y lanze un aviso
         }
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
@@ -76,6 +93,16 @@ namespace LoginPetShop_v1.Veterinario
         }
 
         private void tBoxBuscarProducto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridViewProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dataGridViewProductoProxVencimiento_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
