@@ -44,6 +44,8 @@
     <Compile Include="Accesorio.cs" />
     <Compile Include="Administrador.cs" />
     <Compile Include="Alimento.cs" />
+    <Compile Include="Cliente.cs" />
+    <Compile Include="DetalleVenta.cs" />
     <Compile Include="FichaMedica.cs" />
     <Compile Include="Gerente.cs" />
     <Compile Include="HistorialMedico.cs" />
@@ -54,6 +56,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vacuna.cs" />
     <Compile Include="Vendedor.cs" />
+    <Compile Include="Venta.cs" />
     <Compile Include="Veterinario.cs" />
   </ItemGroup>
   <ItemGroup>

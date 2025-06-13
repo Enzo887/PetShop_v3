@@ -16,14 +16,6 @@ namespace BE
             set { _cantidadVenta = value; }
         }
 
-        private Producto _precioUnidad;
-
-        public Producto PrecioUnidad
-        {
-            get { return _precioUnidad; }
-            set { _precioUnidad = value; }
-        }
-
         private Producto _producto;
 
         public Producto Producto
@@ -39,5 +31,14 @@ namespace BE
             get { return _ventaID; }
             set { _ventaID = value; }
         }
+
+        private float _subTotal;
+
+        public float Subtotal
+        {
+            get { return _subTotal; }
+            set { _subTotal = value; }
+        }
+
     }
 }

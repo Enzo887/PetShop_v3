@@ -136,6 +136,7 @@
             this.btnGuardar.TabIndex = 18;
             this.btnGuardar.Text = "Guardar Venta";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
@@ -155,6 +156,7 @@
             this.btnBuscarCliente.TabIndex = 20;
             this.btnBuscarCliente.Text = "Buscar";
             this.btnBuscarCliente.UseVisualStyleBackColor = true;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
             // 
             // tboxClienteBuscado
             // 
@@ -172,6 +174,7 @@
             this.btnBuscarProducto.TabIndex = 22;
             this.btnBuscarProducto.Text = "Buscar";
             this.btnBuscarProducto.UseVisualStyleBackColor = true;
+            this.btnBuscarProducto.Click += new System.EventHandler(this.btnBuscarProducto_Click);
             // 
             // tboxProductoBuscado
             // 
