@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BLL
+{
+    public class DetalleVenta
+    {
+                                      //en el parametro "conecto" con los datos de la capa BE que le cargo previamente
+        public float CalcularSubtotal(BE.DetalleVenta detalleVenta) {
+            float subtotal = 0f;
+            subtotal = detalleVenta.Producto.PrecioUnidad * detalleVenta.CantidadVenta;
+            return subtotal;
+        }
+    }
+}

@@ -16,7 +16,7 @@ namespace BE
             set { _estado = value; }
         }
 
-        private DateTime _fechaDeVenta;
+        private DateTime _fechaDeVenta = DateTime.Now;
 
         public DateTime FechaDeVenta
         {
@@ -24,25 +24,17 @@ namespace BE
             set { _fechaDeVenta = value; }
         }
 
-        private string _metodoDePago;
+        private Cliente _cliente;
 
-        public string MetodoDePago
+        public Cliente Cliente
         {
-            get { return _metodoDePago; }
-            set { _metodoDePago = value; }
-        }
-
-        private Cliente _nombreCliente;
-
-        public Cliente NombreCliente
-        {
-            get { return _nombreCliente; }
-            set { _nombreCliente = value; }
+            get { return _cliente; }
+            set { _cliente = value; }
         }
 
         private Vendedor _nombreVendedor;
 
-        public Vendedor MyProperty
+        public Vendedor NombreVendedor
         {
             get { return _nombreVendedor; }
             set { _nombreVendedor = value; }
@@ -63,5 +55,14 @@ namespace BE
             get { return _ventaID; }
             set { _ventaID = value; }
         }
+
+        private List<DetalleVenta> _detalleVentas = new List<DetalleVenta>();
+
+        public List<DetalleVenta> DetalleVentas
+        {
+            get { return _detalleVentas; }
+            set { _detalleVentas = value; }
+        }
+
     }
 }
