@@ -65,6 +65,7 @@ namespace BLL
         }
         public void RegistrarUsuario(BE.Usuario unUsuario)
         {
+            //instancio un objeto admin de la clase DAL que es quien va a registrar al usuario 
             DAL.Administrador unAdminDal = new DAL.Administrador();
             unAdminDal.RegistrarUsuario(unUsuario);
         }

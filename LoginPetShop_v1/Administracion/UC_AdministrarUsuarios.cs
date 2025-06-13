@@ -20,6 +20,7 @@ namespace LoginPetShop_v1.Administracion
 
         private void btnCrearUsuario_Click(object sender, EventArgs e)
         {
+            //creo una instancia de admnistrador de BLL que es la que opera con los metodos
             BLL.Administrador unAdmin = new BLL.Administrador();
             string tipoUsuario = comboxSeleccionRolNuevoUsuario.SelectedItem.ToString();
             //validaciones
@@ -51,7 +52,7 @@ namespace LoginPetShop_v1.Administracion
             }
 
             BE.Usuario unUsuario;
-
+            //dependiendo de que tipo se elija en el combo box se va a instanciar una entidad ya sea admin, gerente, vendedor, veterinario
             switch (tipoUsuario)
             {
                 case "Administrador":
@@ -64,6 +65,7 @@ namespace LoginPetShop_v1.Administracion
                         unUsuario.DNI = dni;
                         //unUsuario.Rol = comboxSeleccionRolNuevoUsuario.SelectedItem.ToString();
                         unUsuario.Rol = "1";
+                        //llamo al metodo registrar usuario de adminBLL
                         unAdmin.RegistrarUsuario(unUsuario);
                         MessageBox.Show("Se registro el usuario correctamente");
                     };
