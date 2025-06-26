@@ -56,5 +56,13 @@ namespace BE
 			set { _dni = value; }
 		}
 
+		private int _usuarioID;
+
+		public int UsuarioID
+		{
+			get { return _usuarioID; }
+			set { _usuarioID = value; }
+		}
+
 	}
 }

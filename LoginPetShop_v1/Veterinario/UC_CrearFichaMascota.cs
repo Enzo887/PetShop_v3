@@ -16,8 +16,6 @@ namespace LoginPetShop_v1.Veterinario
         public UC_CrearFichaMascota()
         {
             InitializeComponent();
-           
-       
 
         }
              
@@ -57,17 +55,13 @@ namespace LoginPetShop_v1.Veterinario
                 MessageBox.Show("No se encontro el form");
             }
         }
-        //proximamente borrar
-        private int contadorId = 0;
-        public int GenerarNuevoId()
-        {
-            return contadorId++;
-        }
 
+       
         private void btnCrear_Click(object sender, EventArgs e)
         {
+            BLL.Veterinario unVeterinarioBLL = new BLL.Veterinario();
             string nombreMascota = tBoxNombreMascota.Text;
-            GenerarNuevoId();
+          
             //numericUpDown solo puede dar numero de tipo int o decimal
             decimal valor= numericUpDownPeso.Value;
             //convierto el valor decimal en float
@@ -79,7 +73,7 @@ namespace LoginPetShop_v1.Veterinario
             }
             //valida que los campos no esten vacios
             if
-          (
+                (
                   string.IsNullOrWhiteSpace(tBoxNombreMascota.Text) ||
                   string.IsNullOrWhiteSpace(cBoxEspecie.Text) ||
                   string.IsNullOrWhiteSpace(cBoxRaza.Text) ||
@@ -90,24 +84,13 @@ namespace LoginPetShop_v1.Veterinario
                   string.IsNullOrWhiteSpace(tBoxDniDueño.Text) ||
                   string.IsNullOrWhiteSpace(tboxTelefonoDueño.Text) ||
                   string.IsNullOrWhiteSpace(tBoxMail.Text)
-          )
+                )
             {
                 MessageBox.Show("Por favor, completá todos los campos obligatorios.", "Campos Faltantes!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            Mascota mascota = new Mascota()
-            {   
-                ID = contadorId,
-                Nombre = tBoxNombreMascota.Text,
-                Especie = cBoxEspecie.Text,
-                Raza = cBoxRaza.Text,
-                Sexo = cBoxSexo.Text,
-                Peso = pesoFloat,
-                FechaDeNacimiento = dTPFechaNacimientoMascota.Value
-            };
 
-
-            Cliente cliente = new Cliente() 
+            Cliente cliente = new Cliente()
             {
                 Nombre = tBoxNombreDueño.Text,
                 Apellido = tBoxApellidoDueño.Text,
@@ -116,11 +99,40 @@ namespace LoginPetShop_v1.Veterinario
                 Email = tBoxMail.Text
             };
 
+            Mascota mascota = new Mascota()
+            {
+
+                Nombre = tBoxNombreMascota.Text,
+                Especie = cBoxEspecie.Text,
+                Raza = cBoxRaza.Text,
+                Sexo = cBoxSexo.Text,
+                Peso = pesoFloat,
+                FechaDeNacimiento = dTPFechaNacimientoMascota.Value,
+                Dueño = cliente
+            };
+
+            FichaMedica unaFicha = new FichaMedica()
+            {
+                Mascota = mascota,
+                FechaDeRegistro = DateTime.Now,
+                Cliente = cliente
+              
+
+            };
+            try
+            {
+                unVeterinarioBLL.CrearFichaMascota(unaFicha);
+                MessageBox.Show("Ficha medica creada correctamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al crear la ficha medica: " + ex.Message);
+            }
           
             //arreglar asignacion de id(todos los id son 1)
             var veterinarioInicio = this.FindForm() as VeterinarioInicio;
                     
-                    veterinarioInicio.AgregarFila(contadorId, nombreMascota);
+         
                     veterinarioInicio.MostrarPrincipal();
 
                         //setea todo en dafult
@@ -136,8 +148,6 @@ namespace LoginPetShop_v1.Veterinario
                         tBoxDniDueño.Clear(); ;
                         tBoxMail.Clear();
                         tboxTelefonoDueño.Clear();
-
-
         }
 
         string[] razasPerro =

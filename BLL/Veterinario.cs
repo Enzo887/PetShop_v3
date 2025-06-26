@@ -44,9 +44,10 @@ namespace BLL
 
         }
 
-        public void CrearFichaMascota(Cliente unCliente, Mascota unaMascota)
+        public void CrearFichaMascota(BE.FichaMedica unaFicha)
         {
-
+            DAL.Veterinario unVeterinarioDAL = new DAL.Veterinario();
+            unVeterinarioDAL.CrearFichMedica(unaFicha);
         }
 
         public void EditarFichaMascota(FichaMedica unaFicha)
