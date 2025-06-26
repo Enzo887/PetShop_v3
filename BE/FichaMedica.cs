@@ -39,5 +39,15 @@ namespace BE
                 get { return _mascota; }
                 set { _mascota = value; }
             }
+
+        private int _usuarioID;
+
+        public int UsuarioID
+        {
+            get { return _usuarioID; }
+            set { _usuarioID = value; }
+        }
+
+
     }
 }
