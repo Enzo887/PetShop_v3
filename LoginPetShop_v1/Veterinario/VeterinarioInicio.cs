@@ -154,10 +154,11 @@ namespace LoginPetShop_v1.Veterinario
 
         }
 
-        public void AgregarFila(int idMascota, string nombreMascota)
+        //despues arreglar idmascota
+        public void AgregarFila(string nombreMascota)
         {
 
-            dataGridViewFichas.Rows.Add(idMascota, nombreMascota, "ver");
+            dataGridViewFichas.Rows.Add(nombreMascota, "ver");
            
         }
 
@@ -177,23 +178,37 @@ namespace LoginPetShop_v1.Veterinario
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-           
-            if (tBoxBusqueda.Text == null) 
+            //le asigno un nombre a la busqueda para que sea facil de manipular
+            string nombreBuscado = tBoxBusqueda.Text.Trim();
+
+            //verifico que se haya ingresado un nombre
+            if (string.IsNullOrWhiteSpace(nombreBuscado)) 
             {
                 MessageBox.Show("Escriba el nombre de una mascota para buscar");
             }
-            string texto = tBoxBusqueda.Text.ToLower();
-            foreach (DataGridViewRow fila in dataGridViewFichas.Rows) 
+
+            //creo la instancia de la ficha y llamo al metodo de la busqueda que va a devolver los resultados con un datatable
+            //asignamos este datatable que nos devuelve como datasource del grid que va a ser lo que carga los datos en la pantalla
+            try
             {
-                if (fila.IsNewRow) continue;
+                BLL.FichaMedica FichaMedicaBLL = new BLL.FichaMedica();
+                DataTable nombreEncontrado = FichaMedicaBLL.BuscarFicha(nombreBuscado);
 
-                string nombre = fila.Cells["NombreMascota"].Value.ToString().ToLower();
+                dataGridViewFichas.Rows.Clear();
 
-                // Mostrar solo si contiene el texto buscado
-                fila.Visible = string.IsNullOrEmpty(texto) || nombre.Contains(texto);
+                foreach (DataRow Fila in nombreEncontrado.Rows)
+                {
+                    int idMascota = Convert.ToInt32(Fila["MASCOTA_ID"]);
+                    string nombreMascota = Fila["NombreMascota"].ToString();
+
+                    dataGridViewFichas.Rows.Add(idMascota, nombreMascota);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hubo un error buscando la ficha de la mascota" + ex.Message);
             }
             tBoxBusqueda.Clear();
-
         }
     }
 }

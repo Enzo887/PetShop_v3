@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,7 @@ namespace DAL
     public class Veterinario
     {
         private Conexion conexion = new Conexion();
-        public int CrearFichMedica(FichaMedica unaFicha)
+        public int CrearFichMedica(BE.FichaMedica unaFicha)
         {
             SqlParameter[] parametros = new SqlParameter[]
             {
@@ -35,5 +36,7 @@ namespace DAL
             };
            return conexion.EscribirPorStoreProcedure("SP_CrearFichaMedica", parametros);
         }
+
+       
     }
 }
