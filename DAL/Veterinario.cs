@@ -14,6 +14,7 @@ namespace DAL
         private Conexion conexion = new Conexion();
         public int CrearFichMedica(BE.FichaMedica unaFicha)
         {
+            //le paso los parametros en los que se va a aescribir del store procedure para despues retornar el metodo de escribir por sp y mandar a las base de datos la nueva ficha con los datos que le pase en los parametros 
             SqlParameter[] parametros = new SqlParameter[]
             {
                 //cliente/dueño de la mascota

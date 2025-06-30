@@ -123,18 +123,19 @@ namespace LoginPetShop_v1.Veterinario
             {
                 unVeterinarioBLL.CrearFichaMascota(unaFicha);
                 MessageBox.Show("Ficha medica creada correctamente");
-                //VeterinarioInicio.AgregarFila(idMascota, nombreMascota);
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al crear la ficha medica: " + ex.Message);
             }
           
-            //arreglar asignacion de id(todos los id son 1)
             var veterinarioInicio = this.FindForm() as VeterinarioInicio;
-                    
-         
-                    veterinarioInicio.MostrarPrincipal();
+            if (veterinarioInicio != null)
+            {
+                veterinarioInicio.MostrarPrincipal();
+                veterinarioInicio.MostrarFichasMascotas();
+            }     
 
                         //setea todo en dafult
                         tBoxNombreMascota.Clear();

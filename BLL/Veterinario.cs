@@ -46,6 +46,7 @@ namespace BLL
 
         public void CrearFichaMascota(BE.FichaMedica unaFicha)
         {
+            //instanciamos un veterinario de la clase dal que es donde se va a comunicar con la base de datos, ahi llamamos al metodo CrearFichaMedica de veterinario en la capa dal y le pasasmos como parametro la ficha que creamos para poder insertarla con una consulta a la base de datos
             DAL.Veterinario unVeterinarioDAL = new DAL.Veterinario();
             unVeterinarioDAL.CrearFichMedica(unaFicha);
         }
