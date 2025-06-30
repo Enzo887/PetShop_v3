@@ -23,6 +23,7 @@ namespace LoginPetShop_v1.Veterinario
         private UC_AgregarProducto agregarProducto;
         private UC_EditarProducto editarProducto;
         private UC_ProgramarVacuna programarVacuna;
+        int idProducto;
         
         
         public VeterinarioInicio()
@@ -34,9 +35,10 @@ namespace LoginPetShop_v1.Veterinario
             editarHistorialMedico = new UC_EditarHistorialMedico();
             gestionarStock = new UC_GestionarStock();
             agregarProducto = new UC_AgregarProducto(gestionarStock);
-            editarProducto = new UC_EditarProducto(gestionarStock);
+            editarProducto = new UC_EditarProducto(gestionarStock, idProducto);
             agregarConsulta = new UC_AgregarConsulta(editarHistorialMedico);
             programarVacuna= new UC_ProgramarVacuna(editarHistorialMedico);
+
 
             crearFichaMascota.Dock = DockStyle.Fill;
             editarFichaMascota.Dock = DockStyle .Fill;
@@ -45,6 +47,7 @@ namespace LoginPetShop_v1.Veterinario
             agregarProducto.Dock = DockStyle .Fill;
             agregarConsulta.Dock = DockStyle .Fill;
             programarVacuna.Dock = DockStyle .Fill;
+            editarProducto.Dock = DockStyle .Fill;
             //agrega los UserControl
             panelContenedorVeterinario.Controls.Add(crearFichaMascota);
             panelContenedorVeterinario.Controls.Add(editarFichaMascota);
@@ -53,6 +56,7 @@ namespace LoginPetShop_v1.Veterinario
             panelContenedorVeterinario.Controls.Add(agregarProducto);
             panelContenedorVeterinario.Controls.Add (agregarConsulta);
             panelContenedorVeterinario.Controls.Add(programarVacuna);
+            panelContenedorVeterinario.Controls.Add(editarProducto);
 
             crearFichaMascota.Visible = false;
             editarFichaMascota.Visible = false;
@@ -61,6 +65,7 @@ namespace LoginPetShop_v1.Veterinario
             agregarProducto.Visible = false;
             agregarConsulta.Visible = false ;
             programarVacuna.Visible = false;
+            editarProducto.Visible = false; 
 
 
         }
@@ -73,8 +78,9 @@ namespace LoginPetShop_v1.Veterinario
             gestionarStock.Visible = false;
             agregarProducto.Visible = false;
             agregarConsulta.Visible=false;
-            programarVacuna.Visible = false;    
-        
+            programarVacuna.Visible = false;
+            editarProducto.Visible = false;
+
         }
         public void MostrarEdicionFicha(Mascota mascota, Cliente cliente)
         {
@@ -88,6 +94,7 @@ namespace LoginPetShop_v1.Veterinario
             agregarProducto.Visible = false;
             agregarConsulta.Visible = false;
             programarVacuna.Visible = false;
+            editarProducto.Visible = false;
         }
         public void MostrarEdicionHistorial()
         {
@@ -99,6 +106,7 @@ namespace LoginPetShop_v1.Veterinario
             agregarProducto.Visible = false;
             agregarConsulta.Visible = false;
             programarVacuna.Visible = false;
+            editarProducto.Visible = false;
         }
         public void MostrarGestionStock()
         {
@@ -107,9 +115,12 @@ namespace LoginPetShop_v1.Veterinario
             editarHistorialMedico.Visible = false;
             gestionarStock.Visible = true;
             gestionarStock.BringToFront();
+            gestionarStock.ActualizarDataGrid();
             agregarProducto.Visible = false;
             agregarConsulta.Visible = false;
             programarVacuna.Visible = false;
+            editarProducto.Visible = false;
+            
         }
         public void MostrarAgregarProducto()
         {
@@ -121,6 +132,21 @@ namespace LoginPetShop_v1.Veterinario
             agregarProducto.BringToFront();
             agregarConsulta.Visible = false;
             programarVacuna.Visible = false;
+            editarProducto.Visible = false;
+        }
+        public void MostrarEditarProducto(int idProducto)
+        {
+            crearFichaMascota.Visible = false;
+            editarFichaMascota.Visible = false;
+            editarHistorialMedico.Visible = false;
+            gestionarStock.Visible = false;
+            agregarProducto.Visible = false;
+            agregarConsulta.Visible = false;
+            programarVacuna.Visible = false;
+            editarProducto.Visible = true;
+            editarProducto.BringToFront();
+
+            editarProducto.CargarProducto(idProducto);
         }
         public void MostrarPrincipal() 
         {
@@ -131,6 +157,7 @@ namespace LoginPetShop_v1.Veterinario
             agregarProducto.Visible = false;
             agregarConsulta.Visible = false;
             programarVacuna.Visible = false;
+            editarProducto.Visible = false;
         }
         public void MostrarAgregarConsulta()
         {
@@ -141,6 +168,7 @@ namespace LoginPetShop_v1.Veterinario
             agregarProducto.Visible = false;
             agregarConsulta.Visible = true;
             programarVacuna.Visible = false;
+            editarProducto.Visible = false;
         }
         public void MostrarProgramarVacuna()
         {
@@ -151,6 +179,7 @@ namespace LoginPetShop_v1.Veterinario
             agregarProducto.Visible = false;
             agregarConsulta.Visible = false;
             programarVacuna.Visible = true;
+            editarProducto.Visible = false;
         }
         private void VeterinarioInicio_Load(object sender, EventArgs e)
         {
@@ -195,10 +224,11 @@ namespace LoginPetShop_v1.Veterinario
 
         }
 
-        public void AgregarFila(int idMascota, string nombreMascota)
+        //despues arreglar idmascota
+        public void AgregarFila(string nombreMascota)
         {
 
-            dataGridViewFichas.Rows.Add(idMascota, nombreMascota, "ver");
+            dataGridViewFichas.Rows.Add(nombreMascota, "ver");
            
         }
 
@@ -218,23 +248,37 @@ namespace LoginPetShop_v1.Veterinario
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-           
-            if (tBoxBusqueda.Text == null) 
+            //le asigno un nombre a la busqueda para que sea facil de manipular
+            string nombreBuscado = tBoxBusqueda.Text.Trim();
+
+            //verifico que se haya ingresado un nombre
+            if (string.IsNullOrWhiteSpace(nombreBuscado)) 
             {
                 MessageBox.Show("Escriba el nombre de una mascota para buscar");
             }
-            string texto = tBoxBusqueda.Text.ToLower();
-            foreach (DataGridViewRow fila in dataGridViewFichas.Rows) 
+
+            //creo la instancia de la ficha y llamo al metodo de la busqueda que va a devolver los resultados con un datatable
+            //asignamos este datatable que nos devuelve como datasource del grid que va a ser lo que carga los datos en la pantalla
+            try
             {
-                if (fila.IsNewRow) continue;
+                BLL.FichaMedica FichaMedicaBLL = new BLL.FichaMedica();
+                DataTable nombreEncontrado = FichaMedicaBLL.BuscarFicha(nombreBuscado);
 
-                string nombre = fila.Cells["NombreMascota"].Value.ToString().ToLower();
+                dataGridViewFichas.Rows.Clear();
 
-                // Mostrar solo si contiene el texto buscado
-                fila.Visible = string.IsNullOrEmpty(texto) || nombre.Contains(texto);
+                foreach (DataRow Fila in nombreEncontrado.Rows)
+                {
+                    int idMascota = Convert.ToInt32(Fila["MASCOTA_ID"]);
+                    string nombreMascota = Fila["NombreMascota"].ToString();
+
+                    dataGridViewFichas.Rows.Add(idMascota, nombreMascota);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hubo un error buscando la ficha de la mascota" + ex.Message);
             }
             tBoxBusqueda.Clear();
-
         }
         
     }

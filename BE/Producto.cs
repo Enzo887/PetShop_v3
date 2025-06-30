@@ -56,5 +56,7 @@ namespace BE
             set { _estado = value; }
         }
 
+        public string EstadoTexto => Estado ? "Habilitado" : "Deshabilitado";
+
     }
 }

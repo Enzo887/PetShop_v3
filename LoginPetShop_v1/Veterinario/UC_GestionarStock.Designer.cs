@@ -35,6 +35,7 @@
             this.tBoxBuscarProducto = new System.Windows.Forms.TextBox();
             this.lblProductos = new System.Windows.Forms.Label();
             this.dataGridViewProductos = new System.Windows.Forms.DataGridView();
+            this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -42,7 +43,7 @@
             this.NombreProducto2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Vencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantidadRestante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnLimpiarBusqueda = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductoProxVencimiento)).BeginInit();
             this.SuspendLayout();
@@ -87,11 +88,15 @@
             // 
             // tBoxBuscarProducto
             // 
+            this.tBoxBuscarProducto.ForeColor = System.Drawing.Color.Gray;
             this.tBoxBuscarProducto.Location = new System.Drawing.Point(34, 52);
             this.tBoxBuscarProducto.Name = "tBoxBuscarProducto";
             this.tBoxBuscarProducto.Size = new System.Drawing.Size(210, 20);
             this.tBoxBuscarProducto.TabIndex = 13;
+            this.tBoxBuscarProducto.Text = "Buscar por \"ID\" o \"Nombre\"";
             this.tBoxBuscarProducto.TextChanged += new System.EventHandler(this.tBoxBuscarProducto_TextChanged);
+            this.tBoxBuscarProducto.Enter += new System.EventHandler(this.tBoxBuscarProducto_Enter);
+            this.tBoxBuscarProducto.Leave += new System.EventHandler(this.tBoxBuscarProducto_Leave);
             // 
             // lblProductos
             // 
@@ -108,8 +113,10 @@
             this.dataGridViewProductos.AllowUserToDeleteRows = false;
             this.dataGridViewProductos.AllowUserToResizeColumns = false;
             this.dataGridViewProductos.AllowUserToResizeRows = false;
+            this.dataGridViewProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdProducto,
             this.NombreProducto,
             this.Estado,
             this.Editar});
@@ -118,9 +125,16 @@
             this.dataGridViewProductos.Name = "dataGridViewProductos";
             this.dataGridViewProductos.ReadOnly = true;
             this.dataGridViewProductos.RowHeadersVisible = false;
-            this.dataGridViewProductos.Size = new System.Drawing.Size(228, 257);
+            this.dataGridViewProductos.Size = new System.Drawing.Size(254, 257);
             this.dataGridViewProductos.TabIndex = 20;
+            this.dataGridViewProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProductos_CellClick);
             this.dataGridViewProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProductos_CellContentClick);
+            // 
+            // IdProducto
+            // 
+            this.IdProducto.HeaderText = "ID";
+            this.IdProducto.Name = "IdProducto";
+            this.IdProducto.ReadOnly = true;
             // 
             // NombreProducto
             // 
@@ -133,29 +147,30 @@
             this.Estado.HeaderText = "Estado";
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
-            this.Estado.Width = 75;
             // 
             // Editar
             // 
             this.Editar.HeaderText = "";
             this.Editar.Name = "Editar";
             this.Editar.ReadOnly = true;
-            this.Editar.Width = 50;
+            this.Editar.Text = "Editar";
+            this.Editar.UseColumnTextForButtonValue = true;
             // 
             // dataGridViewProductoProxVencimiento
             // 
+            this.dataGridViewProductoProxVencimiento.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewProductoProxVencimiento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProductoProxVencimiento.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NombreProducto2,
             this.Vencimiento,
             this.CantidadRestante});
             this.dataGridViewProductoProxVencimiento.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridViewProductoProxVencimiento.Location = new System.Drawing.Point(335, 114);
+            this.dataGridViewProductoProxVencimiento.Location = new System.Drawing.Point(316, 114);
             this.dataGridViewProductoProxVencimiento.Name = "dataGridViewProductoProxVencimiento";
             this.dataGridViewProductoProxVencimiento.ReadOnly = true;
             this.dataGridViewProductoProxVencimiento.RowHeadersVisible = false;
             this.dataGridViewProductoProxVencimiento.RowHeadersWidth = 30;
-            this.dataGridViewProductoProxVencimiento.Size = new System.Drawing.Size(223, 97);
+            this.dataGridViewProductoProxVencimiento.Size = new System.Drawing.Size(239, 94);
             this.dataGridViewProductoProxVencimiento.TabIndex = 21;
             this.dataGridViewProductoProxVencimiento.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProductoProxVencimiento_CellContentClick);
             // 
@@ -170,30 +185,28 @@
             this.Vencimiento.HeaderText = "Vencimiento";
             this.Vencimiento.Name = "Vencimiento";
             this.Vencimiento.ReadOnly = true;
-            this.Vencimiento.Width = 70;
             // 
             // CantidadRestante
             // 
             this.CantidadRestante.HeaderText = "Cantidad restante";
             this.CantidadRestante.Name = "CantidadRestante";
             this.CantidadRestante.ReadOnly = true;
-            this.CantidadRestante.Width = 50;
             // 
-            // btnBuscar
+            // btnLimpiarBusqueda
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(250, 52);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(49, 23);
-            this.btnBuscar.TabIndex = 22;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            this.btnLimpiarBusqueda.Location = new System.Drawing.Point(250, 52);
+            this.btnLimpiarBusqueda.Name = "btnLimpiarBusqueda";
+            this.btnLimpiarBusqueda.Size = new System.Drawing.Size(28, 23);
+            this.btnLimpiarBusqueda.TabIndex = 22;
+            this.btnLimpiarBusqueda.Text = "X";
+            this.btnLimpiarBusqueda.UseVisualStyleBackColor = true;
+            this.btnLimpiarBusqueda.Click += new System.EventHandler(this.btnLimpiarBusqueda_Click);
             // 
             // UC_GestionarStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.btnLimpiarBusqueda);
             this.Controls.Add(this.dataGridViewProductoProxVencimiento);
             this.Controls.Add(this.dataGridViewProductos);
             this.Controls.Add(this.btnVolver);
@@ -221,12 +234,13 @@
         private System.Windows.Forms.Label lblProductos;
         private System.Windows.Forms.DataGridView dataGridViewProductos;
         private System.Windows.Forms.DataGridView dataGridViewProductoProxVencimiento;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreProducto2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Vencimiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn CantidadRestante;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.DataGridViewButtonColumn Editar;
+        private System.Windows.Forms.Button btnLimpiarBusqueda;
     }
 }

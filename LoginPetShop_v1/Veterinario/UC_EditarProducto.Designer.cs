@@ -95,6 +95,7 @@
             this.btnGuardarCambios.TabIndex = 50;
             this.btnGuardarCambios.Text = "Guardar Cambios";
             this.btnGuardarCambios.UseVisualStyleBackColor = true;
+            this.btnGuardarCambios.Click += new System.EventHandler(this.btnGuardarCambios_Click);
             // 
             // inputFechaVencimiento
             // 

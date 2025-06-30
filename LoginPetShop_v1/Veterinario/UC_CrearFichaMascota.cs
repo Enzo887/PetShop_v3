@@ -123,6 +123,7 @@ namespace LoginPetShop_v1.Veterinario
             {
                 unVeterinarioBLL.CrearFichaMascota(unaFicha);
                 MessageBox.Show("Ficha medica creada correctamente");
+                
             }
             catch (Exception ex)
             {
