@@ -1,4 +1,5 @@
 ﻿using BE;
+using BLL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,16 +19,30 @@ namespace LoginPetShop_v1.Veterinario
         {
             InitializeComponent();
             gestionarStock = gestionarStockExistente;
-            //desp cambiar para que se pueda actualiza el dataGrid :)
+           
         }
 
         private void btnDeshabilitar_Click(object sender, EventArgs e)
         {
 
         }
-
+        private void cBoxCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cBoxCategoria.Text == "Vacuna")
+            {
+                //inhabilita el comboBox de receta ya que este no necesita ese campo
+                cBoxReceta.Enabled = false;
+                cBoxReceta.SelectedIndex = -1;
+            }
+            else if (cBoxCategoria.Text == "Medicamento")
+            {   //lo habilita si la categoria es medicamento
+                cBoxReceta.Enabled = true;
+            }
+            
+        }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            BLL.Veterinario unVeterinarioBLL = new BLL.Veterinario();   
             decimal cantidad = nUDCantidadProducto.Value;
             float cantidadProducto = (float)cantidad;
            
@@ -61,10 +76,8 @@ namespace LoginPetShop_v1.Veterinario
 
             if (cBoxCategoria.Text == "Vacuna")
             {
-                //inhabilita el comboBox de receta ya que este no necesita ese campo
-                cBoxReceta.Enabled = false;
-                cBoxReceta.SelectedIndex = -1;
-                Vacuna vacuna = new Vacuna()
+                
+                BE.Vacuna vacuna = new BE.Vacuna()
                 {
                     Nombre = tboxNombreProducto.Text,
                     PrecioUnidad = float.Parse(tboxPrecioProducto.Text),
@@ -77,11 +90,22 @@ namespace LoginPetShop_v1.Veterinario
                 nombreProducto = vacuna.Nombre;
                 Estado = vacuna.Estado;
 
+                try
+                {
+                    unVeterinarioBLL.AgregarVacuna(vacuna);
+                    MessageBox.Show("Vacuna agregada correctamente");
+                    gestionarStock.AgregarFilaProductos(nombreProducto, Estado);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al agregar la vacuna " + ex.Message);
+                }
+
                 gestionarStock.AgregarFilaProductos(nombreProducto, Estado);
             }
             else if (cBoxCategoria.Text == "Medicamento")
             {
-                cBoxReceta.Enabled = true;
+              
                 if (string.IsNullOrWhiteSpace(cBoxReceta.Text))
                 {
                     MessageBox.Show("Por favor, seleccione si el medicamento requiere receta");
@@ -89,7 +113,7 @@ namespace LoginPetShop_v1.Veterinario
                 }
                 bool receta = cBoxReceta.Text == "si";
 
-                Medicamento medicamento = new Medicamento()
+                BE.Medicamento medicamento = new BE.Medicamento()
                 {
                     Nombre = tboxNombreProducto.Text,
                     PrecioUnidad = float.Parse(tboxPrecioProducto.Text),
@@ -102,15 +126,28 @@ namespace LoginPetShop_v1.Veterinario
                 nombreProducto = medicamento.Nombre;
                 Estado = medicamento.Estado;
 
-                gestionarStock.AgregarFilaProductos(nombreProducto, Estado);
+               
+                try
+                {
+                    unVeterinarioBLL.AgregarMedicamento(medicamento);
+                    MessageBox.Show("Medicamento agregado correctamente");
+                    gestionarStock.AgregarFilaProductos(nombreProducto, Estado);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al agregar el medicamento: " + ex.Message);
+                }
             }
+
+           
+
+            //vuelve a gestion de stock y limpia el formulario
             var veterinarioInicio = this.FindForm() as VeterinarioInicio;
-
-
 
             if (veterinarioInicio != null)
             {
                 veterinarioInicio.MostrarGestionStock();
+                gestionarStock.ActualizarDataGrid();
             }
             else
             {
@@ -123,8 +160,34 @@ namespace LoginPetShop_v1.Veterinario
             nUDCantidadProducto.Value = 0;
             cBoxReceta.SelectedIndex = -1;
             cBoxEstado.SelectedIndex = -1;
+            cBoxCategoria.SelectedIndex = -1;
 
                 
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            var veterinarioInicio = this.FindForm() as VeterinarioInicio;
+
+
+
+            if (veterinarioInicio != null)
+            {
+                veterinarioInicio.MostrarGestionStock();
+                gestionarStock.ActualizarDataGrid();
+            }
+            else
+            {
+                MessageBox.Show("No se encontro el form");
+            }
+
+            tboxNombreProducto.Clear();
+            tboxPrecioProducto.Clear();
+            inputFechaVencimiento.Value = DateTime.Today;
+            nUDCantidadProducto.Value = 0;
+            cBoxReceta.SelectedIndex = -1;
+            cBoxEstado.SelectedIndex = -1;
+            cBoxCategoria.SelectedIndex = -1;
         }
     }
 }

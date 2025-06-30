@@ -23,5 +23,7 @@ namespace BE
             get { return _requiereReceta; }
             set { _requiereReceta = value; }
         }
+        public string RecetaTexto => RequiereReceta ? "SI" : "NO";
+
     }
 }

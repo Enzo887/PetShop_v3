@@ -1,6 +1,6 @@
 ﻿namespace LoginPetShop_v1.Veterinario
 {
-    partial class UC_AgregarProducto
+    partial class UC_EditarProducto
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -28,7 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnAgregar = new System.Windows.Forms.Button();
+            this.lblEstado = new System.Windows.Forms.Label();
+            this.cBoxEstado = new System.Windows.Forms.ComboBox();
+            this.lblReceta = new System.Windows.Forms.Label();
+            this.cBoxReceta = new System.Windows.Forms.ComboBox();
+            this.btnGuardarCambios = new System.Windows.Forms.Button();
             this.inputFechaVencimiento = new System.Windows.Forms.DateTimePicker();
             this.lblFechaVencimiento = new System.Windows.Forms.Label();
             this.cBoxCategoria = new System.Windows.Forms.ComboBox();
@@ -39,39 +43,75 @@
             this.lblCategoria = new System.Windows.Forms.Label();
             this.tboxNombreProducto = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.cBoxReceta = new System.Windows.Forms.ComboBox();
-            this.lblReceta = new System.Windows.Forms.Label();
-            this.cBoxEstado = new System.Windows.Forms.ComboBox();
-            this.lblEstado = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nUDCantidadProducto)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnAgregar
+            // lblEstado
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(85, 258);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(100, 23);
-            this.btnAgregar.TabIndex = 29;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.Location = new System.Drawing.Point(89, 203);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(168, 13);
+            this.lblEstado.TabIndex = 54;
+            this.lblEstado.Text = "Seleccione el estado del producto";
+            // 
+            // cBoxEstado
+            // 
+            this.cBoxEstado.FormattingEnabled = true;
+            this.cBoxEstado.Items.AddRange(new object[] {
+            "Habilitado",
+            "Deshabilitado"});
+            this.cBoxEstado.Location = new System.Drawing.Point(92, 219);
+            this.cBoxEstado.Name = "cBoxEstado";
+            this.cBoxEstado.Size = new System.Drawing.Size(121, 21);
+            this.cBoxEstado.TabIndex = 53;
+            // 
+            // lblReceta
+            // 
+            this.lblReceta.AutoSize = true;
+            this.lblReceta.Location = new System.Drawing.Point(407, 155);
+            this.lblReceta.Name = "lblReceta";
+            this.lblReceta.Size = new System.Drawing.Size(88, 13);
+            this.lblReceta.TabIndex = 52;
+            this.lblReceta.Text = "Necesita receta?";
+            // 
+            // cBoxReceta
+            // 
+            this.cBoxReceta.FormattingEnabled = true;
+            this.cBoxReceta.Items.AddRange(new object[] {
+            "Si",
+            "No"});
+            this.cBoxReceta.Location = new System.Drawing.Point(410, 171);
+            this.cBoxReceta.Name = "cBoxReceta";
+            this.cBoxReceta.Size = new System.Drawing.Size(74, 21);
+            this.cBoxReceta.TabIndex = 51;
+            // 
+            // btnGuardarCambios
+            // 
+            this.btnGuardarCambios.Location = new System.Drawing.Point(92, 274);
+            this.btnGuardarCambios.Name = "btnGuardarCambios";
+            this.btnGuardarCambios.Size = new System.Drawing.Size(103, 23);
+            this.btnGuardarCambios.TabIndex = 50;
+            this.btnGuardarCambios.Text = "Guardar Cambios";
+            this.btnGuardarCambios.UseVisualStyleBackColor = true;
+            this.btnGuardarCambios.Click += new System.EventHandler(this.btnGuardarCambios_Click);
             // 
             // inputFechaVencimiento
             // 
             this.inputFechaVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.inputFechaVencimiento.Location = new System.Drawing.Point(256, 167);
+            this.inputFechaVencimiento.Location = new System.Drawing.Point(263, 171);
             this.inputFechaVencimiento.Name = "inputFechaVencimiento";
             this.inputFechaVencimiento.Size = new System.Drawing.Size(100, 20);
-            this.inputFechaVencimiento.TabIndex = 28;
+            this.inputFechaVencimiento.TabIndex = 48;
             // 
             // lblFechaVencimiento
             // 
             this.lblFechaVencimiento.AutoSize = true;
-            this.lblFechaVencimiento.Location = new System.Drawing.Point(253, 150);
+            this.lblFechaVencimiento.Location = new System.Drawing.Point(260, 154);
             this.lblFechaVencimiento.Name = "lblFechaVencimiento";
             this.lblFechaVencimiento.Size = new System.Drawing.Size(112, 13);
-            this.lblFechaVencimiento.TabIndex = 27;
+            this.lblFechaVencimiento.TabIndex = 47;
             this.lblFechaVencimiento.Text = "Fecha de vencimiento";
             // 
             // cBoxCategoria
@@ -80,120 +120,79 @@
             this.cBoxCategoria.Items.AddRange(new object[] {
             "Vacuna",
             "Medicamento"});
-            this.cBoxCategoria.Location = new System.Drawing.Point(85, 166);
+            this.cBoxCategoria.Location = new System.Drawing.Point(92, 170);
             this.cBoxCategoria.Name = "cBoxCategoria";
             this.cBoxCategoria.Size = new System.Drawing.Size(100, 21);
-            this.cBoxCategoria.TabIndex = 26;
-            this.cBoxCategoria.SelectedIndexChanged += new System.EventHandler(this.cBoxCategoria_SelectedIndexChanged);
+            this.cBoxCategoria.TabIndex = 46;
             // 
             // tboxPrecioProducto
             // 
-            this.tboxPrecioProducto.Location = new System.Drawing.Point(256, 104);
+            this.tboxPrecioProducto.Location = new System.Drawing.Point(263, 108);
             this.tboxPrecioProducto.Name = "tboxPrecioProducto";
             this.tboxPrecioProducto.Size = new System.Drawing.Size(100, 20);
-            this.tboxPrecioProducto.TabIndex = 25;
+            this.tboxPrecioProducto.TabIndex = 45;
             // 
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(253, 87);
+            this.lblPrecio.Location = new System.Drawing.Point(260, 91);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(37, 13);
-            this.lblPrecio.TabIndex = 24;
+            this.lblPrecio.TabIndex = 44;
             this.lblPrecio.Text = "Precio";
             // 
             // nUDCantidadProducto
             // 
-            this.nUDCantidadProducto.Location = new System.Drawing.Point(403, 105);
+            this.nUDCantidadProducto.Location = new System.Drawing.Point(410, 109);
             this.nUDCantidadProducto.Name = "nUDCantidadProducto";
             this.nUDCantidadProducto.Size = new System.Drawing.Size(46, 20);
-            this.nUDCantidadProducto.TabIndex = 23;
+            this.nUDCantidadProducto.TabIndex = 43;
             // 
             // lblCantidad
             // 
             this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(400, 87);
+            this.lblCantidad.Location = new System.Drawing.Point(407, 91);
             this.lblCantidad.Name = "lblCantidad";
             this.lblCantidad.Size = new System.Drawing.Size(49, 13);
-            this.lblCantidad.TabIndex = 22;
+            this.lblCantidad.TabIndex = 42;
             this.lblCantidad.Text = "Cantidad";
             // 
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Location = new System.Drawing.Point(82, 150);
+            this.lblCategoria.Location = new System.Drawing.Point(89, 154);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(52, 13);
-            this.lblCategoria.TabIndex = 21;
+            this.lblCategoria.TabIndex = 41;
             this.lblCategoria.Text = "Categoria";
             // 
             // tboxNombreProducto
             // 
-            this.tboxNombreProducto.Location = new System.Drawing.Point(85, 103);
+            this.tboxNombreProducto.Location = new System.Drawing.Point(92, 107);
             this.tboxNombreProducto.Name = "tboxNombreProducto";
             this.tboxNombreProducto.Size = new System.Drawing.Size(100, 20);
-            this.tboxNombreProducto.TabIndex = 20;
+            this.tboxNombreProducto.TabIndex = 40;
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(82, 87);
+            this.lblNombre.Location = new System.Drawing.Point(89, 91);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(44, 13);
-            this.lblNombre.TabIndex = 19;
+            this.lblNombre.TabIndex = 39;
             this.lblNombre.Text = "Nombre";
-            // 
-            // cBoxReceta
-            // 
-            this.cBoxReceta.FormattingEnabled = true;
-            this.cBoxReceta.Items.AddRange(new object[] {
-            "Si",
-            "No"});
-            this.cBoxReceta.Location = new System.Drawing.Point(403, 167);
-            this.cBoxReceta.Name = "cBoxReceta";
-            this.cBoxReceta.Size = new System.Drawing.Size(74, 21);
-            this.cBoxReceta.TabIndex = 35;
-            // 
-            // lblReceta
-            // 
-            this.lblReceta.AutoSize = true;
-            this.lblReceta.Location = new System.Drawing.Point(400, 151);
-            this.lblReceta.Name = "lblReceta";
-            this.lblReceta.Size = new System.Drawing.Size(88, 13);
-            this.lblReceta.TabIndex = 36;
-            this.lblReceta.Text = "Necesita receta?";
-            // 
-            // cBoxEstado
-            // 
-            this.cBoxEstado.FormattingEnabled = true;
-            this.cBoxEstado.Items.AddRange(new object[] {
-            "Habilitado",
-            "Deshabilitado"});
-            this.cBoxEstado.Location = new System.Drawing.Point(85, 215);
-            this.cBoxEstado.Name = "cBoxEstado";
-            this.cBoxEstado.Size = new System.Drawing.Size(121, 21);
-            this.cBoxEstado.TabIndex = 37;
-            // 
-            // lblEstado
-            // 
-            this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(82, 199);
-            this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(168, 13);
-            this.lblEstado.TabIndex = 38;
-            this.lblEstado.Text = "Seleccione el estado del producto";
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(246, 258);
+            this.btnCancelar.Location = new System.Drawing.Point(263, 274);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 56;
+            this.btnCancelar.TabIndex = 55;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // UC_AgregarProducto
+            // UC_EditarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -202,7 +201,7 @@
             this.Controls.Add(this.cBoxEstado);
             this.Controls.Add(this.lblReceta);
             this.Controls.Add(this.cBoxReceta);
-            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.btnGuardarCambios);
             this.Controls.Add(this.inputFechaVencimiento);
             this.Controls.Add(this.lblFechaVencimiento);
             this.Controls.Add(this.cBoxCategoria);
@@ -213,7 +212,7 @@
             this.Controls.Add(this.lblCategoria);
             this.Controls.Add(this.tboxNombreProducto);
             this.Controls.Add(this.lblNombre);
-            this.Name = "UC_AgregarProducto";
+            this.Name = "UC_EditarProducto";
             this.Size = new System.Drawing.Size(600, 450);
             ((System.ComponentModel.ISupportInitialize)(this.nUDCantidadProducto)).EndInit();
             this.ResumeLayout(false);
@@ -222,7 +221,12 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnAgregar;
+
+        private System.Windows.Forms.Label lblEstado;
+        private System.Windows.Forms.ComboBox cBoxEstado;
+        private System.Windows.Forms.Label lblReceta;
+        private System.Windows.Forms.ComboBox cBoxReceta;
+        private System.Windows.Forms.Button btnGuardarCambios;
         private System.Windows.Forms.DateTimePicker inputFechaVencimiento;
         private System.Windows.Forms.Label lblFechaVencimiento;
         private System.Windows.Forms.ComboBox cBoxCategoria;
@@ -233,10 +237,6 @@
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.TextBox tboxNombreProducto;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.ComboBox cBoxReceta;
-        private System.Windows.Forms.Label lblReceta;
-        private System.Windows.Forms.ComboBox cBoxEstado;
-        private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Button btnCancelar;
     }
 }

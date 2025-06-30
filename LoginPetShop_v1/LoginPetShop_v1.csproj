@@ -137,6 +137,12 @@
     <Compile Include="Vendedor\UC_RegistrarVenta.Designer.cs">
       <DependentUpon>UC_RegistrarVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Veterinario\UC_AgregarConsulta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Veterinario\UC_AgregarConsulta.Designer.cs">
+      <DependentUpon>UC_AgregarConsulta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Veterinario\UC_AgregarProducto.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -175,11 +181,23 @@
     <Compile Include="Veterinario\UC_EditarHistorialMedico.Designer.cs">
       <DependentUpon>UC_EditarHistorialMedico.cs</DependentUpon>
     </Compile>
+    <Compile Include="Veterinario\UC_EditarProducto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Veterinario\UC_EditarProducto.Designer.cs">
+      <DependentUpon>UC_EditarProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Veterinario\UC_GestionarStock.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Veterinario\UC_GestionarStock.Designer.cs">
       <DependentUpon>UC_GestionarStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Veterinario\UC_ProgramarVacuna.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Veterinario\UC_ProgramarVacuna.Designer.cs">
+      <DependentUpon>UC_ProgramarVacuna.cs</DependentUpon>
     </Compile>
     <Compile Include="Veterinario\VeterinarioInicio.cs">
       <SubType>Form</SubType>
@@ -244,6 +262,9 @@
     <EmbeddedResource Include="Vendedor\UC_RegistrarVenta.resx">
       <DependentUpon>UC_RegistrarVenta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Veterinario\UC_AgregarConsulta.resx">
+      <DependentUpon>UC_AgregarConsulta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Veterinario\UC_AgregarProducto.resx">
       <DependentUpon>UC_AgregarProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -259,8 +280,14 @@
     <EmbeddedResource Include="Veterinario\UC_EditarHistorialMedico.resx">
       <DependentUpon>UC_EditarHistorialMedico.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Veterinario\UC_EditarProducto.resx">
+      <DependentUpon>UC_EditarProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Veterinario\UC_GestionarStock.resx">
       <DependentUpon>UC_GestionarStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Veterinario\UC_ProgramarVacuna.resx">
+      <DependentUpon>UC_ProgramarVacuna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Veterinario\VeterinarioInicio.resx">
       <DependentUpon>VeterinarioInicio.cs</DependentUpon>
