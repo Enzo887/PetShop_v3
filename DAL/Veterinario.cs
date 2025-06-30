@@ -12,10 +12,7 @@ namespace DAL
     public class Veterinario
     {
         private Conexion conexion = new Conexion();
-
-        
-
-        public int CrearFichMedica(FichaMedica unaFicha)
+        public int CrearFichMedica(BE.FichaMedica unaFicha)
         {
             SqlParameter[] parametros = new SqlParameter[]
             {
