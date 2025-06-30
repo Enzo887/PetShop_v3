@@ -19,5 +19,12 @@ namespace BLL
 
             return total;
         }
+
+        //quizas seria bueno que sea bool asi me dice si se registro a no la venta?
+        public int RegistrarVenta(BE.Venta venta) { 
+            DAL.Venta unaVenta = new DAL.Venta();
+            int venta_ID = unaVenta.RegistrarVenta(venta);
+            return venta_ID;
+        }
     }
 }

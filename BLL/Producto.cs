@@ -15,10 +15,10 @@ namespace BLL
 
         }
 
-		public virtual BE.Producto BuscarProducto(string producto)
+		public virtual List<BE.Producto> BuscarProducto(string nombreProducto)
 		{
 			DAL.Producto unProductoDAL = new DAL.Producto();
-			return unProductoDAL.BuscarProducto(producto);
+			return unProductoDAL.BuscarProducto(nombreProducto);
 		}
 	}
 }

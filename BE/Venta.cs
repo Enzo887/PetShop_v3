@@ -8,14 +8,6 @@ namespace BE
 {
     public class Venta
     {
-        private string _estado;
-
-        public string Estado
-        {
-            get { return _estado; }
-            set { _estado = value; }
-        }
-
         private DateTime _fechaDeVenta = DateTime.Now;
 
         public DateTime FechaDeVenta
