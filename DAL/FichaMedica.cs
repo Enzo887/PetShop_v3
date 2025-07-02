@@ -13,15 +13,29 @@ namespace DAL
     {
         Conexion conexion = new Conexion();
 
-        public DataTable BuscarFichaMascota(string nombreMascota)
+        public List<Mascota> BuscarFichaMascota(string nombreMascota)
         {
-            //aca es donde recibo el nombre de la mascota que se busque y lo paso como parametro para que cuando haga la consulta a la base de datos en el return me devuelva las coincidencias que encuentra el Store Procedure
+            //Creamos una lista de mascotas vacia donde se va a guardar las coincidencias de la busqueda
+            List<Mascota> listaMascotas = new List<Mascota>();
+             //aca es donde recibo el nombre de la mascota que se busque y lo paso como parametro para que cuando haga la consulta a la base de datos en el return me devuelva las coincidencias que encuentra el Store Procedure
             SqlParameter[] parametros = new SqlParameter[]
             {
                 new SqlParameter("@NombreMascota", nombreMascota)
             };
 
-            return conexion.LeerPorStoreProcedure("SP_BuscarHistorialMascota", parametros);
+            DataTable mascotasBuscadas = conexion.LeerPorStoreProcedure("SP_BuscarHistorialMascota", parametros);
+            //recorremos cada fila de las coincidencias y las convertimos en mascota para añadir cada una a la lista de mascotas
+            foreach (DataRow fila in mascotasBuscadas.Rows)
+            {
+                Mascota mascota = new Mascota
+                {
+                    ID = Convert.ToInt32(fila["MASCOTA_ID"]),
+                    Nombre = fila["NombreMascota"].ToString()
+                };
+                listaMascotas.Add(mascota);
+            }
+            //Una vez termina de ejecutar retornamos esta lista
+            return listaMascotas;
         }
 
         public List<Mascota> ListarFichasEnGrid()

@@ -236,6 +236,34 @@ namespace LoginPetShop_v1.Veterinario
             }
         }
 
+        private void btnEliminarMascota_Click(object sender, EventArgs e)
+        {
+            //verificamos que no se elimine ninguna ficha con mascota sin querer
+            if (MessageBox.Show("¿Seguro que desea eliminar esta ficha?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+
+                try
+                {
+                    //instanciamos un veteriario de bll y llamamos a su metodo de eliminar mascota al cual le pasamos el id de la mascota que estamos "editando"
+                    BLL.Veterinario veterinarioBLL = new BLL.Veterinario();
+                    veterinarioBLL.EliminarMascota(mascotaActual.ID); 
+
+                    MessageBox.Show("Mascota eliminada correctamente.");
+
+                    // Actualizamos la vista despues de eliminar para mostrar el inicio
+                    var veterinarioInicio = this.FindForm() as VeterinarioInicio;
+                    if (veterinarioInicio != null)
+                    {
+                        veterinarioInicio.MostrarFichasMascotas();
+                        veterinarioInicio.MostrarPrincipal();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al eliminar la mascota: " + ex.Message);
+                }
+            }
+        }
     }
     
 }
