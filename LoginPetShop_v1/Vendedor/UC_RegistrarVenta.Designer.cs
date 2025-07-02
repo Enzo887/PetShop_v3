@@ -98,9 +98,19 @@
             // nudCantidad
             // 
             this.nudCantidad.Location = new System.Drawing.Point(407, 63);
+            this.nudCantidad.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudCantidad.Name = "nudCantidad";
             this.nudCantidad.Size = new System.Drawing.Size(75, 20);
             this.nudCantidad.TabIndex = 11;
+            this.nudCantidad.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // btnAgregarProducto
             // 

@@ -33,12 +33,14 @@
             this.btnRegistrarVenta = new System.Windows.Forms.Button();
             this.margenTop = new System.Windows.Forms.Panel();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.btnRegistrarCliente = new System.Windows.Forms.Button();
             this.panelLateral.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelLateral
             // 
             this.panelLateral.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panelLateral.Controls.Add(this.btnRegistrarCliente);
             this.panelLateral.Controls.Add(this.btnGestionarStock);
             this.panelLateral.Controls.Add(this.btnRegistrarVenta);
             this.panelLateral.Controls.Add(this.margenTop);
@@ -86,6 +88,17 @@
             this.panelContenedor.Size = new System.Drawing.Size(600, 450);
             this.panelContenedor.TabIndex = 2;
             // 
+            // btnRegistrarCliente
+            // 
+            this.btnRegistrarCliente.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRegistrarCliente.Location = new System.Drawing.Point(0, 194);
+            this.btnRegistrarCliente.Name = "btnRegistrarCliente";
+            this.btnRegistrarCliente.Size = new System.Drawing.Size(200, 47);
+            this.btnRegistrarCliente.TabIndex = 3;
+            this.btnRegistrarCliente.Text = "Registrar Cliente";
+            this.btnRegistrarCliente.UseVisualStyleBackColor = true;
+            this.btnRegistrarCliente.Click += new System.EventHandler(this.btnRegistrarCliente_Click);
+            // 
             // VendedorHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -107,5 +120,6 @@
         private System.Windows.Forms.Button btnRegistrarVenta;
         private System.Windows.Forms.Panel margenTop;
         private System.Windows.Forms.Panel panelContenedor;
+        private System.Windows.Forms.Button btnRegistrarCliente;
     }
 }

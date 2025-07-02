@@ -7,48 +7,55 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LoginPetShop_v1.Veterinario;
+using static LoginPetShop_v1.formInicio;
 
 namespace LoginPetShop_v1.Vendedor
 {
     public partial class UC_RegistrarVenta : UserControl
     {
-        List<BE.Producto> unosProductos = new List<BE.Producto>();
-        List<BE.Cliente> unosClientes = new List<BE.Cliente>();
-        BE.Venta unaVenta = new BE.Venta();
-        BE.DetalleVenta unDetalleVenta = new BE.DetalleVenta();
+        private List<BE.Producto> unosProductos = new List<BE.Producto>();
+        private List<BE.Cliente> unosClientes = new List<BE.Cliente>();
+        private BE.Venta unaVenta = new BE.Venta();
+
         public UC_RegistrarVenta()
         {
             InitializeComponent();
         }
 
-
-        private void lblFecha_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            var vendedorInicio = this.FindForm() as VendedorHome;
 
+            if (vendedorInicio != null)
+            {
+                vendedorInicio.MostrarPrincipal();
+            }
+            else
+            {
+                MessageBox.Show("No se encontro el form");
+            }
         }
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
             float cantidad = (float)nudCantidad.Value;
-
-
+            int indiceSeleccionado = cBoxProductoBuscado.SelectedIndex;
             BLL.DetalleVenta unDetalleVentaBLL = new BLL.DetalleVenta();
 
-            //Registrar en detalle venta
-            int indiceSeleccionado = cBoxProductoBuscado.SelectedIndex;
+            if (cantidad < 0)
+            {
+                MessageBox.Show("La cantidad debe ser mayor a cero.");
+                return;
+            }
 
             if (indiceSeleccionado >= 0 && indiceSeleccionado < unosProductos.Count)
             {
                 BE.Producto productoSeleccionado = unosProductos[indiceSeleccionado];
-                unDetalleVenta.Producto = productoSeleccionado;
-            
-                unDetalleVenta.CantidadVenta = cantidad;
 
+                BE.DetalleVenta unDetalleVenta = new BE.DetalleVenta();
+                unDetalleVenta.Producto = productoSeleccionado;
+                unDetalleVenta.CantidadVenta = cantidad;
                 unDetalleVenta.Subtotal = unDetalleVentaBLL.CalcularSubtotal(unDetalleVenta);
 
 
@@ -70,7 +77,7 @@ namespace LoginPetShop_v1.Vendedor
                 cBoxProductoBuscado.Items.Clear(); //limpio la lista
                 cBoxProductoBuscado.SelectedIndex = -1; //vuelve el seleccionado a default
                 cBoxProductoBuscado.Text = string.Empty; //limpio el texto seleccionado
-                nudCantidad.Value = 0;
+                nudCantidad.Value = 1;
             }
         }
 
@@ -79,14 +86,14 @@ namespace LoginPetShop_v1.Vendedor
             string nombreProducto = tboxProducto.Text;
             
             BLL.Producto unProductoBLL = new BLL.Producto();
-            //Busco el producto en la BBDD
+
             unosProductos = unProductoBLL.BuscarProducto(nombreProducto);
 
             if (unosProductos != null) {
                 //Limpio el cBox
                 cBoxProductoBuscado.Items.Clear();
 
-                //Muestro el Producto buscado.
+                //Muestro el producto buscado
                 foreach (var unProducto in unosProductos)
                 {
                     cBoxProductoBuscado.Items.Add(unProducto.Nombre.ToString() + " Precio:" + unProducto.PrecioUnidad.ToString());
@@ -131,7 +138,6 @@ namespace LoginPetShop_v1.Vendedor
                 //Muestro el Producto buscado.
                 foreach (var cliente in unosClientes)
                 {
-                    //tboxClienteBuscado.Text = unosClientes.Nombre.ToString();
                     cBoxClienteBuscado.Items.Add(cliente.Nombre.ToString() + " " + cliente.Apellido.ToString() + " " + cliente.DNI.ToString());
                 }
 
@@ -144,30 +150,53 @@ namespace LoginPetShop_v1.Vendedor
             {
                 MessageBox.Show("El cliente buscado no esta registrado");
             }
-            
-            
-
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            
             int indiceCliente = cBoxClienteBuscado.SelectedIndex;
+            int indiceSeleccionado = cBoxProductoBuscado.SelectedIndex;
+            //var usuario = SesionActual.UsuarioLogueado;
+            var vendedor = SesionActual.UsuarioLogueado as BE.Vendedor;
+            
+            if (vendedor != null)
+            {
+                unaVenta.Vendedor = vendedor;
+            }
+
+            if (gridVenta.Rows.Count <= 1) // 1 = solo la fila nueva vacía
+            {
+                MessageBox.Show("Se debe agregar al menos un producto");
+                return;
+            }
+
+            if (indiceCliente == -1)
+            { 
+                MessageBox.Show("Se debe cargar un cliente");
+                return;
+            }
+
             unaVenta.Cliente = unosClientes[indiceCliente];
-            //registrar la venta
+
+            //MessageBox.Show(unaVenta.Vendedor.UsuarioID.ToString());
             BLL.Venta unaVentaBLL = new BLL.Venta();
-            //MessageBox.Show(unaVenta.Cliente.DNI +" "+ unaVenta.FechaDeVenta);
             int venta_id = unaVentaBLL.RegistrarVenta(unaVenta);
-            unDetalleVenta.Venta_ID = venta_id;
-            MessageBox.Show(venta_id.ToString());
+
+            //MessageBox.Show(venta_id.ToString());
             MessageBox.Show("Venta registrada con exito!");
 
+            //"Resetear"
+            unaVenta = new BE.Venta();
+            unosProductos.Clear();
+            unosClientes.Clear();
             tboxCliente.Clear();
             gridVenta.Rows.Clear();
             cBoxClienteBuscado.SelectedIndex = -1; //vuelve el seleccionado a default
             cBoxClienteBuscado.Text = string.Empty; //limpio el texto seleccionado
-
-
-
+            tboxTotal.Clear();
+            
         }
+        
     }
 }

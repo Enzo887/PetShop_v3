@@ -20,10 +20,17 @@ namespace BLL
             return total;
         }
 
-        //quizas seria bueno que sea bool asi me dice si se registro a no la venta?
-        public int RegistrarVenta(BE.Venta venta) { 
-            DAL.Venta unaVenta = new DAL.Venta();
-            int venta_ID = unaVenta.RegistrarVenta(venta);
+        public int RegistrarVenta(BE.Venta unaVenta) { 
+            DAL.Venta unaVentaDAL = new DAL.Venta();
+            DAL.DetalleVenta unDetalleVentaDAL = new DAL.DetalleVenta();
+            int venta_ID = unaVentaDAL.RegistrarVenta(unaVenta);
+            
+            foreach (var detalle in unaVenta.DetalleVentas)
+            {
+                detalle.Venta_ID = venta_ID;
+                unDetalleVentaDAL.RegistrarDetalleVenta(detalle);
+            }
+            
             return venta_ID;
         }
     }
