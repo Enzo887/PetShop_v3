@@ -20,7 +20,7 @@ namespace LoginPetShop_v1.Veterinario
         {
             InitializeComponent();
             ActualizarDataGrid();
-
+ 
             listaOriginalProductos = unVeterinarioBLL.ObtenerProductos();
             dataGridViewProductos.DataSource = listaOriginalProductos;
         }
