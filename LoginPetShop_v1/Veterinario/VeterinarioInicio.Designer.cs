@@ -42,6 +42,7 @@
             this.NombreMascota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ver = new System.Windows.Forms.DataGridViewButtonColumn();
             this.lblBuscador = new System.Windows.Forms.Label();
+            this.btnLimpiarBusquedaFicha = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxPerfil)).BeginInit();
             this.panelLateralVeterinario.SuspendLayout();
             this.panelContenedorVeterinario.SuspendLayout();
@@ -117,6 +118,7 @@
             // panelContenedorVeterinario
             // 
             this.panelContenedorVeterinario.AutoScroll = true;
+            this.panelContenedorVeterinario.Controls.Add(this.btnLimpiarBusquedaFicha);
             this.panelContenedorVeterinario.Controls.Add(this.btnBuscar);
             this.panelContenedorVeterinario.Controls.Add(this.dataGridViewFichas);
             this.panelContenedorVeterinario.Controls.Add(this.lblBuscador);
@@ -130,7 +132,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(533, 45);
+            this.btnBuscar.Location = new System.Drawing.Point(516, 45);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 7;
@@ -186,6 +188,16 @@
             this.lblBuscador.Text = "Buscar ficha de mascota";
             this.lblBuscador.Click += new System.EventHandler(this.lblBuscador_Click);
             // 
+            // btnLimpiarBusquedaFicha
+            // 
+            this.btnLimpiarBusquedaFicha.Location = new System.Drawing.Point(516, 75);
+            this.btnLimpiarBusquedaFicha.Name = "btnLimpiarBusquedaFicha";
+            this.btnLimpiarBusquedaFicha.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiarBusquedaFicha.TabIndex = 8;
+            this.btnLimpiarBusquedaFicha.Text = "Volver";
+            this.btnLimpiarBusquedaFicha.UseVisualStyleBackColor = true;
+            this.btnLimpiarBusquedaFicha.Click += new System.EventHandler(this.btnLimpiarBusquedaFicha_Click);
+            // 
             // VeterinarioInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -226,5 +238,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreMascota;
         private System.Windows.Forms.DataGridViewButtonColumn Ver;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnLimpiarBusquedaFicha;
     }
 }
