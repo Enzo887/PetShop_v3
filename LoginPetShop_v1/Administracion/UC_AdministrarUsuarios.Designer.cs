@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.btnCrearUsuario = new System.Windows.Forms.Button();
-            this.btnEditarUsuario = new System.Windows.Forms.Button();
-            this.btnEliminarUsuario = new System.Windows.Forms.Button();
             this.tboxNombreUsuarioCrear = new System.Windows.Forms.TextBox();
             this.tboxApellidoUsuarioCrear = new System.Windows.Forms.TextBox();
             this.tboxNUsuarioCrear = new System.Windows.Forms.TextBox();
@@ -41,10 +39,11 @@
             this.lblContraseñaUsuarioCrear = new System.Windows.Forms.Label();
             this.comboxSeleccionRolNuevoUsuario = new System.Windows.Forms.ComboBox();
             this.tboxBuscarUsuario = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DGridViewUsuarios = new System.Windows.Forms.DataGridView();
+            this.cID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cNUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cNUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cRolUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cEditarUsuario = new System.Windows.Forms.DataGridViewButtonColumn();
             this.lblVerUsuarios = new System.Windows.Forms.Label();
@@ -113,13 +112,23 @@
             // 
             // lblApellidoUsuarioCrear
             // 
-            this.cNUsuario.HeaderText = "Nombre Usuario";
-            this.cNUsuario.Name = "cNUsuario";
+            this.lblApellidoUsuarioCrear.AutoSize = true;
+            this.lblApellidoUsuarioCrear.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApellidoUsuarioCrear.Location = new System.Drawing.Point(3, 113);
+            this.lblApellidoUsuarioCrear.Name = "lblApellidoUsuarioCrear";
+            this.lblApellidoUsuarioCrear.Size = new System.Drawing.Size(61, 17);
+            this.lblApellidoUsuarioCrear.TabIndex = 8;
+            this.lblApellidoUsuarioCrear.Text = "Apellido";
             // 
             // lblNUsuarioCrear
             // 
-            this.cRolUsuario.HeaderText = "Rol";
-            this.cRolUsuario.Name = "cRolUsuario";
+            this.lblNUsuarioCrear.AutoSize = true;
+            this.lblNUsuarioCrear.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNUsuarioCrear.Location = new System.Drawing.Point(3, 166);
+            this.lblNUsuarioCrear.Name = "lblNUsuarioCrear";
+            this.lblNUsuarioCrear.Size = new System.Drawing.Size(132, 17);
+            this.lblNUsuarioCrear.TabIndex = 9;
+            this.lblNUsuarioCrear.Text = "Nombre de usuario";
             // 
             // lblContraseñaUsuarioCrear
             // 
@@ -225,11 +234,7 @@
             this.cEditarUsuario.UseColumnTextForButtonValue = true;
             this.cEditarUsuario.Width = 50;
             // 
-            this.tboxApellidoUsuarioCrear.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxApellidoUsuarioCrear.Location = new System.Drawing.Point(3, 109);
-            this.tboxApellidoUsuarioCrear.Name = "tboxApellidoUsuarioCrear";
-            this.tboxApellidoUsuarioCrear.Size = new System.Drawing.Size(136, 23);
-            this.tboxApellidoUsuarioCrear.TabIndex = 39;
+            // lblVerUsuarios
             // 
             this.lblVerUsuarios.AutoSize = true;
             this.lblVerUsuarios.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -239,38 +244,33 @@
             this.lblVerUsuarios.TabIndex = 14;
             this.lblVerUsuarios.Text = "Visualizar usuarios";
             // 
-            // btnEliminarUsuario
+            // lblAdministrarUsuarios
             // 
-            this.btnEliminarUsuario.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEliminarUsuario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarUsuario.Location = new System.Drawing.Point(454, 379);
-            this.btnEliminarUsuario.Name = "btnEliminarUsuario";
-            this.btnEliminarUsuario.Size = new System.Drawing.Size(126, 32);
-            this.btnEliminarUsuario.TabIndex = 37;
-            this.btnEliminarUsuario.Text = "Eliminar usuario";
-            this.btnEliminarUsuario.UseVisualStyleBackColor = false;
+            this.lblAdministrarUsuarios.AutoSize = true;
+            this.lblAdministrarUsuarios.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdministrarUsuarios.Location = new System.Drawing.Point(3, 10);
+            this.lblAdministrarUsuarios.Name = "lblAdministrarUsuarios";
+            this.lblAdministrarUsuarios.Size = new System.Drawing.Size(217, 19);
+            this.lblAdministrarUsuarios.TabIndex = 15;
+            this.lblAdministrarUsuarios.Text = "Administracion de usuarios";
             // 
-            // btnEditarUsuario
+            // lblDniUsuario
             // 
-            this.btnEditarUsuario.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEditarUsuario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarUsuario.Location = new System.Drawing.Point(193, 379);
-            this.btnEditarUsuario.Name = "btnEditarUsuario";
-            this.btnEditarUsuario.Size = new System.Drawing.Size(126, 32);
-            this.btnEditarUsuario.TabIndex = 36;
-            this.btnEditarUsuario.Text = "Editar usuario";
-            this.btnEditarUsuario.UseVisualStyleBackColor = false;
+            this.lblDniUsuario.AutoSize = true;
+            this.lblDniUsuario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDniUsuario.Location = new System.Drawing.Point(3, 270);
+            this.lblDniUsuario.Name = "lblDniUsuario";
+            this.lblDniUsuario.Size = new System.Drawing.Size(31, 17);
+            this.lblDniUsuario.TabIndex = 17;
+            this.lblDniUsuario.Text = "DNI";
             // 
-            // btnCrearUsuario
+            // tboxDniUsuario
             // 
-            this.btnCrearUsuario.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCrearUsuario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrearUsuario.Location = new System.Drawing.Point(322, 379);
-            this.btnCrearUsuario.Name = "btnCrearUsuario";
-            this.btnCrearUsuario.Size = new System.Drawing.Size(126, 32);
-            this.btnCrearUsuario.TabIndex = 35;
-            this.btnCrearUsuario.Text = "Crear usuario";
-            this.btnCrearUsuario.UseVisualStyleBackColor = false;
+            this.tboxDniUsuario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxDniUsuario.Location = new System.Drawing.Point(3, 290);
+            this.tboxDniUsuario.Name = "tboxDniUsuario";
+            this.tboxDniUsuario.Size = new System.Drawing.Size(136, 23);
+            this.tboxDniUsuario.TabIndex = 16;
             // 
             // btnBorrarBusqueda
             // 
@@ -290,6 +290,7 @@
             this.Controls.Add(this.btnBorrarBusqueda);
             this.Controls.Add(this.lblDniUsuario);
             this.Controls.Add(this.tboxDniUsuario);
+            this.Controls.Add(this.lblAdministrarUsuarios);
             this.Controls.Add(this.lblVerUsuarios);
             this.Controls.Add(this.DGridViewUsuarios);
             this.Controls.Add(this.tboxBuscarUsuario);

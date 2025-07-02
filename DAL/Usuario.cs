@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using BE;
 
 namespace DAL
 {
@@ -40,7 +41,12 @@ namespace DAL
         {
             Conexion conexion = new Conexion();
             SqlParameter[] parametros = new SqlParameter[] {
-                new SqlParameter(),
+                new SqlParameter("@Usuario_ID", usuario.UsuarioID),
+                new SqlParameter("@DniUsuario", usuario.DNI),
+                new SqlParameter("@Nombre", usuario.Nombre),
+                new SqlParameter("@Apellido", usuario.Apellido),
+                new SqlParameter("@NombreUsuario", usuario.NombreUsuario),
+                new SqlParameter("@Contraseña", usuario.Contraseña)
             };
             conexion.EscribirPorStoreProcedure("SP_", parametros);
         }
