@@ -155,11 +155,56 @@ namespace BLL
 
         }
 
-        public int CrearFichaMascota(BE.FichaMedica unaFicha)
+        public int CrearFichaMascota(BE.FichaMedica unaFicha, BE.Mascota unaMascota, BE.Cliente unCliente)
         {
-            //instanciamos un veterinario de la clase dal que es donde se va a comunicar con la base de datos, ahi llamamos al metodo CrearFichaMedica de veterinario en la capa dal y le pasasmos como parametro la ficha que creamos para poder insertarla con una consulta a la base de datos
+            //Verificamos que todos los campos sean validos
+            if (unaMascota.FechaDeNacimiento > DateTime.Today)
+                throw new Exception("No se puede agendar una mascota que todavía no nació.");
+            if (string.IsNullOrWhiteSpace(unaMascota.Nombre) ||
+                string.IsNullOrWhiteSpace(unaMascota.Especie) ||
+                string.IsNullOrWhiteSpace(unaMascota.Raza) ||
+                string.IsNullOrWhiteSpace(unaMascota.Sexo) ||
+                unaMascota.Peso <= 0 ||
+                string.IsNullOrWhiteSpace(unaMascota.Dueño.Nombre) ||
+                string.IsNullOrWhiteSpace(unaMascota.Dueño.Apellido) ||
+                (unaMascota.Dueño.DNI <= 0) ||
+                (unaMascota.Dueño.Telefono <= 0) ||
+                string.IsNullOrWhiteSpace(unaMascota.Dueño.Email))
+            {
+                throw new Exception("Por favor, completá todos los campos obligatorios.");
+            }
+            //Creamos un cliente basado en la informacion que recibimos del formulario, sera el dueño de la mascota
+            BE.Cliente cliente = new BE.Cliente
+            {
+                Nombre = unaMascota.Dueño.Nombre,
+                Apellido = unaMascota.Dueño.Apellido,
+                DNI = unaMascota.Dueño.DNI,
+                Telefono = unaMascota.Dueño.Telefono,
+                Email = unaMascota.Dueño.Email
+            };
+            //Creamos una mascota tambien basada en la info recibida del form y le asignamos al cliente creado como ddueño
+            BE.Mascota mascota = new BE.Mascota
+            {
+                Nombre = unaMascota.Nombre,
+                Especie = unaMascota.Especie,
+                Raza = unaMascota.Raza,
+                Sexo = unaMascota.Sexo,
+                Peso = unaMascota.Peso,
+                FechaDeNacimiento = unaMascota.FechaDeNacimiento,
+                Dueño = cliente
+            };
+            //Creamos la ficha medica con los datos de la mascota, su dueño y la fecha actual, que seria la de registro
+            BE.FichaMedica ficha = new BE.FichaMedica
+            {
+                Mascota = mascota,
+                FechaDeRegistro = DateTime.Now,
+                Cliente = cliente
+            };
+
+           
+            //instanciamos un veterinario de la clase dal que es donde se va a comunicar con la base de datos, ahi llamamos al metodo CrearFichaMedica de veterinario en la capa dal y le pasasmos como parametro la ficha que creamos para poder insertarla y nos va a retornar el id que se haya generado
             DAL.Veterinario unVeterinarioDAL = new DAL.Veterinario();
-            return unVeterinarioDAL.CrearFichMedica(unaFicha);
+            return unVeterinarioDAL.CrearFichMedica(ficha);
         }
 
         public BE.FichaMedica ObtenerFichaPorMascotaID(int idMascota)
@@ -167,12 +212,34 @@ namespace BLL
             DAL.FichaMedica fichaMedicaDAL = new DAL.FichaMedica();
             return fichaMedicaDAL.ObtenerFichaPorMascotaID(idMascota);
         }
-
-        public void ActualizarFichaMedica(BE.FichaMedica fichaActualizada)
+        public void GuardarCambiosFicha(BE.FichaMedica unaFicha)
         {
+            //vamos a guardar la mascota y el cliente que seria le dueño de la ficha que recibimos por parametro
+            var mascota = unaFicha.Mascota;
+            var cliente = unaFicha.Cliente;
+
+            //validamos que todos los campos sean validos
+            if (mascota.FechaDeNacimiento > DateTime.Today)
+                throw new Exception("No se puede agendar una mascota que todavía no nació.");
+            if (string.IsNullOrWhiteSpace(mascota.Nombre) ||
+                string.IsNullOrWhiteSpace(mascota.Especie) ||
+                string.IsNullOrWhiteSpace(mascota.Raza) ||
+                string.IsNullOrWhiteSpace(mascota.Sexo) ||
+                mascota.Peso <= 0 ||
+                string.IsNullOrWhiteSpace(cliente.Nombre) ||
+                string.IsNullOrWhiteSpace(cliente.Apellido) ||
+                cliente.DNI <= 0 ||
+                cliente.Telefono <= 0 ||
+                string.IsNullOrWhiteSpace(cliente.Email))
+            {
+                throw new Exception("Por favor, completá todos los campos obligatorios.");
+            }
+
+            // Creamos una instancia de veterinario de la capa DAL donde se comunica con la base de datos y llamamos al metodo que va a escribir la actualizacion de la ficha donde le pasamos la ficha actualizada
             DAL.Veterinario unVeterinarioDAL = new DAL.Veterinario();
-            unVeterinarioDAL.ActualizarFichaMedica(fichaActualizada);
+            unVeterinarioDAL.ActualizarFichaMedica(unaFicha);
         }
+        
         //editar ficha va a ser actualizar
         public void EditarFichaMascota(FichaMedica unaFicha)
         {
