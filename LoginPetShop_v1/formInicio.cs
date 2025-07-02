@@ -67,6 +67,10 @@ namespace LoginPetShop_v1
                         {
                             UsuarioID = usuarioLogeado.UsuarioID,
                             Nombre = usuarioLogeado.Nombre,
+                            Apellido = usuarioLogeado.Apellido,
+                            NombreUsuario = usuarioLogeado.NombreUsuario,
+                            Contraseña = usuarioLogeado.Contraseña,
+                            DNI = usuarioLogeado.DNI,
                             Rol = usuarioLogeado.Rol
                         };
                         break;
@@ -76,6 +80,10 @@ namespace LoginPetShop_v1
                         {
                             UsuarioID = usuarioLogeado.UsuarioID,
                             Nombre = usuarioLogeado.Nombre,
+                            Apellido = usuarioLogeado.Apellido,
+                            NombreUsuario = usuarioLogeado.NombreUsuario,
+                            Contraseña = usuarioLogeado.Contraseña,
+                            DNI = usuarioLogeado.DNI,
                             Rol = usuarioLogeado.Rol
                         };
                         break;
@@ -85,8 +93,14 @@ namespace LoginPetShop_v1
                         {
                             UsuarioID = usuarioLogeado.UsuarioID,
                             Nombre = usuarioLogeado.Nombre,
+                            Apellido = usuarioLogeado.Apellido,
+                            NombreUsuario = usuarioLogeado.NombreUsuario,
+                            Contraseña = usuarioLogeado.Contraseña,
+                            DNI = usuarioLogeado.DNI,
                             Rol = usuarioLogeado.Rol
                         };
+                        MessageBox.Show(usuarioEspecifico.Nombre + usuarioEspecifico.DNI);
+                        MessageBox.Show(usuarioLogeado.DNI.ToString());
                         break;
 
                     case "veterinario":
@@ -94,6 +108,10 @@ namespace LoginPetShop_v1
                         {
                             UsuarioID = usuarioLogeado.UsuarioID,
                             Nombre = usuarioLogeado.Nombre,
+                            Apellido = usuarioLogeado.Apellido,
+                            NombreUsuario = usuarioLogeado.NombreUsuario,
+                            Contraseña = usuarioLogeado.Contraseña,
+                            DNI = usuarioLogeado.DNI,
                             Rol = usuarioLogeado.Rol
                         };
                         break;
@@ -133,6 +151,19 @@ namespace LoginPetShop_v1
             else
             {
                 MessageBox.Show("El usuario o la clave es incorrecta");
+            }
+        }
+
+        private void chBoxMostrarContraseña_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chBoxMostrarContraseña.Checked)
+            {
+                // Mostrar contraseña
+                tboxClave.PasswordChar = '\0'; // \0 no oculta nada
+            }
+            else
+            {
+                tboxClave.PasswordChar = '*';
             }
         }
     }

@@ -27,9 +27,10 @@ namespace BLL
 
         }
 
-        public void EditarPerfil()
+        public void EditarPerfil(BE.Usuario usuario)
         {
-
+            DAL.Usuario unUsuarioDAL= new DAL.Usuario();
+            unUsuarioDAL.InsertarCambios(usuario);
         }
         public virtual void EditarProducto(Producto unProducto)
         {
