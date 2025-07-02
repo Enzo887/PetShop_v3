@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             this.panelLateral = new System.Windows.Forms.Panel();
+            this.btnRegistrarCliente = new System.Windows.Forms.Button();
             this.btnGestionarStock = new System.Windows.Forms.Button();
             this.btnRegistrarVenta = new System.Windows.Forms.Button();
             this.margenTop = new System.Windows.Forms.Panel();
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.btnRegistrarCliente = new System.Windows.Forms.Button();
+            this.btnEditarPerfil = new System.Windows.Forms.Button();
             this.panelLateral.SuspendLayout();
+            this.margenTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelLateral
@@ -49,6 +51,17 @@
             this.panelLateral.Name = "panelLateral";
             this.panelLateral.Size = new System.Drawing.Size(200, 450);
             this.panelLateral.TabIndex = 1;
+            // 
+            // btnRegistrarCliente
+            // 
+            this.btnRegistrarCliente.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRegistrarCliente.Location = new System.Drawing.Point(0, 194);
+            this.btnRegistrarCliente.Name = "btnRegistrarCliente";
+            this.btnRegistrarCliente.Size = new System.Drawing.Size(200, 47);
+            this.btnRegistrarCliente.TabIndex = 3;
+            this.btnRegistrarCliente.Text = "Registrar Cliente";
+            this.btnRegistrarCliente.UseVisualStyleBackColor = true;
+            this.btnRegistrarCliente.Click += new System.EventHandler(this.btnRegistrarCliente_Click);
             // 
             // btnGestionarStock
             // 
@@ -74,6 +87,7 @@
             // 
             // margenTop
             // 
+            this.margenTop.Controls.Add(this.btnEditarPerfil);
             this.margenTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.margenTop.Location = new System.Drawing.Point(0, 0);
             this.margenTop.Name = "margenTop";
@@ -88,16 +102,15 @@
             this.panelContenedor.Size = new System.Drawing.Size(600, 450);
             this.panelContenedor.TabIndex = 2;
             // 
-            // btnRegistrarCliente
+            // btnEditarPerfil
             // 
-            this.btnRegistrarCliente.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRegistrarCliente.Location = new System.Drawing.Point(0, 194);
-            this.btnRegistrarCliente.Name = "btnRegistrarCliente";
-            this.btnRegistrarCliente.Size = new System.Drawing.Size(200, 47);
-            this.btnRegistrarCliente.TabIndex = 3;
-            this.btnRegistrarCliente.Text = "Registrar Cliente";
-            this.btnRegistrarCliente.UseVisualStyleBackColor = true;
-            this.btnRegistrarCliente.Click += new System.EventHandler(this.btnRegistrarCliente_Click);
+            this.btnEditarPerfil.Location = new System.Drawing.Point(12, 12);
+            this.btnEditarPerfil.Name = "btnEditarPerfil";
+            this.btnEditarPerfil.Size = new System.Drawing.Size(75, 23);
+            this.btnEditarPerfil.TabIndex = 0;
+            this.btnEditarPerfil.Text = "Editar Perfil";
+            this.btnEditarPerfil.UseVisualStyleBackColor = true;
+            this.btnEditarPerfil.Click += new System.EventHandler(this.btnEditarPerfil_Click);
             // 
             // VendedorHome
             // 
@@ -109,6 +122,7 @@
             this.Name = "VendedorHome";
             this.Text = "VendedorHome";
             this.panelLateral.ResumeLayout(false);
+            this.margenTop.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -121,5 +135,6 @@
         private System.Windows.Forms.Panel margenTop;
         private System.Windows.Forms.Panel panelContenedor;
         private System.Windows.Forms.Button btnRegistrarCliente;
+        private System.Windows.Forms.Button btnEditarPerfil;
     }
 }

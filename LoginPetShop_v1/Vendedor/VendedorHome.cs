@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LoginPetShop_v1.ControlesGenerales;
 using LoginPetShop_v1.Veterinario;
 
 namespace LoginPetShop_v1.Vendedor
@@ -44,6 +45,11 @@ namespace LoginPetShop_v1.Vendedor
         private void btnRegistrarCliente_Click(object sender, EventArgs e)
         {
             CargarUserControl(new UC_RegistrarCliente());
+        }
+
+        private void btnEditarPerfil_Click(object sender, EventArgs e)
+        {
+            CargarUserControl(new UC_EditarUsuario());
         }
     }
 }

@@ -14,7 +14,7 @@ namespace BLL
         {
             return null;
         }
-        public DataTable BuscarFicha(string nombreMascota)
+        public List<Mascota> BuscarFicha(string nombreMascota)
         {
             //creo una instancia de ficha medica dal para poder usar los metodos de la clase en esa capa que es la que va a hacer la consulta a la base de datos y entonces retorno la ficha bsucada con ese nombre que haya encontrado en la base de datos 
             DAL.FichaMedica FichaMedicaDAL = new DAL.FichaMedica();

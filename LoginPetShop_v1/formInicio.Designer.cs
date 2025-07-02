@@ -36,6 +36,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.panelContenedorLogin = new System.Windows.Forms.Panel();
             this.lblPetShopTitulo = new System.Windows.Forms.Label();
+            this.chBoxMostrarContraseña = new System.Windows.Forms.CheckBox();
             this.panelContenedorLogin.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,7 +77,7 @@
             // 
             this.tboxClave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tboxClave.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxClave.Location = new System.Drawing.Point(82, 130);
+            this.tboxClave.Location = new System.Drawing.Point(82, 122);
             this.tboxClave.Name = "tboxClave";
             this.tboxClave.PasswordChar = '*';
             this.tboxClave.Size = new System.Drawing.Size(124, 23);
@@ -88,7 +89,7 @@
             this.btnIniciarSesion.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnIniciarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIniciarSesion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIniciarSesion.Location = new System.Drawing.Point(82, 172);
+            this.btnIniciarSesion.Location = new System.Drawing.Point(82, 184);
             this.btnIniciarSesion.Name = "btnIniciarSesion";
             this.btnIniciarSesion.Size = new System.Drawing.Size(124, 36);
             this.btnIniciarSesion.TabIndex = 4;
@@ -112,6 +113,7 @@
             // panelContenedorLogin
             // 
             this.panelContenedorLogin.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panelContenedorLogin.Controls.Add(this.chBoxMostrarContraseña);
             this.panelContenedorLogin.Controls.Add(this.btnIniciarSesion);
             this.panelContenedorLogin.Controls.Add(this.btnCancelar);
             this.panelContenedorLogin.Controls.Add(this.label1);
@@ -132,6 +134,17 @@
             this.lblPetShopTitulo.Size = new System.Drawing.Size(119, 32);
             this.lblPetShopTitulo.TabIndex = 7;
             this.lblPetShopTitulo.Text = "PetShop";
+            // 
+            // chBoxMostrarContraseña
+            // 
+            this.chBoxMostrarContraseña.AutoSize = true;
+            this.chBoxMostrarContraseña.Location = new System.Drawing.Point(83, 151);
+            this.chBoxMostrarContraseña.Name = "chBoxMostrarContraseña";
+            this.chBoxMostrarContraseña.Size = new System.Drawing.Size(118, 17);
+            this.chBoxMostrarContraseña.TabIndex = 66;
+            this.chBoxMostrarContraseña.Text = "Mostrar Contraseña";
+            this.chBoxMostrarContraseña.UseVisualStyleBackColor = true;
+            this.chBoxMostrarContraseña.CheckedChanged += new System.EventHandler(this.chBoxMostrarContraseña_CheckedChanged);
             // 
             // formInicio
             // 
@@ -160,6 +173,7 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Panel panelContenedorLogin;
         private System.Windows.Forms.Label lblPetShopTitulo;
+        private System.Windows.Forms.CheckBox chBoxMostrarContraseña;
     }
 }
 

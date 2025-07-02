@@ -67,6 +67,17 @@ namespace DAL
             };
             conexion.EscribirPorStoreProcedure("SP_ActualizarFichaMedica", parametros);
         }
+
+        public void EliminarMascota(int idMascota)
+        {
+            SqlParameter[] parametros = new SqlParameter[]
+            {
+                new SqlParameter("@IdMascota", idMascota)
+            };
+
+            //llamamos al metodo que va a ejecutar el store procedure en la base de datos
+            conexion.EscribirPorStoreProcedure("SP_EliminarMascota", parametros);
+        }
         public int AgregarMedicamento(BE.Medicamento unMedicamento) 
         {   // escribe en base de datos un nuevo medicamento
 

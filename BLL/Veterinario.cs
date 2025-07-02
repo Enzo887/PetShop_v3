@@ -245,7 +245,23 @@ namespace BLL
         {
 
         }
-
+        public void EliminarMascota(int idMascota)
+        {
+            //verificamos que el id sea valido
+            if (idMascota <= 0)
+            {
+                throw new ArgumentException("El ID de la mascota no es válido.");
+            }
+            //verificamos que la mascota existe antes de eliminarla
+            var mascotaExiste = ObtenerFichaPorMascotaID(idMascota);
+            if (mascotaExiste == null)
+            {
+                throw new Exception("La mascota que quiere eliminar no existe"); 
+            }
+            //instanciamos un veterinario DAL y llamamos a su metodo eliminar mascota que va a ejecutar el store procedure para eliminar mascota, al cual le pasamos el id de la mascota
+            DAL.Veterinario veterinarioDAL = new DAL.Veterinario();
+            veterinarioDAL.EliminarMascota(idMascota);
+        }
         public void EditarHistorialMedico(HistorialMedico unHistorial)
         {
 
@@ -286,10 +302,5 @@ namespace BLL
             return null;
         }
 
-        //choca con el metodo de usuario
-        //public List<Producto> VerStock()
-        //{
-        //    return null;
-        //}
     }
 }
