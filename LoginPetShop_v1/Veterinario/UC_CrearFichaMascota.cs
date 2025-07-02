@@ -59,96 +59,74 @@ namespace LoginPetShop_v1.Veterinario
        
         private void btnCrear_Click(object sender, EventArgs e)
         {
-            BLL.Veterinario unVeterinarioBLL = new BLL.Veterinario();
-            string nombreMascota = tBoxNombreMascota.Text;
-          
-            //numericUpDown solo puede dar numero de tipo int o decimal
-            decimal valor= numericUpDownPeso.Value;
-            //convierto el valor decimal en float
-            float pesoFloat = (float) valor;
-            //valida que la mascota ya haya nacido
-            if (dTPFechaNacimientoMascota.Value.Date > DateTime.Today ) 
-            {
-                MessageBox.Show("No se puede agendar una mascota que todavia no nacio");
-            }
-            //valida que los campos no esten vacios
-            if
-                (
-                  string.IsNullOrWhiteSpace(tBoxNombreMascota.Text) ||
-                  string.IsNullOrWhiteSpace(cBoxEspecie.Text) ||
-                  string.IsNullOrWhiteSpace(cBoxRaza.Text) ||
-                  string.IsNullOrWhiteSpace(cBoxSexo.Text) ||
-                  pesoFloat <= 0 || 
-                  string.IsNullOrWhiteSpace(tBoxNombreDueño.Text) ||
-                  string.IsNullOrWhiteSpace(tBoxApellidoDueño.Text) ||
-                  string.IsNullOrWhiteSpace(tBoxDniDueño.Text) ||
-                  string.IsNullOrWhiteSpace(tboxTelefonoDueño.Text) ||
-                  string.IsNullOrWhiteSpace(tBoxMail.Text)
-                )
-            {
-                MessageBox.Show("Por favor, completá todos los campos obligatorios.", "Campos Faltantes!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
 
-            Cliente cliente = new Cliente()
-            {
-                Nombre = tBoxNombreDueño.Text,
-                Apellido = tBoxApellidoDueño.Text,
-                DNI = int.Parse(tBoxDniDueño.Text),
-                Telefono = int.Parse(tboxTelefonoDueño.Text),
-                Email = tBoxMail.Text
-            };
-
-            Mascota mascota = new Mascota()
-            {
-
-                Nombre = tBoxNombreMascota.Text,
-                Especie = cBoxEspecie.Text,
-                Raza = cBoxRaza.Text,
-                Sexo = cBoxSexo.Text,
-                Peso = pesoFloat,
-                FechaDeNacimiento = dTPFechaNacimientoMascota.Value,
-                Dueño = cliente
-            };
-
-            FichaMedica unaFicha = new FichaMedica()
-            {
-                Mascota = mascota,
-                FechaDeRegistro = DateTime.Now,
-                Cliente = cliente
-              
-
-            };
             try
             {
-                unVeterinarioBLL.CrearFichaMascota(unaFicha);
-                MessageBox.Show("Ficha medica creada correctamente");
-                
+                //convertimos los datos que vienen como texto
+                int dni = int.Parse(tBoxDniDueño.Text);
+                int telefono = int.Parse(tboxTelefonoDueño.Text);
+                float peso = (float)numericUpDownPeso.Value;
+
+                //Creamos el objeto cliente con los datos que vienen del form
+                var cliente = new Cliente
+                {
+                    Nombre = tBoxNombreDueño.Text,
+                    Apellido = tBoxApellidoDueño.Text,
+                    DNI = dni,
+                    Telefono = telefono,
+                    Email = tBoxMail.Text
+                };
+                //Creamos el objeto mascota con los datos que vienen del form y le asignamos el cliente creado como dueño
+                var mascota = new Mascota
+                {
+                    Nombre = tBoxNombreMascota.Text,
+                    Especie = cBoxEspecie.Text,
+                    Raza = cBoxRaza.Text,
+                    Sexo = cBoxSexo.Text,
+                    Peso = peso,
+                    FechaDeNacimiento = dTPFechaNacimientoMascota.Value,
+                    Dueño = cliente
+                };
+                //Creamos el objeto ficha con la mascota y el dueño, ademas de que le guardamos la fecha actual como la fecha del registro
+                var ficha = new FichaMedica
+                {
+                    Mascota = mascota,
+                    FechaDeRegistro = DateTime.Now,
+                    Cliente = cliente
+                };
+
+                //Creamos una instancia de veterinario de la capa BLL que para llamar al metodo que va a crear y le pasamos la ficha, mascota y cliente 
+                BLL.Veterinario unVeterinarioBLL = new BLL.Veterinario();
+                int idMascota = unVeterinarioBLL.CrearFichaMascota(ficha, mascota, cliente);
+
+                MessageBox.Show("Ficha médica creada correctamente");
+
+                //Una vez creada la ficha nos devuelve al form principal donde actualiza y agrega la ficha de la nueva mascota al datagrid
+                var veterinarioInicio = this.FindForm() as VeterinarioInicio;
+                if (veterinarioInicio != null)
+                {
+                    veterinarioInicio.AgregarFila(idMascota, tBoxNombreMascota.Text);
+                    veterinarioInicio.MostrarPrincipal();
+                    veterinarioInicio.MostrarFichasMascotas();
+                }
+
+                // Limpiar campos
+                tBoxNombreMascota.Clear();
+                cBoxEspecie.SelectedIndex = -1;
+                cBoxRaza.SelectedIndex = -1;
+                cBoxSexo.SelectedIndex = -1;
+                numericUpDownPeso.Value = 0;
+                dTPFechaNacimientoMascota.Value = DateTime.Today;
+                tBoxNombreDueño.Clear();
+                tBoxApellidoDueño.Clear();
+                tBoxDniDueño.Clear();
+                tBoxMail.Clear();
+                tboxTelefonoDueño.Clear();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al crear la ficha medica: " + ex.Message);
+                MessageBox.Show("Error al crear la ficha médica: " + ex.Message);
             }
-          
-            //arreglar asignacion de id(todos los id son 1)
-            var veterinarioInicio = this.FindForm() as VeterinarioInicio;
-                    
-         
-                    veterinarioInicio.MostrarPrincipal();
-
-                        //setea todo en dafult
-                        tBoxNombreMascota.Clear();
-                        cBoxEspecie.SelectedIndex = -1;
-                        cBoxRaza.SelectedIndex = -1;
-                        cBoxSexo.SelectedIndex = -1;
-                        numericUpDownPeso.Value = 0;
-                        dTPFechaNacimientoMascota.Value = DateTime.Today;
-
-                        tBoxNombreDueño.Clear();
-                        tBoxApellidoDueño.Clear();
-                        tBoxDniDueño.Clear(); ;
-                        tBoxMail.Clear();
-                        tboxTelefonoDueño.Clear();
         }
 
         string[] razasPerro =
