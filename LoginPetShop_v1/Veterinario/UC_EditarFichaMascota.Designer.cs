@@ -54,6 +54,7 @@
             this.cBoxSexo = new System.Windows.Forms.ComboBox();
             this.cBoxRaza = new System.Windows.Forms.ComboBox();
             this.cBoxEspecie = new System.Windows.Forms.ComboBox();
+            this.btnEliminarMascota = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPeso)).BeginInit();
             this.SuspendLayout();
             // 
@@ -289,10 +290,21 @@
             this.cBoxEspecie.TabIndex = 112;
             this.cBoxEspecie.SelectedIndexChanged += new System.EventHandler(this.cBoxEspecie_SelectedIndexChanged_1);
             // 
+            // btnEliminarMascota
+            // 
+            this.btnEliminarMascota.Location = new System.Drawing.Point(300, 312);
+            this.btnEliminarMascota.Name = "btnEliminarMascota";
+            this.btnEliminarMascota.Size = new System.Drawing.Size(75, 42);
+            this.btnEliminarMascota.TabIndex = 116;
+            this.btnEliminarMascota.Text = "Eliminar ficha";
+            this.btnEliminarMascota.UseVisualStyleBackColor = true;
+            this.btnEliminarMascota.Click += new System.EventHandler(this.btnEliminarMascota_Click);
+            // 
             // UC_EditarFichaMascota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnEliminarMascota);
             this.Controls.Add(this.numericUpDownPeso);
             this.Controls.Add(this.cBoxSexo);
             this.Controls.Add(this.cBoxRaza);
@@ -355,5 +367,6 @@
         private System.Windows.Forms.ComboBox cBoxSexo;
         private System.Windows.Forms.ComboBox cBoxRaza;
         private System.Windows.Forms.ComboBox cBoxEspecie;
+        private System.Windows.Forms.Button btnEliminarMascota;
     }
 }

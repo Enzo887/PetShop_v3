@@ -77,6 +77,12 @@
     <Compile Include="Administracion\UC_EditarRol.Designer.cs">
       <DependentUpon>UC_EditarRol.cs</DependentUpon>
     </Compile>
+    <Compile Include="Administracion\UC_EditarUsuarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Administracion\UC_EditarUsuarios.Designer.cs">
+      <DependentUpon>UC_EditarUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Administracion\UC_VerEstadisticas.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -231,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Administracion\UC_EditarRol.resx">
       <DependentUpon>UC_EditarRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\UC_EditarUsuarios.resx">
+      <DependentUpon>UC_EditarUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Administracion\UC_VerEstadisticas.resx">
       <DependentUpon>UC_VerEstadisticas.cs</DependentUpon>

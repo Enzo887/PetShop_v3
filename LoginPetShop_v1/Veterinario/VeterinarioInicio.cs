@@ -279,19 +279,15 @@ namespace LoginPetShop_v1.Veterinario
             try
             {
                 BLL.FichaMedica FichaMedicaBLL = new BLL.FichaMedica();
-                DataTable nombreEncontrado = FichaMedicaBLL.BuscarFicha(nombreBuscado);
+                List<Mascota> mascotasEncontradas = FichaMedicaBLL.BuscarFicha(nombreBuscado);
 
                 //limpiamos el grid para que solo se muestre la coincidencia
                 dataGridViewFichas.Rows.Clear();
 
                 //recorremos cada fila de la coincidencia y gurdamos lo necesario que siempre es el ID y el Nombre de la mascota, para despues otra vez llamar al metodo AgregarFila que va a poner los datos que guardo antes de la coincidencia
-                foreach (DataRow Fila in nombreEncontrado.Rows)
+                foreach (Mascota mascota in mascotasEncontradas)
                 {
-                    int idMascota = Convert.ToInt32(Fila["MASCOTA_ID"]);
-                    string nombreMascota = Fila["NombreMascota"].ToString();
-
-                    //dataGridViewFichas.Rows.Add(idMascota, nombreMascota, "Ver");
-                    AgregarFila(idMascota, nombreMascota);
+                    AgregarFila(mascota.ID, mascota.Nombre);
                 }
             }
             catch (Exception ex)
@@ -324,6 +320,12 @@ namespace LoginPetShop_v1.Veterinario
                     MessageBox.Show("Hubo un error con la ficha médica");
                 }
             }
+        }
+
+        private void btnLimpiarBusquedaFicha_Click(object sender, EventArgs e)
+        {
+            tBoxBusqueda.Clear();
+            MostrarFichasMascotas();
         }
     }
 }
