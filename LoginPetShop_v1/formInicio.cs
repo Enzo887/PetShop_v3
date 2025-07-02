@@ -12,6 +12,16 @@ namespace LoginPetShop_v1
 {
     public partial class formInicio : Form
     {
+        public static class SesionActual
+        {
+            private static BE.Usuario _usuarioLogueado;
+
+            public static BE.Usuario UsuarioLogueado
+            {
+                get { return _usuarioLogueado; }
+                set { _usuarioLogueado = value; }
+            }
+        }
         public formInicio()
         {
             InitializeComponent();
@@ -42,11 +52,61 @@ namespace LoginPetShop_v1
             string nombreUsuario = tboxUsuario.Text;
             string clave = tboxClave.Text;
 
-            BLL.Administrador usuario = new BLL.Administrador();
+            BLL.Usuario usuario = new BLL.Usuario();
             BE.Usuario usuarioLogeado =  usuario.Loguearse(nombreUsuario, clave);
 
-            if(usuarioLogeado != null)
+            if (usuarioLogeado != null)
             {
+                // Asigno el Usuario en el tipo que debe ser
+                BE.Usuario usuarioEspecifico = null;
+
+                switch (usuarioLogeado.Rol)
+                {
+                    case "admin":
+                        usuarioEspecifico = new BE.Administrador
+                        {
+                            UsuarioID = usuarioLogeado.UsuarioID,
+                            Nombre = usuarioLogeado.Nombre,
+                            Rol = usuarioLogeado.Rol
+                        };
+                        break;
+
+                    case "gerente":
+                        usuarioEspecifico = new BE.Gerente
+                        {
+                            UsuarioID = usuarioLogeado.UsuarioID,
+                            Nombre = usuarioLogeado.Nombre,
+                            Rol = usuarioLogeado.Rol
+                        };
+                        break;
+
+                    case "vendedor":
+                        usuarioEspecifico = new BE.Vendedor
+                        {
+                            UsuarioID = usuarioLogeado.UsuarioID,
+                            Nombre = usuarioLogeado.Nombre,
+                            Rol = usuarioLogeado.Rol
+                        };
+                        break;
+
+                    case "veterinario":
+                        usuarioEspecifico = new BE.Veterinario
+                        {
+                            UsuarioID = usuarioLogeado.UsuarioID,
+                            Nombre = usuarioLogeado.Nombre,
+                            Rol = usuarioLogeado.Rol
+                        };
+                        break;
+
+                    default:
+                        MessageBox.Show("Rol de usuario no reconocido");
+                        return;
+                }
+
+                // Se guarda la sesion con el tipo correcto
+                SesionActual.UsuarioLogueado = usuarioEspecifico;
+
+                //Muestro pantallas segun Rol
                 Form formInicio = null;
 
                 switch (usuarioLogeado.Rol)

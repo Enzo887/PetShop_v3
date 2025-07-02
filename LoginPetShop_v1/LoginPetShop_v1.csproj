@@ -125,6 +125,12 @@
     <Compile Include="Vendedor\UC_GestionarStock.Designer.cs">
       <DependentUpon>UC_GestionarStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vendedor\UC_RegistrarCliente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vendedor\UC_RegistrarCliente.Designer.cs">
+      <DependentUpon>UC_RegistrarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vendedor\VendedorHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vendedor\UC_GestionarStock.resx">
       <DependentUpon>UC_GestionarStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendedor\UC_RegistrarCliente.resx">
+      <DependentUpon>UC_RegistrarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vendedor\VendedorHome.resx">
       <DependentUpon>VendedorHome.cs</DependentUpon>

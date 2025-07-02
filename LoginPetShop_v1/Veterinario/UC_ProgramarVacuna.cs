@@ -13,6 +13,11 @@ namespace LoginPetShop_v1.Veterinario
     public partial class UC_ProgramarVacuna : UserControl
     {
         UC_EditarHistorialMedico editarHistorial;
+        private int idMascotaActual;
+        public void SetearIdMascota(int idMascota)
+        {
+            idMascotaActual = idMascota;
+        }
         public UC_ProgramarVacuna(UC_EditarHistorialMedico editarHistorialExistente)
         {
             editarHistorial = editarHistorialExistente;
@@ -36,7 +41,7 @@ namespace LoginPetShop_v1.Veterinario
 
             if (veterinarioInicio != null)
             {
-                veterinarioInicio.MostrarEdicionHistorial();
+                veterinarioInicio.MostrarEdicionHistorial(idMascotaActual);
             }
             else
             {

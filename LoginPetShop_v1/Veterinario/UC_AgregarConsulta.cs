@@ -15,6 +15,12 @@ namespace LoginPetShop_v1.Veterinario
     public partial class UC_AgregarConsulta : UserControl
     {
         UC_EditarHistorialMedico editarhistorial;
+        private int idMascota;
+
+        public void SetearIdMascota(int id)
+        {
+            idMascota = id;
+        }
         public UC_AgregarConsulta(UC_EditarHistorialMedico editarHistorialExistente)
         {
             editarhistorial = editarHistorialExistente;
@@ -41,7 +47,7 @@ namespace LoginPetShop_v1.Veterinario
 
             if (veterinarioInicio != null)
             {
-                veterinarioInicio.MostrarEdicionHistorial();
+                veterinarioInicio.MostrarEdicionHistorial(idMascota);
             }
             else
             {
@@ -60,7 +66,7 @@ namespace LoginPetShop_v1.Veterinario
 
             if (veterinarioInicio != null)
             {
-                veterinarioInicio.MostrarEdicionHistorial();
+                veterinarioInicio.MostrarEdicionHistorial(idMascota);
             }
             else
             {
