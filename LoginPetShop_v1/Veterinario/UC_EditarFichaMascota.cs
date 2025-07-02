@@ -38,19 +38,6 @@ namespace LoginPetShop_v1.Veterinario
             fichaActual = unaFicha;
             mascotaActual=unaFicha.Mascota;
             clienteActual=unaFicha.Cliente;
-            /*mascotaActual.ID = mascota.ID;
-            mascotaActual.Nombre = mascota.Nombre;
-            mascotaActual.Especie = mascota.Especie;
-            mascotaActual.Raza= mascota.Raza;
-            mascotaActual.Sexo= mascota.Sexo;
-            mascotaActual.Peso= mascota.Peso;
-            mascotaActual.FechaDeNacimiento=mascota.FechaDeNacimiento;
-
-            clienteActual.Nombre=cliente.Nombre;
-            clienteActual.Apellido= cliente.Apellido;
-            clienteActual.DNI = cliente.DNI;
-            clienteActual.Email= cliente.Email;
-            clienteActual.Telefono= cliente.Telefono;*/
 
             //le asigno el paso a la variable valor de tipo float
             float valor = mascotaActual.Peso;
@@ -184,79 +171,58 @@ namespace LoginPetShop_v1.Veterinario
         private void btnGuardarCambios_Click(object sender, EventArgs e)
         {
             //Funciona practicamente igual que crear ficha la logica del boton guardar cambios, con la diferencia de que me carga la ficha con los datos de la mascota actual que este revisando, cuando le doy a guardar pasa la misma ficha, porque el id no cambia pero con los datos actualizados
-            BLL.Veterinario unVeterinarioBLL = new BLL.Veterinario();
-            string nombreMascota = tBoxNombreMascota.Text;
-            string nombreDueño = tBoxNombreDueño.Text;
-            string apellidoDueño = tBoxApellidoDueño.Text;
-            int dniDueño = int.Parse(tBoxDniDueño.Text);
-            int telefonoDueño = int.Parse(tboxTelefonoDueño.Text);
-            string emailDueño = tBoxMail.Text;
-            decimal pesoMascota = numericUpDownPeso.Value;
-            string especieMascota = cBoxEspecie.Text;
-            string razaMascota = cBoxRaza.Text;
-            string sexoMascota = cBoxSexo.Text;
-            
-
-            float pesoFloat = (float)pesoMascota;
-
-            if (dTPFechaNacimientoMascota.Value.Date > DateTime.Today)
-            {
-                MessageBox.Show("No se puede agendar una mascota que todavia no nacio");
-            }
-
-            if
-                (
-                  string.IsNullOrWhiteSpace(tBoxNombreMascota.Text) ||
-                  string.IsNullOrWhiteSpace(cBoxEspecie.Text) ||
-                  string.IsNullOrWhiteSpace(cBoxRaza.Text) ||
-                  string.IsNullOrWhiteSpace(cBoxSexo.Text) ||
-                  pesoFloat <= 0 ||
-                  string.IsNullOrWhiteSpace(tBoxNombreDueño.Text) ||
-                  string.IsNullOrWhiteSpace(tBoxApellidoDueño.Text) ||
-                  string.IsNullOrWhiteSpace(tBoxDniDueño.Text) ||
-                  string.IsNullOrWhiteSpace(tboxTelefonoDueño.Text) ||
-                  string.IsNullOrWhiteSpace(tBoxMail.Text)
-                )
-            {
-                MessageBox.Show("Por favor, completá todos los campos obligatorios.", "Campos Faltantes!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            //Creamos el cliente actualizado
-            Cliente cliente = new Cliente
-            {
-                Nombre = nombreDueño,
-                Apellido = apellidoDueño,
-                DNI = dniDueño,
-                Telefono = telefonoDueño,
-                Email = emailDueño
-            };
-            //Creamos la mascota actualizada
-            Mascota mascota = new Mascota
-            {
-                ID = mascotaActual.ID,
-                Nombre = nombreMascota,
-                Especie = especieMascota,
-                Raza = razaMascota,
-                Sexo = sexoMascota,
-                Peso = pesoFloat,
-                FechaDeNacimiento = dTPFechaNacimientoMascota.Value,
-                Dueño = cliente
-            };
-            //Creamos la ficha actualizada
-            FichaMedica fichaActualizada = new FichaMedica
-            {
-                IdFichaMedica= fichaActual.IdFichaMedica,
-                Mascota = mascota,
-                Cliente = cliente
-            };
-
-            //llamamos al metodo de veterinario en bll y le pasamos como parametro la ficha con los cambios
             try
             {
-                unVeterinarioBLL.ActualizarFichaMedica(fichaActualizada);
-                MessageBox.Show("Ficha medica actualizada correctamente");
+                // Agarramos todos los datos que vienen del form
+                string nombreMascota = tBoxNombreMascota.Text;
+                string especieMascota = cBoxEspecie.Text;
+                string razaMascota = cBoxRaza.Text;
+                string sexoMascota = cBoxSexo.Text;
+                float pesoFloat = (float)numericUpDownPeso.Value;
+                DateTime fechaNacimiento = dTPFechaNacimientoMascota.Value;
 
+                string nombreDueño = tBoxNombreDueño.Text;
+                string apellidoDueño = tBoxApellidoDueño.Text;
+                int dni = int.Parse(tBoxDniDueño.Text);
+                int telefono = int.Parse(tboxTelefonoDueño.Text);
+                string email = tBoxMail.Text;
+
+                // Creamos cliente con datos del dueño de la mascota
+                Cliente cliente = new Cliente
+                {
+                    Nombre = nombreDueño,
+                    Apellido = apellidoDueño,
+                    DNI = dni,
+                    Telefono = telefono,
+                    Email = email
+                };
+                // Creamos mascota usando el id actual para identificar que es una mascota que ya existe
+                Mascota mascota = new Mascota
+                {
+                    ID = mascotaActual.ID,
+                    Nombre = nombreMascota,
+                    Especie = especieMascota,
+                    Raza = razaMascota,
+                    Sexo = sexoMascota,
+                    Peso = pesoFloat,
+                    FechaDeNacimiento = fechaNacimiento,
+                    Dueño = cliente
+                };
+                //Creamos la ficha que tiene la mascota y el dueño con el id actual (el que entramos a editar) para poder devolver el mismo
+                FichaMedica ficha = new FichaMedica
+                {
+                    IdFichaMedica = fichaActual.IdFichaMedica,
+                    Mascota = mascota,
+                    Cliente = cliente
+                };
+
+                // Creamos una instancia de veterinario BLL para llamar al metodo que trabaja la logica de actualizacion
+                BLL.Veterinario unVeterinarioBLL = new BLL.Veterinario();
+                unVeterinarioBLL.GuardarCambiosFicha(ficha);
+
+                MessageBox.Show("Ficha médica actualizada correctamente");
+
+                //Una vez que se crea volvemos a la vista principal con todo actualizado donde nos muestra la mascota actualizada si le damos a "Ver"
                 var veterinarioInicio = this.FindForm() as VeterinarioInicio;
                 if (veterinarioInicio != null)
                 {
@@ -266,8 +232,10 @@ namespace LoginPetShop_v1.Veterinario
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Hubo un error actualizando la ficha medica: " + ex.Message);
+                MessageBox.Show("Error al actualizar la ficha médica: " + ex.Message);
             }
         }
+
     }
+    
 }
