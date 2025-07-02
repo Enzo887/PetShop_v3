@@ -83,6 +83,12 @@
     <Compile Include="Administracion\UC_VerEstadisticas.Designer.cs">
       <DependentUpon>UC_VerEstadisticas.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlesGenerales\UC_EditarUsuario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesGenerales\UC_EditarUsuario.Designer.cs">
+      <DependentUpon>UC_EditarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="formInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Administracion\UC_VerEstadisticas.resx">
       <DependentUpon>UC_VerEstadisticas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesGenerales\UC_EditarUsuario.resx">
+      <DependentUpon>UC_EditarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formInicio.resx">
       <DependentUpon>formInicio.cs</DependentUpon>
