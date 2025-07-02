@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LoginPetShop_v1.Veterinario;
 
 namespace LoginPetShop_v1.Vendedor
 {
     public partial class VendedorHome : Form
     {
+        private UC_RegistrarVenta RegistrarVenta;
+
         public VendedorHome()
         {
             InitializeComponent();
@@ -25,12 +28,22 @@ namespace LoginPetShop_v1.Vendedor
 
         private void btnRegistrarVenta_Click(object sender, EventArgs e)
         {
-            CargarUserControl( new UC_RegistrarVenta() );
+            CargarUserControl(RegistrarVenta = new UC_RegistrarVenta() );
         }
 
         private void btnGestionarStock_Click(object sender, EventArgs e)
         {
             CargarUserControl ( new UC_GestionarStock() );
+        }
+        public void MostrarPrincipal()
+        {
+            RegistrarVenta.Visible = false;
+            //this.Close();
+        }
+
+        private void btnRegistrarCliente_Click(object sender, EventArgs e)
+        {
+            CargarUserControl(new UC_RegistrarCliente());
         }
     }
 }

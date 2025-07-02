@@ -19,5 +19,19 @@ namespace BLL
 
             return total;
         }
+
+        public int RegistrarVenta(BE.Venta unaVenta) { 
+            DAL.Venta unaVentaDAL = new DAL.Venta();
+            DAL.DetalleVenta unDetalleVentaDAL = new DAL.DetalleVenta();
+            int venta_ID = unaVentaDAL.RegistrarVenta(unaVenta);
+            
+            foreach (var detalle in unaVenta.DetalleVentas)
+            {
+                detalle.Venta_ID = venta_ID;
+                unDetalleVentaDAL.RegistrarDetalleVenta(detalle);
+            }
+            
+            return venta_ID;
+        }
     }
 }

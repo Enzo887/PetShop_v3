@@ -8,7 +8,7 @@ namespace BLL
 {
     public class Cliente
     {
-        public BE.Cliente BuscarCliente(string dni)
+        public List<BE.Cliente> BuscarCliente(string dni)
         {
             DAL.Cliente unClienteDAL = new DAL.Cliente();
             return unClienteDAL.BuscarCliente(dni);
