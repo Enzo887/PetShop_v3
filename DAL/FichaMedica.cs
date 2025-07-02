@@ -44,5 +44,47 @@ namespace DAL
             }
             return listaMascotas;
         }
+
+        public BE.FichaMedica ObtenerFichaPorMascotaID(int idMascota)
+        {
+            SqlParameter[] parametros = new SqlParameter[]
+            {
+                new SqlParameter("@MascotaID", idMascota)
+            };
+            DataTable tabla = conexion.LeerPorStoreProcedure("SP_ObtenerFichaPorIdMascota", parametros);
+
+            if (tabla.Rows.Count == 0)
+            {
+                return null;
+            }
+
+            DataRow fila = tabla.Rows[0];
+
+            BE.Cliente cliente = new BE.Cliente
+            {
+                DNI = Convert.ToInt32(fila["DNI_CLIENTE"]),
+                Nombre = fila["NOMBRE_CLIENTE"].ToString(),
+                Apellido = fila["APELLIDO_CLIENTE"].ToString(),
+                Email = fila["EMAIL_CLIENTE"].ToString(),
+                Telefono = Convert.ToInt32(fila["TELEFONO_CLIENTE"])
+            };
+
+            BE.Mascota mascota = new BE.Mascota
+            {
+                ID = Convert.ToInt32(fila["MASCOTA_ID"]),
+                Nombre = fila["NOMBRE_MASCOTA"].ToString(),
+                Especie = fila["ESPECIE"].ToString(),
+                Raza = fila["RAZA"].ToString(),
+                Sexo = fila["SEXO"].ToString(),
+                Peso = float.Parse(fila["PESO"].ToString()),
+                FechaDeNacimiento = Convert.ToDateTime(fila["FECHA_NACIMIENTO"])
+            };
+
+            return new BE.FichaMedica
+            {
+                Mascota = mascota,
+                Cliente = cliente
+            };
+        }
     }
 }

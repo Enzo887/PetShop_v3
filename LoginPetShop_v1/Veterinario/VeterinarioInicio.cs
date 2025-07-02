@@ -84,9 +84,8 @@ namespace LoginPetShop_v1.Veterinario
             editarProducto.Visible = false;
 
         }
-        public void MostrarEdicionFicha(Mascota mascota, Cliente cliente)
+        public void MostrarEdicionFicha(FichaMedica unaFicha)
         {
-            editarFichaMascota.CargarMascota(mascota, cliente);
 
             crearFichaMascota.Visible = false;
             editarFichaMascota.Visible = true;
@@ -97,8 +96,9 @@ namespace LoginPetShop_v1.Veterinario
             agregarConsulta.Visible = false;
             programarVacuna.Visible = false;
             editarProducto.Visible = false;
+            editarFichaMascota.CargarFicha(unaFicha);
         }
-        public void MostrarEdicionHistorial()
+        public void MostrarEdicionHistorial(int idMascota)
         {
             crearFichaMascota.Visible = false;
             editarFichaMascota.Visible = false;
@@ -109,6 +109,7 @@ namespace LoginPetShop_v1.Veterinario
             agregarConsulta.Visible = false;
             programarVacuna.Visible = false;
             editarProducto.Visible = false;
+            editarHistorialMedico.CargarHistorial(idMascota);
         }
         public void MostrarGestionStock()
         {
@@ -161,7 +162,7 @@ namespace LoginPetShop_v1.Veterinario
             programarVacuna.Visible = false;
             editarProducto.Visible = false;
         }
-        public void MostrarAgregarConsulta()
+        public void MostrarAgregarConsulta(int idMascota)
         {
             crearFichaMascota.Visible = false;
             editarFichaMascota.Visible = false;
@@ -171,8 +172,9 @@ namespace LoginPetShop_v1.Veterinario
             agregarConsulta.Visible = true;
             programarVacuna.Visible = false;
             editarProducto.Visible = false;
+            agregarConsulta.SetearIdMascota(idMascota);
         }
-        public void MostrarProgramarVacuna()
+        public void MostrarProgramarVacuna(int idMascota)
         {
             crearFichaMascota.Visible = false;
             editarFichaMascota.Visible = false;
@@ -182,6 +184,7 @@ namespace LoginPetShop_v1.Veterinario
             agregarConsulta.Visible = false;
             programarVacuna.Visible = true;
             editarProducto.Visible = false;
+    
         }
         private void VeterinarioInicio_Load(object sender, EventArgs e)
         {
@@ -297,6 +300,30 @@ namespace LoginPetShop_v1.Veterinario
             }
             tBoxBusqueda.Clear();
         }
-        
+
+     
+        private void dataGridViewFichas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == dataGridViewFichas.Columns["Ver"].Index)
+            {
+                int idMascota = Convert.ToInt32(dataGridViewFichas.Rows[e.RowIndex].Cells[0].Value);
+
+                BLL.Veterinario veterinarioBLL = new BLL.Veterinario();
+                BE.FichaMedica fichaCompleta = veterinarioBLL.ObtenerFichaPorMascotaID(idMascota);
+
+                if(fichaCompleta != null)
+                {
+                    var veterinarioInicio = this.FindForm() as VeterinarioInicio;
+                    if (veterinarioInicio != null)
+                    {
+                        veterinarioInicio.MostrarEdicionFicha(fichaCompleta);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Hubo un error con la ficha médica");
+                }
+            }
+        }
     }
 }

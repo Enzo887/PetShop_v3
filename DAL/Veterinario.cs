@@ -33,11 +33,40 @@ namespace DAL
                 new SqlParameter("@FechaNacimiento", unaFicha.Mascota.FechaDeNacimiento),
 
                 //ficha medica
-                new SqlParameter("@FechaRegistroFicha", unaFicha.FechaDeRegistro)
+                new SqlParameter("@FechaRegistroFicha", unaFicha.FechaDeRegistro),
+
+                new SqlParameter("@MascotaID", SqlDbType.Int){Direction = ParameterDirection.Output}
             };
-           return conexion.EscribirPorStoreProcedure("SP_CrearFichaMedica", parametros);
+            conexion.EscribirPorStoreProcedure("SP_CrearFichaMedica", parametros);
+
+            int idMascotaGenerado = Convert.ToInt32(parametros[12].Value);
+            unaFicha.Mascota.ID = idMascotaGenerado;
+
+            return idMascotaGenerado;
         }
 
+        public void ActualizarFichaMedica(BE.FichaMedica fichaActualizada)
+        {
+            //le paso los parametros en los que se va a escribir del store procedure para despues retornar el metodo de escribir por sp y mandar a las base de datos la ficha con los datos actualizados
+            SqlParameter[] parametros = new SqlParameter[]
+            {
+                //Datos Mascota
+                new SqlParameter("@MascotaID", fichaActualizada.Mascota.ID),
+                new SqlParameter("@NombreMascota", fichaActualizada.Mascota.Nombre),
+                new SqlParameter("@EspecieMascota", fichaActualizada.Mascota.Especie),
+                new SqlParameter("@RazaMascota", fichaActualizada.Mascota.Raza),
+                new SqlParameter("@SexoMascota", fichaActualizada.Mascota.Sexo),
+                new SqlParameter("@PesoMascota", fichaActualizada.Mascota.Peso),
+                new SqlParameter("@FechaNacimiento", fichaActualizada.Mascota.FechaDeNacimiento),
+                //Datos Cliente
+                new SqlParameter("@DNICliente", fichaActualizada.Cliente.DNI),
+                new SqlParameter("@NombreCliente", fichaActualizada.Cliente.Nombre),
+                new SqlParameter("@ApellidoCliente", fichaActualizada.Cliente.Apellido),
+                new SqlParameter("@EmailCliente", fichaActualizada.Cliente.Email),
+                new SqlParameter("@TelefonoCliente", fichaActualizada.Cliente.Telefono)
+            };
+            conexion.EscribirPorStoreProcedure("SP_ActualizarFichaMedica", parametros);
+        }
         public int AgregarMedicamento(BE.Medicamento unMedicamento) 
         {   // escribe en base de datos un nuevo medicamento
 
