@@ -274,5 +274,44 @@ namespace DAL
             }
            else { return -1; }
         }
+
+
+        /*
+         * crear el proc y agregarlo qsyo gracias copiloto
+        public void EliminarProducto(int idProducto)
+        {   // elimina un producto de la base de datos
+            SqlParameter[] parametros = new SqlParameter[]
+            {
+                new SqlParameter("@IdProducto", idProducto)
+            };
+            conexion.EscribirPorStoreProcedure("SP_EliminarProducto", parametros);
+        */
+
+        public int CrearConsulta(BE.Consulta unaConsulta, int idHistorial) 
+        {
+            // escribe en base de datos una nueva vacuna
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@Historial_id", idHistorial),
+                new SqlParameter("@FechaConsulta", unaConsulta.FechaDeConsulta),
+                new SqlParameter("@Diagnostico", unaConsulta.Diagnostico),
+                new SqlParameter("@Descripcion", unaConsulta.Observaciones),
+                new SqlParameter("@Tratamiento", unaConsulta.Tratamiento),
+                new SqlParameter("@Consulta_id", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    }
+            };
+            conexion.EscribirPorStoreProcedure("SP_AgregarConsulta", parameters);
+            //me traigo el id autoincremental del sql y lo devuelvo
+            int idGenerado = Convert.ToInt32(parameters[5].Value);
+            unaConsulta.IdConsulta = idGenerado;
+
+            return idGenerado;
+        }
+
+       // public void ProgramarVacuna(BE.Vacuna un)
+
+
     }
 }

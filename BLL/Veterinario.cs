@@ -10,6 +10,7 @@ namespace BLL
 {
     public class Veterinario : Usuario
     {
+        DAL.Veterinario unVeterinarioDal = new DAL.Veterinario();
         public override void AgregarProducto(Producto unProducto)
         {
            
@@ -17,47 +18,46 @@ namespace BLL
         //revisar si hice cagada o no hice mis propios metodos xd
         public void ActualizarVacuna(BE.Vacuna unaVacuna, int idProducto) 
         {   
-            DAL.Veterinario unVeterinarioDal = new DAL.Veterinario();
+            
             unVeterinarioDal.ActualizarVacuna(unaVacuna, idProducto);
         }
 
         public void ActualizarMedicamento(BE.Medicamento unMedicamento, int idProducto)
         {
-            DAL.Veterinario unVeterinarioDal = new DAL.Veterinario();
+            
             unVeterinarioDal.ActualizarMedicamento(unMedicamento, idProducto);
         }
 
         public void AgregarMedicamento(BE.Medicamento unMedicamento)
         {
-            DAL.Veterinario unVeterinarioDAL = new DAL.Veterinario();
-            unVeterinarioDAL.AgregarMedicamento(unMedicamento);
+           
+            unVeterinarioDal.AgregarMedicamento(unMedicamento);
         }
         public void AgregarVacuna(BE.Vacuna unaVacuna)
         {
-            DAL.Veterinario unVeterinarioDAL = new DAL.Veterinario();
-            unVeterinarioDAL.AgregarVacuna(unaVacuna);
+            
+            unVeterinarioDal.AgregarVacuna(unaVacuna);
         }
+
 
         public BE.Medicamento ObtenerMedicamentoPorID(int idProducto) 
         {
-            DAL.Veterinario unVeterinarioDal = new DAL.Veterinario();
+            
             return unVeterinarioDal.ObtenerMedicamentoPorId(idProducto);
             
         }
         public BE.Vacuna ObtenerVacunaPorID(int idProducto)
         {
-            DAL.Veterinario unVeterinarioDal = new DAL.Veterinario();
             return unVeterinarioDal.ObtenerVacunaPorId(idProducto);
         }
         public int ObtenerCategoriaPorID(int idProducto) 
         {
-            DAL.Veterinario unveterinarioDal = new DAL.Veterinario();
-            return unveterinarioDal.ObtenerCategoriaPorID((int)idProducto);
+            return unVeterinarioDal.ObtenerCategoriaPorID((int)idProducto);
         }
         public List<BE.Producto> ObtenerProductos() 
         {
             var productos = new List<BE.Producto>();
-            DAL.Veterinario unVeterinarioDal = new DAL.Veterinario();
+           
             // Obtengo los datos desde la DAL y los guardo en una lista
             var tabla = unVeterinarioDal.ObtenerProductosDeVeterinario();
 
@@ -150,9 +150,9 @@ namespace BLL
 
         }
 
-        public void CrearConsulta()
+        public void CrearConsulta(BE.Consulta unaConsulta, int idHistorial)
         {
-
+            unVeterinarioDal.CrearConsulta(unaConsulta, idHistorial);
         }
 
         public int CrearFichaMascota(BE.FichaMedica unaFicha, BE.Mascota unaMascota, BE.Cliente unCliente)
@@ -203,8 +203,8 @@ namespace BLL
 
            
             //instanciamos un veterinario de la clase dal que es donde se va a comunicar con la base de datos, ahi llamamos al metodo CrearFichaMedica de veterinario en la capa dal y le pasasmos como parametro la ficha que creamos para poder insertarla y nos va a retornar el id que se haya generado
-            DAL.Veterinario unVeterinarioDAL = new DAL.Veterinario();
-            return unVeterinarioDAL.CrearFichMedica(ficha);
+         
+            return unVeterinarioDal.CrearFichMedica(ficha);
         }
 
         public BE.FichaMedica ObtenerFichaPorMascotaID(int idMascota)
