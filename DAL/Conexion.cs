@@ -286,6 +286,33 @@ namespace DAL
         }
         #endregion
 
+        public object EjecutarScalarPorStoreProcedure(string nombreSP, SqlParameter[] parametros)
+        {
+            object resultado = null;
+            var comando = new SqlCommand();
+
+            this.Conectar();
+            try
+            {
+                comando.CommandText = nombreSP;
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Connection = this.objConexion;
+
+                comando.Parameters.AddRange(parametros);
+
+                resultado = comando.ExecuteScalar();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                this.Desconectar();
+            }
+
+            return resultado;
+        }
 
     }
 }

@@ -12,9 +12,16 @@ namespace LoginPetShop_v1.Administracion
 {
     public partial class AdminInicio : Form
     {
+        private UC_AdministrarUsuarios AdministrarUsuarios;
+        private UC_EditarUsuarios EditarUsuarios;
+        int idUsuario;
+        
         public AdminInicio()
         {
             InitializeComponent();
+            
+            AdministrarUsuarios = new UC_AdministrarUsuarios();
+            EditarUsuarios = new UC_EditarUsuarios(AdministrarUsuarios,idUsuario);
         }
 
         private void CargarUserControl(UserControl control)
@@ -46,7 +53,18 @@ namespace LoginPetShop_v1.Administracion
 
         private void btnGestionarUsuarios_Click(object sender, EventArgs e)
         {
-            CargarUserControl(new UC_AdministrarUsuarios());
+            MostrarAdministracionUsuarios();
+        }
+
+        public void MostrarAdministracionUsuarios() 
+        {
+            CargarUserControl(AdministrarUsuarios);
+        }
+        public void MostrarEditarUsuario (int idUsuario)
+        {
+            UC_EditarUsuarios EditarUsuarios = new UC_EditarUsuarios(AdministrarUsuarios, idUsuario);
+            CargarUserControl (EditarUsuarios);
+            EditarUsuarios.CargarUsuario(idUsuario);
         }
     }
 }

@@ -24,9 +24,9 @@ namespace BE
             set { _producto = value; }
         }
 
-        private Venta _ventaID;
+        private int _ventaID;
 
-        public Venta Venta
+        public int Venta_ID
         {
             get { return _ventaID; }
             set { _ventaID = value; }

@@ -8,14 +8,6 @@ namespace BE
 {
     public class Venta
     {
-        private string _estado;
-
-        public string Estado
-        {
-            get { return _estado; }
-            set { _estado = value; }
-        }
-
         private DateTime _fechaDeVenta = DateTime.Now;
 
         public DateTime FechaDeVenta
@@ -32,12 +24,12 @@ namespace BE
             set { _cliente = value; }
         }
 
-        private Vendedor _nombreVendedor;
+        private Vendedor _vendedor;
 
-        public Vendedor NombreVendedor
+        public Vendedor Vendedor
         {
-            get { return _nombreVendedor; }
-            set { _nombreVendedor = value; }
+            get { return _vendedor; }
+            set { _vendedor = value; }
         }
 
         private float _precioTotal;
