@@ -36,12 +36,12 @@
             this.panelTopVeterinario = new System.Windows.Forms.Panel();
             this.tBoxBusqueda = new System.Windows.Forms.TextBox();
             this.panelContenedorVeterinario = new System.Windows.Forms.Panel();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.dataGridViewFichas = new System.Windows.Forms.DataGridView();
             this.IdMascota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreMascota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ver = new System.Windows.Forms.DataGridViewButtonColumn();
             this.lblBuscador = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxPerfil)).BeginInit();
             this.panelLateralVeterinario.SuspendLayout();
             this.panelContenedorVeterinario.SuspendLayout();
@@ -128,6 +128,16 @@
             this.panelContenedorVeterinario.TabIndex = 9;
             this.panelContenedorVeterinario.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedorVeterinario_Paint);
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(533, 45);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 7;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // dataGridViewFichas
             // 
             this.dataGridViewFichas.AllowUserToAddRows = false;
@@ -145,6 +155,7 @@
             this.dataGridViewFichas.ReadOnly = true;
             this.dataGridViewFichas.Size = new System.Drawing.Size(344, 288);
             this.dataGridViewFichas.TabIndex = 6;
+            this.dataGridViewFichas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewFichas_CellClick);
             this.dataGridViewFichas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewFichas_CellContentClick);
             // 
             // IdMascota
@@ -174,16 +185,6 @@
             this.lblBuscador.TabIndex = 5;
             this.lblBuscador.Text = "Buscar ficha de mascota";
             this.lblBuscador.Click += new System.EventHandler(this.lblBuscador_Click);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(533, 45);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 7;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // VeterinarioInicio
             // 

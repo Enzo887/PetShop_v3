@@ -155,12 +155,25 @@ namespace BLL
 
         }
 
-        public void CrearFichaMascota(BE.FichaMedica unaFicha)
+        public int CrearFichaMascota(BE.FichaMedica unaFicha)
         {
+            //instanciamos un veterinario de la clase dal que es donde se va a comunicar con la base de datos, ahi llamamos al metodo CrearFichaMedica de veterinario en la capa dal y le pasasmos como parametro la ficha que creamos para poder insertarla con una consulta a la base de datos
             DAL.Veterinario unVeterinarioDAL = new DAL.Veterinario();
-            unVeterinarioDAL.CrearFichMedica(unaFicha);
+            return unVeterinarioDAL.CrearFichMedica(unaFicha);
         }
 
+        public BE.FichaMedica ObtenerFichaPorMascotaID(int idMascota)
+        {
+            DAL.FichaMedica fichaMedicaDAL = new DAL.FichaMedica();
+            return fichaMedicaDAL.ObtenerFichaPorMascotaID(idMascota);
+        }
+
+        public void ActualizarFichaMedica(BE.FichaMedica fichaActualizada)
+        {
+            DAL.Veterinario unVeterinarioDAL = new DAL.Veterinario();
+            unVeterinarioDAL.ActualizarFichaMedica(fichaActualizada);
+        }
+        //editar ficha va a ser actualizar
         public void EditarFichaMascota(FichaMedica unaFicha)
         {
 
@@ -175,7 +188,17 @@ namespace BLL
         {
 
         }
-
+        public List<BE.Vacuna> ObtenerVacunasPorMascotaID(int idMascota)
+        {
+            //instancio un historial medico que va a hacer las consultas a la base de datos para traerme las vacunas que tenga programadas una mascota o la consultas de esta misma mascota, tanto el metodo ObtenerVacunasPorMascotaID como ObtenercConsultasPorMascotaID va a retornar la lista de vacunas y consultas
+            DAL.HistorialMedico unHistorialDAL = new DAL.HistorialMedico();
+            return unHistorialDAL.ObtenerVacunasPorMascotaID(idMascota);
+        }
+        public List<BE.Consulta> ObtenerConsultasPorMascotaID(int idMascota)
+        {
+            DAL.HistorialMedico unHistorialDAL = new DAL.HistorialMedico();
+            return unHistorialDAL.ObtenerConsultasPorMascotaID(idMascota);
+        }
         public void VerConsulta()
         {
 
