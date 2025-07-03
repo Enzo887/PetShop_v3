@@ -12,9 +12,11 @@ namespace LoginPetShop_v1.Gerente
 {
     public partial class GerenteInicio : Form
     {
+        private UC_CrearDescuento crearDescuento;
         public GerenteInicio()
         {
             InitializeComponent();
+            crearDescuento = new UC_CrearDescuento(); 
         }
         private void CargarUserControl(UserControl control)
         {
@@ -30,6 +32,10 @@ namespace LoginPetShop_v1.Gerente
         private void btnTarjetaPuntos_Click(object sender, EventArgs e)
         {
             CargarUserControl(new UC_CrearTarjeta());
+        }
+        public void MostrarCrearDescuento()
+        {
+            CargarUserControl(crearDescuento);
         }
     }
 }

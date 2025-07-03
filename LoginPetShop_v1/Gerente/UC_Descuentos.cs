@@ -16,5 +16,14 @@ namespace LoginPetShop_v1.Gerente
         {
             InitializeComponent();
         }
+
+        private void btnAgregarDescuento_Click(object sender, EventArgs e)
+        {
+            var gerenteInicio = this.FindForm() as GerenteInicio;
+            if (gerenteInicio != null)
+            {
+                gerenteInicio.MostrarCrearDescuento();
+            }
+        }
     }
 }

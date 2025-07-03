@@ -32,12 +32,13 @@ namespace BE
             set { _porcentajeDescuento = value; }
         }
 
-        private Cliente _idCliente;
+        private int _usuarioID;
 
-        public Cliente IdCliente
+        public int UsuarioID
         {
-            get { return _idCliente; }
-            set { _idCliente = value; }
+            get { return _usuarioID; }
+            set { _usuarioID = value; }
         }
+
     }
 }

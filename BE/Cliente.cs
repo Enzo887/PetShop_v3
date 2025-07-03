@@ -47,6 +47,12 @@ namespace BE
 			get { return _telefono; }
 			set { _telefono = value; }
 		}
+        private DateTime _fechadeRegistro = DateTime.Now;
 
-	}
+        public DateTime FechadeRegistro
+        {
+            get { return _fechadeRegistro; }
+            set { _fechadeRegistro = value; }
+        }
+    }
 }

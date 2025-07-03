@@ -13,5 +13,10 @@ namespace BLL
             DAL.Cliente unClienteDAL = new DAL.Cliente();
             return unClienteDAL.BuscarCliente(dni);
         }
+        public void RegistrarCliente (BE.Cliente cliente)
+        {
+            DAL.Cliente clienteDAL = new DAL.Cliente();
+            clienteDAL.RegistrarCliente(cliente);
+        }
     }
 }

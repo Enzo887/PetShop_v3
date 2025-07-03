@@ -25,16 +25,23 @@ namespace LoginPetShop_v1.Vendedor
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            var vendedorInicio = this.FindForm() as VendedorHome;
-
-            if (vendedorInicio != null)
+            MessageBox.Show("Registro de venta Cancelada");
+            unaVenta = new BE.Venta();
+            if(unosProductos == null || unosClientes == null)
             {
-                vendedorInicio.MostrarPrincipal();
+                unosProductos.Clear();
+                unosClientes.Clear();
             }
-            else
-            {
-                MessageBox.Show("No se encontro el form");
-            }
+            tboxCliente.Clear();
+            gridVenta.Rows.Clear();
+            cBoxClienteBuscado.SelectedIndex = -1; //vuelve el seleccionado a default
+            cBoxClienteBuscado.Text = string.Empty; //limpio el texto seleccionado
+            tboxTotal.Clear();
+            tboxProducto.Clear();
+            cBoxProductoBuscado.Items.Clear(); //limpio la lista
+            cBoxProductoBuscado.SelectedIndex = -1; //vuelve el seleccionado a default
+            cBoxProductoBuscado.Text = string.Empty; //limpio el texto seleccionado
+            nudCantidad.Value = 1;
         }
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)

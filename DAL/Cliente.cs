@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BE;
 
 namespace DAL
 {
@@ -45,6 +46,21 @@ namespace DAL
             {
                 return null;
             }
+        }
+
+        public void RegistrarCliente(BE.Cliente cliente)
+        {
+            Conexion conexion = new Conexion();
+            SqlParameter[] parametros = new SqlParameter[] {
+                new SqlParameter("@DNI", cliente.DNI),
+                new SqlParameter("@NOMBRE", cliente.Nombre),
+                new SqlParameter("@APELLIDO", cliente.Apellido),
+                new SqlParameter("@EMAIL", cliente.Email),
+                new SqlParameter("@TELEFONO", cliente.Telefono),
+                new SqlParameter("@FECHA_REGISTRO", cliente.FechadeRegistro)
+            };
+
+            conexion.EscribirPorStoreProcedure("SP_RegistrarCliente", parametros);
         }
     }
 }
