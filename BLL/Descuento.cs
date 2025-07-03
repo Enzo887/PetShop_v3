@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BE;
 
 namespace BLL
 {
@@ -36,5 +37,21 @@ namespace BLL
             return descuentoDAL.ListarDescuentos();
         }
 
+        public BE.Descuento ObtenerDescuentoPorID(int idDescuento)
+        {
+            DAL.Descuento descuentoDAL = new DAL.Descuento();
+            return descuentoDAL.ObternerDescuentoPorID(idDescuento);
+        }
+
+        public void EliminarDescuento(int idDescuento)
+        {
+            if (idDescuento <= 0)
+            {
+                throw new ArgumentException("El ID de la mascota no es válido.");
+            }
+
+            DAL.Descuento unDescuentoDAL = new DAL.Descuento();
+            unDescuentoDAL.EliminarDescuento(idDescuento);
+        }
     }
 }
