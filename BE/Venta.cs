@@ -56,5 +56,14 @@ namespace BE
             set { _detalleVentas = value; }
         }
 
+        private Descuento _descuento;
+
+        public Descuento Descuento
+        {
+            get { return _descuento; }
+            set { _descuento = value; }
+        }
+
+
     }
 }

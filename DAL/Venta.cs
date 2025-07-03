@@ -14,7 +14,7 @@ namespace DAL
         {
             Conexion conexion = new Conexion();
             SqlParameter[] parametros = new SqlParameter[] {
-                new SqlParameter("@Descuento_ID", 1), //harcodeado por ahora
+                new SqlParameter("@Descuento_ID", venta.Descuento.IdDescuento),
                 new SqlParameter("@Fecha_venta", venta.FechaDeVenta),
                 new SqlParameter("@DNI_CLIENTE", venta.Cliente.DNI),
                 new SqlParameter("@PrecioTotal", venta.PrecioTotal),

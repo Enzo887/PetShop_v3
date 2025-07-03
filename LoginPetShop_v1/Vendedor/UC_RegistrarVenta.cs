@@ -16,11 +16,13 @@ namespace LoginPetShop_v1.Vendedor
     {
         private List<BE.Producto> unosProductos = new List<BE.Producto>();
         private List<BE.Cliente> unosClientes = new List<BE.Cliente>();
+        private List<BE.Descuento> descuentos = new List<BE.Descuento>();
         private BE.Venta unaVenta = new BE.Venta();
 
         public UC_RegistrarVenta()
         {
             InitializeComponent();
+            cargarDescuentos();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -42,12 +44,17 @@ namespace LoginPetShop_v1.Vendedor
             cBoxProductoBuscado.SelectedIndex = -1; //vuelve el seleccionado a default
             cBoxProductoBuscado.Text = string.Empty; //limpio el texto seleccionado
             nudCantidad.Value = 1;
+            cboxDescuento.SelectedIndex = -1;
+            cboxDescuento.Text = string.Empty;
+            tboxTotalConDescuento.Clear();
         }
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
             float cantidad = (float)nudCantidad.Value;
             int indiceSeleccionado = cBoxProductoBuscado.SelectedIndex;
+            int indiceSelecDescuento = cboxDescuento.SelectedIndex;
+
             BLL.DetalleVenta unDetalleVentaBLL = new BLL.DetalleVenta();
 
             if (cantidad < 0)
@@ -75,9 +82,13 @@ namespace LoginPetShop_v1.Vendedor
                 BLL.Venta unaVentaBLL = new BLL.Venta();
                 //Añado el precio total a la venta
                 unaVenta.PrecioTotal = unaVentaBLL.CalcularTotal(unaVenta);
-
+                
+                unaVenta.Descuento = descuentos[indiceSelecDescuento];
                 //Muestro el precio total en pantalla
                 tboxTotal.Text = unaVenta.PrecioTotal.ToString();
+
+                //Muestro el precio total CON DESCUENTO en pantalla
+                tboxTotalConDescuento.Text = unaVentaBLL.CalcularTotalConDescuento(unaVenta).ToString();
 
                 //limpio los datos de entrada
                 tboxProducto.Clear();
@@ -164,7 +175,6 @@ namespace LoginPetShop_v1.Vendedor
             
             int indiceCliente = cBoxClienteBuscado.SelectedIndex;
             int indiceSeleccionado = cBoxProductoBuscado.SelectedIndex;
-            //var usuario = SesionActual.UsuarioLogueado;
             var vendedor = SesionActual.UsuarioLogueado as BE.Vendedor;
             
             if (vendedor != null)
@@ -186,11 +196,9 @@ namespace LoginPetShop_v1.Vendedor
 
             unaVenta.Cliente = unosClientes[indiceCliente];
 
-            //MessageBox.Show(unaVenta.Vendedor.UsuarioID.ToString());
             BLL.Venta unaVentaBLL = new BLL.Venta();
             int venta_id = unaVentaBLL.RegistrarVenta(unaVenta);
 
-            //MessageBox.Show(venta_id.ToString());
             MessageBox.Show("Venta registrada con exito!");
 
             //"Resetear"
@@ -201,9 +209,39 @@ namespace LoginPetShop_v1.Vendedor
             gridVenta.Rows.Clear();
             cBoxClienteBuscado.SelectedIndex = -1; //vuelve el seleccionado a default
             cBoxClienteBuscado.Text = string.Empty; //limpio el texto seleccionado
+            cboxDescuento.SelectedIndex = -1;
+            cboxDescuento.Text = string.Empty;
+            tboxTotalConDescuento.Clear();
             tboxTotal.Clear();
             
         }
         
+        private void cargarDescuentos()
+        {
+            BLL.Descuento descuentoBLL = new BLL.Descuento();
+            
+            descuentos = descuentoBLL.ListarDescuentos();
+
+            if (descuentos != null)
+            {
+                //Limpio el cBox
+                cboxDescuento.Items.Clear();
+
+                //Muestro el descuento buscado
+                foreach (var descuento in descuentos)
+                {
+                    cboxDescuento.Items.Add(descuento.NombreDescuento.ToString() + " %" + descuento.PorcentajeDescuento.ToString());
+                }
+                //Se selecciona el primero en la busqueda
+                if (cboxDescuento.Items.Count > 0)
+                {
+                    cboxDescuento.SelectedIndex = 0;
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se encuentra el descuento");
+            }
+        }
     }
 }

@@ -79,7 +79,7 @@ namespace LoginPetShop_v1.Vendedor
             clienteBLL.RegistrarCliente(cliente);
             MessageBox.Show("Se registro el cliente correctamente");
 
-            //"reseteo
+            //"reseteo"
             cliente = new BE.Cliente();
             tboxNombre.Clear();
             tboxApellido.Clear();
