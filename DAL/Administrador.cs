@@ -74,7 +74,7 @@ namespace DAL
 
         public DataTable ObtenerUsuarios() 
         {
-            return   conexion.LeerPorComando("SELECT * FROM V_ObtenerUsuarios");
+            return   conexion.LeerPorComando("SELECT * FROM Vista_ObtenerUsuarios");
         }
 
         public BE.Usuario ObtenerUsuarioPorID(int idUsuario)

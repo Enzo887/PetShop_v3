@@ -9,9 +9,10 @@ namespace BLL
     public class Gerente : Usuario
     {
 
-        public void VerClientesFrecuentes()
+        public List<BE.Descuento> VerDescuentos()
         {
-
+            DAL.Descuento unDescuento = new DAL.Descuento();
+            return unDescuento.ListarDescuentos();
         }
 
         public void CrearDescuento()
