@@ -43,7 +43,7 @@ namespace LoginPetShop_v1.Veterinario
             dataGridViewProductos.DataSource = productos;
           
 
-        dataGridViewProductoProxVencimiento.AutoGenerateColumns = false;
+            dataGridViewProductoProxVencimiento.AutoGenerateColumns = false;
 
             dataGridViewProductoProxVencimiento.Columns["NombreProducto2"].DataPropertyName = "Nombre";
 
@@ -78,21 +78,7 @@ namespace LoginPetShop_v1.Veterinario
             ActualizarDataGrid();
 
         }
-        public void AgregarFilaProductos(string nombreProducto, bool estado)
-        {
-            string _estado;
-            if (estado == true)
-            {
-                _estado = "Habilitado";
-            }
-            else if (estado == false)
-            {
-                _estado = "Deshabilitado";
-            }
-            else { _estado = "Deshabilitado"; }
-                dataGridViewProductos.Rows.Add(nombreProducto, _estado, "ver");
-
-        }
+  
         public void AgregarFilaProximoAVencer(string nombreProducto, string vencimiento, float cantidadRestante) 
         {
             dataGridViewProductoProxVencimiento.Rows.Add(nombreProducto, vencimiento, cantidadRestante);

@@ -19,6 +19,11 @@ namespace LoginPetShop_v1.Veterinario
             InitializeComponent();
         }
 
+        public int ObtenerId() 
+        {
+           int idFicha = idMascotaActual;
+            return idFicha;
+        }
         public void CargarHistorial(int idMascota)
         {
             idMascotaActual = idMascota;//le asigno el valor que recibo de id aca para poder reutilizarlo
@@ -26,20 +31,43 @@ namespace LoginPetShop_v1.Veterinario
 
             //cargamos las vacunas que ya tenga programadas la mascota (si es que tiene)
             List<Vacuna> vacunas = unVeterinarioBLL.ObtenerVacunasPorMascotaID(idMascota);
-            dataGridViewVacunas.Rows.Clear();
+            // dataGridViewVacunas.Rows.Clear();
             //recorremos la lista de vacunas que nos retorna el metodo de ObtenerVacunasPorMascotaID que tiene el Veterinario BLL y añadimos en el DataGrid cada una de estas vacunas
+
             foreach (var vacuna in vacunas)
-            {
-                dataGridViewVacunas.Rows.Add(vacuna.NombreVacuna, vacuna.FechaProgramada.ToShortDateString(), vacuna.EstadoAplicacionTexto);
+            {//verificamos que si la fecha programada ya paso se cambie el estado de la vacuno a aplica y viceversa
+                if (vacuna.FechaProgramada < DateTime.Today)
+                {
+                    vacuna.EstadoDeAplicacion = true;
+                }
+                else
+                {
+                    vacuna.EstadoDeAplicacion = false;
+                }
             }
+                dataGridViewVacunas.AutoGenerateColumns = false;
+
+            // Configurar el DataPropertyName para que mapee las propiedades de Producto
+            dataGridViewVacunas.Columns["Vacuna"].DataPropertyName = "NombreVacuna";
+            dataGridViewVacunas.Columns["FechaAplicacion"].DataPropertyName = "FechaProgramada";
+            dataGridViewVacunas.Columns["Estado"].DataPropertyName = "EstadoAplicacionTexto";
+
+
+            dataGridViewVacunas.DataSource = vacunas;
+
+         
+           
             //cargamos las consultas anteriores de la mascota 
+
             List<Consulta> consultas = unVeterinarioBLL.ObtenerConsultasPorMascotaID(idMascota);
-            dataGridViewConsultas.Rows.Clear();
-            //recorremos la lista de consultas que nos retorna el metodo de ObtenerConsultasPorMascotaID que tiene el Veterinario BLL y añadimos en el DataGrid cada una de estas consultas
-            foreach (var consulta in consultas)
-            {
-                dataGridViewConsultas.Rows.Add(consulta.Diagnostico, consulta.Tratamiento, consulta.FechaDeConsulta.ToShortDateString());
-            }
+            dataGridViewConsultas.AutoGenerateColumns = false;
+
+            dataGridViewConsultas.Columns["Diagnostico"].DataPropertyName = "Diagnostico";
+            dataGridViewConsultas.Columns["Tratamiento"].DataPropertyName = "Tratamiento";
+            dataGridViewConsultas.Columns["FechaConsulta"].DataPropertyName = "FechaDeConsulta";
+
+         
+            dataGridViewConsultas.DataSource = consultas;
         }
         private void btnAgregarConsulta_Click(object sender, EventArgs e)
         {
@@ -70,6 +98,7 @@ namespace LoginPetShop_v1.Veterinario
             if (veterinarioInicio != null)
             {
                 veterinarioInicio.MostrarProgramarVacuna(idMascotaActual);
+                
             }
             else
             {
@@ -90,6 +119,11 @@ namespace LoginPetShop_v1.Veterinario
             {
                 MessageBox.Show("No se encontro el form");
             }
+        }
+
+        private void dataGridViewVacunas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

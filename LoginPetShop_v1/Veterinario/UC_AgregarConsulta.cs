@@ -26,22 +26,20 @@ namespace LoginPetShop_v1.Veterinario
             editarhistorial = editarHistorialExistente;
             InitializeComponent();
         }
-
+        BLL.Veterinario unVeterinarioBLL = new BLL.Veterinario();
         private void btnAgregarConsulta_Click(object sender, EventArgs e)
         {
             Consulta consulta = new Consulta()
-            {
+            {   
                 Diagnostico = tBoxDiagnostico.Text,
-                Observaciones=tBoxDescripcion.Text,
-                Tratamiento=tBoxTratamiento.Text,
-                FechaDeConsulta=dTPFechaConsulta.Value,
+                Tratamiento = tBoxTratamiento.Text,
+                Observaciones = tBoxDescripcion.Text,
+                FechaDeConsulta = dTPFechaConsulta.Value
             };
-            string diagnostico = consulta.Diagnostico;
-            string tratamiento = consulta.Tratamiento;
-            string fecha= consulta.FechaDeConsulta.ToString();
 
+            unVeterinarioBLL.CrearConsulta(consulta, idMascota);
             //agrega las filas al data grid
-            editarhistorial.AgregarFilaConsultas(diagnostico, tratamiento, fecha);
+            editarhistorial.AgregarFilaConsultas(consulta.Diagnostico, consulta.Tratamiento, consulta.FechaDeConsulta.ToString());
 
             var veterinarioInicio = this.FindForm() as VeterinarioInicio;
 

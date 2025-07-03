@@ -27,7 +27,7 @@ namespace DAL
                 var vacuna = new Vacuna
                 {
                     NombreVacuna = fila["NombreVacuna"].ToString(),
-                    FechaProgramada = Convert.ToDateTime(fila["FechaProgramada"]),
+                    FechaProgramada = Convert.ToDateTime(fila["Fecha_Programada"]),
                     EstadoDeAplicacion = Convert.ToBoolean(fila["Estado"].ToString())
                 };
                 listaDeVacunas.Add(vacuna);
@@ -49,9 +49,9 @@ namespace DAL
             {
                 var consulta = new Consulta
                 {
-                    Diagnostico = fila["Diagnostico"].ToString(),
-                    Tratamiento = fila["Tratamiento"].ToString(),
-                    FechaDeConsulta = Convert.ToDateTime(fila["FechaDeConsulta"])
+                    Diagnostico = fila["DIAGNOSTICO"].ToString(),
+                    Tratamiento = fila["TRATAMIENTO"].ToString(),
+                    FechaDeConsulta = Convert.ToDateTime(fila["FECHA_CONSULTA"])
                 };
                 listaDeConsultas.Add(consulta);
             }

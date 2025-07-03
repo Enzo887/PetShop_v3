@@ -142,8 +142,8 @@ namespace DAL
                 new SqlParameter("@Precio", unaVacuna.PrecioUnidad),
                 new SqlParameter("@FechaVencimiento", unaVacuna.Vencimiento),
                 new SqlParameter("@Stock", unaVacuna.Cantidad),
-                new SqlParameter("@Estado",estado)
-            
+                new SqlParameter("@Estado",estado),
+                new SqlParameter("@Receta", "NO")
             };
             conexion.EscribirPorStoreProcedure("SP_ActualizarProducto", parameters);
         }
@@ -255,10 +255,10 @@ namespace DAL
 
                 return new Vacuna
                 {
-                    IdProducto = Convert.ToInt32(fila["IdProducto"]),
+                    IdProducto = Convert.ToInt32(fila["PRODUCTO_ID"]),
                     Nombre = fila["Nombre"].ToString(),
                     PrecioUnidad = float.Parse(fila["Precio"].ToString()),
-                    Vencimiento = Convert.ToDateTime(fila["FechaVencimiento"]),
+                    Vencimiento = Convert.ToDateTime(fila["Fecha_Vencimiento"]),
                     Cantidad = float.Parse(fila["Stock"].ToString()),
                     Estado = _estado,
                 };
@@ -269,6 +269,10 @@ namespace DAL
         public DataTable ObtenerProductosDeVeterinario()
         {   // obtiene todos los datos de productos que son medicamento o vacunas
             return conexion.LeerPorComando("SELECT * FROM Vista_ProductosConCategoria");
+        }
+        public DataTable ObtenerVacuna()
+        {   // obtiene las vacunas vacunas
+            return conexion.LeerPorComando("SELECT * FROM Vista_ObtenerVacunas");
         }
         public int ObtenerCategoriaPorID(int idProducto)
         {
@@ -285,5 +289,67 @@ namespace DAL
             }
            else { return -1; }
         }
+
+
+        /*
+         * crear el proc y agregarlo qsyo gracias copiloto
+        public void EliminarProducto(int idProducto)
+        {   // elimina un producto de la base de datos
+            SqlParameter[] parametros = new SqlParameter[]
+            {
+                new SqlParameter("@IdProducto", idProducto)
+            };
+            conexion.EscribirPorStoreProcedure("SP_EliminarProducto", parametros);
+        */
+
+        public int CrearConsulta(BE.Consulta unaConsulta, int idHistorial) 
+        {
+            // escribe en base de datos una nueva vacuna
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@Historial_id", idHistorial),
+                new SqlParameter("@FechaConsulta", unaConsulta.FechaDeConsulta),
+                new SqlParameter("@Diagnostico", unaConsulta.Diagnostico),
+                new SqlParameter("@Descripcion", unaConsulta.Observaciones),
+                new SqlParameter("@Tratamiento", unaConsulta.Tratamiento),
+                new SqlParameter("@Consulta_id", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    }
+            };
+            conexion.EscribirPorStoreProcedure("SP_AgregarConsulta", parameters);
+            //me traigo el id autoincremental del sql y lo devuelvo
+            int idGenerado = Convert.ToInt32(parameters[5].Value);
+            unaConsulta.IdConsulta = idGenerado;
+
+            return idGenerado;
+        }
+
+        public void ProgramarVacuna(BE.Vacuna unaVacuna, int ficha_id) 
+        {
+            // escribe en base de datos una nueva vacuna
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@Producto_id", unaVacuna.IdProducto),
+                new SqlParameter("@FechaProgramada", unaVacuna.FechaProgramada),
+                new SqlParameter("@Estado", unaVacuna.EstadoDeAplicacion),
+                new SqlParameter("@Ficha_id", ficha_id)
+
+            };
+            conexion.EscribirPorStoreProcedure("SP_ProgramarVacuna", parameters);
+           
+        }
+
+        public void EliminarProducto(int idProducto) 
+        {
+            SqlParameter[] parametros = new SqlParameter[]
+            {
+                new SqlParameter("@Producto_Id", idProducto)
+            };
+            conexion.EscribirPorStoreProcedure("SP_EliminarProducto", parametros);
+
+        }
+
+
     }
 }

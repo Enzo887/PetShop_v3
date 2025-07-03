@@ -15,6 +15,7 @@ namespace LoginPetShop_v1.Veterinario
     {
         UC_GestionarStock gestionarStock;
         int IDProducto;
+
         public UC_EditarProducto(UC_GestionarStock gestionarStockExistente, int Producto_id)
         {
             gestionarStock = gestionarStockExistente;
@@ -22,10 +23,10 @@ namespace LoginPetShop_v1.Veterinario
             InitializeComponent();
             IDProducto = Producto_id;
         }
-
+        BLL.Veterinario unVeterinarioBLL = new BLL.Veterinario();
         public void CargarProducto(int idProducto)
         {
-            BLL.Veterinario unVeterinarioBLL = new BLL.Veterinario();
+           
             //llena los campos con la info del producto ya sea vacuna o medicamento
             int categoriaID = unVeterinarioBLL.ObtenerCategoriaPorID(idProducto);
 
@@ -63,6 +64,8 @@ namespace LoginPetShop_v1.Veterinario
                     inputFechaVencimiento.Value = producto.Vencimiento;
                     nUDCantidadProducto.Value = (decimal)producto.Cantidad;
                     cBoxCategoria.Text = "Vacuna";
+                    cBoxEstado.Text = producto.EstadoTexto;
+                   
 
                 }
                 else
@@ -165,6 +168,7 @@ namespace LoginPetShop_v1.Veterinario
                         Estado = estado
                     };
 
+
                     unVeterinarioBLL.ActualizarVacuna(vacuna, IDProducto);
                     MessageBox.Show("Vacuna actualizada correctamente.");
                 }
@@ -229,6 +233,35 @@ namespace LoginPetShop_v1.Veterinario
             cBoxCategoria.SelectedIndex = -1;
 
 
+        }
+
+        private void btnEliminarProducto_Click(object sender, EventArgs e)
+        {
+            //verificamos que no se elimine ninguna ficha con mascota sin querer
+            if (MessageBox.Show("¿Seguro que desea eliminar este producto?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+
+                try
+                {
+                    
+                    
+                    unVeterinarioBLL.EliminarProducto(IDProducto);
+
+                    MessageBox.Show("Producto eliminado correctamente.");
+
+                 
+                    var veterinarioInicio = this.FindForm() as VeterinarioInicio;
+                    if (veterinarioInicio != null)
+                    {
+                        veterinarioInicio.MostrarGestionStock();
+                   
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al eliminar el producto: " + ex.Message);
+                }
+            }
         }
     }
 }
