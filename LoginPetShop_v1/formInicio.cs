@@ -99,8 +99,6 @@ namespace LoginPetShop_v1
                             DNI = usuarioLogeado.DNI,
                             Rol = usuarioLogeado.Rol
                         };
-                        MessageBox.Show(usuarioEspecifico.Nombre + usuarioEspecifico.DNI);
-                        MessageBox.Show(usuarioLogeado.DNI.ToString());
                         break;
 
                     case "veterinario":

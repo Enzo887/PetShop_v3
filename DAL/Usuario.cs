@@ -48,7 +48,7 @@ namespace DAL
                 new SqlParameter("@NombreUsuario", usuario.NombreUsuario),
                 new SqlParameter("@Contraseña", usuario.Contraseña)
             };
-            conexion.EscribirPorStoreProcedure("SP_", parametros);
+            conexion.EscribirPorStoreProcedure("SP_ActualizarUsuarioGeneral", parametros);
         }
     }
 }
