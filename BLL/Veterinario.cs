@@ -1,8 +1,10 @@
 ﻿using BE;
+using DAL;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -125,9 +127,27 @@ namespace BLL
 
             return productos;
         }
-        public override void EliminarProducto(Producto unProducto)
-        {
 
+        public List<BE.Vacuna> ObtenerVacunas()
+        {
+            List<BE.Vacuna> vacunas = new List<BE.Vacuna>();
+
+            DataTable tabla = unVeterinarioDal.ObtenerVacuna();
+            foreach (DataRow fila in tabla.Rows)
+            {
+
+                vacunas.Add(new BE.Vacuna
+                {
+                    IdProducto = Convert.ToInt32(fila["PRODUCTO_ID"]),
+                    Nombre = fila["NombreProducto"].ToString(),
+                });
+
+            }
+            return vacunas;
+            }
+        public void EliminarProducto(int idProducto)
+        {
+            unVeterinarioDal.EliminarProducto(idProducto);
         }
 
         public override void EditarProducto(Producto unProducto)
@@ -267,9 +287,9 @@ namespace BLL
 
         }
 
-        public void ProgramarVacuna()
+        public void ProgramarVacuna(BE.Vacuna unaVacuna, int ficha_id)
         {
-
+            unVeterinarioDal.ProgramarVacuna(unaVacuna, ficha_id);
         }
         public List<BE.Vacuna> ObtenerVacunasPorMascotaID(int idMascota)
         {

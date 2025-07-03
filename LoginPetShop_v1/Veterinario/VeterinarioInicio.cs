@@ -58,133 +58,78 @@ namespace LoginPetShop_v1.Veterinario
             panelContenedorVeterinario.Controls.Add(programarVacuna);
             panelContenedorVeterinario.Controls.Add(editarProducto);
 
-            crearFichaMascota.Visible = false;
-            editarFichaMascota.Visible = false;
-            editarHistorialMedico.Visible = false;
-            gestionarStock.Visible = false;
-            agregarProducto.Visible = false;
-            agregarConsulta.Visible = false ;
-            programarVacuna.Visible = false;
-            editarProducto.Visible = false; 
 
 
+            MostrarSolo(null);
             MostrarFichasMascotas();
 
         }
+
+        private void MostrarSolo(UserControl visibleControl)
+        {
+            foreach (Control ctrl in panelContenedorVeterinario.Controls)
+            {
+                if (ctrl is UserControl uc)
+                {
+                    uc.Visible = (uc == visibleControl && visibleControl != null);
+                    if (uc.Visible)
+                        uc.BringToFront();
+                }
+            }
+        }
+
+
         public void MostrarCreacionFicha() 
         {
-            crearFichaMascota.Visible = true;
-            crearFichaMascota.BringToFront();
-            editarFichaMascota.Visible = false;
-            editarHistorialMedico.Visible = false;
-            gestionarStock.Visible = false;
-            agregarProducto.Visible = false;
-            agregarConsulta.Visible=false;
-            programarVacuna.Visible = false;
-            editarProducto.Visible = false;
+            MostrarSolo(crearFichaMascota);
 
         }
         public void MostrarEdicionFicha(FichaMedica unaFicha)
         {
-
-            crearFichaMascota.Visible = false;
-            editarFichaMascota.Visible = true;
-            editarFichaMascota.BringToFront();
-            editarHistorialMedico.Visible = false;
-            gestionarStock.Visible = false;
-            agregarProducto.Visible = false;
-            agregarConsulta.Visible = false;
-            programarVacuna.Visible = false;
-            editarProducto.Visible = false;
+            MostrarSolo(editarFichaMascota);
             editarFichaMascota.CargarFicha(unaFicha);
         }
         public void MostrarEdicionHistorial(int idMascota)
         {
-            crearFichaMascota.Visible = false;
-            editarFichaMascota.Visible = false;
-            editarHistorialMedico.Visible = true;
-            editarHistorialMedico.BringToFront();
-            gestionarStock.Visible = false;
-            agregarProducto.Visible = false;
-            agregarConsulta.Visible = false;
-            programarVacuna.Visible = false;
-            editarProducto.Visible = false;
+
+
+            MostrarSolo(editarHistorialMedico);
+
             editarHistorialMedico.CargarHistorial(idMascota);
         }
         public void MostrarGestionStock()
         {
-            crearFichaMascota.Visible = false;
-            editarFichaMascota.Visible = false;
-            editarHistorialMedico.Visible = false;
-            gestionarStock.Visible = true;
-            gestionarStock.BringToFront();
+            MostrarSolo(gestionarStock);
             gestionarStock.ActualizarDataGrid();
-            agregarProducto.Visible = false;
-            agregarConsulta.Visible = false;
-            programarVacuna.Visible = false;
-            editarProducto.Visible = false;
+     
             
         }
         public void MostrarAgregarProducto()
         {
-            crearFichaMascota.Visible = false;
-            editarFichaMascota.Visible = false;
-            editarHistorialMedico.Visible = false;
-            gestionarStock.Visible = false;
-            agregarProducto.Visible = true;
-            agregarProducto.BringToFront();
-            agregarConsulta.Visible = false;
-            programarVacuna.Visible = false;
-            editarProducto.Visible = false;
+            MostrarSolo(agregarProducto);
         }
         public void MostrarEditarProducto(int idProducto)
         {
-            crearFichaMascota.Visible = false;
-            editarFichaMascota.Visible = false;
-            editarHistorialMedico.Visible = false;
-            gestionarStock.Visible = false;
-            agregarProducto.Visible = false;
-            agregarConsulta.Visible = false;
-            programarVacuna.Visible = false;
-            editarProducto.Visible = true;
-            editarProducto.BringToFront();
 
+            MostrarSolo(editarProducto);
             editarProducto.CargarProducto(idProducto);
         }
         public void MostrarPrincipal() 
         {
-            crearFichaMascota.Visible = false;
-            editarFichaMascota.Visible = false;
-            editarHistorialMedico.Visible = false;
-            gestionarStock.Visible = false;
-            agregarProducto.Visible = false;
-            agregarConsulta.Visible = false;
-            programarVacuna.Visible = false;
-            editarProducto.Visible = false;
+
+            MostrarSolo(null);
         }
         public void MostrarAgregarConsulta(int idMascota)
         {
-            crearFichaMascota.Visible = false;
-            editarFichaMascota.Visible = false;
-            editarHistorialMedico.Visible = false;
-            gestionarStock.Visible = false;
-            agregarProducto.Visible = false;
-            agregarConsulta.Visible = true;
-            programarVacuna.Visible = false;
-            editarProducto.Visible = false;
+            MostrarSolo(agregarConsulta);
             agregarConsulta.SetearIdMascota(idMascota);
+           
         }
         public void MostrarProgramarVacuna(int idMascota)
         {
-            crearFichaMascota.Visible = false;
-            editarFichaMascota.Visible = false;
-            editarHistorialMedico.Visible = false;
-            gestionarStock.Visible = false;
-            agregarProducto.Visible = false;
-            agregarConsulta.Visible = false;
-            programarVacuna.Visible = true;
-            editarProducto.Visible = false;
-    
+            MostrarSolo(programarVacuna);
+            programarVacuna.CargarVacunas();
+
         }
         private void VeterinarioInicio_Load(object sender, EventArgs e)
         {
