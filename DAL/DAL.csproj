@@ -44,6 +44,7 @@
     <Compile Include="Administrador.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="Descuento.cs" />
     <Compile Include="DetalleVenta.cs" />
     <Compile Include="FichaMedica.cs" />
     <Compile Include="HistorialMedico.cs" />
