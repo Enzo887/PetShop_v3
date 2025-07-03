@@ -20,6 +20,18 @@ namespace BLL
             return total;
         }
 
+        public float CalcularTotalConDescuento(BE.Venta venta)
+        {
+            float total = 0f;
+            foreach (var detalle in venta.DetalleVentas)
+            {
+                total += detalle.Subtotal;
+            }
+            float porcentaje = venta.Descuento.PorcentajeDescuento / 100f;
+            float totalConDescuento = total - (total * porcentaje);
+            return totalConDescuento;
+        }
+
         public int RegistrarVenta(BE.Venta unaVenta) { 
             DAL.Venta unaVentaDAL = new DAL.Venta();
             DAL.DetalleVenta unDetalleVentaDAL = new DAL.DetalleVenta();

@@ -42,7 +42,7 @@
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.btnBuscarProducto = new System.Windows.Forms.Button();
             this.lblDescuento = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboxDescuento = new System.Windows.Forms.ComboBox();
             this.gridVenta = new System.Windows.Forms.DataGridView();
             this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +50,8 @@
             this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cBoxProductoBuscado = new System.Windows.Forms.ComboBox();
             this.cBoxClienteBuscado = new System.Windows.Forms.ComboBox();
+            this.tboxTotalConDescuento = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridVenta)).BeginInit();
             this.SuspendLayout();
@@ -181,19 +183,20 @@
             // lblDescuento
             // 
             this.lblDescuento.AutoSize = true;
-            this.lblDescuento.Location = new System.Drawing.Point(71, 303);
+            this.lblDescuento.Location = new System.Drawing.Point(78, 311);
             this.lblDescuento.Name = "lblDescuento";
             this.lblDescuento.Size = new System.Drawing.Size(97, 13);
             this.lblDescuento.TabIndex = 24;
             this.lblDescuento.Text = "Descuento al Total";
             // 
-            // comboBox1
+            // cboxDescuento
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(74, 319);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(130, 21);
-            this.comboBox1.TabIndex = 25;
+            this.cboxDescuento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxDescuento.FormattingEnabled = true;
+            this.cboxDescuento.Location = new System.Drawing.Point(81, 329);
+            this.cboxDescuento.Name = "cboxDescuento";
+            this.cboxDescuento.Size = new System.Drawing.Size(169, 21);
+            this.cboxDescuento.TabIndex = 25;
             // 
             // gridVenta
             // 
@@ -246,14 +249,32 @@
             this.cBoxClienteBuscado.Size = new System.Drawing.Size(173, 21);
             this.cBoxClienteBuscado.TabIndex = 28;
             // 
+            // tboxTotalConDescuento
+            // 
+            this.tboxTotalConDescuento.Location = new System.Drawing.Point(390, 329);
+            this.tboxTotalConDescuento.Name = "tboxTotalConDescuento";
+            this.tboxTotalConDescuento.Size = new System.Drawing.Size(59, 20);
+            this.tboxTotalConDescuento.TabIndex = 30;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(270, 332);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(114, 13);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "Total (con descuento):";
+            // 
             // UC_RegistrarVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.tboxTotalConDescuento);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.cBoxClienteBuscado);
             this.Controls.Add(this.cBoxProductoBuscado);
             this.Controls.Add(this.gridVenta);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboxDescuento);
             this.Controls.Add(this.lblDescuento);
             this.Controls.Add(this.btnBuscarProducto);
             this.Controls.Add(this.btnBuscarCliente);
@@ -292,7 +313,7 @@
         private System.Windows.Forms.Button btnBuscarCliente;
         private System.Windows.Forms.Button btnBuscarProducto;
         private System.Windows.Forms.Label lblDescuento;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboxDescuento;
         private System.Windows.Forms.DataGridView gridVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
@@ -300,5 +321,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
         private System.Windows.Forms.ComboBox cBoxProductoBuscado;
         private System.Windows.Forms.ComboBox cBoxClienteBuscado;
+        private System.Windows.Forms.TextBox tboxTotalConDescuento;
+        private System.Windows.Forms.Label label1;
     }
 }

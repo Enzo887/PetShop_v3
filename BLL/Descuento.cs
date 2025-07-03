@@ -30,5 +30,11 @@ namespace BLL
             descuentoDAL.InsertarDescuento(unDescuento);
         }
 
+        public List<BE.Descuento> ListarDescuentos()
+        {
+            DAL.Descuento descuentoDAL = new DAL.Descuento();
+            return descuentoDAL.ListarDescuentos();
+        }
+
     }
 }
