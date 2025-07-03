@@ -83,6 +83,7 @@
             this.btnAgregarDescuento.TabIndex = 2;
             this.btnAgregarDescuento.Text = "Agregar Descuento";
             this.btnAgregarDescuento.UseVisualStyleBackColor = true;
+            this.btnAgregarDescuento.Click += new System.EventHandler(this.btnAgregarDescuento_Click);
             // 
             // btnEditarDescuento
             // 
