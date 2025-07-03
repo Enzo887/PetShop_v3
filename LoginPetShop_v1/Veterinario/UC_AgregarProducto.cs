@@ -94,14 +94,14 @@ namespace LoginPetShop_v1.Veterinario
                 {
                     unVeterinarioBLL.AgregarVacuna(vacuna);
                     MessageBox.Show("Vacuna agregada correctamente");
-                    gestionarStock.AgregarFilaProductos(nombreProducto, Estado);
+                    gestionarStock.ActualizarDataGrid();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error al agregar la vacuna " + ex.Message);
                 }
 
-                gestionarStock.AgregarFilaProductos(nombreProducto, Estado);
+                gestionarStock.ActualizarDataGrid();
             }
             else if (cBoxCategoria.Text == "Medicamento")
             {
@@ -131,7 +131,7 @@ namespace LoginPetShop_v1.Veterinario
                 {
                     unVeterinarioBLL.AgregarMedicamento(medicamento);
                     MessageBox.Show("Medicamento agregado correctamente");
-                    gestionarStock.AgregarFilaProductos(nombreProducto, Estado);
+                    gestionarStock.ActualizarDataGrid();
                 }
                 catch (Exception ex)
                 {

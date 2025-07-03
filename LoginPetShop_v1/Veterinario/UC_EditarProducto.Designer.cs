@@ -44,6 +44,7 @@
             this.tboxNombreProducto = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnEliminarProducto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nUDCantidadProducto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,6 +125,7 @@
             this.cBoxCategoria.Name = "cBoxCategoria";
             this.cBoxCategoria.Size = new System.Drawing.Size(100, 21);
             this.cBoxCategoria.TabIndex = 46;
+            this.cBoxCategoria.SelectedIndexChanged += new System.EventHandler(this.cBoxCategoria_SelectedIndexChanged);
             // 
             // tboxPrecioProducto
             // 
@@ -192,10 +194,21 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // btnEliminarProducto
+            // 
+            this.btnEliminarProducto.Location = new System.Drawing.Point(381, 274);
+            this.btnEliminarProducto.Name = "btnEliminarProducto";
+            this.btnEliminarProducto.Size = new System.Drawing.Size(103, 23);
+            this.btnEliminarProducto.TabIndex = 56;
+            this.btnEliminarProducto.Text = "Eliminar producto";
+            this.btnEliminarProducto.UseVisualStyleBackColor = true;
+            this.btnEliminarProducto.Click += new System.EventHandler(this.btnEliminarProducto_Click);
+            // 
             // UC_EditarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnEliminarProducto);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lblEstado);
             this.Controls.Add(this.cBoxEstado);
@@ -238,5 +251,6 @@
         private System.Windows.Forms.TextBox tboxNombreProducto;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnEliminarProducto;
     }
 }

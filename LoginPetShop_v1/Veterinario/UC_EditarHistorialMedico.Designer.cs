@@ -31,7 +31,7 @@
             this.dataGridViewVacunas = new System.Windows.Forms.DataGridView();
             this.Vacuna = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaAplicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewConsultas = new System.Windows.Forms.DataGridView();
             this.Diagnostico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tratamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +63,7 @@
             this.dataGridViewVacunas.RowHeadersVisible = false;
             this.dataGridViewVacunas.Size = new System.Drawing.Size(241, 243);
             this.dataGridViewVacunas.TabIndex = 0;
+            this.dataGridViewVacunas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewVacunas_CellContentClick);
             // 
             // Vacuna
             // 
@@ -86,15 +87,16 @@
             // 
             this.Estado.Frozen = true;
             this.Estado.HeaderText = "Estado";
-            this.Estado.Items.AddRange(new object[] {
-            "Aplicada",
-            "Por aplicar"});
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
+            this.Estado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Estado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Estado.Width = 70;
             // 
             // dataGridViewConsultas
             // 
+            this.dataGridViewConsultas.AllowUserToAddRows = false;
+            this.dataGridViewConsultas.AllowUserToDeleteRows = false;
             this.dataGridViewConsultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewConsultas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Diagnostico,
@@ -198,9 +200,6 @@
 
         private System.Windows.Forms.DataGridView dataGridViewVacunas;
         private System.Windows.Forms.DataGridView dataGridViewConsultas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Vacuna;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaAplicacion;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Diagnostico;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tratamiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
@@ -209,5 +208,8 @@
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnProgramarVacuna;
         private System.Windows.Forms.Button btnAgregarConsulta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Vacuna;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaAplicacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }
 }

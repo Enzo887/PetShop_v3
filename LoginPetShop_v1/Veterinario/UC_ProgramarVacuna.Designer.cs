@@ -31,11 +31,11 @@
             this.lblVacuna = new System.Windows.Forms.Label();
             this.dTPFechaAplicacion = new System.Windows.Forms.DateTimePicker();
             this.lblFechaAplicacion = new System.Windows.Forms.Label();
-            this.tBoxNombreVacuna = new System.Windows.Forms.TextBox();
             this.lblEstado = new System.Windows.Forms.Label();
             this.cBoxEstadoAplicacion = new System.Windows.Forms.ComboBox();
             this.btnProgramar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.cBoxVacuna = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblVacuna
@@ -65,13 +65,6 @@
             this.lblFechaAplicacion.TabIndex = 2;
             this.lblFechaAplicacion.Text = "Fecha de aplicacion";
             // 
-            // tBoxNombreVacuna
-            // 
-            this.tBoxNombreVacuna.Location = new System.Drawing.Point(246, 105);
-            this.tBoxNombreVacuna.Name = "tBoxNombreVacuna";
-            this.tBoxNombreVacuna.Size = new System.Drawing.Size(100, 20);
-            this.tBoxNombreVacuna.TabIndex = 3;
-            // 
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
@@ -91,6 +84,7 @@
             this.cBoxEstadoAplicacion.Name = "cBoxEstadoAplicacion";
             this.cBoxEstadoAplicacion.Size = new System.Drawing.Size(103, 21);
             this.cBoxEstadoAplicacion.TabIndex = 5;
+            this.cBoxEstadoAplicacion.SelectedIndexChanged += new System.EventHandler(this.cBoxEstadoAplicacion_SelectedIndexChanged);
             // 
             // btnProgramar
             // 
@@ -112,15 +106,23 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // cBoxVacuna
+            // 
+            this.cBoxVacuna.FormattingEnabled = true;
+            this.cBoxVacuna.Location = new System.Drawing.Point(246, 116);
+            this.cBoxVacuna.Name = "cBoxVacuna";
+            this.cBoxVacuna.Size = new System.Drawing.Size(100, 21);
+            this.cBoxVacuna.TabIndex = 8;
+            // 
             // UC_ProgramarVacuna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cBoxVacuna);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnProgramar);
             this.Controls.Add(this.cBoxEstadoAplicacion);
             this.Controls.Add(this.lblEstado);
-            this.Controls.Add(this.tBoxNombreVacuna);
             this.Controls.Add(this.lblFechaAplicacion);
             this.Controls.Add(this.dTPFechaAplicacion);
             this.Controls.Add(this.lblVacuna);
@@ -136,10 +138,10 @@
         private System.Windows.Forms.Label lblVacuna;
         private System.Windows.Forms.DateTimePicker dTPFechaAplicacion;
         private System.Windows.Forms.Label lblFechaAplicacion;
-        private System.Windows.Forms.TextBox tBoxNombreVacuna;
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.ComboBox cBoxEstadoAplicacion;
         private System.Windows.Forms.Button btnProgramar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.ComboBox cBoxVacuna;
     }
 }
