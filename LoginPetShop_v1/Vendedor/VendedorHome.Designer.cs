@@ -33,8 +33,9 @@
             this.btnGestionarStock = new System.Windows.Forms.Button();
             this.btnRegistrarVenta = new System.Windows.Forms.Button();
             this.margenTop = new System.Windows.Forms.Panel();
-            this.panelContenedor = new System.Windows.Forms.Panel();
             this.btnEditarPerfil = new System.Windows.Forms.Button();
+            this.panelContenedor = new System.Windows.Forms.Panel();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.panelLateral.SuspendLayout();
             this.margenTop.SuspendLayout();
             this.SuspendLayout();
@@ -42,6 +43,7 @@
             // panelLateral
             // 
             this.panelLateral.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panelLateral.Controls.Add(this.btnCerrarSesion);
             this.panelLateral.Controls.Add(this.btnRegistrarCliente);
             this.panelLateral.Controls.Add(this.btnGestionarStock);
             this.panelLateral.Controls.Add(this.btnRegistrarVenta);
@@ -94,6 +96,16 @@
             this.margenTop.Size = new System.Drawing.Size(200, 100);
             this.margenTop.TabIndex = 0;
             // 
+            // btnEditarPerfil
+            // 
+            this.btnEditarPerfil.Location = new System.Drawing.Point(64, 35);
+            this.btnEditarPerfil.Name = "btnEditarPerfil";
+            this.btnEditarPerfil.Size = new System.Drawing.Size(75, 23);
+            this.btnEditarPerfil.TabIndex = 0;
+            this.btnEditarPerfil.Text = "Editar Perfil";
+            this.btnEditarPerfil.UseVisualStyleBackColor = true;
+            this.btnEditarPerfil.Click += new System.EventHandler(this.btnEditarPerfil_Click);
+            // 
             // panelContenedor
             // 
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -102,15 +114,15 @@
             this.panelContenedor.Size = new System.Drawing.Size(600, 450);
             this.panelContenedor.TabIndex = 2;
             // 
-            // btnEditarPerfil
+            // btnCerrarSesion
             // 
-            this.btnEditarPerfil.Location = new System.Drawing.Point(12, 12);
-            this.btnEditarPerfil.Name = "btnEditarPerfil";
-            this.btnEditarPerfil.Size = new System.Drawing.Size(75, 23);
-            this.btnEditarPerfil.TabIndex = 0;
-            this.btnEditarPerfil.Text = "Editar Perfil";
-            this.btnEditarPerfil.UseVisualStyleBackColor = true;
-            this.btnEditarPerfil.Click += new System.EventHandler(this.btnEditarPerfil_Click);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(10, 394);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(182, 23);
+            this.btnCerrarSesion.TabIndex = 0;
+            this.btnCerrarSesion.Text = "Cerrar Sesion";
+            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // VendedorHome
             // 
@@ -136,5 +148,6 @@
         private System.Windows.Forms.Panel panelContenedor;
         private System.Windows.Forms.Button btnRegistrarCliente;
         private System.Windows.Forms.Button btnEditarPerfil;
+        private System.Windows.Forms.Button btnCerrarSesion;
     }
 }

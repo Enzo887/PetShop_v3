@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LoginPetShop_v1.ControlesGenerales;
 using LoginPetShop_v1.Veterinario;
+using static LoginPetShop_v1.formInicio;
 
 namespace LoginPetShop_v1.Vendedor
 {
@@ -19,6 +20,7 @@ namespace LoginPetShop_v1.Vendedor
         public VendedorHome()
         {
             InitializeComponent();
+            CargarUserControl(RegistrarVenta = new UC_RegistrarVenta());
         }
         private void CargarUserControl(UserControl control)
         {
@@ -38,8 +40,8 @@ namespace LoginPetShop_v1.Vendedor
         }
         public void MostrarPrincipal()
         {
-            RegistrarVenta.Visible = false;
-            //this.Close();
+            //RegistrarVenta.Visible = false;
+            this.Close();
         }
 
         private void btnRegistrarCliente_Click(object sender, EventArgs e)
@@ -50,6 +52,23 @@ namespace LoginPetShop_v1.Vendedor
         private void btnEditarPerfil_Click(object sender, EventArgs e)
         {
             CargarUserControl(new UC_EditarUsuario());
+        }
+        public void VolverAPantallaPrincipal()
+        {
+            CargarUserControl(RegistrarVenta);
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            // Limpiar la sesión
+            SesionActual.UsuarioLogueado = null;
+
+            // Mostrar el login de nuevo
+            //formInicio loginForm = new formInicio();
+            //loginForm.Show();
+
+            // Cerrar el formulario actual
+            this.Close();
         }
     }
 }
