@@ -31,20 +31,21 @@
             this.lblVeterinario = new System.Windows.Forms.Label();
             this.BtnCrearFicha = new System.Windows.Forms.Button();
             this.btnStock = new System.Windows.Forms.Button();
-            this.pBoxPerfil = new System.Windows.Forms.PictureBox();
             this.panelLateralVeterinario = new System.Windows.Forms.Panel();
             this.panelTopVeterinario = new System.Windows.Forms.Panel();
             this.tBoxBusqueda = new System.Windows.Forms.TextBox();
             this.panelContenedorVeterinario = new System.Windows.Forms.Panel();
+            this.btnLimpiarBusquedaFicha = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dataGridViewFichas = new System.Windows.Forms.DataGridView();
+            this.lblBuscador = new System.Windows.Forms.Label();
             this.IdMascota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreMascota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ver = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.lblBuscador = new System.Windows.Forms.Label();
-            this.btnLimpiarBusquedaFicha = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxPerfil)).BeginInit();
+            this.btnEditarPerfil = new System.Windows.Forms.Button();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.panelLateralVeterinario.SuspendLayout();
+            this.panelTopVeterinario.SuspendLayout();
             this.panelContenedorVeterinario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFichas)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +54,7 @@
             // 
             this.lblVeterinario.AutoSize = true;
             this.lblVeterinario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.lblVeterinario.Location = new System.Drawing.Point(17, 112);
+            this.lblVeterinario.Location = new System.Drawing.Point(17, 18);
             this.lblVeterinario.Name = "lblVeterinario";
             this.lblVeterinario.Size = new System.Drawing.Size(101, 24);
             this.lblVeterinario.TabIndex = 1;
@@ -80,16 +81,6 @@
             this.btnStock.UseVisualStyleBackColor = true;
             this.btnStock.Click += new System.EventHandler(this.btnStock_Click);
             // 
-            // pBoxPerfil
-            // 
-            this.pBoxPerfil.Location = new System.Drawing.Point(22, 19);
-            this.pBoxPerfil.Name = "pBoxPerfil";
-            this.pBoxPerfil.Size = new System.Drawing.Size(95, 80);
-            this.pBoxPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBoxPerfil.TabIndex = 7;
-            this.pBoxPerfil.TabStop = false;
-            this.pBoxPerfil.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // panelLateralVeterinario
             // 
             this.panelLateralVeterinario.Controls.Add(this.panelTopVeterinario);
@@ -101,6 +92,9 @@
             // 
             // panelTopVeterinario
             // 
+            this.panelTopVeterinario.Controls.Add(this.btnCerrarSesion);
+            this.panelTopVeterinario.Controls.Add(this.btnEditarPerfil);
+            this.panelTopVeterinario.Controls.Add(this.lblVeterinario);
             this.panelTopVeterinario.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTopVeterinario.Location = new System.Drawing.Point(0, 0);
             this.panelTopVeterinario.Name = "panelTopVeterinario";
@@ -129,6 +123,16 @@
             this.panelContenedorVeterinario.Size = new System.Drawing.Size(631, 453);
             this.panelContenedorVeterinario.TabIndex = 9;
             this.panelContenedorVeterinario.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedorVeterinario_Paint);
+            // 
+            // btnLimpiarBusquedaFicha
+            // 
+            this.btnLimpiarBusquedaFicha.Location = new System.Drawing.Point(516, 75);
+            this.btnLimpiarBusquedaFicha.Name = "btnLimpiarBusquedaFicha";
+            this.btnLimpiarBusquedaFicha.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiarBusquedaFicha.TabIndex = 8;
+            this.btnLimpiarBusquedaFicha.Text = "Volver";
+            this.btnLimpiarBusquedaFicha.UseVisualStyleBackColor = true;
+            this.btnLimpiarBusquedaFicha.Click += new System.EventHandler(this.btnLimpiarBusquedaFicha_Click);
             // 
             // btnBuscar
             // 
@@ -160,6 +164,16 @@
             this.dataGridViewFichas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewFichas_CellClick);
             this.dataGridViewFichas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewFichas_CellContentClick);
             // 
+            // lblBuscador
+            // 
+            this.lblBuscador.AutoSize = true;
+            this.lblBuscador.Location = new System.Drawing.Point(43, 29);
+            this.lblBuscador.Name = "lblBuscador";
+            this.lblBuscador.Size = new System.Drawing.Size(124, 13);
+            this.lblBuscador.TabIndex = 5;
+            this.lblBuscador.Text = "Buscar ficha de mascota";
+            this.lblBuscador.Click += new System.EventHandler(this.lblBuscador_Click);
+            // 
             // IdMascota
             // 
             this.IdMascota.HeaderText = "Id de mascota";
@@ -177,26 +191,28 @@
             this.Ver.HeaderText = "";
             this.Ver.Name = "Ver";
             this.Ver.ReadOnly = true;
+            this.Ver.Text = "Ver";
+            this.Ver.UseColumnTextForButtonValue = true;
             // 
-            // lblBuscador
+            // btnEditarPerfil
             // 
-            this.lblBuscador.AutoSize = true;
-            this.lblBuscador.Location = new System.Drawing.Point(43, 29);
-            this.lblBuscador.Name = "lblBuscador";
-            this.lblBuscador.Size = new System.Drawing.Size(124, 13);
-            this.lblBuscador.TabIndex = 5;
-            this.lblBuscador.Text = "Buscar ficha de mascota";
-            this.lblBuscador.Click += new System.EventHandler(this.lblBuscador_Click);
+            this.btnEditarPerfil.Location = new System.Drawing.Point(21, 56);
+            this.btnEditarPerfil.Name = "btnEditarPerfil";
+            this.btnEditarPerfil.Size = new System.Drawing.Size(97, 23);
+            this.btnEditarPerfil.TabIndex = 2;
+            this.btnEditarPerfil.Text = "Editar perfil";
+            this.btnEditarPerfil.UseVisualStyleBackColor = true;
+            this.btnEditarPerfil.Click += new System.EventHandler(this.btnEditarPerfil_Click);
             // 
-            // btnLimpiarBusquedaFicha
+            // btnCerrarSesion
             // 
-            this.btnLimpiarBusquedaFicha.Location = new System.Drawing.Point(516, 75);
-            this.btnLimpiarBusquedaFicha.Name = "btnLimpiarBusquedaFicha";
-            this.btnLimpiarBusquedaFicha.Size = new System.Drawing.Size(75, 23);
-            this.btnLimpiarBusquedaFicha.TabIndex = 8;
-            this.btnLimpiarBusquedaFicha.Text = "Volver";
-            this.btnLimpiarBusquedaFicha.UseVisualStyleBackColor = true;
-            this.btnLimpiarBusquedaFicha.Click += new System.EventHandler(this.btnLimpiarBusquedaFicha_Click);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(21, 95);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(97, 23);
+            this.btnCerrarSesion.TabIndex = 3;
+            this.btnCerrarSesion.Text = "Cerrar sesion";
+            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // VeterinarioInicio
             // 
@@ -204,22 +220,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 453);
             this.Controls.Add(this.panelContenedorVeterinario);
-            this.Controls.Add(this.pBoxPerfil);
             this.Controls.Add(this.btnStock);
             this.Controls.Add(this.BtnCrearFicha);
-            this.Controls.Add(this.lblVeterinario);
             this.Controls.Add(this.panelLateralVeterinario);
             this.Name = "VeterinarioInicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VeterinarioInicio";
             this.Load += new System.EventHandler(this.VeterinarioInicio_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxPerfil)).EndInit();
             this.panelLateralVeterinario.ResumeLayout(false);
+            this.panelTopVeterinario.ResumeLayout(false);
+            this.panelTopVeterinario.PerformLayout();
             this.panelContenedorVeterinario.ResumeLayout(false);
             this.panelContenedorVeterinario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFichas)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -227,17 +241,18 @@
         private System.Windows.Forms.Label lblVeterinario;
         private System.Windows.Forms.Button BtnCrearFicha;
         private System.Windows.Forms.Button btnStock;
-        private System.Windows.Forms.PictureBox pBoxPerfil;
         private System.Windows.Forms.Panel panelLateralVeterinario;
         private System.Windows.Forms.TextBox tBoxBusqueda;
         private System.Windows.Forms.Panel panelContenedorVeterinario;
         private System.Windows.Forms.Label lblBuscador;
         private System.Windows.Forms.Panel panelTopVeterinario;
         private System.Windows.Forms.DataGridView dataGridViewFichas;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnLimpiarBusquedaFicha;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdMascota;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreMascota;
         private System.Windows.Forms.DataGridViewButtonColumn Ver;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Button btnLimpiarBusquedaFicha;
+        private System.Windows.Forms.Button btnCerrarSesion;
+        private System.Windows.Forms.Button btnEditarPerfil;
     }
 }

@@ -73,7 +73,8 @@ namespace LoginPetShop_v1.ControlesGenerales
             else if (formPadre is VeterinarioInicio veterinario)
             {
                 this.Parent.Controls.Remove(this);
-                //veterinario.VolverAPantallaPrincipal(); se debe agregar a veterinarioinicio
+                veterinario.VolverAPantallaPrincipal();
+
             }
             else if (formPadre is GerenteInicio gerente)
             {

@@ -1,13 +1,16 @@
 ﻿using BE;
+using LoginPetShop_v1.ControlesGenerales;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static LoginPetShop_v1.formInicio;
 
 
 namespace LoginPetShop_v1.Veterinario
@@ -63,6 +66,13 @@ namespace LoginPetShop_v1.Veterinario
             MostrarSolo(null);
             MostrarFichasMascotas();
 
+        }
+
+        private void CargarUserControl(UserControl control)
+        {
+            panelContenedorVeterinario.Controls.Clear();           // Limpia el contenido actual
+            control.Dock = DockStyle.Fill;             // Ocupa todo el panel
+            panelContenedorVeterinario.Controls.Add(control);      // Agrega el nuevo
         }
 
         private void MostrarSolo(UserControl visibleControl)
@@ -202,7 +212,7 @@ namespace LoginPetShop_v1.Veterinario
         private void dataGridViewFichas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //toma el nombre de la celda de al lado para pasarlo como parametro
-            string nombreMascota = dataGridViewFichas.Rows[e.RowIndex].Cells["nombreMascota"].Value.ToString();
+            // string nombreMascota = dataGridViewFichas.Rows[e.RowIndex].Cells["nombreMascota"].Value.ToString();
             //hay que agregar la solicitud de parametro de la edicion de ficha
             //MostrarEdicionFicha();
 
@@ -272,5 +282,72 @@ namespace LoginPetShop_v1.Veterinario
             tBoxBusqueda.Clear();
             MostrarFichasMascotas();
         }
+
+        private void btnEditarPerfil_Click(object sender, EventArgs e)
+        {
+            CargarUserControl(new UC_EditarUsuario());
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            // Limpiar la sesión
+            SesionActual.UsuarioLogueado = null;
+
+            // Mostrar el login de nuevo
+            //formInicio loginForm = new formInicio();
+            //loginForm.Show();
+
+            // Cerrar el formulario actual
+            this.Close();
+        }
+
+        public void VolverAPantallaPrincipal() 
+        {
+            this.Opacity = 0;
+            this.Controls.Clear();
+            cargarPantalla();           
+            this.Opacity = 1;
+
+           
+
+        }
+        public void cargarPantalla() 
+        {
+            InitializeComponent();
+
+            crearFichaMascota = new UC_CrearFichaMascota();
+            editarFichaMascota = new UC_EditarFichaMascota();
+            editarHistorialMedico = new UC_EditarHistorialMedico();
+            gestionarStock = new UC_GestionarStock();
+            agregarProducto = new UC_AgregarProducto(gestionarStock);
+            editarProducto = new UC_EditarProducto(gestionarStock, idProducto);
+            agregarConsulta = new UC_AgregarConsulta(editarHistorialMedico);
+            programarVacuna = new UC_ProgramarVacuna(editarHistorialMedico);
+
+
+            crearFichaMascota.Dock = DockStyle.Fill;
+            editarFichaMascota.Dock = DockStyle.Fill;
+            editarHistorialMedico.Dock = DockStyle.Fill;
+            gestionarStock.Dock = DockStyle.Fill;
+            agregarProducto.Dock = DockStyle.Fill;
+            agregarConsulta.Dock = DockStyle.Fill;
+            programarVacuna.Dock = DockStyle.Fill;
+            editarProducto.Dock = DockStyle.Fill;
+            //agrega los UserControl
+            panelContenedorVeterinario.Controls.Add(crearFichaMascota);
+            panelContenedorVeterinario.Controls.Add(editarFichaMascota);
+            panelContenedorVeterinario.Controls.Add(editarHistorialMedico);
+            panelContenedorVeterinario.Controls.Add(gestionarStock);
+            panelContenedorVeterinario.Controls.Add(agregarProducto);
+            panelContenedorVeterinario.Controls.Add(agregarConsulta);
+            panelContenedorVeterinario.Controls.Add(programarVacuna);
+            panelContenedorVeterinario.Controls.Add(editarProducto);
+
+
+
+            MostrarSolo(null);
+            MostrarFichasMascotas();
+        }
+
     }
 }
