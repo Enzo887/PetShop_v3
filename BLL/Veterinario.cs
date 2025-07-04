@@ -150,25 +150,6 @@ namespace BLL
             unVeterinarioDal.EliminarProducto(idProducto);
         }
 
-        public override void EditarProducto(Producto unProducto)
-        {
-
-        }
-
-        public override void HabilitarProducto(Producto unProducto)
-        {
-
-        }
-
-        public override void DeshabilitarProducto(Producto unProducto)
-        {
-
-        }
-
-        public void BuscarMedicamento(Medicamento unMedicamento)
-        {
-
-        }
 
         public void CrearConsulta(BE.Consulta unaConsulta, int idHistorial)
         {
@@ -261,10 +242,7 @@ namespace BLL
         }
         
         //editar ficha va a ser actualizar
-        public void EditarFichaMascota(FichaMedica unaFicha)
-        {
-
-        }
+  
         public void EliminarMascota(int idMascota)
         {
             //verificamos que el id sea valido
@@ -282,10 +260,7 @@ namespace BLL
             DAL.Veterinario veterinarioDAL = new DAL.Veterinario();
             veterinarioDAL.EliminarMascota(idMascota);
         }
-        public void EditarHistorialMedico(HistorialMedico unHistorial)
-        {
-
-        }
+    
 
         public void ProgramarVacuna(BE.Vacuna unaVacuna, int ficha_id)
         {
@@ -302,25 +277,7 @@ namespace BLL
             DAL.HistorialMedico unHistorialDAL = new DAL.HistorialMedico();
             return unHistorialDAL.ObtenerConsultasPorMascotaID(idMascota);
         }
-        public void VerConsulta()
-        {
 
-        }
-
-        public FichaMedica VerFichaMascota(Mascota unaMascota)
-        {
-            return null;
-        }
-
-        public HistorialMedico VerHistorialMedico(Mascota unaMascota)
-        {
-            return null;
-        }
-
-        public List<Medicamento> VerMedicamentos()
-        {
-            return null;
-        }
 
     }
 }

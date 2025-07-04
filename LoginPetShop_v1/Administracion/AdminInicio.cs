@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LoginPetShop_v1.ControlesGenerales;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static LoginPetShop_v1.formInicio;
 
 namespace LoginPetShop_v1.Administracion
 {
@@ -65,6 +67,17 @@ namespace LoginPetShop_v1.Administracion
             UC_EditarUsuarios EditarUsuarios = new UC_EditarUsuarios(AdministrarUsuarios, idUsuario);
             CargarUserControl (EditarUsuarios);
             EditarUsuarios.CargarUsuario(idUsuario);
+        }
+
+        private void btnEditarPerfil_Click(object sender, EventArgs e)
+        {
+            CargarUserControl(new UC_EditarUsuario());
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            SesionActual.UsuarioLogueado = null;
+            this.Close();
         }
     }
 }
