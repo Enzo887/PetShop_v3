@@ -33,7 +33,7 @@ namespace LoginPetShop_v1.Administracion
             panelContenedorAdmin.Controls.Add(control);      // Agrega el nuevo
         }
 
-        
+     
 
         private void btnVerEstadisticas_Click(object sender, EventArgs e)
         {
@@ -45,7 +45,7 @@ namespace LoginPetShop_v1.Administracion
 
         }
 
-      
+    
 
         private void btnGestionarUsuarios_Click(object sender, EventArgs e)
         {

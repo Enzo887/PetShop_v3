@@ -10,9 +10,17 @@ namespace BLL
 {
     public class Vendedor : Usuario
     {
-        public override void AgregarProducto(Producto unProducto)
+
+        DAL.Vendedor unVendedorDal = new DAL.Vendedor();
+
+        public void AgregarAlimento(BE.Alimento unAlimento)
+        {
+            unVendedorDal.AgregarAlimento(unAlimento);
+        }
+        public void AgregarAccesorio(BE.Accesorio unAccesorio)
         {
 
+            unVendedorDal.AgregarAccesorio(unAccesorio);
         }
 
         public override void EditarProducto(Producto unProducto)
@@ -52,7 +60,7 @@ namespace BLL
         public List<BE.Producto> ObtenerProductos()
         {
             var productos = new List<BE.Producto>();
-            var tabla = unVendedorDAL.ObtenerProductosDeVeterinario();
+            var tabla = unVendedorDAL.ObtenerProductosDeVendedor();
             foreach (DataRow fila in tabla.Rows)
             {
                 int categoria = Convert.ToInt32(fila["Categoria_Id"]);
@@ -81,10 +89,9 @@ namespace BLL
                         IdProducto = Convert.ToInt32(fila["PRODUCTO_ID"]),
                         Nombre = fila["NombreProducto"].ToString(),
                         PrecioUnidad = float.Parse(fila["Precio"].ToString()),
-                        Vencimiento = Convert.ToDateTime(fila["FECHA_VENCIMIENTO"]),
                         Cantidad = float.Parse(fila["Stock"].ToString()),
                         Estado = _estado,
-                        //RequiereReceta = _receta,
+                       
 
                     });
                 }
@@ -105,7 +112,6 @@ namespace BLL
                         IdProducto = Convert.ToInt32(fila["PRODUCTO_ID"]),
                         Nombre = fila["NombreProducto"].ToString(),
                         PrecioUnidad = float.Parse(fila["Precio"].ToString()),
-                        //Vencimiento = Convert.ToDateTime(fila["FECHA_VENCIMIENTO"]),
                         Cantidad = float.Parse(fila["Stock"].ToString()),
                         Estado = _estado,
 

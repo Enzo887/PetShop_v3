@@ -169,12 +169,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Veterinario\HistorialMedico.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Veterinario\HistorialMedico.Designer.cs">
-      <DependentUpon>HistorialMedico.cs</DependentUpon>
-    </Compile>
     <Compile Include="Veterinario\UC_CrearFichaMascota.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -285,9 +279,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Veterinario\UC_AgregarProducto.resx">
       <DependentUpon>UC_AgregarProducto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Veterinario\HistorialMedico.resx">
-      <DependentUpon>HistorialMedico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Veterinario\UC_CrearFichaMascota.resx">
       <DependentUpon>UC_CrearFichaMascota.cs</DependentUpon>
