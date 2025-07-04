@@ -291,16 +291,6 @@ namespace DAL
         }
 
 
-        /*
-         * crear el proc y agregarlo qsyo gracias copiloto
-        public void EliminarProducto(int idProducto)
-        {   // elimina un producto de la base de datos
-            SqlParameter[] parametros = new SqlParameter[]
-            {
-                new SqlParameter("@IdProducto", idProducto)
-            };
-            conexion.EscribirPorStoreProcedure("SP_EliminarProducto", parametros);
-        */
 
         public int CrearConsulta(BE.Consulta unaConsulta, int idHistorial) 
         {

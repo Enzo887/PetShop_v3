@@ -12,50 +12,7 @@ namespace BLL
     {
         DAL.Administrador unAdminDal = new DAL.Administrador();
         BE.Usuario unUsuario = new BE.Usuario();
-        public void AgregarAlertaARol(Rol unRol, Alerta unaAlerta)
-        {
-
-        }
-
-        public void AgregarRolAUsuario(Rol unRol, Usuario unUsuario)
-        {
-
-        }
-
-        public void CrearAlerta()
-        {
-
-        }
-
-        public void CrearRol()
-        {
-
-        }
-
-        public void EditarPermisosDeRol(Rol unRol)
-        {
-
-        }
-
-        public void EliminarAlerta(Rol unRol)
-        {
-
-        }
-
-        public void EliminarRol(Rol unRol)
-        {
-
-        }
-
-        public void EliminarRolAUsuario(Rol unRol, Usuario unUsuario)
-        {
-
-        }
-        public void VerEstadisticas()
-        {
-
-        }
-
+     
         public List<Usuario> VerListaDeUsuarios()
         {
             return null;
@@ -108,6 +65,84 @@ namespace BLL
                     
             }
             return ListaUsuarios;
+        }
+        public List<BE.Venta> ObtenerVentasGenerales()
+        {
+
+            List<BE.Venta> ListaVentasGenerales = new List<BE.Venta>();
+
+
+            DataTable ventasGenerales = unAdminDal.ObtenerVentasGenerales();
+            foreach (DataRow fila in ventasGenerales.Rows)
+            {
+                ListaVentasGenerales.Add(new BE.Venta
+                {
+                    VentaID = Convert.ToInt32(fila["VENTA_ID"]),
+                    FechaDeVenta = Convert.ToDateTime(fila["FECHA_VENTA"]),
+                    PrecioTotal = Convert.ToInt32(fila["MONTO_TOTAL"]),
+
+                });
+
+            }
+            return ListaVentasGenerales;
+        }
+        public List<BE.Cliente> ObtenerClientesFrecuentes()
+        {
+
+            List<BE.Cliente> ListaClientesFrecuentas = new List<BE.Cliente>();
+
+
+            DataTable ClientesFrecuentes = unAdminDal.ObtenerClientesFrecuentes();
+            foreach (DataRow fila in ClientesFrecuentes.Rows)
+            {
+                ListaClientesFrecuentas.Add(new BE.Cliente
+                {
+                    DNI = Convert.ToInt32(fila["DNI"]),
+                    Nombre = fila[("NOMBRE")].ToString(),
+                    Apellido =  fila[("APELLIDO")].ToString()
+
+                });
+            }
+            return ListaClientesFrecuentas;
+        }
+
+        public List<BE.Producto> ObtenerStockActual()
+        {
+
+            List<BE.Producto> ListaProductos = new List<BE.Producto>();
+
+
+            DataTable ProductosActuales = unAdminDal.ObtenerStock();
+            foreach (DataRow fila in ProductosActuales.Rows)
+            {
+                ListaProductos.Add(new BE.Producto
+                {
+                    IdProducto = Convert.ToInt32(fila["PRODUCTO_ID"]),
+                    Nombre = fila[("NOMBRE")].ToString(),
+                    Cantidad= Convert.ToInt32(fila["STOCK"]),
+
+                });
+            }
+            return ListaProductos;
+        }
+
+        public List<BE.Producto> ObtenerProductosMasVendidos()
+        {
+
+            List<BE.Producto> ListaProductosMasVendidos = new List<BE.Producto>();
+
+
+            DataTable ProductosActuales = unAdminDal.ObtenerProductosMasVendidos();
+            foreach (DataRow fila in ProductosActuales.Rows)
+            {
+                ListaProductosMasVendidos.Add(new BE.Producto
+                {
+                    IdProducto = Convert.ToInt32(fila["PRODUCTO_ID"]),
+                    Nombre = fila[("NOMBRE")].ToString(),
+                    Cantidad = Convert.ToInt32(fila["STOCK"]),
+                });
+            }
+            return ListaProductosMasVendidos;
         }
 
         public BE.Usuario ObtenerUsuarioPorID(int idUsuario) 

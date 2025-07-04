@@ -1,5 +1,6 @@
 ﻿using BE;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -14,7 +15,7 @@ namespace DAL
         private Conexion conexion = new Conexion();
         public int RegistrarUsuario(BE.Usuario unUsuario)
         {
-       
+
             // escribe en base de datos un nuevo Usuario
 
             SqlParameter[] parameters = new SqlParameter[]
@@ -60,21 +61,21 @@ namespace DAL
 
         }
 
-        public void EliminarUsuario(int idUsuario) 
+        public void EliminarUsuario(int idUsuario)
         {
             // escribe en base de datos un nuevo Usuario
 
             SqlParameter[] parameters = new SqlParameter[]
             {
                 new SqlParameter("@Usuario_ID", idUsuario),
-        
+
             };
             conexion.EscribirPorStoreProcedure("SP_EliminarUsuario", parameters);
         }
 
-        public DataTable ObtenerUsuarios() 
+        public DataTable ObtenerUsuarios()
         {
-            return   conexion.LeerPorComando("SELECT * FROM V_ObtenerUsuarios");
+            return conexion.LeerPorComando("SELECT * FROM Vista_ObtenerUsuarios");
         }
 
         public BE.Usuario ObtenerUsuarioPorID(int idUsuario)
@@ -101,12 +102,37 @@ namespace DAL
 
                 };
             }
-            else 
+            else
             {
                 return null;
             }
-          
+
         }
+
+        /*ESTADISTICAS A HACER
+        ventas generales
+        Clientes frecuentes
+        stock
+        productos mas vendidos*/
+
+        public DataTable ObtenerVentasGenerales()
+        {
+            return conexion.LeerPorComando("SELECT * FROM Vista_VentasGenerales");
+        }
+        public DataTable ObtenerClientesFrecuentes()
+        {
+            return conexion.LeerPorComando("SELECT * FROM Vista_CLIENTES_FRECUENTES");
+        }
+        public DataTable ObtenerStock()
+        {
+            return conexion.LeerPorComando("SELECT * FROM Vista_STOCK_ACTUAL");
+        }
+        public DataTable ObtenerProductosMasVendidos()
+        {
+            return conexion.LeerPorComando("SELECT * FROM Vista_PRODUCTOS_MAS_VENDIDOS");
+        }
+
+
 
 
     }

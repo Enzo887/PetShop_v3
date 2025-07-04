@@ -53,29 +53,11 @@
     <Compile Include="Administracion\AdminInicio.Designer.cs">
       <DependentUpon>AdminInicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Administracion\AdministracionDeRol.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Administracion\AdministracionDeRol.Designer.cs">
-      <DependentUpon>AdministracionDeRol.cs</DependentUpon>
-    </Compile>
     <Compile Include="Administracion\UC_AdministrarUsuarios.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Administracion\UC_AdministrarUsuarios.Designer.cs">
       <DependentUpon>UC_AdministrarUsuarios.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Administracion\UC_ConfigurarAlertas.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Administracion\UC_ConfigurarAlertas.Designer.cs">
-      <DependentUpon>UC_ConfigurarAlertas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Administracion\UC_EditarRol.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Administracion\UC_EditarRol.Designer.cs">
-      <DependentUpon>UC_EditarRol.cs</DependentUpon>
     </Compile>
     <Compile Include="Administracion\UC_EditarUsuarios.cs">
       <SubType>UserControl</SubType>
@@ -226,17 +208,8 @@
     <EmbeddedResource Include="Administracion\AdminInicio.resx">
       <DependentUpon>AdminInicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Administracion\AdministracionDeRol.resx">
-      <DependentUpon>AdministracionDeRol.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Administracion\UC_AdministrarUsuarios.resx">
       <DependentUpon>UC_AdministrarUsuarios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Administracion\UC_ConfigurarAlertas.resx">
-      <DependentUpon>UC_ConfigurarAlertas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Administracion\UC_EditarRol.resx">
-      <DependentUpon>UC_EditarRol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Administracion\UC_EditarUsuarios.resx">
       <DependentUpon>UC_EditarUsuarios.cs</DependentUpon>
@@ -285,6 +258,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Vendedor\UC_RegistrarVenta.resx">
       <DependentUpon>UC_RegistrarVenta.cs</DependentUpon>

@@ -64,7 +64,7 @@ namespace LoginPetShop_v1.Veterinario
 
             dataGridViewConsultas.Columns["Diagnostico"].DataPropertyName = "Diagnostico";
             dataGridViewConsultas.Columns["Tratamiento"].DataPropertyName = "Tratamiento";
-            dataGridViewConsultas.Columns["FechaConsulta"].DataPropertyName = "FechaDeConsulta";
+            dataGridViewConsultas.Columns["Fecha"].DataPropertyName = "FechaDeConsulta";
 
          
             dataGridViewConsultas.DataSource = consultas;
