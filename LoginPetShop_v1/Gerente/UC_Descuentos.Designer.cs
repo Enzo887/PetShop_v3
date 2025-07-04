@@ -30,12 +30,11 @@
         {
             this.lblListaDescuentos = new System.Windows.Forms.Label();
             this.gridListaDescuentos = new System.Windows.Forms.DataGridView();
-            this.NombreDescuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Porcentaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAgregarDescuento = new System.Windows.Forms.Button();
-            this.btnEditarDescuento = new System.Windows.Forms.Button();
-            this.btnEliminarDescuento = new System.Windows.Forms.Button();
+            this.cIdDescuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreDescuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Porcentaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ver = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridListaDescuentos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,30 +49,21 @@
             // 
             // gridListaDescuentos
             // 
+            this.gridListaDescuentos.AllowUserToAddRows = false;
+            this.gridListaDescuentos.AllowUserToDeleteRows = false;
             this.gridListaDescuentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridListaDescuentos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cIdDescuento,
             this.NombreDescuento,
-            this.Cliente,
-            this.Porcentaje});
+            this.Porcentaje,
+            this.Ver});
             this.gridListaDescuentos.Location = new System.Drawing.Point(31, 42);
             this.gridListaDescuentos.Name = "gridListaDescuentos";
-            this.gridListaDescuentos.Size = new System.Drawing.Size(345, 283);
+            this.gridListaDescuentos.ReadOnly = true;
+            this.gridListaDescuentos.RowHeadersVisible = false;
+            this.gridListaDescuentos.Size = new System.Drawing.Size(405, 283);
             this.gridListaDescuentos.TabIndex = 1;
-            // 
-            // NombreDescuento
-            // 
-            this.NombreDescuento.HeaderText = "Nombre Descuento";
-            this.NombreDescuento.Name = "NombreDescuento";
-            // 
-            // Cliente
-            // 
-            this.Cliente.HeaderText = "Cliente";
-            this.Cliente.Name = "Cliente";
-            // 
-            // Porcentaje
-            // 
-            this.Porcentaje.HeaderText = "Porcentaje";
-            this.Porcentaje.Name = "Porcentaje";
+            this.gridListaDescuentos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridListaDescuentos_CellClick);
             // 
             // btnAgregarDescuento
             // 
@@ -85,30 +75,38 @@
             this.btnAgregarDescuento.UseVisualStyleBackColor = true;
             this.btnAgregarDescuento.Click += new System.EventHandler(this.btnAgregarDescuento_Click);
             // 
-            // btnEditarDescuento
+            // cIdDescuento
             // 
-            this.btnEditarDescuento.Location = new System.Drawing.Point(392, 59);
-            this.btnEditarDescuento.Name = "btnEditarDescuento";
-            this.btnEditarDescuento.Size = new System.Drawing.Size(108, 23);
-            this.btnEditarDescuento.TabIndex = 3;
-            this.btnEditarDescuento.Text = "Editar Descuento";
-            this.btnEditarDescuento.UseVisualStyleBackColor = true;
+            this.cIdDescuento.HeaderText = "ID Descuento";
+            this.cIdDescuento.Name = "cIdDescuento";
+            this.cIdDescuento.ReadOnly = true;
             // 
-            // btnEliminarDescuento
+            // NombreDescuento
             // 
-            this.btnEliminarDescuento.Location = new System.Drawing.Point(394, 88);
-            this.btnEliminarDescuento.Name = "btnEliminarDescuento";
-            this.btnEliminarDescuento.Size = new System.Drawing.Size(106, 23);
-            this.btnEliminarDescuento.TabIndex = 4;
-            this.btnEliminarDescuento.Text = "Eliminar Descuento";
-            this.btnEliminarDescuento.UseVisualStyleBackColor = true;
+            this.NombreDescuento.HeaderText = "Nombre Descuento";
+            this.NombreDescuento.Name = "NombreDescuento";
+            this.NombreDescuento.ReadOnly = true;
+            // 
+            // Porcentaje
+            // 
+            this.Porcentaje.HeaderText = "Porcentaje";
+            this.Porcentaje.Name = "Porcentaje";
+            this.Porcentaje.ReadOnly = true;
+            // 
+            // Ver
+            // 
+            this.Ver.HeaderText = "";
+            this.Ver.Name = "Ver";
+            this.Ver.ReadOnly = true;
+            this.Ver.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Ver.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Ver.Text = "Ver";
+            this.Ver.UseColumnTextForButtonValue = true;
             // 
             // UC_Descuentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnEliminarDescuento);
-            this.Controls.Add(this.btnEditarDescuento);
             this.Controls.Add(this.btnAgregarDescuento);
             this.Controls.Add(this.gridListaDescuentos);
             this.Controls.Add(this.lblListaDescuentos);
@@ -124,11 +122,10 @@
 
         private System.Windows.Forms.Label lblListaDescuentos;
         private System.Windows.Forms.DataGridView gridListaDescuentos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreDescuento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Porcentaje;
         private System.Windows.Forms.Button btnAgregarDescuento;
-        private System.Windows.Forms.Button btnEditarDescuento;
-        private System.Windows.Forms.Button btnEliminarDescuento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cIdDescuento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreDescuento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Porcentaje;
+        private System.Windows.Forms.DataGridViewButtonColumn Ver;
     }
 }
