@@ -78,13 +78,7 @@ namespace LoginPetShop_v1.Veterinario
             ActualizarDataGrid();
 
         }
-  
-        public void AgregarFilaProximoAVencer(string nombreProducto, string vencimiento, float cantidadRestante) 
-        {
-            dataGridViewProductoProxVencimiento.Rows.Add(nombreProducto, vencimiento, cantidadRestante);
-        }
       
-
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
             

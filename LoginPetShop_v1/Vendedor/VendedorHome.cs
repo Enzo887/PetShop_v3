@@ -16,11 +16,21 @@ namespace LoginPetShop_v1.Vendedor
     public partial class VendedorHome : Form
     {
         private UC_RegistrarVenta RegistrarVenta;
-
+        private UC_AgregarProducto agregarProducto;
+        private UC_GestionarStock gestionarStock;
+        private UC_EditarUsuario editarUsuario;
+        private UC_RegistrarCliente registrarCliente;
+        private UC_EditarProducto editarProducto;
+        int idProducto;
         public VendedorHome()
         {
             InitializeComponent();
             CargarUserControl(RegistrarVenta = new UC_RegistrarVenta());
+            agregarProducto = new UC_AgregarProducto();
+            gestionarStock = new UC_GestionarStock();
+            editarUsuario = new UC_EditarUsuario();
+            registrarCliente = new UC_RegistrarCliente();
+            editarProducto = new UC_EditarProducto(gestionarStock, idProducto);
         }
         private void CargarUserControl(UserControl control)
         {
@@ -31,12 +41,19 @@ namespace LoginPetShop_v1.Vendedor
 
         private void btnRegistrarVenta_Click(object sender, EventArgs e)
         {
-            CargarUserControl(RegistrarVenta = new UC_RegistrarVenta() );
+            CargarUserControl(RegistrarVenta);
         }
 
         private void btnGestionarStock_Click(object sender, EventArgs e)
         {
-            CargarUserControl ( new UC_GestionarStock() );
+            CargarUserControl (gestionarStock);
+        }
+
+        public void MostrarGestionStock()
+        {
+            CargarUserControl(gestionarStock);
+            gestionarStock.ActualizarDataGrid();
+
         }
         public void MostrarPrincipal()
         {
@@ -46,16 +63,26 @@ namespace LoginPetShop_v1.Vendedor
 
         private void btnRegistrarCliente_Click(object sender, EventArgs e)
         {
-            CargarUserControl(new UC_RegistrarCliente());
+            CargarUserControl(registrarCliente);
         }
 
         private void btnEditarPerfil_Click(object sender, EventArgs e)
         {
-            CargarUserControl(new UC_EditarUsuario());
+            CargarUserControl(editarUsuario);
         }
         public void VolverAPantallaPrincipal()
         {
             CargarUserControl(RegistrarVenta);
+        }
+        public void MostrarAgregarProducto()
+        {
+            //MostrarSolo(agregarProducto);
+            CargarUserControl(agregarProducto);
+        }
+        public void MostrarEditarProducto(int idProducto)
+        {
+            CargarUserControl(editarProducto);
+            editarProducto.CargarProducto(idProducto);
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
