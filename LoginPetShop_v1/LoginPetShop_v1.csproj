@@ -125,6 +125,18 @@
     <Compile Include="Gerente\UC_EditarDescuento.Designer.cs">
       <DependentUpon>UC_EditarDescuento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vendedor\UC_AgregarProducto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vendedor\UC_AgregarProducto.Designer.cs">
+      <DependentUpon>UC_AgregarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vendedor\UC_EditarProducto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vendedor\UC_EditarProducto.Designer.cs">
+      <DependentUpon>UC_EditarProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vendedor\UC_GestionarStock.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -264,6 +276,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Gerente\UC_EditarDescuento.resx">
       <DependentUpon>UC_EditarDescuento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendedor\UC_AgregarProducto.resx">
+      <DependentUpon>UC_AgregarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendedor\UC_EditarProducto.resx">
+      <DependentUpon>UC_EditarProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vendedor\UC_GestionarStock.resx">
       <DependentUpon>UC_GestionarStock.cs</DependentUpon>

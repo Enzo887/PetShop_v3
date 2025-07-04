@@ -8,9 +8,9 @@ namespace BE
 {
     public class Alimento : Producto
     {
-        private Mascota _especie;
+        private string _especie;
 
-        public Mascota Especie
+        public string Especie
         {
             get { return _especie; }
             set { _especie = value; }
