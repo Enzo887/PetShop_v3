@@ -33,10 +33,7 @@ namespace LoginPetShop_v1.Administracion
             panelContenedorAdmin.Controls.Add(control);      // Agrega el nuevo
         }
 
-        private void btnAdminstrarRoles_Click(object sender, EventArgs e)
-        {
-            CargarUserControl(new AdministracionDeRol()); 
-        }
+     
 
         private void btnVerEstadisticas_Click(object sender, EventArgs e)
         {

@@ -32,8 +32,8 @@
             this.cBoxEstado = new System.Windows.Forms.ComboBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.inputFechaIngreso = new System.Windows.Forms.DateTimePicker();
-            this.lblFechaIngreso = new System.Windows.Forms.Label();
+            this.inputFechaVencimiento = new System.Windows.Forms.DateTimePicker();
+            this.lblFechaVencimiento = new System.Windows.Forms.Label();
             this.cBoxCategoria = new System.Windows.Forms.ComboBox();
             this.tboxPrecio = new System.Windows.Forms.TextBox();
             this.lblPrecio = new System.Windows.Forms.Label();
@@ -82,27 +82,31 @@
             this.btnAgregar.TabIndex = 70;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // inputFechaIngreso
+            // inputFechaVencimiento
             // 
-            this.inputFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.inputFechaIngreso.Location = new System.Drawing.Point(255, 164);
-            this.inputFechaIngreso.Name = "inputFechaIngreso";
-            this.inputFechaIngreso.Size = new System.Drawing.Size(100, 20);
-            this.inputFechaIngreso.TabIndex = 69;
+            this.inputFechaVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.inputFechaVencimiento.Location = new System.Drawing.Point(255, 164);
+            this.inputFechaVencimiento.Name = "inputFechaVencimiento";
+            this.inputFechaVencimiento.Size = new System.Drawing.Size(100, 20);
+            this.inputFechaVencimiento.TabIndex = 69;
             // 
-            // lblFechaIngreso
+            // lblFechaVencimiento
             // 
-            this.lblFechaIngreso.AutoSize = true;
-            this.lblFechaIngreso.Location = new System.Drawing.Point(252, 147);
-            this.lblFechaIngreso.Name = "lblFechaIngreso";
-            this.lblFechaIngreso.Size = new System.Drawing.Size(75, 13);
-            this.lblFechaIngreso.TabIndex = 68;
-            this.lblFechaIngreso.Text = "Fecha Ingreso";
+            this.lblFechaVencimiento.AutoSize = true;
+            this.lblFechaVencimiento.Location = new System.Drawing.Point(252, 147);
+            this.lblFechaVencimiento.Name = "lblFechaVencimiento";
+            this.lblFechaVencimiento.Size = new System.Drawing.Size(112, 13);
+            this.lblFechaVencimiento.TabIndex = 68;
+            this.lblFechaVencimiento.Text = "Fecha de vencimiento";
             // 
             // cBoxCategoria
             // 
             this.cBoxCategoria.FormattingEnabled = true;
+            this.cBoxCategoria.Items.AddRange(new object[] {
+            "Alimento",
+            "Accesorio"});
             this.cBoxCategoria.Location = new System.Drawing.Point(84, 163);
             this.cBoxCategoria.Name = "cBoxCategoria";
             this.cBoxCategoria.Size = new System.Drawing.Size(100, 21);
@@ -173,8 +177,8 @@
             this.Controls.Add(this.cBoxEstado);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.inputFechaIngreso);
-            this.Controls.Add(this.lblFechaIngreso);
+            this.Controls.Add(this.inputFechaVencimiento);
+            this.Controls.Add(this.lblFechaVencimiento);
             this.Controls.Add(this.cBoxCategoria);
             this.Controls.Add(this.tboxPrecio);
             this.Controls.Add(this.lblPrecio);
@@ -197,8 +201,8 @@
         private System.Windows.Forms.ComboBox cBoxEstado;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.DateTimePicker inputFechaIngreso;
-        private System.Windows.Forms.Label lblFechaIngreso;
+        private System.Windows.Forms.DateTimePicker inputFechaVencimiento;
+        private System.Windows.Forms.Label lblFechaVencimiento;
         private System.Windows.Forms.ComboBox cBoxCategoria;
         private System.Windows.Forms.TextBox tboxPrecio;
         private System.Windows.Forms.Label lblPrecio;

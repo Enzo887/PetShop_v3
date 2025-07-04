@@ -12,7 +12,7 @@ namespace DAL
     public class Vendedor
     {
         Conexion conexion = new Conexion();
-        public DataTable ObtenerProductosDeVeterinario()
+        public DataTable ObtenerProductosDeVendedor()
         {
             return conexion.LeerPorComando("SELECT * FROM Vista_ProductosConCategoriaVendedor");
         }
@@ -170,6 +170,53 @@ namespace DAL
                 new SqlParameter("@Producto_Id", idProducto)
             };
             conexion.EscribirPorStoreProcedure("SP_EliminarProducto", parametros);
+
+        }
+
+
+        public int AgregarAccesorio(BE.Accesorio unAccesorio)
+        {   // escribe en base de datos un nuevo accesorio
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@Nombre", unAccesorio.Nombre),
+                new SqlParameter("@Precio", unAccesorio.PrecioUnidad),
+                new SqlParameter("@Stock", unAccesorio.Cantidad),
+                new SqlParameter("@FechaVencimiento", null),
+                new SqlParameter("@Categoria_Id", 4),
+                new SqlParameter("@Producto_Id", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    }
+            };
+            conexion.EscribirPorStoreProcedure("SP_AgregarProducto", parameters);
+            int idGenerado = Convert.ToInt32(parameters[5].Value);
+            unAccesorio.IdProducto = idGenerado;
+
+            return idGenerado;
+
+        }
+
+        public int AgregarAlimento(BE.Alimento unAlimento)
+        {   // escribe en base de datos un nuevo alimento
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@Nombre", unAlimento.Nombre),
+                new SqlParameter("@Precio", unAlimento.PrecioUnidad),
+                new SqlParameter("@FechaVencimiento", unAlimento.Vencimiento),
+                new SqlParameter("@Stock", unAlimento.Cantidad),
+                new SqlParameter("@Categoria_Id", 3),
+                new SqlParameter("@Producto_Id", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    }
+            };
+            conexion.EscribirPorStoreProcedure("SP_AgregarProducto", parameters);
+            int idGenerado = Convert.ToInt32(parameters[5].Value);
+            unAlimento.IdProducto = idGenerado;
+
+            return idGenerado;
 
         }
 
